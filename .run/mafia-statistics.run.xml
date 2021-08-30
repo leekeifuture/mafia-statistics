@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration name="mafia-statistics" default="false"
+        type="js.build_tools.npm">
+        <command value="run" />
+        <envs />
+        <method v="2" />
+        <node-interpreter
+            value="$USER_HOME$/.nvm/versions/node/v10.19.0/bin/node" />
+        <package-json value="$PROJECT_DIR$/package.json" />
+        <scripts>
+            <script value="start" />
+        </scripts>
+    </configuration>
+</component>
