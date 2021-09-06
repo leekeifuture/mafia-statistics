@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-    <configuration name="mafia-statistics" default="false"
+    <configuration name="Mafia Statistics" default="false"
         type="js.build_tools.npm">
         <command value="run" />
         <envs />
