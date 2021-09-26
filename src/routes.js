@@ -36,14 +36,14 @@ import ExtendedTables from 'views/Tables/ExtendedTables.jsx'
 import ReactTables from 'views/Tables/ReactTables.jsx'
 import RegularTables from 'views/Tables/RegularTables.jsx'
 import Widgets from 'views/Widgets/Widgets.jsx'
-import Player from './views/Player/Player'
+import PlayerProfile from './views/Player/PlayerProfile'
 import Upload from './views/Upload/Upload'
 
 var dashRoutes = [
     {
         path: '/players/:id?',
         name: 'Игрок',
-        component: Player,
+        component: PlayerProfile,
         layout: '/admin'
     },
     {
