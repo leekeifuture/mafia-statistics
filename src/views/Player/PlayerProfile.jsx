@@ -16,6 +16,8 @@ import GridItem from 'components/Grid/GridItem.jsx'
 import ReactEcharts from 'echarts-for-react'
 import React from 'react'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
+import CustomLinearProgress
+    from '../../components/CustomLinearProgress/CustomLinearProgress'
 
 class PlayerProfile extends React.Component {
     constructor(props) {
@@ -24,8 +26,101 @@ class PlayerProfile extends React.Component {
             nickname: '',
             gamesTotal: 0,
             coupleStatistics: [],
-            numbersStatistics: {},
-            ratingStatistics: {},
+            numbersStatistics: {
+                fromDate: '',
+                toDate: '',
+                placeOne: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeTwo: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeThree: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeFour: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeFive: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeSix: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeSeven: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeEight: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeNine: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                },
+                placeTen: {
+                    gamesRed: 0,
+                    gamesBlack: 0,
+                    gamesDon: 0,
+                    gamesSheriff: 0,
+                    percentWinRed: 0,
+                    percentWinBlack: 0
+                }
+            },
+            ratingStatistics: {
+                fromDate: '',
+                toDate: '',
+                bestMove: 0,
+                gamesBlack: 0,
+                gamesDon: 0,
+                gamesRed: 0,
+                gamesSheriff: 0,
+                penaltyPoints: 0,
+                points: 0
+            },
             rolesHistoryStatistics: {
                 fromDate: '',
                 toDate: '',
@@ -50,8 +145,35 @@ class PlayerProfile extends React.Component {
                 percentBestPlayer: 0,
                 percentFirstShooting: 0
             },
-            visitingStatistics: {},
-            serialityStatistics: {}
+            visitingStatistics: {
+                fromDate: '',
+                toDate: '',
+                byMonday: 0,
+                byTuesday: 0,
+                byWednesday: 0,
+                byThursday: 0,
+                byFriday: 0,
+                bySaturday: 0,
+                bySunday: 0
+            },
+            serialityStatistics: {
+                fromDate: '',
+                toDate: '',
+                maximumSeriesOfDefeat: 0,
+                maximumSeriesOfWin: 0,
+                successivelyLostByBlack: 0,
+                successivelyLostByDon: 0,
+                successivelyLostByRed: 0,
+                successivelyLostBySheriff: 0,
+                successivelyPlayedByBlack: 0,
+                successivelyPlayedByDon: 0,
+                successivelyPlayedByRed: 10,
+                successivelyPlayedBySheriff: 0,
+                successivelyWonByBlack: 0,
+                successivelyWonByDon: 0,
+                successivelyWonByRed: 0,
+                successivelyWonBySheriff: 0
+            }
         }
     }
 
@@ -150,6 +272,13 @@ class PlayerProfile extends React.Component {
                                 <hr />
                                 <p className={classes.description}>
                                     Игры сыграно: {this.state.gamesTotal}
+                                    <br />
+                                    <br />
+                                    <CustomLinearProgress
+                                        variant="determinate"
+                                        color="primary"
+                                        value={30}
+                                    />
                                 </p>
                             </CardBody>
                         </Card>
