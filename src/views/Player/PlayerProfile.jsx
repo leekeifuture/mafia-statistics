@@ -12,12 +12,11 @@ import CardIcon from 'components/Card/CardIcon.jsx'
 import Clearfix from 'components/Clearfix/Clearfix.jsx'
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
-
-import ReactEcharts from 'echarts-for-react'
 import React from 'react'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
 import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
+import RolesHistoryStatisticsComponent from './RolesHistoryStatisticsComponent'
 
 class PlayerProfile extends React.Component {
     constructor(props) {
@@ -188,60 +187,7 @@ class PlayerProfile extends React.Component {
     }
 
     render() {
-        const fromDate = new Date(this.state.rolesHistoryStatistics.fromDate)
-        const toDate = new Date(this.state.rolesHistoryStatistics.toDate)
 
-        const options = {year: 'numeric', month: 'long', day: 'numeric'}
-
-        const strFromDate = fromDate.toLocaleDateString('ru', options)
-        const strToDate = toDate.toLocaleDateString('ru', options)
-
-        const option = {
-            title: {
-                text: 'История вытянутых карт',
-                subtext: `${strFromDate} - ${strToDate}`,
-                left: 'center'
-            },
-            tooltip: {
-                trigger: 'item'
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left'
-            },
-            series: [
-                {
-                    name: 'Количество игр',
-                    type: 'pie',
-                    radius: '50%',
-                    data: [
-                        {
-                            value: this.state.rolesHistoryStatistics.percentSelectedBlack,
-                            name: 'Чёрный'
-                        },
-                        {
-                            value: this.state.rolesHistoryStatistics.percentSelectedSheriff,
-                            name: 'Шериф'
-                        },
-                        {
-                            value: this.state.rolesHistoryStatistics.percentSelectedDon,
-                            name: 'Дон'
-                        },
-                        {
-                            value: this.state.rolesHistoryStatistics.percentSelectedRed,
-                            name: 'Красный'
-                        }
-                    ],
-                    emphasis: {
-                        itemStyle: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
-                }
-            ]
-        }
 
         const {classes} = this.props
         return (
@@ -271,13 +217,14 @@ class PlayerProfile extends React.Component {
                                 </h4>
                                 <hr />
                                 <p className={classes.description}>
-                                    Игры сыграно: {this.state.gamesTotal}
-                                    <br />
+                                    <div>
+                                        Игры сыграно: {this.state.gamesTotal}
+                                    </div>
                                     <br />
                                     <CustomLinearProgress
                                         variant="determinate"
                                         color="primary"
-                                        value={30}
+                                        value={12.1}
                                     />
                                 </p>
                             </CardBody>
@@ -296,7 +243,9 @@ class PlayerProfile extends React.Component {
                             <CardBody>
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={6}>
-                                        <ReactEcharts option={option} />
+                                        <RolesHistoryStatisticsComponent
+                                            rolesHistoryStatistics={this.state.rolesHistoryStatistics}
+                                        />
                                     </GridItem>
                                 </GridContainer>
                                 <GridContainer>
