@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
         super(props)
         this.state = {
             mobileOpen: false,
-            miniActive: false,
+            miniActive: true,
             image: image,
             color: 'blue',
             bgColor: 'black',
