@@ -1,11 +1,9 @@
 import withStyles from '@material-ui/core/styles/withStyles'
 import {BarChart} from '@material-ui/icons'
-import avatar from 'assets/img/faces/marc.jpg'
 
 import userProfileStyles
     from 'assets/jss/material-dashboard-pro-react/views/userProfileStyles.jsx'
 import Card from 'components/Card/Card.jsx'
-import CardAvatar from 'components/Card/CardAvatar.jsx'
 import CardBody from 'components/Card/CardBody.jsx'
 import CardHeader from 'components/Card/CardHeader.jsx'
 import CardIcon from 'components/Card/CardIcon.jsx'
@@ -14,8 +12,7 @@ import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
-import CustomLinearProgress
-    from '../../components/CustomLinearProgress/CustomLinearProgress'
+import PlayerCardComponent from './PlayerCardComponent'
 import RolesHistoryStatisticsComponent from './RolesHistoryStatisticsComponent'
 
 class PlayerProfile extends React.Component {
@@ -187,48 +184,15 @@ class PlayerProfile extends React.Component {
     }
 
     render() {
-
-
         const {classes} = this.props
         return (
             <div>
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={3}>
-                        <Card profile>
-                            <CardAvatar profile>
-                                <a href=""
-                                   onClick={e => e.preventDefault()}>
-                                    <img src={avatar} alt="..." />
-                                </a>
-                            </CardAvatar>
-                            <CardBody profile>
-                                <h6 className={classes.cardCategory}
-                                    style={{
-                                        display: 'inline',
-                                        textTransform: 'lowercase'
-                                    }}
-                                >
-                                    г-н {' '}
-                                </h6>
-                                <h4 className={classes.cardTitle}
-                                    style={{display: 'inline'}}
-                                >
-                                    {this.state.nickname}
-                                </h4>
-                                <hr />
-                                <p className={classes.description}>
-                                    <div>
-                                        Игры сыграно: {this.state.gamesTotal}
-                                    </div>
-                                    <br />
-                                    <CustomLinearProgress
-                                        variant="determinate"
-                                        color="primary"
-                                        value={12.1}
-                                    />
-                                </p>
-                            </CardBody>
-                        </Card>
+                        <PlayerCardComponent
+                            classes={classes}
+                            state={this.state}
+                        />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={9}>
                         <Card>
