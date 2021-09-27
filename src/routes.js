@@ -42,7 +42,7 @@ import Upload from './views/Upload/Upload'
 var dashRoutes = [
     {
         path: '/players/:id?',
-        name: 'Игрок',
+        name: 'Профиль игрока',
         component: PlayerProfile,
         layout: '/admin'
     },

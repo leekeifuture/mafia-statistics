@@ -27,6 +27,8 @@ class PlayerProfile extends React.Component {
             numbersStatistics: {},
             ratingStatistics: {},
             rolesHistoryStatistics: {
+                fromDate: '',
+                toDate: '',
                 gamesRed: 0,
                 gamesBlack: 0,
                 gamesDon: 0,
@@ -64,9 +66,18 @@ class PlayerProfile extends React.Component {
     }
 
     render() {
+        const fromDate = new Date(this.state.rolesHistoryStatistics.fromDate)
+        const toDate = new Date(this.state.rolesHistoryStatistics.toDate)
+
+        const options = {year: 'numeric', month: 'long', day: 'numeric'}
+
+        const strFromDate = fromDate.toLocaleDateString('ru', options)
+        const strToDate = toDate.toLocaleDateString('ru', options)
+
         const option = {
             title: {
                 text: 'История вытянутых карт',
+                subtext: `${strFromDate} - ${strToDate}`,
                 left: 'center'
             },
             tooltip: {
@@ -136,15 +147,9 @@ class PlayerProfile extends React.Component {
                                 >
                                     {this.state.nickname}
                                 </h4>
+                                <hr />
                                 <p className={classes.description}>
-                                    Don't be scared of the truth because we need
-                                    to
-                                    restart the
-                                    human foundation in truth And I love you
-                                    like
-                                    Kanye loves Kanye
-                                    I love Rick Owens’ bed design but the back
-                                    is...
+                                    Игры сыграно: {this.state.gamesTotal}
                                 </p>
                             </CardBody>
                         </Card>
@@ -161,7 +166,7 @@ class PlayerProfile extends React.Component {
                             </CardHeader>
                             <CardBody>
                                 <GridContainer>
-                                    <GridItem xs={12} sm={12} md={8}>
+                                    <GridItem xs={12} sm={12} md={6}>
                                         <ReactEcharts option={option} />
                                     </GridItem>
                                 </GridContainer>
