@@ -88,7 +88,7 @@ class Dashboard extends React.Component {
     }
 
     getActiveRoute = routes => {
-        let activeRoute = 'Default Brand Text'
+        let activeRoute = ''
         for (let i = 0; i < routes.length; i++) {
             if (routes[i].collapse) {
                 let collapseActiveRoute = this.getActiveRoute(routes[i].views)
@@ -97,7 +97,9 @@ class Dashboard extends React.Component {
                 }
             } else {
                 if (
-                    window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
+                    window.location.href.indexOf(
+                        routes[i].layout + routes[i].path.replace(':id?', '')
+                    ) !== -1
                 ) {
                     return routes[i].name
                 }
