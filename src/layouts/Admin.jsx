@@ -148,7 +148,7 @@ class Dashboard extends React.Component {
             <div className={classes.wrapper}>
                 <Sidebar
                     routes={routes}
-                    logoText={'Creative Tim'}
+                    logoText={'Ничего Личного'}
                     logo={logo}
                     image={this.state.image}
                     handleDrawerToggle={this.handleDrawerToggle}
@@ -166,7 +166,7 @@ class Dashboard extends React.Component {
                         handleDrawerToggle={this.handleDrawerToggle}
                         {...rest}
                     />
-                    {/* On the /maps/full-screen-maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
+                    {/* On the /maps/full-screen-maps route we want the map to be on full screen - this is not possible if the content and container classes are present because they have some paddings which would make the map smaller */}
                     {this.getRoute() ? (
                         <div className={classes.content}>
                             <div className={classes.container}>

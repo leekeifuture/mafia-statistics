@@ -310,7 +310,6 @@ class RegularForms extends React.Component {
                                         <div
                                             className={classes.staticFormGroup}>
                                             <p className={classes.staticFormControl}>
-                                                hello@creative-tim.com
                                             </p>
                                         </div>
                                     </GridItem>
