@@ -26,7 +26,7 @@ const WinningHistoryStatisticsComponent = (props) => {
         },
         series: [
             {
-                name: 'Количество игр',
+                name: 'Количество побед',
                 type: 'pie',
                 radius: '50%',
                 data: [
