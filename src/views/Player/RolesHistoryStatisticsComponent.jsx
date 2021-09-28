@@ -32,7 +32,7 @@ const RolesHistoryStatisticsComponent = (props) => {
                 data: [
                     {
                         value: props.rolesHistoryStatistics.percentSelectedBlack,
-                        name: 'Чёрный'
+                        name: 'Мафия'
                     },
                     {
                         value: props.rolesHistoryStatistics.percentSelectedSheriff,
@@ -44,7 +44,7 @@ const RolesHistoryStatisticsComponent = (props) => {
                     },
                     {
                         value: props.rolesHistoryStatistics.percentSelectedRed,
-                        name: 'Красный'
+                        name: 'Мирный'
                     }
                 ],
                 emphasis: {

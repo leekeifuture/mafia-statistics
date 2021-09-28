@@ -32,7 +32,7 @@ const WinningHistoryStatisticsComponent = (props) => {
                 data: [
                     {
                         value: props.ratingStatistics.gamesBlack,
-                        name: 'Чёрный'
+                        name: 'Мафия'
                     },
                     {
                         value: props.ratingStatistics.gamesSheriff,
@@ -44,7 +44,7 @@ const WinningHistoryStatisticsComponent = (props) => {
                     },
                     {
                         value: props.ratingStatistics.gamesRed,
-                        name: 'Красный'
+                        name: 'Мирный'
                     }
                 ],
                 emphasis: {
