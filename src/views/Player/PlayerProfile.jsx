@@ -1,6 +1,5 @@
 import withStyles from '@material-ui/core/styles/withStyles'
 import {BarChart} from '@material-ui/icons'
-
 import userProfileStyles
     from 'assets/jss/material-dashboard-pro-react/views/userProfileStyles.jsx'
 import Card from 'components/Card/Card.jsx'
@@ -204,6 +203,7 @@ class PlayerProfile extends React.Component {
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>
                                     Статистика игрока
+                                    <small> - история из рейтинга</small>
                                 </h4>
                             </CardHeader>
                             <CardBody>
@@ -219,14 +219,22 @@ class PlayerProfile extends React.Component {
                                         />
                                     </GridItem>
                                 </GridContainer>
-                                <GridContainer>
-                                    <GridItem xs={12} sm={12} md={6}>
-
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={6}>
-
-                                    </GridItem>
-                                </GridContainer>
+                                <Clearfix />
+                            </CardBody>
+                        </Card>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={12}>
+                        <Card>
+                            <CardHeader color="rose" icon>
+                                <CardIcon color="rose">
+                                    <BarChart />
+                                </CardIcon>
+                                <h4 className={classes.cardIconTitle}>
+                                    Статистика игрока
+                                    <small> - серийность</small>
+                                </h4>
+                            </CardHeader>
+                            <CardBody>
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={4}>
 
@@ -235,11 +243,6 @@ class PlayerProfile extends React.Component {
 
                                     </GridItem>
                                     <GridItem xs={12} sm={12} md={4}>
-
-                                    </GridItem>
-                                </GridContainer>
-                                <GridContainer>
-                                    <GridItem xs={12} sm={12} md={12}>
 
                                     </GridItem>
                                 </GridContainer>
