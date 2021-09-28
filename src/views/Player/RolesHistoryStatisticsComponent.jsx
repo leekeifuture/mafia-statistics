@@ -22,7 +22,7 @@ const RolesHistoryStatisticsComponent = (props) => {
         legend: {
             orient: 'vertical',
             x: 'left',
-            y: 'bottom',
+            y: 'bottom'
         },
         series: [
             {
