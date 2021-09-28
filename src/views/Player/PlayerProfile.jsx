@@ -14,6 +14,8 @@ import React from 'react'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
 import PlayerCardComponent from './PlayerCardComponent'
 import RolesHistoryStatisticsComponent from './RolesHistoryStatisticsComponent'
+import WinningHistoryStatisticsComponent
+    from './WinningHistoryStatisticsComponent'
 
 class PlayerProfile extends React.Component {
     constructor(props) {
@@ -209,6 +211,11 @@ class PlayerProfile extends React.Component {
                                     <GridItem xs={12} sm={12} md={6}>
                                         <RolesHistoryStatisticsComponent
                                             rolesHistoryStatistics={this.state.rolesHistoryStatistics}
+                                        />
+                                    </GridItem>
+                                    <GridItem xs={12} sm={12} md={6}>
+                                        <WinningHistoryStatisticsComponent
+                                            ratingStatistics={this.state.ratingStatistics}
                                         />
                                     </GridItem>
                                 </GridContainer>
