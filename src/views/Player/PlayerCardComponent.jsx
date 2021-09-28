@@ -1,3 +1,4 @@
+import {CardMembership, Mood, MoodBad} from '@material-ui/icons'
 import React from 'react'
 import avatar from '../../assets/img/faces/marc.jpg'
 import {blackColor} from '../../assets/jss/material-dashboard-pro-react'
@@ -7,6 +8,28 @@ import CardBody from '../../components/Card/CardBody'
 import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
 
+const getClubCardType = (clubCardType, clubCardText) => {
+    if (!clubCardType) {
+        return <></>
+    }
+
+    return (
+        <div>
+            <br />
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                flexWrap: 'wrap'
+            }}>
+                <CardMembership />
+                <span style={{marginLeft: '5px'}}>
+                            {clubCardText}
+                        </span>
+            </div>
+        </div>
+    )
+}
+
 const PlayerCardComponent = (props) => {
     const gamesTotal = props.state.gamesTotal
     const gamesWined =
@@ -14,6 +37,18 @@ const PlayerCardComponent = (props) => {
         props.state.ratingStatistics.gamesBlack +
         props.state.ratingStatistics.gamesDon +
         props.state.ratingStatistics.gamesSheriff
+
+    let clubCardType = ''
+
+    if (props.state.gamesTotal >= 1000) {
+        clubCardType = 'ЗОЛОТО'
+    } else if (props.state.gamesTotal >= 500) {
+        clubCardType = 'СЕРЕБРО'
+    } else if (props.state.gamesTotal >= 100) {
+        clubCardType = 'БРОНЗА'
+    }
+
+    const clubCardText = clubCardType ? `Тип клубной карты: ${clubCardType}` : ''
 
     return (
         <Card profile>
@@ -81,6 +116,31 @@ const PlayerCardComponent = (props) => {
                         color="primary"
                         value={props.state.rolesHistoryStatistics.percentWinning}
                     />
+
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexWrap: 'wrap'
+                    }}>
+                        <Mood />
+                        <span style={{marginLeft: '5px'}}>
+                            Максимальная серия
+                            побед: {props.state.serialityStatistics.maximumSeriesOfWin}
+                        </span>
+                    </div>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexWrap: 'wrap'
+                    }}>
+                        <MoodBad />
+                        <span style={{marginLeft: '5px'}}>
+                            Максимальная серия
+                            поражений: {props.state.serialityStatistics.maximumSeriesOfDefeat}
+                        </span>
+                    </div>
+
+                    {getClubCardType(clubCardType, clubCardText)}
                 </p>
             </CardBody>
         </Card>
