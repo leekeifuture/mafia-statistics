@@ -21,7 +21,8 @@ const WinningHistoryStatisticsComponent = (props) => {
         },
         legend: {
             orient: 'vertical',
-            left: 'left'
+            x: 'left',
+            y: 'bottom'
         },
         series: [
             {
