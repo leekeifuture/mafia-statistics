@@ -1,13 +1,12 @@
-import PlayerProfile from './views/Player/PlayerProfile'
-import StatisticsDashboard
-    from './views/StatisticsDashboard/StatisticsDashboard'
+import Dashboard from './views/Dashboard/Dashboard'
+import PlayerProfile from './views/PlayerProfile/PlayerProfile'
 import Upload from './views/Upload/Upload'
 
 const dashRoutes = [
     {
         path: '/dashboard',
         name: 'Статистика клуба игры в мафию - Ничего Личного',
-        component: StatisticsDashboard,
+        component: Dashboard,
         layout: '/admin'
     },
     {

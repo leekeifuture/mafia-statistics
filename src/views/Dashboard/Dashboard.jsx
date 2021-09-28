@@ -13,7 +13,7 @@ import React from 'react'
 import Table from '../../components/Table/Table'
 import RecordsComponent from './RecordsComponent'
 
-class StatisticsDashboard extends React.Component {
+class Dashboard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -158,8 +158,8 @@ class StatisticsDashboard extends React.Component {
     }
 }
 
-StatisticsDashboard.propTypes = {
+Dashboard.propTypes = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(dashboardStyle)(StatisticsDashboard)
+export default withStyles(dashboardStyle)(Dashboard)
