@@ -1,5 +1,4 @@
 import Icon from '@material-ui/core/Icon'
-import Store from '@material-ui/icons/Store'
 import Warning from '@material-ui/icons/Warning'
 import React from 'react'
 import Card from '../../components/Card/Card'
@@ -13,9 +12,9 @@ const RecordsComponent = (props) => {
     return (<>
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
-                <CardHeader color="warning" stats icon>
-                    <CardIcon color="warning">
-                        <Icon>content_copy</Icon>
+                <CardHeader color="success" stats icon>
+                    <CardIcon color="success">
+                        <i className="fas fa-trophy" />
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия побед
@@ -39,9 +38,9 @@ const RecordsComponent = (props) => {
         </GridItem>
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
-                <CardHeader color="success" stats icon>
-                    <CardIcon color="success">
-                        <Store />
+                <CardHeader color="danger" stats icon>
+                    <CardIcon color="danger">
+                        <Icon>info_outline</Icon>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия поражений
@@ -65,8 +64,8 @@ const RecordsComponent = (props) => {
         </GridItem>
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
-                <CardHeader color="danger" stats icon>
-                    <CardIcon color="danger">
+                <CardHeader color="info" stats icon>
+                    <CardIcon color="info">
                         <Icon>info_outline</Icon>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
@@ -91,8 +90,8 @@ const RecordsComponent = (props) => {
         </GridItem>
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
-                <CardHeader color="info" stats icon>
-                    <CardIcon color="info">
+                <CardHeader color="warning" stats icon>
+                    <CardIcon color="warning">
                         <i className="fab fa-twitter" />
                     </CardIcon>
                     <p className={props.classes.cardCategory}>

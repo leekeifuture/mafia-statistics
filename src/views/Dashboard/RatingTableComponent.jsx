@@ -1,4 +1,4 @@
-import Language from '@material-ui/icons/Language'
+import {Star} from '@material-ui/icons'
 import React from 'react'
 import Card from '../../components/Card/Card'
 import CardBody from '../../components/Card/CardBody'
@@ -96,7 +96,7 @@ const RatingTableComponent = (props) => {
         <Card>
             <CardHeader color="success" icon>
                 <CardIcon color="success">
-                    <Language />
+                    <Star />
                 </CardIcon>
                 <h4 className={props.classes.cardIconTitle}>
                     Рейтинговая таблица
