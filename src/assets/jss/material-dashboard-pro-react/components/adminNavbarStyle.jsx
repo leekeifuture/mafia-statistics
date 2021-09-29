@@ -48,7 +48,8 @@ const headerStyle = theme => ({
         margin: '0 !important',
         '&:hover,&:focus': {
             background: 'transparent'
-        }
+        },
+        whiteSpace: 'normal'
     },
     primary: {
         backgroundColor: primaryColor[0],
