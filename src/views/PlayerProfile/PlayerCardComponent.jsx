@@ -1,4 +1,4 @@
-import {CardMembership, Mood, MoodBad} from '@material-ui/icons'
+import {CardMembership} from '@material-ui/icons'
 import React from 'react'
 import avatar from '../../assets/img/faces/marc.jpg'
 import {blackColor} from '../../assets/jss/material-dashboard-pro-react'
@@ -122,7 +122,7 @@ const PlayerCardComponent = (props) => {
                         alignItems: 'center',
                         flexWrap: 'wrap'
                     }}>
-                        <Mood />
+                        <i className="fas fa-trophy" />
                         <span style={{marginLeft: '5px'}}>
                             Максимальная серия
                             побед: {props.state.serialityStatistics.maximumSeriesOfWin}
@@ -133,8 +133,9 @@ const PlayerCardComponent = (props) => {
                         alignItems: 'center',
                         flexWrap: 'wrap'
                     }}>
-                        <MoodBad />
-                        <span style={{marginLeft: '5px'}}>
+                        <i className="fas fa-shield-alt"
+                           style={{marginLeft: '1px'}} />
+                        <span style={{marginLeft: '6px'}}>
                             Максимальная серия
                             поражений: {props.state.serialityStatistics.maximumSeriesOfDefeat}
                         </span>

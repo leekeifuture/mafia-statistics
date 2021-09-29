@@ -40,7 +40,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="danger" stats icon>
                     <CardIcon color="danger">
-                        <Icon>info_outline</Icon>
+                        <i className="fas fa-shield-alt" />
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия поражений
@@ -92,7 +92,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="warning" stats icon>
                     <CardIcon color="warning">
-                        <i className="fab fa-twitter" />
+                        <i className="fas fa-skull-crossbones" />
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальный процент первого отстрела
