@@ -1,4 +1,5 @@
 import {
+    blackColor,
     cardTitle,
     grayColor,
     successColor,
@@ -40,8 +41,8 @@ const dashboardStyle = {
         color: grayColor[0]
     },
     stats: {
-        color: grayColor[0],
-        fontSize: '12px',
+        color: blackColor,
+        fontSize: '14px',
         lineHeight: '22px',
         display: 'inline-flex',
         '& svg': {

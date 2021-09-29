@@ -1,12 +1,10 @@
 import Icon from '@material-ui/core/Icon'
-import Warning from '@material-ui/icons/Warning'
 import React from 'react'
 import Card from '../../components/Card/Card'
 import CardFooter from '../../components/Card/CardFooter'
 import CardHeader from '../../components/Card/CardHeader'
 import CardIcon from '../../components/Card/CardIcon'
 import GridItem from '../../components/Grid/GridItem'
-import Danger from '../../components/Typography/Danger'
 
 const RecordsComponent = (props) => {
     return (<>
@@ -25,13 +23,7 @@ const RecordsComponent = (props) => {
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        <Danger>
-                            <Warning />
-                        </Danger>
-                        <a href=""
-                           onClick={e => e.preventDefault()}>
-                            15 побед подряд
-                        </a>
+                        15 побед подряд
                     </div>
                 </CardFooter>
             </Card>
@@ -51,13 +43,7 @@ const RecordsComponent = (props) => {
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        <Danger>
-                            <Warning />
-                        </Danger>
-                        <a href=""
-                           onClick={e => e.preventDefault()}>
-                            15 поражений подряд
-                        </a>
+                        15 поражений подряд
                     </div>
                 </CardFooter>
             </Card>
@@ -77,13 +63,7 @@ const RecordsComponent = (props) => {
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        <Danger>
-                            <Warning />
-                        </Danger>
-                        <a href=""
-                           onClick={e => e.preventDefault()}>
-                            Посещаемость 100%
-                        </a>
+                        Посещаемость 100%
                     </div>
                 </CardFooter>
             </Card>
@@ -103,13 +83,7 @@ const RecordsComponent = (props) => {
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        <Danger>
-                            <Warning />
-                        </Danger>
-                        <a href=""
-                           onClick={e => e.preventDefault()}>
-                            100% первого отстрела
-                        </a>
+                        100% первого отстрела
                     </div>
                 </CardFooter>
             </Card>
