@@ -7,6 +7,7 @@ import CardAvatar from '../../components/Card/CardAvatar'
 import CardBody from '../../components/Card/CardBody'
 import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
+import getMention from '../../util/util'
 
 const getClubCardType = (clubCardType) => {
     const clubCardText = clubCardType ? `Тип клубной карты: ${clubCardType}` : ''
@@ -83,7 +84,7 @@ const PlayerCardComponent = (props) => {
                         textTransform: 'lowercase'
                     }}
                 >
-                    г-н {' '}
+                    {getMention(props.state.gender) + ' '}
                 </h6>
                 <h4 className={props.classes.cardTitle}
                     style={{display: 'inline'}}

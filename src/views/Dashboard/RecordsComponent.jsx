@@ -5,6 +5,7 @@ import CardFooter from '../../components/Card/CardFooter'
 import CardHeader from '../../components/Card/CardHeader'
 import CardIcon from '../../components/Card/CardIcon'
 import GridItem from '../../components/Grid/GridItem'
+import getMention from '../../util/util'
 
 const RecordsComponent = (props) => {
     return (<>
@@ -18,7 +19,8 @@ const RecordsComponent = (props) => {
                         Максимальная серия побед
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-н</small> {props.state.winSeriesPlayerNickname}
+                        <small>{getMention(props.state.gender) + ' '}</small>
+                        {props.state.winSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
@@ -38,7 +40,8 @@ const RecordsComponent = (props) => {
                         Максимальная серия поражений
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-н</small> {props.state.defeatSeriesPlayerNickname}
+                        <small>{getMention(props.state.gender) + ' '}</small>
+                        {props.state.defeatSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
@@ -58,7 +61,8 @@ const RecordsComponent = (props) => {
                         Максимальный процент посещаемости
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-жа</small> {props.state.visitingSeriesPlayerNickname}
+                        <small>{getMention(props.state.gender) + ' '}</small>
+                        {props.state.visitingSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
@@ -78,7 +82,8 @@ const RecordsComponent = (props) => {
                         Максимальный процент первого отстрела
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-н</small> {props.state.firstShootingSeriesPlayerNickname}
+                        <small>{getMention(props.state.gender) + ' '}</small>
+                        {props.state.firstShootingSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>

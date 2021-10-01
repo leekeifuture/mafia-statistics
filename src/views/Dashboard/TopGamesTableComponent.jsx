@@ -7,6 +7,7 @@ import CardIcon from '../../components/Card/CardIcon'
 import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 import Table from '../../components/Table/Table'
+import getMention from '../../util/util'
 
 const TopGamesTableComponent = (props) => {
     const tableHead = [
@@ -17,9 +18,11 @@ const TopGamesTableComponent = (props) => {
     const tableData = []
 
     props.topGamesTable.forEach((player, index) => {
+        const mention = getMention(player.gender)
+
         tableData.push([
             `#${index + 1}`,
-            player.playerNickname,
+            mention + ' ' + player.playerNickname,
             player.gamesTotal
         ])
     })
