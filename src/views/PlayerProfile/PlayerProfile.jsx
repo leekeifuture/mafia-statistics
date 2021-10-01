@@ -21,7 +21,9 @@ class PlayerProfile extends React.Component {
         super(props)
         this.state = {
             nickname: '',
+            photoUrl: '',
             gamesTotal: 0,
+            vkId: null,
             coupleStatistics: [],
             numbersStatistics: {
                 fromDate: '',

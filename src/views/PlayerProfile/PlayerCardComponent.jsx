@@ -1,6 +1,6 @@
 import {CardMembership} from '@material-ui/icons'
 import React from 'react'
-import avatar from '../../assets/img/faces/marc.jpg'
+import defaultAvatar from '../../assets/img/default-avatar.png'
 import {blackColor} from '../../assets/jss/material-dashboard-pro-react'
 import Card from '../../components/Card/Card'
 import CardAvatar from '../../components/Card/CardAvatar'
@@ -55,7 +55,10 @@ const PlayerCardComponent = (props) => {
             <CardAvatar profile>
                 <a href=""
                    onClick={e => e.preventDefault()}>
-                    <img src={avatar} alt="..." />
+                    <img src={props.state.photoUrl
+                        ? props.state.photoUrl
+                        : defaultAvatar}
+                         alt="..." />
                 </a>
             </CardAvatar>
             <CardBody profile>
