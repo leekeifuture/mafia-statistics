@@ -8,7 +8,9 @@ import CardBody from '../../components/Card/CardBody'
 import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
 
-const getClubCardType = (clubCardType, clubCardText) => {
+const getClubCardType = (clubCardType) => {
+    const clubCardText = clubCardType ? `Тип клубной карты: ${clubCardType}` : ''
+
     if (!clubCardType) {
         return <></>
     }
@@ -30,6 +32,23 @@ const getClubCardType = (clubCardType, clubCardText) => {
     )
 }
 
+const getPhotoUrl = (photoUrl) => {
+    const wrongPhotos = [
+        'https://vk.com/images/camera_200.png',
+        'https://vk.com/images/deactivated_200.png'
+    ]
+
+    let photo = photoUrl
+        ? photoUrl
+        : defaultAvatar
+
+    if (wrongPhotos.includes(photoUrl)) {
+        photo = defaultAvatar
+    }
+
+    return photo
+}
+
 const PlayerCardComponent = (props) => {
     const gamesTotal = props.state.gamesTotal
     const gamesWined =
@@ -48,16 +67,12 @@ const PlayerCardComponent = (props) => {
         clubCardType = 'БРОНЗА'
     }
 
-    const clubCardText = clubCardType ? `Тип клубной карты: ${clubCardType}` : ''
-
     return (
         <Card profile>
             <CardAvatar profile>
                 <a href=""
                    onClick={e => e.preventDefault()}>
-                    <img src={props.state.photoUrl
-                        ? props.state.photoUrl
-                        : defaultAvatar}
+                    <img src={getPhotoUrl(props.state.photoUrl)}
                          alt="..." />
                 </a>
             </CardAvatar>
@@ -144,7 +159,7 @@ const PlayerCardComponent = (props) => {
                         </span>
                     </div>
 
-                    {getClubCardType(clubCardType, clubCardText)}
+                    {getClubCardType(clubCardType)}
                 </p>
             </CardBody>
         </Card>
