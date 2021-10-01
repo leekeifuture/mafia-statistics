@@ -17,5 +17,9 @@ export const mafiaStatisticsApi = {
     getPlayerById(id) {
         return axiosInstance.get(`/players/${id}`)
             .then(response => response.data)
+    },
+    getDashboardInfo() {
+        return axiosInstance.get('/statistics/dashboard')
+            .then(response => response.data)
     }
 }

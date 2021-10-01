@@ -18,12 +18,12 @@ const RecordsComponent = (props) => {
                         Максимальная серия побед
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-н</small> Старый
+                        <small>г-н</small> {props.state.winSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        15 побед подряд
+                        Побед подряд {props.state.winSeriesGames}
                     </div>
                 </CardFooter>
             </Card>
@@ -38,12 +38,12 @@ const RecordsComponent = (props) => {
                         Максимальная серия поражений
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-н</small> Колобок
+                        <small>г-н</small> {props.state.defeatSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        15 поражений подряд
+                        Поражений подряд {props.state.defeatSeriesGames}
                     </div>
                 </CardFooter>
             </Card>
@@ -58,12 +58,12 @@ const RecordsComponent = (props) => {
                         Максимальный процент посещаемости
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-жа</small> Марсианка
+                        <small>г-жа</small> {props.state.visitingSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        Посещаемость 100%
+                        Посещаемость {props.state.visitingSeriesPercent}%
                     </div>
                 </CardFooter>
             </Card>
@@ -78,12 +78,13 @@ const RecordsComponent = (props) => {
                         Максимальный процент первого отстрела
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>г-н</small> Валет
+                        <small>г-н</small> {props.state.firstShootingSeriesPlayerNickname}
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        100% первого отстрела
+                        {props.state.firstShootingSeriesPercent}%
+                        первого отстрела
                     </div>
                 </CardFooter>
             </Card>
