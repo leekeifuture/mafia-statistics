@@ -31,19 +31,19 @@ const RolesHistoryStatisticsComponent = (props) => {
                 radius: '50%',
                 data: [
                     {
-                        value: props.rolesHistoryStatistics.percentSelectedBlack,
+                        value: props.rolesHistoryStatistics.gamesBlack,
                         name: 'Мафия'
                     },
                     {
-                        value: props.rolesHistoryStatistics.percentSelectedSheriff,
+                        value: props.rolesHistoryStatistics.gamesSheriff,
                         name: 'Шериф'
                     },
                     {
-                        value: props.rolesHistoryStatistics.percentSelectedDon,
+                        value: props.rolesHistoryStatistics.gamesDon,
                         name: 'Дон'
                     },
                     {
-                        value: props.rolesHistoryStatistics.percentSelectedRed,
+                        value: props.rolesHistoryStatistics.gamesRed,
                         name: 'Мирный'
                     }
                 ],

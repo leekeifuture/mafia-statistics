@@ -1,5 +1,6 @@
 import {Star} from '@material-ui/icons'
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import Card from '../../components/Card/Card'
 import CardBody from '../../components/Card/CardBody'
 import CardHeader from '../../components/Card/CardHeader'
@@ -22,7 +23,10 @@ const RatingTableComponent = (props) => {
 
         tableData.push([
             `#${index + 1}`,
-            mention + ' ' + player.playerNickname,
+            (<NavLink style={{color: 'black'}}
+                      to={`/admin/players/${player.playerId}`}>{
+                mention + ' ' + player.playerNickname
+            }</NavLink>),
             player.points
         ])
     })

@@ -68,6 +68,13 @@ const PlayerCardComponent = (props) => {
         clubCardType = 'БРОНЗА'
     }
 
+    const maximumSeriesOfWin = props.state.serialityStatistics
+        ? props.state.serialityStatistics.maximumSeriesOfWin
+        : 0
+    const maximumSeriesOfDefeat = props.state.serialityStatistics
+        ? props.state.serialityStatistics.maximumSeriesOfDefeat
+        : 0
+
     return (
         <Card profile>
             <CardAvatar profile>
@@ -144,7 +151,7 @@ const PlayerCardComponent = (props) => {
                         <i className="fas fa-trophy" />
                         <span style={{marginLeft: '5px'}}>
                             Максимальная серия
-                            побед: {props.state.serialityStatistics.maximumSeriesOfWin}
+                            побед: {maximumSeriesOfWin}
                         </span>
                     </div>
                     <div style={{
@@ -156,7 +163,7 @@ const PlayerCardComponent = (props) => {
                            style={{marginLeft: '1px'}} />
                         <span style={{marginLeft: '6px'}}>
                             Максимальная серия
-                            поражений: {props.state.serialityStatistics.maximumSeriesOfDefeat}
+                            поражений: {maximumSeriesOfDefeat}
                         </span>
                     </div>
 

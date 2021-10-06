@@ -1,5 +1,6 @@
 import Language from '@material-ui/icons/Language'
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import Card from '../../components/Card/Card'
 import CardBody from '../../components/Card/CardBody'
 import CardHeader from '../../components/Card/CardHeader'
@@ -22,7 +23,10 @@ const TopGamesTableComponent = (props) => {
 
         tableData.push([
             `#${index + 1}`,
-            mention + ' ' + player.playerNickname,
+            (<NavLink style={{color: 'black'}}
+                      to={`/admin/players/${player.playerId}`}>{
+                mention + ' ' + player.playerNickname
+            }</NavLink>),
             player.gamesTotal
         ])
     })

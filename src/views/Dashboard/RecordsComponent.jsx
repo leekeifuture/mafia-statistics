@@ -1,5 +1,6 @@
 import Icon from '@material-ui/core/Icon'
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import Card from '../../components/Card/Card'
 import CardFooter from '../../components/Card/CardFooter'
 import CardHeader from '../../components/Card/CardHeader'
@@ -19,8 +20,11 @@ const RecordsComponent = (props) => {
                         Максимальная серия побед
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>{getMention(props.state.gender) + ' '}</small>
-                        {props.state.winSeriesPlayerNickname}
+                        <NavLink
+                            to={`/admin/players/${props.state.winSeriesPlayerId}`}>
+                            <small>{getMention(props.state.gender) + ' '}</small>
+                            {props.state.winSeriesPlayerNickname}
+                        </NavLink>
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
@@ -40,8 +44,11 @@ const RecordsComponent = (props) => {
                         Максимальная серия поражений
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>{getMention(props.state.gender) + ' '}</small>
-                        {props.state.defeatSeriesPlayerNickname}
+                        <NavLink
+                            to={`/admin/players/${props.state.defeatSeriesPlayerId}`}>
+                            <small>{getMention(props.state.gender) + ' '}</small>
+                            {props.state.defeatSeriesPlayerNickname}
+                        </NavLink>
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
@@ -61,8 +68,11 @@ const RecordsComponent = (props) => {
                         Максимальный процент посещаемости
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>{getMention(props.state.gender) + ' '}</small>
-                        {props.state.visitingSeriesPlayerNickname}
+                        <NavLink
+                            to={`/admin/players/${props.state.visitingSeriesPlayerId}`}>
+                            <small>{getMention(props.state.gender) + ' '}</small>
+                            {props.state.visitingSeriesPlayerNickname}
+                        </NavLink>
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
@@ -82,8 +92,11 @@ const RecordsComponent = (props) => {
                         Максимальный процент первого отстрела
                     </p>
                     <h3 className={props.classes.cardTitle}>
-                        <small>{getMention(props.state.gender) + ' '}</small>
-                        {props.state.firstShootingSeriesPlayerNickname}
+                        <NavLink
+                            to={`/admin/players/${props.state.firstShootingSeriesPlayerId}`}>
+                            <small>{getMention(props.state.gender) + ' '}</small>
+                            {props.state.firstShootingSeriesPlayerNickname}
+                        </NavLink>
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
