@@ -1,19 +1,12 @@
-import Icon from '@material-ui/core/Icon'
-import InputAdornment from '@material-ui/core/InputAdornment'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-import Email from '@material-ui/icons/Email'
 // @material-ui/icons
-import Face from '@material-ui/icons/Face'
-
 import loginPageStyle
     from 'assets/jss/material-dashboard-pro-react/views/loginPageStyle.jsx'
 import Card from 'components/Card/Card.jsx'
 import CardBody from 'components/Card/CardBody.jsx'
-import CardFooter from 'components/Card/CardFooter.jsx'
 import CardHeader from 'components/Card/CardHeader.jsx'
 import Button from 'components/CustomButtons/Button.jsx'
-import CustomInput from 'components/CustomInput/CustomInput.jsx'
 // core components
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
@@ -32,6 +25,13 @@ class LoginPage extends React.Component {
     }
 
     componentDidMount() {
+        window.VK.init({apiId: 7969557})
+        window.VK.Widgets.Auth('vk_auth', {
+            onAuth: data => {
+                alert('user ' + data['uid'] + ' authorized')
+            }
+        })
+
         // we add a hidden class to the card and after 700 ms we delete it and the transition appears
         this.timeOutFunction = setTimeout(
             function () {
@@ -59,8 +59,9 @@ class LoginPage extends React.Component {
                                     className={`${classes.cardHeader} ${classes.textCenter}`}
                                     color="rose"
                                 >
-                                    <h4 className={classes.cardTitle}>Log
-                                        in</h4>
+                                    <h4 className={classes.cardTitle}>
+                                        Регистрация/авторизация через ВК
+                                    </h4>
                                     <div className={classes.socialLine}>
                                         {[
                                             'fab fa-facebook-square',
@@ -80,61 +81,10 @@ class LoginPage extends React.Component {
                                         })}
                                     </div>
                                 </CardHeader>
-                                <CardBody>
-                                    <CustomInput
-                                        labelText="First Name.."
-                                        id="firstname"
-                                        formControlProps={{
-                                            fullWidth: true
-                                        }}
-                                        inputProps={{
-                                            endAdornment: (
-                                                <InputAdornment position="end">
-                                                    <Face
-                                                        className={classes.inputAdornmentIcon} />
-                                                </InputAdornment>
-                                            )
-                                        }}
-                                    />
-                                    <CustomInput
-                                        labelText="Email..."
-                                        id="email"
-                                        formControlProps={{
-                                            fullWidth: true
-                                        }}
-                                        inputProps={{
-                                            endAdornment: (
-                                                <InputAdornment position="end">
-                                                    <Email
-                                                        className={classes.inputAdornmentIcon} />
-                                                </InputAdornment>
-                                            )
-                                        }}
-                                    />
-                                    <CustomInput
-                                        labelText="Password"
-                                        id="password"
-                                        formControlProps={{
-                                            fullWidth: true
-                                        }}
-                                        inputProps={{
-                                            endAdornment: (
-                                                <InputAdornment position="end">
-                                                    <Icon
-                                                        className={classes.inputAdornmentIcon}>
-                                                        lock_outline
-                                                    </Icon>
-                                                </InputAdornment>
-                                            )
-                                        }}
-                                    />
+                                <CardBody style={{textAlign: 'center'}}>
+                                    <div id="vk_auth"
+                                         className={classes.vkAuth} />
                                 </CardBody>
-                                <CardFooter
-                                    className={classes.justifyContentCenter}>
-                                    <Button color="rose" simple size="lg" block>
-                                        Let's Go
-                                    </Button>
-                                </CardFooter>
                             </Card>
                         </form>
                     </GridItem>

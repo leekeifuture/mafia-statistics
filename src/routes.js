@@ -1,3 +1,4 @@
+import LoginPage from './components/views/Pages/LoginPage'
 import Dashboard from './views/Dashboard/Dashboard'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
 import Upload from './views/Upload/Upload'
@@ -20,6 +21,12 @@ const dashRoutes = [
         name: 'Загрузить',
         component: Upload,
         layout: '/admin'
+    },
+    {
+        path: '/login-page',
+        name: 'Авторизация',
+        component: LoginPage,
+        layout: '/auth'
     }
 ]
 

@@ -14,6 +14,7 @@ import cx from 'classnames'
 import Button from 'components/CustomButtons/Button.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
+import AdminNavbarLinks from './AdminNavbarLinks'
 
 // core components
 
@@ -61,9 +62,9 @@ function AdminNavbar({...props}) {
                         {brandText}
                     </Button>
                 </div>
-                {/*<Hidden smDown implementation="css">*/}
-                {/*    <AdminNavbarLinks rtlActive={rtlActive} />*/}
-                {/*</Hidden>*/}
+                <Hidden smDown implementation="css">
+                    <AdminNavbarLinks rtlActive={rtlActive} />
+                </Hidden>
                 <Hidden mdUp implementation="css">
                     <Button
                         className={classes.appResponsive}
