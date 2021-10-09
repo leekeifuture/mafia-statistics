@@ -56,7 +56,7 @@ class AuthNavbar extends React.Component {
                              className={classes.navLink}>
                         <Dashboard className={classes.listItemIcon} />
                         <ListItemText
-                            primary={'Dashboard'}
+                            primary={'Главная'}
                             disableTypography={true}
                             className={classes.listItemText}
                         />
