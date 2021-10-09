@@ -1,19 +1,14 @@
-// @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-// @material-ui/icons
 import loginPageStyle
     from 'assets/jss/material-dashboard-pro-react/views/loginPageStyle.jsx'
 import Card from 'components/Card/Card.jsx'
 import CardBody from 'components/Card/CardBody.jsx'
 import CardHeader from 'components/Card/CardHeader.jsx'
 import Button from 'components/CustomButtons/Button.jsx'
-// core components
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
-
-// import LockOutline from "@material-ui/icons/LockOutline";
 
 class LoginPage extends React.Component {
     constructor(props) {
