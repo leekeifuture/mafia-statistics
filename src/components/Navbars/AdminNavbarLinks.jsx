@@ -42,7 +42,7 @@ class HeaderLinks extends React.Component {
                         className: classes.top + ' ' + classes.search
                     }}
                     inputProps={{
-                        placeholder: rtlActive ? 'بحث' : 'Search',
+                        placeholder: rtlActive ? 'بحث' : 'Поиск',
                         inputProps: {
                             'aria-label': rtlActive ? 'بحث' : 'Search',
                             className: classes.searchInput
