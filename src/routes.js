@@ -1,5 +1,5 @@
-import LoginPage from './components/views/Pages/LoginPage'
 import Dashboard from './views/Dashboard/Dashboard'
+import LoginPage from './views/LoginPage/LoginPage'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
 import Upload from './views/Upload/Upload'
 
