@@ -18,6 +18,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 import routes from 'routes.js'
+import Footer from '../components/Footer/Footer'
 
 var ps
 
@@ -180,7 +181,7 @@ class Dashboard extends React.Component {
                             <Switch>{this.getRoutes(routes)}</Switch>
                         </div>
                     )}
-                    {/*{this.getRoute() ? <Footer fluid /> : null}*/}
+                    {this.getRoute() ? <Footer fluid /> : null}
                     {/*<FixedPlugin
                         handleImageClick={this.handleImageClick}
                         handleColorClick={this.handleColorClick}

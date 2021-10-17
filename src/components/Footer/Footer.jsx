@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 function Footer({...props}) {
-    const {classes, fluid, white, rtlActive} = props
+    const {classes, fluid, white} = props
     var container = cx({
         [classes.container]: !fluid,
         [classes.containerFluid]: fluid,
@@ -31,35 +31,23 @@ function Footer({...props}) {
                 <div className={classes.left}>
                     <List className={classes.list}>
                         <ListItem className={classes.inlineBlock}>
-                            <a href="#home" className={block}>
-                                {rtlActive ? 'الصفحة الرئيسية' : 'Home'}
-                            </a>
-                        </ListItem>
-                        <ListItem className={classes.inlineBlock}>
-                            <a href="#company" className={block}>
-                                {rtlActive ? 'شركة' : 'Company'}
-                            </a>
-                        </ListItem>
-                        <ListItem className={classes.inlineBlock}>
-                            <a href="#portfolio" className={block}>
-                                {rtlActive ? 'بعدسة' : 'Portfolio'}
-                            </a>
-                        </ListItem>
-                        <ListItem className={classes.inlineBlock}>
-                            <a href="#blog" className={block}>
-                                {rtlActive ? 'مدونة' : 'Blog'}
+                            <a target="_blank"
+                               rel="noopener noreferrer"
+                               href="https://vk.com/club96096694"
+                               className={block}>
+                                {'Группа ВК'}
                             </a>
                         </ListItem>
                     </List>
                 </div>
                 <p className={classes.right}>
-                    &copy; {1900 + new Date().getYear()}{' '}
+                    &copy; {1900 + new Date().getYear()}{', '}
+                    {'Сделано с '}
+                    <i className="fa fa-heart heart" />
+                    {' '}
                     <a href="" className={anchor}>
-                        {rtlActive ? '' : ''}
+                        {'г-на Орка'}
                     </a>
-                    {rtlActive
-                        ? ', مصنوعة مع الحب لشبكة الإنترنت أفضل'
-                        : ', made with love for a better web'}
                 </p>
             </div>
         </footer>
@@ -69,8 +57,7 @@ function Footer({...props}) {
 Footer.propTypes = {
     classes: PropTypes.object.isRequired,
     fluid: PropTypes.bool,
-    white: PropTypes.bool,
-    rtlActive: PropTypes.bool
+    white: PropTypes.bool
 }
 
 export default withStyles(footerStyle)(Footer)

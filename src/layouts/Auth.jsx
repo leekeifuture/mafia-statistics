@@ -16,6 +16,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 import routes from 'routes.js'
+import Footer from '../components/Footer/Footer'
 
 class Pages extends React.Component {
     componentDidMount() {
@@ -85,7 +86,7 @@ class Pages extends React.Component {
                         style={{backgroundImage: 'url(' + this.getBgImage() + ')'}}
                     >
                         <Switch>{this.getRoutes(routes)}</Switch>
-                        {/*<Footer white />*/}
+                        <Footer white />
                     </div>
                 </div>
             </div>
