@@ -45,7 +45,10 @@ function Footer({...props}) {
                     {'Сделано с '}
                     <i className="fa fa-heart heart" />
                     {' от '}
-                    <a href="" className={anchor}>
+                    <a target="_blank"
+                       rel="noopener noreferrer"
+                       href="https://vk.com/id142419761"
+                       className={anchor}>
                         {'г-на Орка'}
                     </a>
                 </p>
