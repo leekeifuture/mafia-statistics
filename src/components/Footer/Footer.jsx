@@ -44,7 +44,7 @@ function Footer({...props}) {
                     &copy; {1900 + new Date().getYear()}{', '}
                     {'Сделано с '}
                     <i className="fa fa-heart heart" />
-                    {' '}
+                    {' от '}
                     <a href="" className={anchor}>
                         {'г-на Орка'}
                     </a>
