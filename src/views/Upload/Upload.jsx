@@ -40,7 +40,7 @@ class Upload extends React.Component {
     render() {
         const statisticsTypes = {
             numbers: 'Статистика по номерам',
-            couple: 'Рейтинговая таблица по мафам',
+            couple: 'Лучшие мафиозные пары',
             rating: 'Рейтинговая таблица',
             roles_history: 'История вытянутых карт',
             visiting: 'Статистика по посещениям',
