@@ -75,6 +75,10 @@ const PlayerCardComponent = (props) => {
         ? props.state.serialityStatistics.maximumSeriesOfDefeat
         : 0
 
+    const ratingPoints = props.state.ratingStatistics.points
+        ? props.state.ratingStatistics.points.toFixed(1)
+        : 0
+
     return (
         <Card profile>
             <CardAvatar profile>
@@ -117,7 +121,7 @@ const PlayerCardComponent = (props) => {
                             marginLeft: '5px'
                         }}>
                             Рейтинговые
-                            очки: {props.state.ratingStatistics.points}
+                            очки: {ratingPoints}
                         </li>
                     </ul>
 

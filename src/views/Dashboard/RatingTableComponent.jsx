@@ -21,13 +21,17 @@ const RatingTableComponent = (props) => {
     props.topRatingTable.forEach((player, index) => {
         const mention = getMention(player.gender)
 
+        const ratingPoints = player.points
+            ? player.points.toFixed(1)
+            : 0
+
         tableData.push([
             `#${index + 1}`,
             (<NavLink style={{color: 'black'}}
                       to={`/admin/players/${player.playerId}`}>{
                 mention + ' ' + player.playerNickname
             }</NavLink>),
-            player.points
+            ratingPoints
         ])
     })
 
