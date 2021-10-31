@@ -7,7 +7,7 @@ import CardAvatar from '../../components/Card/CardAvatar'
 import CardBody from '../../components/Card/CardBody'
 import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
-import getMention from '../../util/util'
+import {getMention} from '../../util/util'
 
 const getClubCardType = (clubCardType) => {
     const clubCardText = clubCardType ? `Тип клубной карты: ${clubCardType}` : ''

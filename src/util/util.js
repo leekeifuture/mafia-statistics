@@ -1,4 +1,4 @@
-const getMention = (gender) => {
+export const getMention = (gender) => {
     let mention = 'г-н'
 
     if (gender === 'MALE') {
@@ -10,4 +10,17 @@ const getMention = (gender) => {
     return mention
 }
 
-export default getMention
+export const getSubtextDate = (fromDate, toDate) => {
+    const fromDateObj = new Date(fromDate)
+    const toDateObj = new Date(toDate)
+
+    const options = {year: 'numeric', month: 'long', formatMatcher: 'basic'}
+
+    const strFromDate = fromDateObj.toLocaleDateString('ru', options)
+    const strToDate = toDateObj.toLocaleDateString('ru', options)
+
+    return strFromDate === strToDate
+        ? `${strFromDate}`
+        : `${strFromDate} - ${strToDate}`
+}
+

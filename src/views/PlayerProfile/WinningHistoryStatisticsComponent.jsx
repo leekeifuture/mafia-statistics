@@ -1,19 +1,17 @@
 import ReactEcharts from 'echarts-for-react'
 import React from 'react'
+import {getSubtextDate} from '../../util/util'
 
 const WinningHistoryStatisticsComponent = (props) => {
-    const fromDate = new Date(props.ratingStatistics.fromDate)
-    const toDate = new Date(props.ratingStatistics.toDate)
-
-    const options = {year: 'numeric', month: 'long', day: 'numeric'}
-
-    const strFromDate = fromDate.toLocaleDateString('ru', options)
-    const strToDate = toDate.toLocaleDateString('ru', options)
+    const subtext = getSubtextDate(
+        props.ratingStatistics.fromDate,
+        props.ratingStatistics.toDate
+    )
 
     const option = {
         title: {
             text: 'История побед',
-            subtext: `${strFromDate} - ${strToDate}`,
+            subtext,
             left: 'center'
         },
         tooltip: {

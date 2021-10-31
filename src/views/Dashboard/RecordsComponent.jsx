@@ -6,7 +6,7 @@ import CardFooter from '../../components/Card/CardFooter'
 import CardHeader from '../../components/Card/CardHeader'
 import CardIcon from '../../components/Card/CardIcon'
 import GridItem from '../../components/Grid/GridItem'
-import getMention from '../../util/util'
+import {getMention} from '../../util/util'
 
 const RecordsComponent = (props) => {
     return (<>

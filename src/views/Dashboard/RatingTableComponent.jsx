@@ -8,7 +8,7 @@ import CardIcon from '../../components/Card/CardIcon'
 import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 import Table from '../../components/Table/Table'
-import getMention from '../../util/util'
+import {getMention} from '../../util/util'
 
 const RatingTableComponent = (props) => {
     const tableHead = [
