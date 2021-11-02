@@ -79,6 +79,8 @@ const PlayerCardComponent = (props) => {
         ? props.state.ratingStatistics.points.toFixed(1)
         : 0
 
+    const mention = getMention(props.state.gender)
+
     return (
         <Card profile>
             <CardAvatar profile>
@@ -95,7 +97,7 @@ const PlayerCardComponent = (props) => {
                         textTransform: 'lowercase'
                     }}
                 >
-                    {getMention(props.state.gender) + ' '}
+                    {mention}
                 </h6>
                 <h4 className={props.classes.cardTitle}
                     style={{display: 'inline'}}

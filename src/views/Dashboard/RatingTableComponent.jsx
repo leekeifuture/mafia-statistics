@@ -29,7 +29,7 @@ const RatingTableComponent = (props) => {
             `#${index + 1}`,
             (<NavLink style={{color: 'black'}}
                       to={`/admin/players/${player.playerId}`}>{
-                mention + ' ' + player.playerNickname
+                mention + player.playerNickname
             }</NavLink>),
             ratingPoints
         ])

@@ -1,10 +1,10 @@
 export const getMention = (gender) => {
-    let mention = 'г-н'
+    let mention = 'г-н '
 
     if (gender === 'MALE') {
-        mention = 'г-н'
+        mention = 'г-н '
     } else if (gender === 'FEMALE') {
-        mention = 'г-жа'
+        mention = 'г-жа '
     }
 
     return mention

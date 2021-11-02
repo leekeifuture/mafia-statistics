@@ -9,6 +9,11 @@ import GridItem from '../../components/Grid/GridItem'
 import {getMention} from '../../util/util'
 
 const RecordsComponent = (props) => {
+    const winSeriesMention = getMention(props.state.winSeriesPlayerGender)
+    const defeatSeriesMention = getMention(props.state.defeatSeriesPlayerGender)
+    const visitingSeriesMention = getMention(props.state.visitingSeriesPlayerGender)
+    const firstShootingMention = getMention(props.state.firstShootingSeriesPlayerGender)
+
     return (<>
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
@@ -22,7 +27,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/admin/players/${props.state.winSeriesPlayerId}`}>
-                            <small>{getMention(props.state.gender) + ' '}</small>
+                            <small>{winSeriesMention}</small>
                             {props.state.winSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -46,7 +51,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/admin/players/${props.state.defeatSeriesPlayerId}`}>
-                            <small>{getMention(props.state.gender) + ' '}</small>
+                            <small>{defeatSeriesMention}</small>
                             {props.state.defeatSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -70,7 +75,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/admin/players/${props.state.visitingSeriesPlayerId}`}>
-                            <small>{getMention(props.state.gender) + ' '}</small>
+                            <small>{visitingSeriesMention}</small>
                             {props.state.visitingSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -94,7 +99,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/admin/players/${props.state.firstShootingSeriesPlayerId}`}>
-                            <small>{getMention(props.state.gender) + ' '}</small>
+                            <small>{firstShootingMention}</small>
                             {props.state.firstShootingSeriesPlayerNickname}
                         </NavLink>
                     </h3>
