@@ -7,7 +7,7 @@ import {
 import customDropdownStyle
     from 'assets/jss/material-dashboard-pro-react/components/customDropdownStyle.jsx'
 
-const adminNavbarLinksStyle = theme => ({
+const statisticsNavbarLinksStyle = theme => ({
     ...customDropdownStyle(theme),
     search: {
         margin: '0',
@@ -153,4 +153,4 @@ const adminNavbarLinksStyle = theme => ({
     }
 })
 
-export default adminNavbarLinksStyle
+export default statisticsNavbarLinksStyle

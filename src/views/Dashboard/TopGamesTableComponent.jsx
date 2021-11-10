@@ -24,7 +24,7 @@ const TopGamesTableComponent = (props) => {
         tableData.push([
             `#${index + 1}`,
             (<NavLink style={{color: 'black'}}
-                      to={`/admin/players/${player.playerId}`}>{
+                      to={`/statistics/players/${player.playerId}`}>{
                 mention + player.playerNickname
             }</NavLink>),
             player.gamesTotal
@@ -39,6 +39,7 @@ const TopGamesTableComponent = (props) => {
                 </CardIcon>
                 <h4 className={props.classes.cardIconTitle}>
                     Топ по количеству игр
+                    <small> - за всё время</small>
                 </h4>
             </CardHeader>
             <CardBody>

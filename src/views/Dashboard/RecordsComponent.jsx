@@ -26,7 +26,7 @@ const RecordsComponent = (props) => {
                     </p>
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
-                            to={`/admin/players/${props.state.winSeriesPlayerId}`}>
+                            to={`/statistics/players/${props.state.winSeriesPlayerId}`}>
                             <small>{winSeriesMention}</small>
                             {props.state.winSeriesPlayerNickname}
                         </NavLink>
@@ -50,7 +50,7 @@ const RecordsComponent = (props) => {
                     </p>
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
-                            to={`/admin/players/${props.state.defeatSeriesPlayerId}`}>
+                            to={`/statistics/players/${props.state.defeatSeriesPlayerId}`}>
                             <small>{defeatSeriesMention}</small>
                             {props.state.defeatSeriesPlayerNickname}
                         </NavLink>
@@ -74,7 +74,7 @@ const RecordsComponent = (props) => {
                     </p>
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
-                            to={`/admin/players/${props.state.visitingSeriesPlayerId}`}>
+                            to={`/statistics/players/${props.state.visitingSeriesPlayerId}`}>
                             <small>{visitingSeriesMention}</small>
                             {props.state.visitingSeriesPlayerNickname}
                         </NavLink>
@@ -98,7 +98,7 @@ const RecordsComponent = (props) => {
                     </p>
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
-                            to={`/admin/players/${props.state.firstShootingSeriesPlayerId}`}>
+                            to={`/statistics/players/${props.state.firstShootingSeriesPlayerId}`}>
                             <small>{firstShootingMention}</small>
                             {props.state.firstShootingSeriesPlayerNickname}
                         </NavLink>

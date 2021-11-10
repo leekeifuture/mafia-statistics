@@ -8,32 +8,26 @@ import Menu from '@material-ui/icons/Menu'
 import MoreVert from '@material-ui/icons/MoreVert'
 import ViewList from '@material-ui/icons/ViewList'
 
-import adminNavbarStyle
-    from 'assets/jss/material-dashboard-pro-react/components/adminNavbarStyle.jsx'
+import statisticsNavbarStyle
+    from 'assets/jss/material-dashboard-pro-react/components/statisticsNavbarStyle.jsx'
 import cx from 'classnames'
 import Button from 'components/CustomButtons/Button.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AdminNavbarLinks from './AdminNavbarLinks'
+import StatisticsNavbarLinks from './StatisticsNavbarLinks'
 
 // core components
 
-function AdminNavbar({...props}) {
-    const {classes, color, rtlActive, brandText} = props
+function StatisticsNavbar({...props}) {
+    const {classes, color, brandText} = props
     const appBarClasses = cx({
         [' ' + classes[color]]: color
     })
-    const sidebarMinimize =
-        classes.sidebarMinimize +
-        ' ' +
-        cx({
-            [classes.sidebarMinimizeRTL]: rtlActive
-        })
     return (
         <AppBar className={classes.appBar + appBarClasses}>
             <Toolbar className={classes.container}>
                 <Hidden smDown implementation="css">
-                    <div className={sidebarMinimize}>
+                    <div className={classes.sidebarMinimize}>
                         {props.miniActive ? (
                             <Button
                                 justIcon
@@ -63,7 +57,11 @@ function AdminNavbar({...props}) {
                     </Button>
                 </div>
                 <Hidden smDown implementation="css">
-                    <AdminNavbarLinks rtlActive={rtlActive} />
+                    <StatisticsNavbarLinks
+                        authenticated={props.authenticated}
+                        currentUser={props.currentUser}
+                        handleLogout={props.handleLogout}
+                    />
                 </Hidden>
                 <Hidden mdUp implementation="css">
                     <Button
@@ -81,11 +79,10 @@ function AdminNavbar({...props}) {
     )
 }
 
-AdminNavbar.propTypes = {
+StatisticsNavbar.propTypes = {
     classes: PropTypes.object.isRequired,
     color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger']),
-    rtlActive: PropTypes.bool,
     brandText: PropTypes.string
 }
 
-export default withStyles(adminNavbarStyle)(AdminNavbar)
+export default withStyles(statisticsNavbarStyle)(StatisticsNavbar)

@@ -1,13 +1,12 @@
 import {CardMembership} from '@material-ui/icons'
 import React from 'react'
-import defaultAvatar from '../../assets/img/default-avatar.png'
 import {blackColor} from '../../assets/jss/material-dashboard-pro-react'
 import Card from '../../components/Card/Card'
 import CardAvatar from '../../components/Card/CardAvatar'
 import CardBody from '../../components/Card/CardBody'
 import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
-import {getMention} from '../../util/util'
+import {getMention, getPhotoUrl} from '../../util/util'
 
 const getClubCardType = (clubCardType) => {
     const clubCardText = clubCardType ? `Тип клубной карты: ${clubCardType}` : ''
@@ -31,23 +30,6 @@ const getClubCardType = (clubCardType) => {
             </div>
         </div>
     )
-}
-
-const getPhotoUrl = (photoUrl) => {
-    const wrongPhotos = [
-        'https://vk.com/images/camera_200.png',
-        'https://vk.com/images/deactivated_200.png'
-    ]
-
-    let photo = photoUrl
-        ? photoUrl
-        : defaultAvatar
-
-    if (wrongPhotos.includes(photoUrl)) {
-        photo = defaultAvatar
-    }
-
-    return photo
 }
 
 const PlayerCardComponent = (props) => {

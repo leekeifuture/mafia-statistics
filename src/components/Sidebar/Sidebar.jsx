@@ -7,17 +7,20 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
+import {ExitToApp} from '@material-ui/icons'
+import Person from '@material-ui/icons/Person'
 
 import sidebarStyle
     from 'assets/jss/material-dashboard-pro-react/components/sidebarStyle.jsx'
 import cx from 'classnames'
 // core components
-import AdminNavbarLinks from 'components/Navbars/AdminNavbarLinks.jsx'
+import StatisticsNavbarLinks from 'components/Navbars/StatisticsNavbarLinks.jsx'
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from 'perfect-scrollbar'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import {getMention, getPhotoUrl} from '../../util/util'
 
 var ps
 
@@ -46,6 +49,7 @@ class SidebarWrapper extends React.Component {
         return (
             <div className={className} ref="sidebarWrapper">
                 {user}
+                <br />
                 {headerLinks}
                 {links}
             </div>
@@ -81,7 +85,7 @@ class Sidebar extends React.Component {
     }
     // this verifies if any of the collapses should be default opened on a rerender of this component
     // for example, on the refresh of the page,
-    // while on the src/views/forms/RegularForms.jsx - route /admin/regular-forms
+    // while on the src/views/forms/RegularForms.jsx - route /statistics/regular-forms
     getCollapseInitialState(routes) {
         for (let i = 0; i < routes.length; i++) {
             if (routes[i].collapse && this.getCollapseInitialState(routes[i].views)) {
@@ -309,7 +313,7 @@ class Sidebar extends React.Component {
             bgColor,
             rtlActive
         } = this.props
-        /*const itemText =
+        const itemText =
             classes.itemText +
             ' ' +
             cx({
@@ -351,8 +355,12 @@ class Sidebar extends React.Component {
             ' ' +
             cx({
                 [classes.photoRTL]: rtlActive
-            })*/
-        /*var user = (
+            })
+
+        const currentUser = this.props.currentUser
+        const avatar = getPhotoUrl(currentUser.photoUrl)
+        const nickname = getMention(currentUser.gender) + ' ' + currentUser.nickname
+        var user = (
             <div className={userWrapperClass}>
                 <div className={photo}>
                     <img src={avatar} className={classes.avatarImg} alt="..." />
@@ -365,7 +373,7 @@ class Sidebar extends React.Component {
                             onClick={() => this.openCollapse('openAvatar')}
                         >
                             <ListItemText
-                                primary={rtlActive ? 'تانيا أندرو' : 'Tania Andrew'}
+                                primary={nickname}
                                 secondary={
                                     <b
                                         className={
@@ -386,16 +394,17 @@ class Sidebar extends React.Component {
                                 className={classes.list + ' ' + classes.collapseList}>
                                 <ListItem className={classes.collapseItem}>
                                     <NavLink
-                                        to="#"
+                                        to={`/statistics/players/${currentUser.id}`}
                                         className={
                                             classes.itemLink + ' ' + classes.userCollapseLinks
                                         }
                                     >
-                    <span className={collapseItemMini}>
-                      {rtlActive ? 'مع' : 'MP'}
-                    </span>
+                                        <Person
+                                            className={classes.collapseItemMini}
+                                            style={{fontSize: '20px'}}
+                                        />
                                         <ListItemText
-                                            primary={rtlActive ? 'ملفي' : 'My Profile'}
+                                            primary={'Мой профиль'}
                                             disableTypography={true}
                                             className={collapseItemText}
                                         />
@@ -403,35 +412,18 @@ class Sidebar extends React.Component {
                                 </ListItem>
                                 <ListItem className={classes.collapseItem}>
                                     <NavLink
-                                        to="#"
+                                        to={'/statistics/dashboard'}
+                                        onClick={() => this.props.handleLogout()}
                                         className={
                                             classes.itemLink + ' ' + classes.userCollapseLinks
                                         }
                                     >
-                    <span className={collapseItemMini}>
-                      {rtlActive ? 'هوع' : 'EP'}
-                    </span>
-                                        <ListItemText
-                                            primary={
-                                                rtlActive ? 'تعديل الملف الشخصي' : 'Edit Profile'
-                                            }
-                                            disableTypography={true}
-                                            className={collapseItemText}
+                                        <ExitToApp
+                                            className={classes.collapseItemMini}
+                                            style={{fontSize: '20px'}}
                                         />
-                                    </NavLink>
-                                </ListItem>
-                                <ListItem className={classes.collapseItem}>
-                                    <NavLink
-                                        to="#"
-                                        className={
-                                            classes.itemLink + ' ' + classes.userCollapseLinks
-                                        }
-                                    >
-                    <span className={collapseItemMini}>
-                      {rtlActive ? 'و' : 'S'}
-                    </span>
                                         <ListItemText
-                                            primary={rtlActive ? 'إعدادات' : 'Settings'}
+                                            primary={'Выход'}
                                             disableTypography={true}
                                             className={collapseItemText}
                                         />
@@ -442,10 +434,10 @@ class Sidebar extends React.Component {
                     </ListItem>
                 </List>
             </div>
-        )*/
-        var links = (
-            <List className={classes.list}>{this.createLinks(routes)}</List>
         )
+        // var links = (
+        //     <List className={classes.list}>{this.createLinks(routes)}</List>
+        // )
 
         const logoNormal =
             classes.logoNormal +
@@ -514,10 +506,10 @@ class Sidebar extends React.Component {
                         {brand}
                         <SidebarWrapper
                             className={sidebarWrapper}
-                            // user={user}
-                            headerLinks={<AdminNavbarLinks
+                            user={user}
+                            headerLinks={<StatisticsNavbarLinks
                                 rtlActive={rtlActive} />}
-                            links={links}
+                            // links={links}
                         />
                         {image !== undefined ? (
                             <div
@@ -541,8 +533,8 @@ class Sidebar extends React.Component {
                         {brand}
                         <SidebarWrapper
                             className={sidebarWrapper}
-                            // user={user}
-                            links={links}
+                            user={user}
+                            // links={links}
                         />
                         {image !== undefined ? (
                             <div

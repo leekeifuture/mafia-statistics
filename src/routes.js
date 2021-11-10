@@ -8,22 +8,22 @@ const dashRoutes = [
         path: '/dashboard',
         name: 'Статистика клуба игры в мафию - Ничего Личного',
         component: Dashboard,
-        layout: '/admin'
+        layout: '/statistics'
     },
     {
         path: '/players/:id?',
         name: 'Профиль игрока',
         component: PlayerProfile,
-        layout: '/admin'
+        layout: '/statistics'
     },
     {
         path: '/upload',
         name: 'Загрузить',
         component: Upload,
-        layout: '/admin'
+        layout: '/statistics'
     },
     {
-        path: '/login-page',
+        path: '/login',
         name: 'Авторизация',
         component: LoginPage,
         layout: '/auth'

@@ -5,10 +5,10 @@ import logo from 'assets/img/logo-white.svg'
 import image from 'assets/img/sidebar-1.jpg'
 
 import appStyle
-    from 'assets/jss/material-dashboard-pro-react/layouts/adminStyle.jsx'
+    from 'assets/jss/material-dashboard-pro-react/layouts/statisticsStyle.jsx'
 import cx from 'classnames'
 // core components
-import AdminNavbar from 'components/Navbars/AdminNavbar.jsx'
+import StatisticsNavbar from 'components/Navbars/StatisticsNavbar.jsx'
 import Sidebar from 'components/Sidebar/Sidebar.jsx'
 // creates a beautiful scrollbar
 import PerfectScrollbar from 'perfect-scrollbar'
@@ -18,26 +18,43 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 import routes from 'routes.js'
+import {ACCESS_TOKEN, mafiaStatisticsApi} from '../api/mafiaStatisticsApi'
 import Footer from '../components/Footer/Footer'
 
 var ps
 
-class Dashboard extends React.Component {
+class Statistics extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             mobileOpen: false,
-            miniActive: true,
+            miniActive: false,
             image: image,
             color: 'blue',
             bgColor: 'black',
             hasImage: true,
-            fixedClasses: 'dropdown'
+            fixedClasses: 'dropdown',
+            authenticated: false
         }
         this.resizeFunction = this.resizeFunction.bind(this)
+        this.handleLogout = this.handleLogout.bind(this)
+        this.loadCurrentlyLoggedInUser = this.loadCurrentlyLoggedInUser.bind(this)
     }
 
     componentDidMount() {
+        mafiaStatisticsApi.getPlayerById('me')
+            .then(data => {
+                    this.setState({
+                        currentUser: data,
+                        authenticated: true
+                    })
+                }, error => {
+                    this.setState({
+                        authenticated: false
+                    })
+                }
+            )
+
         if (navigator.platform.indexOf('Win') > -1) {
             ps = new PerfectScrollbar(this.refs.mainPanel, {
                 suppressScrollX: true,
@@ -64,6 +81,29 @@ class Dashboard extends React.Component {
         }
     }
 
+    loadCurrentlyLoggedInUser() {
+        mafiaStatisticsApi.getPlayerById('me')
+            .then(data => {
+                    this.setState({
+                        currentUser: data,
+                        authenticated: true
+                    })
+                }, error => {
+                    this.setState({
+                        authenticated: false
+                    })
+                }
+            )
+    }
+
+    handleLogout() {
+        localStorage.removeItem(ACCESS_TOKEN)
+        this.setState({
+            authenticated: false,
+            currentUser: null
+        })
+    }
+
     handleImageClick = image => {
         this.setState({image: image})
     }
@@ -85,7 +125,7 @@ class Dashboard extends React.Component {
     }
 
     getRoute() {
-        return this.props.location.pathname !== '/admin/full-screen-maps'
+        return this.props.location.pathname !== '/statistics/full-screen-maps'
     }
 
     getActiveRoute = routes => {
@@ -113,7 +153,7 @@ class Dashboard extends React.Component {
             if (prop.collapse) {
                 return this.getRoutes(prop.views)
             }
-            if (prop.layout === '/admin') {
+            if (prop.layout === '/statistics') {
                 return (
                     <Route
                         path={prop.layout + prop.path}
@@ -149,27 +189,38 @@ class Dashboard extends React.Component {
             })
         return (
             <div className={classes.wrapper}>
-                <Sidebar
-                    routes={routes}
-                    logoText={'Ничего Личного'}
-                    logo={logo}
-                    image={this.state.image}
-                    handleDrawerToggle={this.handleDrawerToggle}
-                    open={this.state.mobileOpen}
-                    color={this.state.color}
-                    bgColor={this.state.bgColor}
-                    miniActive={this.state.miniActive}
-                    {...rest}
-                />
+                {this.state.authenticated
+                    ? <Sidebar
+                        routes={routes}
+                        logoText={'Ничего Личного'}
+                        logo={logo}
+                        image={this.state.image}
+                        handleDrawerToggle={this.handleDrawerToggle}
+                        open={this.state.mobileOpen}
+                        color={this.state.color}
+                        bgColor={this.state.bgColor}
+                        miniActive={this.state.miniActive}
+                        authenticated={this.state.authenticated}
+                        currentUser={this.state.currentUser}
+                        handleLogout={this.handleLogout}
+                        {...rest}
+                    />
+                    : <></>}
                 <div className={mainPanel} ref="mainPanel">
-                    <AdminNavbar
+                    <StatisticsNavbar
                         sidebarMinimize={this.sidebarMinimize.bind(this)}
                         miniActive={this.state.miniActive}
                         brandText={this.getActiveRoute(routes)}
                         handleDrawerToggle={this.handleDrawerToggle}
+                        authenticated={this.state.authenticated}
+                        currentUser={this.state.currentUser}
+                        handleLogout={this.handleLogout}
                         {...rest}
                     />
-                    {/* On the /maps/full-screen-maps route we want the map to be on full screen - this is not possible if the content and container classes are present because they have some paddings which would make the map smaller */}
+                    {/* On the /maps/full-screen-maps route we want the map to
+                    be on full screen - this is not possible if the content and
+                    container classes are present because they have some
+                    paddings which would make the map smaller */}
                     {this.getRoute() ? (
                         <div className={classes.content}>
                             <div className={classes.container}>
@@ -201,8 +252,8 @@ class Dashboard extends React.Component {
     }
 }
 
-Dashboard.propTypes = {
+Statistics.propTypes = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(appStyle)(Dashboard)
+export default withStyles(appStyle)(Statistics)

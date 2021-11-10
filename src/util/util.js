@@ -1,3 +1,5 @@
+import defaultAvatar from '../assets/img/default-avatar.png'
+
 export const getMention = (gender) => {
     let mention = 'г-н '
 
@@ -24,3 +26,19 @@ export const getSubtextDate = (fromDate, toDate) => {
         : `${strFromDate} - ${strToDate}`
 }
 
+export const getPhotoUrl = (photoUrl) => {
+    const wrongPhotos = [
+        'https://vk.com/images/camera_200.png',
+        'https://vk.com/images/deactivated_200.png'
+    ]
+
+    let photo = photoUrl
+        ? photoUrl
+        : defaultAvatar
+
+    if (wrongPhotos.includes(photoUrl)) {
+        photo = defaultAvatar
+    }
+
+    return photo
+}

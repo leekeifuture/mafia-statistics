@@ -1,8 +1,24 @@
 import * as axios from 'axios'
 
-const baseURL = 'http://localhost:8080/api'
+export const ACCESS_TOKEN = 'accessToken'
+export const API_BASE_URL = 'https://fe67-178-120-62-224.ngrok.io'
+export const OAUTH2_REDIRECT_URI = 'http://localhost:3000/oauth2/redirect'
 
-const axiosInstance = axios.create({baseURL})
+const axiosInstance = axios.create({
+    baseURL: API_BASE_URL,
+    withCredentials: true
+})
+
+axiosInstance.interceptors.request.use(config => {
+    if (localStorage.getItem(ACCESS_TOKEN)) {
+        config.headers.common['Authorization'] =
+            'Bearer ' + localStorage.getItem(ACCESS_TOKEN)
+    } else {
+        delete config.headers.common['Authorization']
+    }
+
+    return config
+})
 
 export const mafiaStatisticsApi = {
     uploadNumbersStatistics(file, statisticsType) {

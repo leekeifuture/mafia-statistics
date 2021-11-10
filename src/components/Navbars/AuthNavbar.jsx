@@ -52,7 +52,7 @@ class AuthNavbar extends React.Component {
         var list = (
             <List className={classes.list}>
                 <ListItem className={classes.listItem}>
-                    <NavLink to={'/admin/dashboard'}
+                    <NavLink to={'/statistics/dashboard'}
                              className={classes.navLink}>
                         <Dashboard className={classes.listItemIcon} />
                         <ListItemText
@@ -64,9 +64,9 @@ class AuthNavbar extends React.Component {
                 </ListItem>
                 <ListItem className={classes.listItem}>
                     <NavLink
-                        to={'/auth/login-page'}
+                        to={'/auth/login'}
                         className={cx(classes.navLink, {
-                            [classes.navLinkActive]: this.activeRoute('/auth/login-page')
+                            [classes.navLinkActive]: this.activeRoute('/auth/login')
                         })}
                     >
                         <Fingerprint className={classes.listItemIcon} />

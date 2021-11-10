@@ -45,9 +45,6 @@ const loginPageStyle = theme => ({
     },
     socialLine: {
         padding: '0.9375rem 0'
-    },
-    vkAuth: {
-        width: '100% !important'
     }
 })
 

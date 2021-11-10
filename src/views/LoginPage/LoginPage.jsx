@@ -8,25 +8,19 @@ import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
+import {API_BASE_URL, OAUTH2_REDIRECT_URI} from '../../api/mafiaStatisticsApi'
 
 class LoginPage extends React.Component {
     constructor(props) {
         super(props)
-        // we use this to make the card to appear after the page has been rendered
+        // We use this to make the card to appear after the page has been rendered
         this.state = {
             cardAnimaton: 'cardHidden'
         }
     }
 
     componentDidMount() {
-        window.VK.init({apiId: 7969557})
-        window.VK.Widgets.Auth('vk_auth', {
-            onAuth: data => {
-                alert('user ' + data['uid'] + ' authorized')
-            }
-        })
-
-        // we add a hidden class to the card and after 700 ms we delete it and the transition appears
+        // We add a hidden class to the card and after 700 ms we delete it and the transition appears
         this.timeOutFunction = setTimeout(
             function () {
                 this.setState({cardAnimaton: ''})
@@ -41,6 +35,8 @@ class LoginPage extends React.Component {
     }
 
     render() {
+        const VK_AUTH_URL = API_BASE_URL + '/oauth2/authorize/vk?redirect_uri=' + OAUTH2_REDIRECT_URI
+
         const {classes} = this.props
         return (
             <div className={classes.container}>
@@ -58,8 +54,9 @@ class LoginPage extends React.Component {
                                     </h4>
                                 </CardHeader>
                                 <CardBody style={{textAlign: 'center'}}>
-                                    <div id="vk_auth"
-                                         className={classes.vkAuth} />
+                                    <a href={VK_AUTH_URL}>
+                                        Вход через ВК
+                                    </a>
                                 </CardBody>
                             </Card>
                         </form>
