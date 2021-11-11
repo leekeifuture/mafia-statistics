@@ -66,11 +66,8 @@ const PlayerCardComponent = (props) => {
     return (
         <Card profile>
             <CardAvatar profile>
-                <a href=""
-                   onClick={e => e.preventDefault()}>
-                    <img src={getPhotoUrl(props.state.photoUrl)}
-                         alt="..." />
-                </a>
+                <img src={getPhotoUrl(props.state.photoUrl)}
+                     alt="..." />
             </CardAvatar>
             <CardBody profile>
                 <h6 className={props.classes.cardCategory}

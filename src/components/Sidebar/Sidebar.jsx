@@ -309,7 +309,6 @@ class Sidebar extends React.Component {
             logo,
             image,
             logoText,
-            routes,
             bgColor,
             rtlActive
         } = this.props
@@ -343,12 +342,6 @@ class Sidebar extends React.Component {
             ' ' +
             cx({
                 [classes.caretRTL]: rtlActive
-            })
-        const collapseItemMini =
-            classes.collapseItemMini +
-            ' ' +
-            cx({
-                [classes.collapseItemMiniRTL]: rtlActive
             })
         const photo =
             classes.photo +
@@ -463,12 +456,12 @@ class Sidebar extends React.Component {
             })
         var brand = (
             <div className={logoClasses}>
-                <a href="" className={logoMini}>
+                <span className={logoMini}>
                     <img src={logo} alt="logo" className={classes.img} />
-                </a>
-                <a href="" className={logoNormal}>
+                </span>
+                <span className={logoNormal}>
                     {logoText}
-                </a>
+                </span>
             </div>
         )
         const drawerPaper =

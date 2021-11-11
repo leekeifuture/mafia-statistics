@@ -4,7 +4,7 @@ import {ACCESS_TOKEN} from '../../api/mafiaStatisticsApi'
 
 class OAuth2RedirectHandler extends React.Component {
     getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]')
+        name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]')
         const regex = new RegExp('[\\?&]' + name + '=([^&#]*)')
 
         const results = regex.exec(this.props.location.search)

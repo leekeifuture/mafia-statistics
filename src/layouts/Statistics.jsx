@@ -1,6 +1,6 @@
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-import logo from 'assets/img/logo-white.svg'
+import logo from 'assets/img/logo/white-hand-nl.png'
 
 import image from 'assets/img/sidebar-1.jpg'
 
