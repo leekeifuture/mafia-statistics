@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-import {ExitToApp} from '@material-ui/icons'
+import {ExitToApp, Settings} from '@material-ui/icons'
 import Person from '@material-ui/icons/Person'
 
 import sidebarStyle
@@ -20,7 +20,8 @@ import PerfectScrollbar from 'perfect-scrollbar'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import {getMention, getPhotoUrl} from '../../util/util'
+import {getMention, getPhotoUrl, isAdmin} from '../../util/util'
+import Upload from '../../views/Manage/Manage'
 
 var ps
 
@@ -49,7 +50,6 @@ class SidebarWrapper extends React.Component {
         return (
             <div className={className} ref="sidebarWrapper">
                 {user}
-                <br />
                 {headerLinks}
                 {links}
             </div>
@@ -428,9 +428,23 @@ class Sidebar extends React.Component {
                 </List>
             </div>
         )
-        // var links = (
-        //     <List className={classes.list}>{this.createLinks(routes)}</List>
-        // )
+
+        const adminSideBarLinks =
+            isAdmin(this.props.currentUser)
+                ? [{
+                    path: '/manage',
+                    name: 'Управление',
+                    component: Upload,
+                    icon: Settings,
+                    layout: '/statistics'
+                }]
+                : []
+
+        const links = (
+            <List className={classes.list}>
+                {this.createLinks(adminSideBarLinks)}
+            </List>
+        )
 
         const logoNormal =
             classes.logoNormal +
@@ -502,7 +516,7 @@ class Sidebar extends React.Component {
                             user={user}
                             headerLinks={<StatisticsNavbarLinks
                                 rtlActive={rtlActive} />}
-                            // links={links}
+                            links={links}
                         />
                         {image !== undefined ? (
                             <div
@@ -527,7 +541,7 @@ class Sidebar extends React.Component {
                         <SidebarWrapper
                             className={sidebarWrapper}
                             user={user}
-                            // links={links}
+                            links={links}
                         />
                         {image !== undefined ? (
                             <div

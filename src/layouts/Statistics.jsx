@@ -34,6 +34,7 @@ class Statistics extends React.Component {
             bgColor: 'black',
             hasImage: true,
             fixedClasses: 'dropdown',
+            currentUser: null,
             authenticated: false
         }
         this.resizeFunction = this.resizeFunction.bind(this)
@@ -200,7 +201,6 @@ class Statistics extends React.Component {
                         color={this.state.color}
                         bgColor={this.state.bgColor}
                         miniActive={this.state.miniActive}
-                        authenticated={this.state.authenticated}
                         currentUser={this.state.currentUser}
                         handleLogout={this.handleLogout}
                         {...rest}

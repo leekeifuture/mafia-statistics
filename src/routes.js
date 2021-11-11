@@ -1,7 +1,7 @@
 import Dashboard from './views/Dashboard/Dashboard'
 import LoginPage from './views/LoginPage/LoginPage'
+import Upload from './views/Manage/Manage'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
-import Upload from './views/Upload/Upload'
 
 const dashRoutes = [
     {
@@ -17,8 +17,8 @@ const dashRoutes = [
         layout: '/statistics'
     },
     {
-        path: '/upload',
-        name: 'Загрузить',
+        path: '/manage',
+        name: 'Управление',
         component: Upload,
         layout: '/statistics'
     },

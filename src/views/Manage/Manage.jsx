@@ -6,7 +6,7 @@ import validationFormsStyle
 import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 
-class Upload extends React.Component {
+class Manage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -75,4 +75,4 @@ class Upload extends React.Component {
     }
 }
 
-export default withStyles(validationFormsStyle)(Upload)
+export default withStyles(validationFormsStyle)(Manage)
