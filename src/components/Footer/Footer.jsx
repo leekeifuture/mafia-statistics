@@ -38,6 +38,14 @@ function Footer({...props}) {
                                 {'Группа ВК'}
                             </a>
                         </ListItem>
+                        <ListItem className={classes.inlineBlock}>
+                            <a target="_blank"
+                               rel="noopener noreferrer"
+                               href="https://t.me/mafiabrest"
+                               className={block}>
+                                {'Telegram чат'}
+                            </a>
+                        </ListItem>
                     </List>
                 </div>
                 <p className={classes.right}>
