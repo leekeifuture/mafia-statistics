@@ -11,8 +11,10 @@ import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
+import CoupleStatistics from './CoupleStatistics'
 import PlayerCardComponent from './PlayerCardComponent'
 import RolesHistoryStatisticsComponent from './RolesHistoryStatisticsComponent'
+import SerialityStatistics from './seriality/SerialityStatistics'
 import WinningHistoryStatisticsComponent
     from './WinningHistoryStatisticsComponent'
 
@@ -20,12 +22,22 @@ class PlayerProfile extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            id: null,
             nickname: '',
-            photoUrl: '',
-            gender: '',
             gamesTotal: 0,
-            vkId: null,
-            coupleStatistics: [],
+            gender: '',
+            photoUrl: '',
+            roles: [],
+            coupleStatistics: [{
+                from_date: '',
+                to_date: '',
+                nicknameOfMafiaOne: '',
+                nicknameOfMafiaTwo: '',
+                percent_of_wins: 0,
+                games: 0,
+                wins: 0,
+                percentOfWins: 0
+            }],
             numbersStatistics: {
                 fromDate: '',
                 toDate: '',
@@ -118,7 +130,7 @@ class PlayerProfile extends React.Component {
                 gamesDon: 0,
                 gamesRed: 0,
                 gamesSheriff: 0,
-                penaltyPoints: 0,
+                additionalPoints: 0,
                 points: 0
             },
             rolesHistoryStatistics: {
@@ -211,48 +223,35 @@ class PlayerProfile extends React.Component {
                             </CardHeader>
                             <CardBody>
                                 <GridContainer>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <RolesHistoryStatisticsComponent
+                                    {this.state.rolesHistoryStatistics
+                                        ? (<RolesHistoryStatisticsComponent
                                             rolesHistoryStatistics={this.state.rolesHistoryStatistics}
-                                        />
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <WinningHistoryStatisticsComponent
+                                        />)
+                                        : (<></>)}
+                                    {this.state.ratingStatistics
+                                        ? (<WinningHistoryStatisticsComponent
                                             ratingStatistics={this.state.ratingStatistics}
-                                        />
-                                    </GridItem>
+                                        />)
+                                        : (<></>)}
                                 </GridContainer>
                                 <Clearfix />
                             </CardBody>
                         </Card>
                     </GridItem>
-                    <GridItem xs={12} sm={12} md={12}>
-                        <Card>
-                            <CardHeader color="rose" icon>
-                                <CardIcon color="rose">
-                                    <BarChart />
-                                </CardIcon>
-                                <h4 className={classes.cardIconTitle}>
-                                    Статистика игрока
-                                    <small> - серийность</small>
-                                </h4>
-                            </CardHeader>
-                            <CardBody>
-                                <GridContainer>
-                                    <GridItem xs={12} sm={12} md={4}>
+                    {this.state.serialityStatistics
+                        ? (<SerialityStatistics
+                            classes={classes}
+                            serialityStatistics={this.state.serialityStatistics}
+                        />)
+                        : <></>}
+                    {this.state.coupleStatistics && this.state.coupleStatistics.length > 0
+                        ? (<CoupleStatistics
+                            classes={classes}
+                            nickname={this.state.nickname}
+                            coupleStatistics={this.state.coupleStatistics}
+                        />)
+                        : <></>}
 
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={4}>
-
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={4}>
-
-                                    </GridItem>
-                                </GridContainer>
-                                <Clearfix />
-                            </CardBody>
-                        </Card>
-                    </GridItem>
                 </GridContainer>
             </div>
         )
