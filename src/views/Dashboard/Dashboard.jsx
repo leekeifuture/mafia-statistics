@@ -14,19 +14,19 @@ class Dashboard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            winSeriesPlayerId: null,
+            winSeriesPlayerId: '',
             winSeriesPlayerGender: '',
             winSeriesPlayerNickname: '',
             winSeriesGames: 0,
-            defeatSeriesPlayerId: null,
+            defeatSeriesPlayerId: '',
             defeatSeriesPlayerGender: '',
             defeatSeriesPlayerNickname: '',
             defeatSeriesGames: 0,
-            visitingSeriesPlayerId: null,
+            visitingSeriesPlayerId: '',
             visitingSeriesPlayerGender: '',
             visitingSeriesPlayerNickname: '',
             visitingSeriesPercent: 0,
-            firstShootingSeriesPlayerId: null,
+            firstShootingSeriesPlayerId: '',
             firstShootingSeriesPlayerGender: '',
             firstShootingSeriesPlayerNickname: '',
             firstShootingSeriesPercent: 0,

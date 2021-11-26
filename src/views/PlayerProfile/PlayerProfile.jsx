@@ -22,7 +22,7 @@ class PlayerProfile extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: null,
+            id: '',
             nickname: '',
             gamesTotal: 0,
             gender: '',
