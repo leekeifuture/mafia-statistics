@@ -1,8 +1,8 @@
 import * as axios from 'axios'
 
-export const ACCESS_TOKEN = 'accessToken'
-export const API_BASE_URL = 'http://localhost:8080'
-export const OAUTH2_REDIRECT_URI = 'http://localhost:3000/oauth2/redirect'
+export const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+export const OAUTH2_REDIRECT_URI = process.env.REACT_APP_OAUTH2_REDIRECT_URI
 
 const axiosInstance = axios.create({
     baseURL: API_BASE_URL,
