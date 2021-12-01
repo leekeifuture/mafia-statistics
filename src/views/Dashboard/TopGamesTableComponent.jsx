@@ -43,7 +43,7 @@ const TopGamesTableComponent = (props) => {
                 </h4>
             </CardHeader>
             <CardBody>
-                <GridContainer justify="space-between">
+                <GridContainer justifyContent="space-between">
                     <GridItem xs={12} sm={12} md={12}>
                         <Table
                             tableHead={tableHead}
