@@ -21,6 +21,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import {getMention, getPhotoUrl, isAdmin} from '../../util/util'
+import LoginPage from '../../views/LoginPage/LoginPage'
 import Upload from '../../views/Manage/Manage'
 
 var ps
@@ -50,6 +51,9 @@ class SidebarWrapper extends React.Component {
         return (
             <div className={className} ref="sidebarWrapper">
                 {user}
+                <Hidden mdUp implementation="css">
+                    <br />
+                </Hidden>
                 {headerLinks}
                 {links}
             </div>
@@ -303,7 +307,7 @@ class Sidebar extends React.Component {
         })
     }
 
-    getUser(classes, rtlActive, bgColor) {
+    getUser(classes, rtlActive, bgColor, collapseItemText) {
         const itemText =
             classes.itemText +
             ' ' +
@@ -312,16 +316,6 @@ class Sidebar extends React.Component {
                 [classes.itemTextMiniRTL]:
                 rtlActive && this.props.miniActive && this.state.miniActive,
                 [classes.itemTextRTL]: rtlActive
-            })
-        const collapseItemText =
-            classes.collapseItemText +
-            ' ' +
-            cx({
-                [classes.collapseItemTextMini]:
-                this.props.miniActive && this.state.miniActive,
-                [classes.collapseItemTextMiniRTL]:
-                rtlActive && this.props.miniActive && this.state.miniActive,
-                [classes.collapseItemTextRTL]: rtlActive
             })
         const userWrapperClass =
             classes.user +
@@ -435,9 +429,30 @@ class Sidebar extends React.Component {
             rtlActive
         } = this.props
 
+        const collapseItemText =
+            classes.collapseItemText +
+            ' ' +
+            cx({
+                [classes.collapseItemTextMini]:
+                this.props.miniActive && this.state.miniActive,
+                [classes.collapseItemTextMiniRTL]:
+                rtlActive && this.props.miniActive && this.state.miniActive,
+                [classes.collapseItemTextRTL]: rtlActive
+            })
+
         const user = this.props.authenticated
-            ? this.getUser(classes, rtlActive, bgColor)
-            : <></>
+            ? this.getUser(classes, rtlActive, bgColor, collapseItemText)
+            : <>
+                <List className={classes.list}>
+                    {this.createLinks([{
+                        path: '/login',
+                        name: 'Авторизация',
+                        component: LoginPage,
+                        icon: Person,
+                        layout: '/auth'
+                    }])}
+                </List>
+            </>
 
         const adminSideBarLinks =
             this.props.authenticated &&
@@ -526,8 +541,12 @@ class Sidebar extends React.Component {
                         <SidebarWrapper
                             className={sidebarWrapper}
                             user={user}
-                            headerLinks={<StatisticsNavbarLinks
-                                rtlActive={rtlActive} />}
+                            headerLinks={
+                                <StatisticsNavbarLinks
+                                    authenticated={this.props.authenticated}
+                                    currentUser={this.props.currentUser}
+                                />
+                            }
                             links={links}
                         />
                         {image !== undefined ? (
