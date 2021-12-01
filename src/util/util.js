@@ -44,5 +44,5 @@ export const getPhotoUrl = (photoUrl) => {
 }
 
 export const isAdmin = (user) => {
-    return user.roles.map(role => role.authority).includes('ADMIN')
+    return user.roles.includes('ADMIN')
 }

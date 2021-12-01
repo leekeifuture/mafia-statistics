@@ -1,22 +1,14 @@
 import withStyles from '@material-ui/core/styles/withStyles'
-import {BarChart} from '@material-ui/icons'
 import userProfileStyles
     from 'assets/jss/material-dashboard-pro-react/views/userProfileStyles.jsx'
-import Card from 'components/Card/Card.jsx'
-import CardBody from 'components/Card/CardBody.jsx'
-import CardHeader from 'components/Card/CardHeader.jsx'
-import CardIcon from 'components/Card/CardIcon.jsx'
-import Clearfix from 'components/Clearfix/Clearfix.jsx'
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
 import CoupleStatistics from './CoupleStatistics'
 import PlayerCardComponent from './PlayerCardComponent'
-import RolesHistoryStatisticsComponent from './RolesHistoryStatisticsComponent'
+import RatingStatistics from './RatingStatistics'
 import SerialityStatistics from './seriality/SerialityStatistics'
-import WinningHistoryStatisticsComponent
-    from './WinningHistoryStatisticsComponent'
 
 class PlayerProfile extends React.Component {
     constructor(props) {
@@ -130,6 +122,7 @@ class PlayerProfile extends React.Component {
                 gamesDon: 0,
                 gamesRed: 0,
                 gamesSheriff: 0,
+                gamesWon: 0,
                 additionalPoints: 0,
                 points: 0
             },
@@ -179,7 +172,7 @@ class PlayerProfile extends React.Component {
                 successivelyLostBySheriff: 0,
                 successivelyPlayedByBlack: 0,
                 successivelyPlayedByDon: 0,
-                successivelyPlayedByRed: 10,
+                successivelyPlayedByRed: 0,
                 successivelyPlayedBySheriff: 0,
                 successivelyWonByBlack: 0,
                 successivelyWonByDon: 0,
@@ -210,34 +203,14 @@ class PlayerProfile extends React.Component {
                             state={this.state}
                         />
                     </GridItem>
-                    <GridItem xs={12} sm={12} md={9}>
-                        <Card>
-                            <CardHeader color="rose" icon>
-                                <CardIcon color="rose">
-                                    <BarChart />
-                                </CardIcon>
-                                <h4 className={classes.cardIconTitle}>
-                                    Статистика игрока
-                                    <small> - история из рейтинга</small>
-                                </h4>
-                            </CardHeader>
-                            <CardBody>
-                                <GridContainer>
-                                    {this.state.rolesHistoryStatistics
-                                        ? (<RolesHistoryStatisticsComponent
-                                            rolesHistoryStatistics={this.state.rolesHistoryStatistics}
-                                        />)
-                                        : (<></>)}
-                                    {this.state.ratingStatistics
-                                        ? (<WinningHistoryStatisticsComponent
-                                            ratingStatistics={this.state.ratingStatistics}
-                                        />)
-                                        : (<></>)}
-                                </GridContainer>
-                                <Clearfix />
-                            </CardBody>
-                        </Card>
-                    </GridItem>
+                    {this.state.rolesHistoryStatistics || this.state.ratingStatistics
+                        ? (<RatingStatistics
+                            rolesHistoryStatistics={this.state.rolesHistoryStatistics}
+                            ratingStatistics={this.state.ratingStatistics}
+                            classes={classes}
+                            state={this.state}
+                        />)
+                        : <></>}
                     {this.state.serialityStatistics
                         ? (<SerialityStatistics
                             classes={classes}
@@ -251,7 +224,6 @@ class PlayerProfile extends React.Component {
                             coupleStatistics={this.state.coupleStatistics}
                         />)
                         : <></>}
-
                 </GridContainer>
             </div>
         )

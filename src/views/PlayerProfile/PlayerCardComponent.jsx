@@ -8,7 +8,17 @@ import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
 import {getMention, getPhotoUrl} from '../../util/util'
 
-const getClubCardType = (clubCardType) => {
+const getClubCardType = (gamesTotal) => {
+    let clubCardType = ''
+
+    if (gamesTotal >= 1000) {
+        clubCardType = 'ЗОЛОТО'
+    } else if (gamesTotal >= 500) {
+        clubCardType = 'СЕРЕБРО'
+    } else if (gamesTotal >= 100) {
+        clubCardType = 'БРОНЗА'
+    }
+
     const clubCardText = clubCardType ? `Тип клубной карты: ${clubCardType}` : ''
 
     if (!clubCardType) {
@@ -34,21 +44,10 @@ const getClubCardType = (clubCardType) => {
 
 const PlayerCardComponent = (props) => {
     const gamesTotal = props.state.gamesTotal
-    const gamesWined =
-        props.state.ratingStatistics.gamesRed +
-        props.state.ratingStatistics.gamesBlack +
-        props.state.ratingStatistics.gamesDon +
-        props.state.ratingStatistics.gamesSheriff
 
-    let clubCardType = ''
-
-    if (props.state.gamesTotal >= 1000) {
-        clubCardType = 'ЗОЛОТО'
-    } else if (props.state.gamesTotal >= 500) {
-        clubCardType = 'СЕРЕБРО'
-    } else if (props.state.gamesTotal >= 100) {
-        clubCardType = 'БРОНЗА'
-    }
+    const gamesWon = props.state.ratingStatistics
+        ? props.state.ratingStatistics.gamesWon
+        : 0
 
     const maximumSeriesOfWin = props.state.serialityStatistics
         ? props.state.serialityStatistics.maximumSeriesOfWin
@@ -57,8 +56,12 @@ const PlayerCardComponent = (props) => {
         ? props.state.serialityStatistics.maximumSeriesOfDefeat
         : 0
 
-    const ratingPoints = props.state.ratingStatistics.points
+    const ratingPoints = props.state.ratingStatistics
         ? props.state.ratingStatistics.points.toFixed(1)
+        : 0
+
+    const percentWinning = props.state.rolesHistoryStatistics
+        ? props.state.rolesHistoryStatistics.percentWinning
         : 0
 
     const mention = getMention(props.state.gender)
@@ -113,19 +116,19 @@ const PlayerCardComponent = (props) => {
                             textAlign: 'left',
                             flexGrow: 1
                         }}>
-                            {`${gamesWined} из ${gamesTotal} игр выиграно`}
+                            {`${gamesWon} из ${gamesTotal} игр выиграно`}
                         </span>
                         <span style={{
                             textAlign: 'right'
                         }}>
-                            {props.state.rolesHistoryStatistics.percentWinning + ' %'}
+                            {percentWinning + ' %'}
                         </span>
                     </span>
 
                     <CustomLinearProgress
                         variant="determinate"
                         color="primary"
-                        value={props.state.rolesHistoryStatistics.percentWinning}
+                        value={percentWinning}
                     />
 
                     <div style={{
@@ -152,7 +155,7 @@ const PlayerCardComponent = (props) => {
                         </span>
                     </div>
 
-                    {getClubCardType(clubCardType)}
+                    {getClubCardType(props.state.gamesTotal)}
                 </p>
             </CardBody>
         </Card>
