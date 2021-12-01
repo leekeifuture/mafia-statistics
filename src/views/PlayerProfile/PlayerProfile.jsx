@@ -4,7 +4,10 @@ import userProfileStyles
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
+import {trackPromise} from 'react-promise-tracker'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
+import LoadingIndicator
+    from '../../components/LoadingIndicator/LoadingIndicator'
 import CoupleStatistics from './CoupleStatistics'
 import PlayerCardComponent from './PlayerCardComponent'
 import RatingStatistics from './RatingStatistics'
@@ -178,55 +181,60 @@ class PlayerProfile extends React.Component {
                 successivelyWonByDon: 0,
                 successivelyWonByRed: 0,
                 successivelyWonBySheriff: 0
-            }
+            },
+            isLoading: true
         }
     }
 
     componentDidMount() {
-        mafiaStatisticsApi.getPlayerById(this.props.match.params.id)
-            .then(data => {
-                    this.setState(data)
-                }, error => {
-                    console.error(error)
-                }
-            )
+        trackPromise(
+            mafiaStatisticsApi.getPlayerById(this.props.match.params.id)
+                .then(data => {
+                        this.setState(data)
+                    }, error => {
+                        console.error(error)
+                    }
+                )
+        ).then(r => this.setState({isLoading: false}))
     }
 
     render() {
         const {classes} = this.props
-        return (
-            <div>
-                <GridContainer>
-                    <GridItem xs={12} sm={12} md={3}>
-                        <PlayerCardComponent
-                            classes={classes}
-                            state={this.state}
-                        />
-                    </GridItem>
-                    {this.state.rolesHistoryStatistics || this.state.ratingStatistics
-                        ? (<RatingStatistics
-                            rolesHistoryStatistics={this.state.rolesHistoryStatistics}
-                            ratingStatistics={this.state.ratingStatistics}
-                            classes={classes}
-                            state={this.state}
-                        />)
-                        : <></>}
-                    {this.state.serialityStatistics
-                        ? (<SerialityStatistics
-                            classes={classes}
-                            serialityStatistics={this.state.serialityStatistics}
-                        />)
-                        : <></>}
-                    {this.state.coupleStatistics && this.state.coupleStatistics.length > 0
-                        ? (<CoupleStatistics
-                            classes={classes}
-                            nickname={this.state.nickname}
-                            coupleStatistics={this.state.coupleStatistics}
-                        />)
-                        : <></>}
-                </GridContainer>
-            </div>
-        )
+        return (<>
+            {this.state.isLoading
+                ? <LoadingIndicator />
+                : (<div>
+                    <GridContainer>
+                        <GridItem xs={12} sm={12} md={3}>
+                            <PlayerCardComponent
+                                classes={classes}
+                                state={this.state}
+                            />
+                        </GridItem>
+                        {this.state.rolesHistoryStatistics || this.state.ratingStatistics
+                            ? (<RatingStatistics
+                                rolesHistoryStatistics={this.state.rolesHistoryStatistics}
+                                ratingStatistics={this.state.ratingStatistics}
+                                classes={classes}
+                                state={this.state}
+                            />)
+                            : <></>}
+                        {this.state.serialityStatistics
+                            ? (<SerialityStatistics
+                                classes={classes}
+                                serialityStatistics={this.state.serialityStatistics}
+                            />)
+                            : <></>}
+                        {this.state.coupleStatistics && this.state.coupleStatistics.length > 0
+                            ? (<CoupleStatistics
+                                classes={classes}
+                                nickname={this.state.nickname}
+                                coupleStatistics={this.state.coupleStatistics}
+                            />)
+                            : <></>}
+                    </GridContainer>
+                </div>)}
+        </>)
     }
 }
 

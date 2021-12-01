@@ -5,7 +5,10 @@ import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
+import {trackPromise} from 'react-promise-tracker'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
+import LoadingIndicator
+    from '../../components/LoadingIndicator/LoadingIndicator'
 import RatingTableComponent from './RatingTableComponent'
 import RecordsComponent from './RecordsComponent'
 import TopGamesTableComponent from './TopGamesTableComponent'
@@ -31,45 +34,51 @@ class Dashboard extends React.Component {
             firstShootingSeriesPlayerNickname: '',
             firstShootingSeriesPercent: 0,
             topGamesTable: [],
-            topRatingTable: []
+            topRatingTable: [],
+            isLoading: true
         }
     }
 
     componentDidMount() {
-        mafiaStatisticsApi.getDashboardInfo()
-            .then(data => {
-                    this.setState(data)
-                }, error => {
-                    console.error(error)
-                }
-            )
+        trackPromise(
+            mafiaStatisticsApi.getDashboardInfo()
+                .then(data => {
+                        this.setState(data)
+                    }, error => {
+                        console.error(error)
+                    }
+                )
+        ).then(r => this.setState({isLoading: false}))
     }
 
     render() {
         const {classes} = this.props
-        return (
-            <div>
-                <GridContainer>
-                    <RecordsComponent
-                        classes={classes}
-                        state={this.state}
-                    />
-                </GridContainer>
-                <GridContainer>
-                    <GridItem xs={12} sm={6} md={6} lg={6}>
-                        <TopGamesTableComponent
-                            classes={classes}
-                            topGamesTable={this.state.topGamesTable}
-                        />
-                    </GridItem>
-                    <GridItem xs={12} sm={6} md={6} lg={6}>
-                        <RatingTableComponent
-                            classes={classes}
-                            topRatingTable={this.state.topRatingTable}
-                        />
-                    </GridItem>
-                </GridContainer>
-            </div>
+        return (<>
+                {this.state.isLoading
+                    ? <LoadingIndicator />
+                    : (<div>
+                        <GridContainer>
+                            <RecordsComponent
+                                classes={classes}
+                                state={this.state}
+                            />
+                        </GridContainer>
+                        <GridContainer>
+                            <GridItem xs={12} sm={6} md={6} lg={6}>
+                                <TopGamesTableComponent
+                                    classes={classes}
+                                    topGamesTable={this.state.topGamesTable}
+                                />
+                            </GridItem>
+                            <GridItem xs={12} sm={6} md={6} lg={6}>
+                                <RatingTableComponent
+                                    classes={classes}
+                                    topRatingTable={this.state.topRatingTable}
+                                />
+                            </GridItem>
+                        </GridContainer>
+                    </div>)}
+            </>
         )
     }
 }

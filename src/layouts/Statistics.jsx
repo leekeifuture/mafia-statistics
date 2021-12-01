@@ -15,11 +15,13 @@ import PerfectScrollbar from 'perfect-scrollbar'
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import PropTypes from 'prop-types'
 import React from 'react'
+import {trackPromise} from 'react-promise-tracker'
 import {Route, Switch} from 'react-router-dom'
 
 import routes from 'routes.js'
 import {ACCESS_TOKEN, mafiaStatisticsApi} from '../api/mafiaStatisticsApi'
 import Footer from '../components/Footer/Footer'
+import LoadingIndicator from '../components/LoadingIndicator/LoadingIndicator'
 
 var ps
 
@@ -41,7 +43,8 @@ class Statistics extends React.Component {
                 photoUrl: '',
                 roles: []
             },
-            authenticated: false
+            authenticated: false,
+            isLoading: true
         }
         this.resizeFunction = this.resizeFunction.bind(this)
         this.handleLogout = this.handleLogout.bind(this)
@@ -49,18 +52,20 @@ class Statistics extends React.Component {
     }
 
     componentDidMount() {
-        mafiaStatisticsApi.getPlayerById('me')
-            .then(data => {
-                    this.setState({
-                        currentUser: data,
-                        authenticated: true
-                    })
-                }, error => {
-                    this.setState({
-                        authenticated: false
-                    })
-                }
-            )
+        trackPromise(
+            mafiaStatisticsApi.getPlayerById('me')
+                .then(data => {
+                        this.setState({
+                            currentUser: data,
+                            authenticated: true
+                        })
+                    }, error => {
+                        this.setState({
+                            authenticated: false
+                        })
+                    }
+                )
+        ).then(r => this.setState({isLoading: false}))
 
         if (navigator.platform.indexOf('Win') > -1) {
             ps = new PerfectScrollbar(this.refs.mainPanel, {
@@ -194,65 +199,51 @@ class Statistics extends React.Component {
                 [classes.mainPanelWithPerfectScrollbar]:
                 navigator.platform.indexOf('Win') > -1
             })
-        return (
-            <div className={classes.wrapper}>
-                <Sidebar
-                    routes={routes}
-                    logoText={'Ничего Личного'}
-                    logo={logo}
-                    image={this.state.image}
-                    handleDrawerToggle={this.handleDrawerToggle}
-                    open={this.state.mobileOpen}
-                    color={this.state.color}
-                    bgColor={this.state.bgColor}
-                    miniActive={this.state.miniActive}
-                    authenticated={this.state.authenticated}
-                    currentUser={this.state.currentUser}
-                    handleLogout={this.handleLogout}
-                    {...rest}
-                />
-                <div className={mainPanel} ref="mainPanel">
-                    <StatisticsNavbar
-                        sidebarMinimize={this.sidebarMinimize.bind(this)}
-                        miniActive={this.state.miniActive}
-                        brandText={this.getActiveRoute(routes)}
-                        handleDrawerToggle={this.handleDrawerToggle}
-                        authenticated={this.state.authenticated}
-                        currentUser={this.state.currentUser}
-                        handleLogout={this.handleLogout}
-                        {...rest}
-                    />
-                    {/* On the /maps/full-screen-maps route we want the map to
-                    be on full screen - this is not possible if the content and
-                    container classes are present because they have some
-                    paddings which would make the map smaller */}
-                    {this.getRoute() ? (
-                        <div className={classes.content}>
-                            <div className={classes.container}>
-                                <Switch>{this.getRoutes(routes)}</Switch>
-                            </div>
+        return (<>
+                {this.state.isLoading
+                    ? <LoadingIndicator />
+                    : (<div className={classes.wrapper}>
+                        <Sidebar
+                            routes={routes}
+                            logoText={'Ничего Личного'}
+                            logo={logo}
+                            image={this.state.image}
+                            handleDrawerToggle={this.handleDrawerToggle}
+                            open={this.state.mobileOpen}
+                            color={this.state.color}
+                            bgColor={this.state.bgColor}
+                            miniActive={this.state.miniActive}
+                            authenticated={this.state.authenticated}
+                            currentUser={this.state.currentUser}
+                            handleLogout={this.handleLogout}
+                            {...rest}
+                        />
+                        <div className={mainPanel} ref="mainPanel">
+                            <StatisticsNavbar
+                                sidebarMinimize={this.sidebarMinimize.bind(this)}
+                                miniActive={this.state.miniActive}
+                                brandText={this.getActiveRoute(routes)}
+                                handleDrawerToggle={this.handleDrawerToggle}
+                                authenticated={this.state.authenticated}
+                                currentUser={this.state.currentUser}
+                                handleLogout={this.handleLogout}
+                                {...rest}
+                            />
+                            {this.getRoute() ? (
+                                <div className={classes.content}>
+                                    <div className={classes.container}>
+                                        <Switch>{this.getRoutes(routes)}</Switch>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className={classes.map}>
+                                    <Switch>{this.getRoutes(routes)}</Switch>
+                                </div>
+                            )}
+                            {this.getRoute() ? <Footer fluid /> : null}
                         </div>
-                    ) : (
-                        <div className={classes.map}>
-                            <Switch>{this.getRoutes(routes)}</Switch>
-                        </div>
-                    )}
-                    {this.getRoute() ? <Footer fluid /> : null}
-                    {/*<FixedPlugin
-                        handleImageClick={this.handleImageClick}
-                        handleColorClick={this.handleColorClick}
-                        handleBgColorClick={this.handleBgColorClick}
-                        handleHasImage={this.handleHasImage}
-                        color={this.state['color']}
-                        bgColor={this.state['bgColor']}
-                        bgImage={this.state['image']}
-                        handleFixedClick={this.handleFixedClick}
-                        fixedClasses={this.state.fixedClasses}
-                        sidebarMinimize={this.sidebarMinimize.bind(this)}
-                        miniActive={this.state.miniActive}
-                    />*/}
-                </div>
-            </div>
+                    </div>)}
+            </>
         )
     }
 }
