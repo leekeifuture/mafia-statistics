@@ -19,7 +19,7 @@ const RatingTableComponent = (props) => {
     const tableData = []
 
     props.topRatingTable.forEach((player, index) => {
-        const mention = getMention(player.gender)
+        const mention = getMention(player)
 
         const ratingPoints = player.points
             ? player.points.toFixed(1)

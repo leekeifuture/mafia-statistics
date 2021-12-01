@@ -42,7 +42,7 @@ const getClubCardType = (gamesTotal) => {
     )
 }
 
-const PlayerCardComponent = (props) => {
+const PlayerCardComponent = props => {
     const gamesTotal = props.state.gamesTotal
 
     const gamesWon = props.state.ratingStatistics
@@ -64,12 +64,12 @@ const PlayerCardComponent = (props) => {
         ? props.state.rolesHistoryStatistics.percentWinning
         : 0
 
-    const mention = getMention(props.state.gender)
+    const mention = getMention(props.state)
 
     return (
         <Card profile>
             <CardAvatar profile>
-                <img src={getPhotoUrl(props.state.photoUrl)}
+                <img src={getPhotoUrl(props.state)}
                      alt="..." />
             </CardAvatar>
             <CardBody profile>

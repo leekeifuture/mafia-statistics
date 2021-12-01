@@ -1,11 +1,6 @@
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-import pricing from 'assets/img/bg-pricing.jpeg'
-import error from 'assets/img/clint-mckoy.jpg'
-import lock from 'assets/img/lock.jpeg'
 import login from 'assets/img/login.jpeg'
-
-import register from 'assets/img/register.jpeg'
 
 import pagesStyle
     from 'assets/jss/material-dashboard-pro-react/layouts/authStyle.jsx'
@@ -41,21 +36,7 @@ class Pages extends React.Component {
             }
         })
     }
-    getBgImage = () => {
-        if (window.location.pathname.indexOf('/auth/register-page') !== -1) {
-            return register
-        } else if (window.location.pathname.indexOf('/auth/login') !== -1) {
-            return login
-        } else if (window.location.pathname.indexOf('/auth/pricing-page') !== -1) {
-            return pricing
-        } else if (
-            window.location.pathname.indexOf('/auth/lock-screen-page') !== -1
-        ) {
-            return lock
-        } else if (window.location.pathname.indexOf('/auth/error-page') !== -1) {
-            return error
-        }
-    }
+
     getActiveRoute = routes => {
         let activeRoute = 'Default Brand Text'
         for (let i = 0; i < routes.length; i++) {
@@ -83,7 +64,7 @@ class Pages extends React.Component {
                 <div className={classes.wrapper} ref="wrapper">
                     <div
                         className={classes.fullPage}
-                        style={{backgroundImage: 'url(' + this.getBgImage() + ')'}}
+                        style={{backgroundImage: 'url(' + login + ')'}}
                     >
                         <Switch>{this.getRoutes(routes)}</Switch>
                         <Footer white />

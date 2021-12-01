@@ -19,7 +19,7 @@ const TopGamesTableComponent = (props) => {
     const tableData = []
 
     props.topGamesTable.forEach((player, index) => {
-        const mention = getMention(player.gender)
+        const mention = getMention(player)
 
         tableData.push([
             `#${index + 1}`,

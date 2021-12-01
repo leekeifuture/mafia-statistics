@@ -9,10 +9,10 @@ import GridItem from '../../components/Grid/GridItem'
 import {getMention} from '../../util/util'
 
 const RecordsComponent = (props) => {
-    const winSeriesMention = getMention(props.state.winSeriesPlayerGender)
-    const defeatSeriesMention = getMention(props.state.defeatSeriesPlayerGender)
-    const visitingSeriesMention = getMention(props.state.visitingSeriesPlayerGender)
-    const firstShootingMention = getMention(props.state.firstShootingSeriesPlayerGender)
+    const winSeriesMention = getMention({gender: props.state.winSeriesPlayerGender})
+    const defeatSeriesMention = getMention({gender: props.state.defeatSeriesPlayerGender})
+    const visitingSeriesMention = getMention({gender: props.state.visitingSeriesPlayerGender})
+    const firstShootingMention = getMention({gender: props.state.firstShootingSeriesPlayerGender})
 
     return (<>
         <GridItem xs={12} sm={6} md={6} lg={3}>

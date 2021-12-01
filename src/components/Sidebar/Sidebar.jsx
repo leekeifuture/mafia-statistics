@@ -312,6 +312,7 @@ class Sidebar extends React.Component {
             bgColor,
             rtlActive
         } = this.props
+
         const itemText =
             classes.itemText +
             ' ' +
@@ -351,85 +352,91 @@ class Sidebar extends React.Component {
             })
 
         const currentUser = this.props.currentUser
-        const avatar = getPhotoUrl(currentUser.photoUrl)
-        const nickname = getMention(currentUser.gender) + ' ' + currentUser.nickname
-        var user = (
-            <div className={userWrapperClass}>
-                <div className={photo}>
-                    <img src={avatar} className={classes.avatarImg} alt="..." />
+        const avatar = getPhotoUrl(currentUser)
+        const nickname = getMention(currentUser) + ' ' + currentUser.nickname
+
+        const user = this.props.authenticated
+            ? (
+                <div className={userWrapperClass}>
+                    <div className={photo}>
+                        <img src={avatar} className={classes.avatarImg}
+                             alt="..." />
+                    </div>
+                    <List className={classes.list}>
+                        <ListItem
+                            className={classes.item + ' ' + classes.userItem}>
+                            <NavLink
+                                to={'#'}
+                                className={classes.itemLink + ' ' + classes.userCollapseButton}
+                                onClick={() => this.openCollapse('openAvatar')}
+                            >
+                                <ListItemText
+                                    primary={nickname}
+                                    secondary={
+                                        <b
+                                            className={
+                                                caret +
+                                                ' ' +
+                                                classes.userCaret +
+                                                ' ' +
+                                                (this.state.openAvatar ? classes.caretActive : '')
+                                            }
+                                        />
+                                    }
+                                    disableTypography={true}
+                                    className={itemText + ' ' + classes.userItemText}
+                                />
+                            </NavLink>
+                            <Collapse in={this.state.openAvatar} unmountOnExit>
+                                <List
+                                    className={classes.list + ' ' + classes.collapseList}>
+                                    <ListItem className={classes.collapseItem}>
+                                        <NavLink
+                                            to={`/statistics/players/${currentUser.id}`}
+                                            className={
+                                                classes.itemLink + ' ' + classes.userCollapseLinks
+                                            }
+                                        >
+                                            <Person
+                                                className={classes.collapseItemMini}
+                                                style={{fontSize: '20px'}}
+                                            />
+                                            <ListItemText
+                                                primary={'Мой профиль'}
+                                                disableTypography={true}
+                                                className={collapseItemText}
+                                            />
+                                        </NavLink>
+                                    </ListItem>
+                                    <ListItem className={classes.collapseItem}>
+                                        <NavLink
+                                            to={'/statistics/dashboard'}
+                                            onClick={() => this.props.handleLogout()}
+                                            className={
+                                                classes.itemLink + ' ' + classes.userCollapseLinks
+                                            }
+                                        >
+                                            <ExitToApp
+                                                className={classes.collapseItemMini}
+                                                style={{fontSize: '20px'}}
+                                            />
+                                            <ListItemText
+                                                primary={'Выход'}
+                                                disableTypography={true}
+                                                className={collapseItemText}
+                                            />
+                                        </NavLink>
+                                    </ListItem>
+                                </List>
+                            </Collapse>
+                        </ListItem>
+                    </List>
                 </div>
-                <List className={classes.list}>
-                    <ListItem className={classes.item + ' ' + classes.userItem}>
-                        <NavLink
-                            to={'#'}
-                            className={classes.itemLink + ' ' + classes.userCollapseButton}
-                            onClick={() => this.openCollapse('openAvatar')}
-                        >
-                            <ListItemText
-                                primary={nickname}
-                                secondary={
-                                    <b
-                                        className={
-                                            caret +
-                                            ' ' +
-                                            classes.userCaret +
-                                            ' ' +
-                                            (this.state.openAvatar ? classes.caretActive : '')
-                                        }
-                                    />
-                                }
-                                disableTypography={true}
-                                className={itemText + ' ' + classes.userItemText}
-                            />
-                        </NavLink>
-                        <Collapse in={this.state.openAvatar} unmountOnExit>
-                            <List
-                                className={classes.list + ' ' + classes.collapseList}>
-                                <ListItem className={classes.collapseItem}>
-                                    <NavLink
-                                        to={`/statistics/players/${currentUser.id}`}
-                                        className={
-                                            classes.itemLink + ' ' + classes.userCollapseLinks
-                                        }
-                                    >
-                                        <Person
-                                            className={classes.collapseItemMini}
-                                            style={{fontSize: '20px'}}
-                                        />
-                                        <ListItemText
-                                            primary={'Мой профиль'}
-                                            disableTypography={true}
-                                            className={collapseItemText}
-                                        />
-                                    </NavLink>
-                                </ListItem>
-                                <ListItem className={classes.collapseItem}>
-                                    <NavLink
-                                        to={'/statistics/dashboard'}
-                                        onClick={() => this.props.handleLogout()}
-                                        className={
-                                            classes.itemLink + ' ' + classes.userCollapseLinks
-                                        }
-                                    >
-                                        <ExitToApp
-                                            className={classes.collapseItemMini}
-                                            style={{fontSize: '20px'}}
-                                        />
-                                        <ListItemText
-                                            primary={'Выход'}
-                                            disableTypography={true}
-                                            className={collapseItemText}
-                                        />
-                                    </NavLink>
-                                </ListItem>
-                            </List>
-                        </Collapse>
-                    </ListItem>
-                </List>
-            </div>
-        )
+            )
+            : (<></>)
 
         const adminSideBarLinks =
+            this.props.authenticated &&
             isAdmin(this.props.currentUser)
                 ? [{
                     path: '/manage',
@@ -495,6 +502,7 @@ class Sidebar extends React.Component {
                 [classes.sidebarWrapperWithPerfectScrollbar]:
                 navigator.platform.indexOf('Win') > -1
             })
+
         return (
             <div ref="mainPanel">
                 <Hidden mdUp implementation="css">

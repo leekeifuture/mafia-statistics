@@ -34,7 +34,13 @@ class Statistics extends React.Component {
             bgColor: 'black',
             hasImage: true,
             fixedClasses: 'dropdown',
-            currentUser: null,
+            currentUser: {
+                id: '',
+                nickname: '',
+                gender: '',
+                photoUrl: '',
+                roles: []
+            },
             authenticated: false
         }
         this.resizeFunction = this.resizeFunction.bind(this)
@@ -190,22 +196,21 @@ class Statistics extends React.Component {
             })
         return (
             <div className={classes.wrapper}>
-                {this.state.authenticated
-                    ? <Sidebar
-                        routes={routes}
-                        logoText={'Ничего Личного'}
-                        logo={logo}
-                        image={this.state.image}
-                        handleDrawerToggle={this.handleDrawerToggle}
-                        open={this.state.mobileOpen}
-                        color={this.state.color}
-                        bgColor={this.state.bgColor}
-                        miniActive={this.state.miniActive}
-                        currentUser={this.state.currentUser}
-                        handleLogout={this.handleLogout}
-                        {...rest}
-                    />
-                    : <></>}
+                <Sidebar
+                    routes={routes}
+                    logoText={'Ничего Личного'}
+                    logo={logo}
+                    image={this.state.image}
+                    handleDrawerToggle={this.handleDrawerToggle}
+                    open={this.state.mobileOpen}
+                    color={this.state.color}
+                    bgColor={this.state.bgColor}
+                    miniActive={this.state.miniActive}
+                    authenticated={this.state.authenticated}
+                    currentUser={this.state.currentUser}
+                    handleLogout={this.handleLogout}
+                    {...rest}
+                />
                 <div className={mainPanel} ref="mainPanel">
                     <StatisticsNavbar
                         sidebarMinimize={this.sidebarMinimize.bind(this)}

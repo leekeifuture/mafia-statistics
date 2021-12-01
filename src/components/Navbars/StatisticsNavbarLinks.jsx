@@ -95,7 +95,7 @@ class StatisticsNavbarLinks extends React.Component {
                                 >
                                     <CardAvatar profile style={{marginTop: 0}}>
                                         <img
-                                            src={getPhotoUrl(this.props.currentUser.photoUrl)}
+                                            src={getPhotoUrl(this.props.currentUser)}
                                             alt="..." />
                                     </CardAvatar>
                                     <Hidden mdUp implementation="css">
