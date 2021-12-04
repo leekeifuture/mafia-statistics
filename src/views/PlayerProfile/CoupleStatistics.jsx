@@ -21,13 +21,11 @@ const CoupleStatistics = props => {
         const nickname = row.nicknameOfMafiaOne === props.nickname
             ? row.nicknameOfMafiaTwo
             : row.nicknameOfMafiaOne
-        const percentOfWins =
-            (100 * row.wins / row.games).toFixed(0) + '%'
         return [
             nickname,
             row.games,
             row.wins,
-            percentOfWins
+            row.percentOfWins + '%'
         ]
     })
 

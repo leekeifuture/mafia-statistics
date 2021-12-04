@@ -57,7 +57,7 @@ const PlayerCardComponent = props => {
         : 0
 
     const ratingPoints = props.state.ratingStatistics
-        ? props.state.ratingStatistics.points.toFixed(1)
+        ? props.state.ratingStatistics.points
         : 0
 
     const percentWinning = props.state.rolesHistoryStatistics
