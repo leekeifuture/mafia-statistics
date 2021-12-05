@@ -58,12 +58,24 @@ class Dashboard extends React.Component {
                     ? <LoadingIndicator />
                     : (<div>
                         <GridContainer>
-                            <RecordsComponent
-                                classes={classes}
-                                state={this.state}
-                            />
-                        </GridContainer>
-                        <GridContainer>
+                            <GridItem xs={12} sm={12} md={12} lg={12}>
+                                <h2 style={{
+                                    marginTop: '5vh',
+                                    marginBottom: '30px',
+                                    textAlign: 'center'
+                                }}><b>
+                                    Статистика всего что есть в клубе игры в
+                                    Мафию - Ничего Личного.
+                                </b></h2>
+                                <h5 style={{
+                                    fontSize: '18px',
+                                    textAlign: 'center'
+                                }}>
+                                    Этот сайт даст вам лучшее представление о
+                                    статистике клуба и обо всех игроках
+                                    участвующих в нём.
+                                </h5>
+                            </GridItem>
                             <GridItem xs={12} sm={6} md={6} lg={6}>
                                 <TopGamesTableComponent
                                     classes={classes}
@@ -76,6 +88,12 @@ class Dashboard extends React.Component {
                                     topRatingTable={this.state.topRatingTable}
                                 />
                             </GridItem>
+                        </GridContainer>
+                        <GridContainer>
+                            <RecordsComponent
+                                classes={classes}
+                                state={this.state}
+                            />
                         </GridContainer>
                     </div>)}
             </>
