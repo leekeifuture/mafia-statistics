@@ -189,11 +189,9 @@ class PlayerProfile extends React.Component {
     componentDidMount() {
         trackPromise(
             mafiaStatisticsApi.getPlayerById(this.props.match.params.id)
-                .then(data => {
-                        this.setState(data)
-                    }, error => {
-                        console.error(error)
-                    }
+                .then(
+                    data => this.setState(data),
+                    error => console.error(error)
                 )
         ).then(r => this.setState({isLoading: false}))
     }
@@ -203,7 +201,7 @@ class PlayerProfile extends React.Component {
         return (<>
             {this.state.isLoading
                 ? <LoadingIndicator />
-                : (<div>
+                : (<>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={3}>
                             <PlayerCardComponent
@@ -233,7 +231,7 @@ class PlayerProfile extends React.Component {
                             />)
                             : <></>}
                     </GridContainer>
-                </div>)}
+                </>)}
         </>)
     }
 }

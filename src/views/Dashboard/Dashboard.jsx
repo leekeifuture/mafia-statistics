@@ -42,11 +42,9 @@ class Dashboard extends React.Component {
     componentDidMount() {
         trackPromise(
             mafiaStatisticsApi.getDashboardInfo()
-                .then(data => {
-                        this.setState(data)
-                    }, error => {
-                        console.error(error)
-                    }
+                .then(
+                    data => this.setState(data),
+                    error => console.error(error)
                 )
         ).then(r => this.setState({isLoading: false}))
     }
@@ -54,50 +52,49 @@ class Dashboard extends React.Component {
     render() {
         const {classes} = this.props
         return (<>
-                {this.state.isLoading
-                    ? <LoadingIndicator />
-                    : (<div>
-                        <GridContainer>
-                            <GridItem xs={12} sm={12} md={12} lg={12}>
-                                <h2 style={{
-                                    marginTop: '5vh',
-                                    marginBottom: '30px',
-                                    textAlign: 'center'
-                                }}><b>
-                                    Статистика всего что есть в клубе игры в
-                                    Мафию - Ничего Личного.
-                                </b></h2>
-                                <h5 style={{
-                                    fontSize: '18px',
-                                    textAlign: 'center'
-                                }}>
-                                    Этот сайт даст вам лучшее представление о
-                                    статистике клуба и обо всех игроках
-                                    участвующих в нём.
-                                </h5>
-                            </GridItem>
-                            <GridItem xs={12} sm={6} md={6} lg={6}>
-                                <TopGamesTableComponent
-                                    classes={classes}
-                                    topGamesTable={this.state.topGamesTable}
-                                />
-                            </GridItem>
-                            <GridItem xs={12} sm={6} md={6} lg={6}>
-                                <RatingTableComponent
-                                    classes={classes}
-                                    topRatingTable={this.state.topRatingTable}
-                                />
-                            </GridItem>
-                        </GridContainer>
-                        <GridContainer>
-                            <RecordsComponent
+            {this.state.isLoading
+                ? <LoadingIndicator />
+                : (<>
+                    <GridContainer>
+                        <GridItem xs={12} sm={12} md={12} lg={12}>
+                            <h2 style={{
+                                marginTop: '5vh',
+                                marginBottom: '30px',
+                                textAlign: 'center'
+                            }}><b>
+                                Статистика всего что есть в клубе игры в
+                                Мафию - Ничего Личного.
+                            </b></h2>
+                            <h5 style={{
+                                fontSize: '18px',
+                                textAlign: 'center'
+                            }}>
+                                Этот сайт даст вам лучшее представление о
+                                статистике клуба и обо всех игроках
+                                участвующих в нём.
+                            </h5>
+                        </GridItem>
+                        <GridItem xs={12} sm={6} md={6} lg={6}>
+                            <TopGamesTableComponent
                                 classes={classes}
-                                state={this.state}
+                                topGamesTable={this.state.topGamesTable}
                             />
-                        </GridContainer>
-                    </div>)}
-            </>
-        )
+                        </GridItem>
+                        <GridItem xs={12} sm={6} md={6} lg={6}>
+                            <RatingTableComponent
+                                classes={classes}
+                                topRatingTable={this.state.topRatingTable}
+                            />
+                        </GridItem>
+                    </GridContainer>
+                    <GridContainer>
+                        <RecordsComponent
+                            classes={classes}
+                            state={this.state}
+                        />
+                    </GridContainer>
+                </>)}
+        </>)
     }
 }
 

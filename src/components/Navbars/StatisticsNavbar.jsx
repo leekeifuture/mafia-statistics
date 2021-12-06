@@ -58,6 +58,7 @@ function StatisticsNavbar({...props}) {
                 </div>
                 <Hidden smDown implementation="css">
                     <StatisticsNavbarLinks
+                        pathname={props.location.pathname}
                         authenticated={props.authenticated}
                         currentUser={props.currentUser}
                         handleLogout={props.handleLogout}

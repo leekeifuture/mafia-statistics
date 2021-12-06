@@ -29,11 +29,9 @@ class Manage extends React.Component {
 
     onFileUpload = (event, statisticsType) => {
         mafiaStatisticsApi.uploadNumbersStatistics(this.state[statisticsType], statisticsType)
-            .then(data => {
-                    console.log(data)
-                }, error => {
-                    console.error(error)
-                }
+            .then(
+                data => console.log(data),
+                error => console.error(error)
             )
     }
 

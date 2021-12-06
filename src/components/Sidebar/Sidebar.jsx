@@ -543,8 +543,10 @@ class Sidebar extends React.Component {
                             user={user}
                             headerLinks={
                                 <StatisticsNavbarLinks
+                                    pathname={this.props.location.pathname}
                                     authenticated={this.props.authenticated}
                                     currentUser={this.props.currentUser}
+                                    handleLogout={this.props.handleLogout}
                                 />
                             }
                             links={links}

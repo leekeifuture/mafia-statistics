@@ -17,6 +17,18 @@ import {NavLink} from 'react-router-dom'
 // import { Manager, Target, Popper } from "react-popper";
 
 class StatisticsNavbarLinks extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            searchQuery: ''
+        }
+        this.handleChangeSearchQuery = this.handleChangeSearchQuery.bind(this)
+    }
+
+    handleChangeSearchQuery(event) {
+        this.setState({searchQuery: event.target.value})
+    }
+
     render() {
         const {classes} = this.props
         const searchButton =
@@ -25,29 +37,40 @@ class StatisticsNavbarLinks extends React.Component {
             classes.searchButton
         return (
             <div>
-                <CustomInput
-                    formControlProps={{
-                        className: classes.top + ' ' + classes.search
-                    }}
-                    inputProps={{
-                        placeholder: 'Поиск по игрокам',
-                        inputProps: {
-                            'aria-label': 'Search',
-                            className: classes.searchInput
-                        }
-                    }}
-                />
-                <Button
-                    color="white"
-                    aria-label="edit"
-                    justIcon
-                    round
-                    className={searchButton}
-                >
-                    <Search
-                        className={classes.headerLinksSvg + ' ' + classes.searchIcon}
-                    />
-                </Button>
+                {this.props.pathname !== '/statistics/search/players'
+                    ? (<form style={{display: 'inline'}}>
+                        <CustomInput
+                            formControlProps={{
+                                className: classes.top + ' ' + classes.search
+                            }}
+                            inputProps={{
+                                placeholder: 'Поиск по игрокам',
+                                inputProps: {
+                                    'aria-label': 'Search',
+                                    className: classes.searchInput,
+                                    value: this.state.searchQuery,
+                                    onChange: this.handleChangeSearchQuery
+                                }
+                            }}
+                        />
+                        <NavLink style={{color: 'inherit'}}
+                                 to={`/statistics/search/players?query=${this.state.searchQuery}`}
+                        >
+                            <Button
+                                type="submit"
+                                color="white"
+                                aria-label="edit"
+                                justIcon
+                                round
+                                className={searchButton}
+                            >
+                                <Search
+                                    className={classes.headerLinksSvg + ' ' + classes.searchIcon}
+                                />
+                            </Button>
+                        </NavLink>
+                    </form>)
+                    : (<></>)}
 
                 <NavLink style={{color: 'inherit'}}
                          to={'/statistics/dashboard'}>

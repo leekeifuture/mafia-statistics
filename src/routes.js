@@ -1,7 +1,8 @@
 import Dashboard from './views/Dashboard/Dashboard'
 import LoginPage from './views/LoginPage/LoginPage'
-import Upload from './views/Manage/Manage'
+import Manage from './views/Manage/Manage'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
+import Search from './views/Search/Search'
 
 const dashRoutes = [
     {
@@ -19,7 +20,13 @@ const dashRoutes = [
     {
         path: '/manage',
         name: 'Управление',
-        component: Upload,
+        component: Manage,
+        layout: '/statistics'
+    },
+    {
+        path: '/search/players',
+        name: 'Поиск по игрокам',
+        component: Search,
         layout: '/statistics'
     },
     {

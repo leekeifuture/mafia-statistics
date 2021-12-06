@@ -37,5 +37,11 @@ export const mafiaStatisticsApi = {
     getDashboardInfo() {
         return axiosInstance.get('/statistics/dashboard')
             .then(response => response.data)
+    },
+    searchPlayersByNickname(query) {
+        return axiosInstance.get('/players/search', {
+            params: {query}
+        })
+            .then(response => response.data)
     }
 }
