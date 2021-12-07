@@ -73,6 +73,7 @@ class Dashboard extends React.Component {
                                 статистике клуба и обо всех игроках
                                 участвующих в нём.
                             </h5>
+                            <br />
                         </GridItem>
                         <GridItem xs={12} sm={6} md={6} lg={6}>
                             <TopGamesTableComponent
