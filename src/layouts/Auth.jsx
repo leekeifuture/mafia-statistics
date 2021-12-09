@@ -14,6 +14,10 @@ import Footer from '../components/Footer/Footer'
 
 class Pages extends React.Component {
     componentDidMount() {
+        if (this.props.location.pathname === '/auth') {
+            this.props.history.push('/auth/login')
+        }
+
         document.body.style.overflow = 'unset'
     }
 

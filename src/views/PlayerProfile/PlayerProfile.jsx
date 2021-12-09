@@ -192,7 +192,7 @@ class PlayerProfile extends React.Component {
         }
     }
 
-    componentDidMount() {
+    getPlayer() {
         trackPromise(
             mafiaStatisticsApi.getPlayerById(this.props.match.params.id)
                 .then(
@@ -200,6 +200,17 @@ class PlayerProfile extends React.Component {
                     error => this.props.history.push('/statistics/dashboard')
                 )
         ).then(r => this.setState({isLoading: false}))
+    }
+
+    componentDidMount() {
+        this.getPlayer()
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.url !== this.props.location.pathname) {
+            this.setState({isLoading: true})
+            this.getPlayer()
+        }
     }
 
     render() {

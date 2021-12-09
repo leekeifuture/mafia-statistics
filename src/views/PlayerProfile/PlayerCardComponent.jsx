@@ -87,7 +87,7 @@ const PlayerCardComponent = props => {
                     {props.state.nickname}
                 </h4>
                 <hr />
-                <p style={{color: blackColor}}
+                <span style={{color: blackColor}}
                    className={props.classes.description}>
                     <ul style={{
                         display: 'flex',
@@ -156,7 +156,7 @@ const PlayerCardComponent = props => {
                     </div>
 
                     {getClubCardType(props.state.gamesTotal)}
-                </p>
+                </span>
             </CardBody>
         </Card>
     )

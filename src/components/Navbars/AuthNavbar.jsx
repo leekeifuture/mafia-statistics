@@ -45,7 +45,6 @@ class AuthNavbar extends React.Component {
     }
 
     render() {
-        console.log(this.props.location.pathname)
         const {classes, color, brandText} = this.props
         const appBarClasses = cx({
             [' ' + classes[color]]: color

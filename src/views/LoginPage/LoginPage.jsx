@@ -40,7 +40,7 @@ class LoginPage extends React.Component {
         const {classes} = this.props
         return (
             <div className={classes.container}>
-                <GridContainer justify="center">
+                <GridContainer justifyContent="center">
                     <GridItem xs={12} sm={6} md={4}>
                         <form>
                             <Card login

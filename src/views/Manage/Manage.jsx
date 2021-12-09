@@ -48,9 +48,9 @@ class Manage extends React.Component {
 
         return (
             <GridContainer>
-                {Object.keys(statisticsTypes).map(statisticsType => {
+                {Object.keys(statisticsTypes).map((statisticsType, index) => {
                     return (
-                        <GridContainer>
+                        <GridContainer key={index}>
                             <GridItem>
                                 <div>{statisticsTypes[statisticsType]}</div>
                                 <input
