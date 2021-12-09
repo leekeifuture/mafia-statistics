@@ -121,7 +121,7 @@ const PlayerCardComponent = props => {
                         <span style={{
                             textAlign: 'right'
                         }}>
-                            {percentWinning + ' %'}
+                            {percentWinning + '%'}
                         </span>
                     </span>
 

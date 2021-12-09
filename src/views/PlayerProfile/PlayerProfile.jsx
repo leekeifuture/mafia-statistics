@@ -26,8 +26,14 @@ class PlayerProfile extends React.Component {
             coupleStatistics: [{
                 from_date: '',
                 to_date: '',
-                nicknameOfMafiaOne: '',
-                nicknameOfMafiaTwo: '',
+                couplePlayer: {
+                    id: '',
+                    nickname: '',
+                    gamesTotal: 0,
+                    gender: '',
+                    photoUrl: '',
+                    roles: []
+                },
                 percent_of_wins: 0,
                 games: 0,
                 wins: 0,
@@ -191,7 +197,7 @@ class PlayerProfile extends React.Component {
             mafiaStatisticsApi.getPlayerById(this.props.match.params.id)
                 .then(
                     data => this.setState(data),
-                    error => console.error(error)
+                    error => this.props.history.push('/statistics/dashboard')
                 )
         ).then(r => this.setState({isLoading: false}))
     }
@@ -227,6 +233,7 @@ class PlayerProfile extends React.Component {
                             ? (<CoupleStatistics
                                 classes={classes}
                                 nickname={this.state.nickname}
+                                gender={this.state.gender}
                                 coupleStatistics={this.state.coupleStatistics}
                             />)
                             : <></>}
