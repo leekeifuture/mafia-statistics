@@ -9,6 +9,7 @@ import GridItem from 'components/Grid/GridItem.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {API_BASE_URL, OAUTH2_REDIRECT_URI} from '../../api/mafiaStatisticsApi'
+import Button from '../../components/CustomButtons/Button'
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -47,16 +48,25 @@ class LoginPage extends React.Component {
                                   className={classes[this.state.cardAnimaton]}>
                                 <CardHeader
                                     className={`${classes.cardHeader} ${classes.textCenter}`}
-                                    color="rose"
+                                    color="primary"
                                 >
                                     <h4 className={classes.cardTitle}>
                                         Авторизация через ВК
                                     </h4>
                                 </CardHeader>
                                 <CardBody style={{textAlign: 'center'}}>
-                                    <a href={VK_AUTH_URL}>
-                                        Вход через ВК
-                                    </a>
+                                    <div>
+                                        Пока что авторизация используется только
+                                        в административных целях. Авторизоваться
+                                        можно при помощи ВК. Приложение запросит
+                                        разрешение на просмотр публичной
+                                        информации, после чего вы будете
+                                        перенаправлены обратно на этот сайт.
+                                    </div>
+                                    <br />
+                                    <Button href={VK_AUTH_URL} color="success">
+                                        Войти
+                                    </Button>
                                 </CardBody>
                             </Card>
                         </form>
