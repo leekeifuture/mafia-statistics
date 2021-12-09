@@ -1,10 +1,9 @@
-// @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
+import error from 'assets/img/error.jpg'
 import login from 'assets/img/login.jpeg'
 
 import pagesStyle
     from 'assets/jss/material-dashboard-pro-react/layouts/authStyle.jsx'
-// core components
 import AuthNavbar from 'components/Navbars/AuthNavbar.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -16,6 +15,14 @@ import Footer from '../components/Footer/Footer'
 class Pages extends React.Component {
     componentDidMount() {
         document.body.style.overflow = 'unset'
+    }
+
+    getBgImage = () => {
+        if (window.location.pathname.indexOf('/auth/login') !== -1) {
+            return login
+        } else if (window.location.pathname.indexOf('/auth/error') !== -1) {
+            return error
+        }
     }
 
     getRoutes = routes => {
@@ -64,7 +71,7 @@ class Pages extends React.Component {
                 <div className={classes.wrapper} ref="wrapper">
                     <div
                         className={classes.fullPage}
-                        style={{backgroundImage: 'url(' + login + ')'}}
+                        style={{backgroundImage: 'url(' + this.getBgImage() + ')'}}
                     >
                         <Switch>{this.getRoutes(routes)}</Switch>
                         <Footer white />

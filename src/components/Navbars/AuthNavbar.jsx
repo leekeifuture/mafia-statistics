@@ -35,7 +35,7 @@ class AuthNavbar extends React.Component {
 
     // verifies if routeName is the one active (in browser input)
     activeRoute(routeName) {
-        return this.props.location.pathname.indexOf(routeName) > -1 ? true : false
+        return this.props.location.pathname.indexOf(routeName) > -1
     }
 
     componentDidUpdate(e) {
@@ -45,6 +45,7 @@ class AuthNavbar extends React.Component {
     }
 
     render() {
+        console.log(this.props.location.pathname)
         const {classes, color, brandText} = this.props
         const appBarClasses = cx({
             [' ' + classes[color]]: color
@@ -62,21 +63,24 @@ class AuthNavbar extends React.Component {
                         />
                     </NavLink>
                 </ListItem>
-                <ListItem className={classes.listItem}>
-                    <NavLink
-                        to={'/auth/login'}
-                        className={cx(classes.navLink, {
-                            [classes.navLinkActive]: this.activeRoute('/auth/login')
-                        })}
-                    >
-                        <Fingerprint className={classes.listItemIcon} />
-                        <ListItemText
-                            primary={'Авторизация'}
-                            disableTypography={true}
-                            className={classes.listItemText}
-                        />
-                    </NavLink>
-                </ListItem>
+                {this.props.location.pathname !== '/auth/error'
+                    ? (<ListItem className={classes.listItem}>
+                        <NavLink
+                            to={'/auth/login'}
+                            className={cx(classes.navLink, {
+                                [classes.navLinkActive]: this.activeRoute('/auth/login')
+                            })}
+                        >
+                            <Fingerprint className={classes.listItemIcon} />
+                            <ListItemText
+                                primary={'Авторизация'}
+                                disableTypography={true}
+                                className={classes.listItemText}
+                            />
+                        </NavLink>
+                    </ListItem>)
+                    : (<></>)}
+
             </List>
         )
         return (
@@ -95,7 +99,7 @@ class AuthNavbar extends React.Component {
                         <div className={classes.flex}>
                             <Button href="" className={classes.title}
                                     color="transparent">
-                                Авторизация
+                                {brandText}
                             </Button>
                         </div>
                     </Hidden>

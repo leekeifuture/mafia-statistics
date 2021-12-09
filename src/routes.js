@@ -1,4 +1,5 @@
 import Dashboard from './views/Dashboard/Dashboard'
+import ErrorPage from './views/ErrorPage/ErrorPage'
 import LoginPage from './views/LoginPage/LoginPage'
 import Manage from './views/Manage/Manage'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
@@ -33,6 +34,12 @@ const dashRoutes = [
         path: '/login',
         name: 'Авторизация',
         component: LoginPage,
+        layout: '/auth'
+    },
+    {
+        path: '/error',
+        name: 'Ошибка',
+        component: ErrorPage,
         layout: '/auth'
     }
 ]

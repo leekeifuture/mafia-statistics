@@ -44,7 +44,7 @@ class Dashboard extends React.Component {
             mafiaStatisticsApi.getDashboardInfo()
                 .then(
                     data => this.setState(data),
-                    error => console.error(error)
+                    error => this.props.history.push('/auth/error')
                 )
         ).then(r => this.setState({isLoading: false}))
     }
