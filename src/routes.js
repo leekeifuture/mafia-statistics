@@ -7,7 +7,7 @@ import Search from './views/Search/Search'
 const dashRoutes = [
     {
         path: '/dashboard',
-        name: 'Статистика клуба игры в мафию - Ничего Личного',
+        name: 'Статистика Ничего Личного',
         component: Dashboard,
         layout: '/statistics'
     },
