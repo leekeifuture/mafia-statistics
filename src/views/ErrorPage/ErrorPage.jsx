@@ -10,10 +10,8 @@ import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
 
 class ErrorPage extends React.Component {
     componentDidMount() {
-        setInterval(() => mafiaStatisticsApi.getDashboardInfo()
-                .then(data => this.props.history.push('/statistics/dashboard')),
-            60000)
-
+        mafiaStatisticsApi.getDashboardInfo()
+            .then(data => this.props.history.push('/statistics/dashboard'))
     }
 
     render() {
