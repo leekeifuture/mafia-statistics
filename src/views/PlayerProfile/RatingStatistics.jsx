@@ -21,7 +21,6 @@ const RatingStatistics = props => {
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
                         Статистика игрока
-                        <small> - история из рейтинга</small>
                     </h4>
                 </CardHeader>
                 <CardBody>

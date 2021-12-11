@@ -7,17 +7,11 @@ import CardIcon from '../../../components/Card/CardIcon'
 import Clearfix from '../../../components/Clearfix/Clearfix'
 import GridContainer from '../../../components/Grid/GridContainer'
 import GridItem from '../../../components/Grid/GridItem'
-import {getSubtextDate} from '../../../util/util'
 import RolesLost from './RolesLost'
 import RolesPlayed from './RolesPlayed'
 import RolesWon from './RolesWon'
 
 const SerialityStatistics = props => {
-    const serialityStatisticsSubtext = getSubtextDate(
-        props.serialityStatistics.fromDate,
-        props.serialityStatistics.toDate
-    )
-
     return (
         <GridItem xs={12} sm={12} md={9}>
             <Card>
@@ -27,7 +21,6 @@ const SerialityStatistics = props => {
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
                         Серийность
-                        <small> - {serialityStatisticsSubtext}</small>
                     </h4>
                 </CardHeader>
                 <CardBody>

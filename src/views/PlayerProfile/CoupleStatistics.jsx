@@ -37,6 +37,10 @@ const CoupleStatistics = props => {
     )
 
     const option = {
+        title: {
+            subtext: coupleStatisticsSubtext,
+            left: 'center'
+        },
         tooltip: {
             confine: true,
             trigger: 'item',
@@ -110,7 +114,6 @@ const CoupleStatistics = props => {
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
                         Лучшие мафиозные пары
-                        <small> - {coupleStatisticsSubtext}</small>
                     </h4>
                 </CardHeader>
                 <CardBody>
