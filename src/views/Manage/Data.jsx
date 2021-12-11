@@ -6,7 +6,7 @@ import validationFormsStyle
 import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 
-class Manage extends React.Component {
+class Data extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -28,7 +28,7 @@ class Manage extends React.Component {
     }
 
     onFileUpload = (event, statisticsType) => {
-        mafiaStatisticsApi.uploadNumbersStatistics(this.state[statisticsType], statisticsType)
+        mafiaStatisticsApi.uploadStatistics(this.state[statisticsType], statisticsType)
             .then(
                 data => console.log(data),
                 error => console.error(error)
@@ -73,4 +73,4 @@ class Manage extends React.Component {
     }
 }
 
-export default withStyles(validationFormsStyle)(Manage)
+export default withStyles(validationFormsStyle)(Data)

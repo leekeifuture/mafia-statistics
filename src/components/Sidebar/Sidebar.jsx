@@ -7,7 +7,8 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-import {ExitToApp, Settings} from '@material-ui/icons'
+import {BarChart, ExitToApp, Settings} from '@material-ui/icons'
+import Group from '@material-ui/icons/Group'
 import Person from '@material-ui/icons/Person'
 
 import sidebarStyle
@@ -22,7 +23,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import {getMention, getPhotoUrl, isAdmin} from '../../util/util'
 import LoginPage from '../../views/LoginPage/LoginPage'
-import Upload from '../../views/Manage/Manage'
 
 var ps
 
@@ -458,11 +458,24 @@ class Sidebar extends React.Component {
             this.props.authenticated &&
             isAdmin(this.props.currentUser)
                 ? [{
-                    path: '/manage',
+                    collapse: true,
                     name: 'Управление',
-                    component: Upload,
                     icon: Settings,
-                    layout: '/statistics'
+                    state: 'componentsCollapse',
+                    views: [
+                        {
+                            path: '/manage/players',
+                            name: 'Игроки',
+                            icon: Group,
+                            layout: '/statistics'
+                        },
+                        {
+                            path: '/manage/data',
+                            name: 'Статистика',
+                            icon: BarChart,
+                            layout: '/statistics'
+                        }
+                    ]
                 }]
                 : []
 
