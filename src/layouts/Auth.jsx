@@ -14,7 +14,7 @@ import Footer from '../components/Footer/Footer'
 
 class Pages extends React.Component {
     componentDidMount() {
-        if (this.props.location.pathname === '/auth') {
+        if (this.props.location.pathname === '/auth' || this.getBgImage() == null) {
             this.props.history.push('/auth/login')
         }
 
