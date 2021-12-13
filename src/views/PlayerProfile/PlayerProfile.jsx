@@ -11,7 +11,7 @@ import LoadingIndicator
 import CoupleStatistics from './CoupleStatistics'
 import PlayerCardComponent from './PlayerCardComponent'
 import RatingStatistics from './RatingStatistics'
-import SerialityStatistics from './seriality/SerialityStatistics'
+import SerialityStatistics from './SerialityStatistics'
 
 class PlayerProfile extends React.Component {
     constructor(props) {

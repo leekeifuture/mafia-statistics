@@ -88,7 +88,7 @@ const PlayerCardComponent = props => {
                 </h4>
                 <hr />
                 <span style={{color: blackColor}}
-                   className={props.classes.description}>
+                      className={props.classes.description}>
                     <ul style={{
                         display: 'flex',
                         alignItems: 'center',
