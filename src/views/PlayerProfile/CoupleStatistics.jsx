@@ -26,11 +26,6 @@ const CoupleStatistics = props => {
         children
     }
 
-    const minDate = props.coupleStatistics
-        .map(row => row.fromDate).sort((a, b) => new Date(a) - new Date(b))
-    const maxDate = props.coupleStatistics
-        .map(row => row.toDate).sort((a, b) => new Date(a) - new Date(b))
-
     const option = {
         title: {
             left: 'center'

@@ -24,6 +24,10 @@ const SerialityStatistics = props => {
         }
     }
     const option = {
+        title: {
+            text: '',
+            left: 'center'
+        },
         tooltip: {
             confine: true,
             trigger: 'axis',
@@ -35,7 +39,7 @@ const SerialityStatistics = props => {
             {
                 type: 'category',
                 axisTick: {show: false},
-                data: []
+                data: ['']
             }
         ],
         yAxis: [
@@ -89,21 +93,21 @@ const SerialityStatistics = props => {
     }
 
     let rolesPlayedOption = JSON.parse(JSON.stringify(option))
-    rolesPlayedOption.xAxis[0].data = ['Подряд сыгранных ролей']
+    rolesPlayedOption.title.text = 'Подряд сыгранных ролей'
     rolesPlayedOption.series[0].data = [props.serialityStatistics.successivelyPlayedByRed]
     rolesPlayedOption.series[1].data = [props.serialityStatistics.successivelyPlayedByBlack]
     rolesPlayedOption.series[2].data = [props.serialityStatistics.successivelyPlayedBySheriff]
     rolesPlayedOption.series[3].data = [props.serialityStatistics.successivelyPlayedByDon]
 
     let rolesWonOption = JSON.parse(JSON.stringify(option))
-    rolesWonOption.xAxis[0].data = ['Подряд выигранных ролей']
+    rolesWonOption.title.text = 'Подряд выигранных ролей'
     rolesWonOption.series[0].data = [props.serialityStatistics.successivelyWonByRed]
     rolesWonOption.series[1].data = [props.serialityStatistics.successivelyWonByBlack]
     rolesWonOption.series[2].data = [props.serialityStatistics.successivelyWonBySheriff]
     rolesWonOption.series[3].data = [props.serialityStatistics.successivelyWonByDon]
 
     let rolesLostOption = JSON.parse(JSON.stringify(option))
-    rolesLostOption.xAxis[0].data = ['Подряд проигранных ролей']
+    rolesLostOption.title.text = 'Подряд проигранных ролей'
     rolesLostOption.series[0].data = [props.serialityStatistics.successivelyLostByRed]
     rolesLostOption.series[1].data = [props.serialityStatistics.successivelyLostByBlack]
     rolesLostOption.series[2].data = [props.serialityStatistics.successivelyLostBySheriff]
