@@ -28,6 +28,7 @@ const CoupleStatistics = props => {
 
     const option = {
         title: {
+            text: 'Лучшие мафиозные пары',
             left: 'center'
         },
         tooltip: {
@@ -102,7 +103,7 @@ const CoupleStatistics = props => {
                         <SupervisorAccount />
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
-                        Лучшие мафиозные пары
+                        Парная игра
                     </h4>
                 </CardHeader>
                 <CardBody>
