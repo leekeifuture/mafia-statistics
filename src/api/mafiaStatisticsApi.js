@@ -1,7 +1,7 @@
 import * as axios from 'axios'
 
 export const ACCESS_TOKEN = 'accessToken'
-export const API_BASE_URL = 'http://api.mafia-brest.by'
+export const API_BASE_URL = 'http://api.statistics.mafia-brest.by'
 export const OAUTH2_REDIRECT_URI = 'http://statistics.mafia-brest.by/oauth2/redirect'
 
 const axiosInstance = axios.create({
