@@ -8,7 +8,7 @@ import CardIcon from '../../components/Card/CardIcon'
 import Clearfix from '../../components/Clearfix/Clearfix'
 import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
-import {getMention, getSubtextDate} from '../../util/util'
+import {getMention} from '../../util/util'
 
 const CoupleStatistics = props => {
     const children = props.coupleStatistics.map(row => ({
@@ -31,14 +31,8 @@ const CoupleStatistics = props => {
     const maxDate = props.coupleStatistics
         .map(row => row.toDate).sort((a, b) => new Date(a) - new Date(b))
 
-    const coupleStatisticsSubtext = getSubtextDate(
-        minDate[0],
-        maxDate[maxDate.length - 1]
-    )
-
     const option = {
         title: {
-            subtext: coupleStatisticsSubtext,
             left: 'center'
         },
         tooltip: {

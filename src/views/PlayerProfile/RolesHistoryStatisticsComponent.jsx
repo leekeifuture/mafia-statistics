@@ -1,18 +1,11 @@
 import ReactEcharts from 'echarts-for-react'
 import React from 'react'
 import GridItem from '../../components/Grid/GridItem'
-import {getSubtextDate} from '../../util/util'
 
 const RolesHistoryStatisticsComponent = (props) => {
-    const rolesHistoryStatisticsSubtext = getSubtextDate(
-        props.rolesHistoryStatistics.fromDate,
-        props.rolesHistoryStatistics.toDate
-    )
-
     const option = {
         title: {
             text: 'История вытянутых карт',
-            subtext: rolesHistoryStatisticsSubtext,
             left: 'center'
         },
         tooltip: {
