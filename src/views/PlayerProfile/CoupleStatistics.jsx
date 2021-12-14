@@ -103,7 +103,7 @@ const CoupleStatistics = props => {
                         <SupervisorAccount />
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
-                        Парная игра
+                        Командная игра
                     </h4>
                 </CardHeader>
                 <CardBody>
