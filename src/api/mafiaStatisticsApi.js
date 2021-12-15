@@ -1,8 +1,8 @@
 import * as axios from 'axios'
 
-export const ACCESS_TOKEN = 'accessToken'
-export const API_BASE_URL = 'https://api.statistics.mafia-brest.by'
-export const OAUTH2_REDIRECT_URI = 'http://statistics.mafia-brest.by/oauth2/redirect'
+export const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+export const OAUTH2_REDIRECT_URI = process.env.REACT_APP_OAUTH2_REDIRECT_URI
 
 const axiosInstance = axios.create({
     baseURL: API_BASE_URL,
@@ -21,7 +21,7 @@ axiosInstance.interceptors.request.use(config => {
 })
 
 export const mafiaStatisticsApi = {
-    uploadNumbersStatistics(file, statisticsType) {
+    uploadStatistics(file, statisticsType) {
         const formData = new FormData()
         formData.append('file', file, file.name)
 
