@@ -19,7 +19,12 @@ import {trackPromise} from 'react-promise-tracker'
 import {Route, Switch} from 'react-router-dom'
 
 import routes from 'routes.js'
-import {ACCESS_TOKEN, mafiaStatisticsApi} from '../api/mafiaStatisticsApi'
+import {
+    ACCESS_TOKEN,
+    mafiaStatisticsApi,
+    utilApi
+} from '../api/mafiaStatisticsApi'
+import defaultAvatar from '../assets/img/default-avatar.png'
 import Footer from '../components/Footer/Footer'
 import LoadingIndicator from '../components/LoadingIndicator/LoadingIndicator'
 
@@ -55,6 +60,18 @@ class Statistics extends React.Component {
         trackPromise(
             mafiaStatisticsApi.getPlayerById('me')
                 .then(data => {
+                        utilApi.isImageExists(data.photoUrl).then(
+                            data => {
+                            }, error => {
+                                this.setState({
+                                    currentUser: {
+                                        ...this.state.currentUser,
+                                        photoUrl: defaultAvatar
+                                    }
+                                })
+                            }
+                        )
+
                         this.setState({
                             currentUser: data,
                             authenticated: true

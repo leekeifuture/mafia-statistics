@@ -5,7 +5,8 @@ import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
 import {trackPromise} from 'react-promise-tracker'
-import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
+import {mafiaStatisticsApi, utilApi} from '../../api/mafiaStatisticsApi'
+import defaultAvatar from '../../assets/img/default-avatar.png'
 import LoadingIndicator
     from '../../components/LoadingIndicator/LoadingIndicator'
 import CoupleStatistics from './CoupleStatistics'
@@ -21,7 +22,7 @@ class PlayerProfile extends React.Component {
             nickname: '',
             gamesTotal: 0,
             gender: '',
-            photoUrl: '',
+            photoUrl: defaultAvatar,
             roles: [],
             coupleStatistics: [{
                 from_date: '',
@@ -196,7 +197,16 @@ class PlayerProfile extends React.Component {
         trackPromise(
             mafiaStatisticsApi.getPlayerById(this.props.match.params.id)
                 .then(
-                    data => this.setState(data),
+                    data => {
+                        utilApi.isImageExists(data.photoUrl).then(
+                            data => {
+                            }, error => {
+                                this.setState({photoUrl: defaultAvatar})
+                            }
+                        )
+
+                        this.setState(data)
+                    },
                     error => this.props.history.push('/statistics/dashboard')
                 )
         ).then(r => this.setState({isLoading: false}))
