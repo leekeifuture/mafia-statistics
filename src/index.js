@@ -4,11 +4,14 @@ import {createBrowserHistory} from 'history'
 import AuthLayout from 'layouts/Auth.jsx'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ReactGA from 'react-ga'
 import {Redirect, Route, Router, Switch} from 'react-router-dom'
 import OAuth2RedirectHandler from './components/OAuth2/OAuth2RedirectHandler'
 import Statistics from './layouts/Statistics'
 
 const hist = createBrowserHistory()
+
+ReactGA.initialize('UA-215581936-1')
 
 ReactDOM.render(
     <Router history={hist}>

@@ -15,6 +15,7 @@ import PerfectScrollbar from 'perfect-scrollbar'
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import PropTypes from 'prop-types'
 import React from 'react'
+import ReactGA from 'react-ga'
 import {trackPromise} from 'react-promise-tracker'
 import {Route, Switch} from 'react-router-dom'
 
@@ -57,6 +58,8 @@ class Statistics extends React.Component {
     }
 
     componentDidMount() {
+        ReactGA.pageview(window.location.pathname)
+
         trackPromise(
             mafiaStatisticsApi.getPlayerById('me')
                 .then(data => {
@@ -102,6 +105,8 @@ class Statistics extends React.Component {
     }
 
     componentDidUpdate(e) {
+        ReactGA.pageview(e.history.location.pathname)
+
         if (e.history.location.pathname !== e.location.pathname) {
             this.refs.mainPanel.scrollTop = 0
             if (this.state.mobileOpen) {
