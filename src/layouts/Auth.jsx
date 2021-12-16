@@ -11,11 +11,25 @@ import {Route, Switch} from 'react-router-dom'
 
 import routes from 'routes.js'
 import Footer from '../components/Footer/Footer'
+import SmallNotification from '../components/views/Components/SmallNotification'
 import {trackMetriks} from '../util/util'
 
-class Pages extends React.Component {
+
+class Auth extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            smallNotification: false
+        }
+        this.handleClose = this.handleClose.bind(this)
+    }
+
     componentDidMount() {
         trackMetriks(window.location.pathname)
+
+        if (this.props.location.state && this.props.location.state.error) {
+            this.setState({smallNotification: true})
+        }
 
         if (this.props.location.pathname === '/auth' || this.getBgImage() == null) {
             this.props.history.push('/auth/login')
@@ -26,6 +40,12 @@ class Pages extends React.Component {
 
     componentDidUpdate(e) {
         trackMetriks(e.history.location.pathname)
+    }
+
+    handleClose(modal) {
+        var x = []
+        x[modal] = false
+        this.setState(x)
     }
 
     getBgImage = () => {
@@ -88,13 +108,27 @@ class Pages extends React.Component {
                         <Footer white />
                     </div>
                 </div>
+                <SmallNotification
+                    handleClose={this.handleClose}
+                    smallNotification={this.state.smallNotification}
+                    title={'Пользователь не найден :('}
+                    description={(<>
+                        По вопросам авторизации можно обратиться к
+                        {' '}
+                        <a target="_blank"
+                           rel="noopener noreferrer"
+                           href="https://vk.com/id142419761">
+                            {'администратору'}
+                        </a>
+                    </>)}
+                />
             </div>
         )
     }
 }
 
-Pages.propTypes = {
+Auth.propTypes = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(pagesStyle)(Pages)
+export default withStyles(pagesStyle)(Auth)

@@ -29,7 +29,7 @@ class OAuth2RedirectHandler extends React.Component {
                 pathname: '/auth/login',
                 state: {
                     from: this.props.location,
-                    error: error
+                    error
                 }
             }} />
         }
