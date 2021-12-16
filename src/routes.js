@@ -33,7 +33,7 @@ const dashRoutes = [
     },
     {
         path: '/search/players',
-        name: 'Поиск по игрокам',
+        name: 'Поиск',
         component: Search,
         layout: '/statistics'
     },

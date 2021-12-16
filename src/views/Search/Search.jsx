@@ -11,6 +11,7 @@ import {trackPromise} from 'react-promise-tracker'
 import {NavLink} from 'react-router-dom'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
 import CustomInput from '../../components/CustomInput/CustomInput'
+import Heading from '../../components/Heading/Heading'
 import LoadingIndicator
     from '../../components/LoadingIndicator/LoadingIndicator'
 import Table from '../../components/Table/Table'
@@ -86,48 +87,60 @@ class Search extends React.Component {
             ])
         })
 
-        return (<GridContainer>
-            <GridItem xs={12}>
-                <Card>
-                    <CardBody>
-                        <CustomInput
-                            labelText="Имя игрока"
-                            formControlProps={{
-                                fullWidth: true
-                            }}
-                            inputProps={{
-                                value: this.state.searchQuery,
-                                onChange: this.handleChangeSearchQuery
-                            }}
-                        />
-                    </CardBody>
-                </Card>
-                {this.state.isLoading
-                    ? <LoadingIndicator />
-                    : (<>
-                        {tableData.length !== 0
-                            ? (<Card>
-                                <CardBody>
-                                    <Table
-                                        tableHeaderColor="primary"
-                                        tableHead={['Никнейм', 'Кол-во игр']}
-                                        tableData={tableData}
-                                        coloredColls={[3]}
-                                        colorsColls={['primary']}
-                                    />
-                                </CardBody>
-                            </Card>)
-                            : (<h2 style={{
-                                marginTop: '5vh',
-                                marginBottom: '30px',
-                                textAlign: 'center'
-                            }}>
-                                Никого не найдено
-                            </h2>)}
-                    </>)
+        return (<>
+            <Heading
+                title="Поиск по игрокам"
+                textAlign="center"
+                category={
+                    <span>
+                        Начинайте вводить имя игрока и результаты
+                        автоматически появятся на странице
+                    </span>
                 }
-            </GridItem>
-        </GridContainer>)
+            />
+            <GridContainer>
+                <GridItem xs={12}>
+                    <Card>
+                        <CardBody>
+                            <CustomInput
+                                labelText="Имя игрока"
+                                formControlProps={{
+                                    fullWidth: true
+                                }}
+                                inputProps={{
+                                    value: this.state.searchQuery,
+                                    onChange: this.handleChangeSearchQuery
+                                }}
+                            />
+                        </CardBody>
+                    </Card>
+                    {this.state.isLoading
+                        ? <LoadingIndicator />
+                        : (<>
+                            {tableData.length !== 0
+                                ? (<Card>
+                                    <CardBody>
+                                        <Table
+                                            tableHeaderColor="primary"
+                                            tableHead={['Никнейм', 'Кол-во игр']}
+                                            tableData={tableData}
+                                            coloredColls={[3]}
+                                            colorsColls={['primary']}
+                                        />
+                                    </CardBody>
+                                </Card>)
+                                : (<h2 style={{
+                                    marginTop: '5vh',
+                                    marginBottom: '30px',
+                                    textAlign: 'center'
+                                }}>
+                                    Никого не найдено
+                                </h2>)}
+                        </>)
+                    }
+                </GridItem>
+            </GridContainer>
+        </>)
     }
 }
 
