@@ -24,19 +24,23 @@ const RolesHistoryStatisticsComponent = (props) => {
                 data: [
                     {
                         value: props.rolesHistoryStatistics.gamesBlack,
-                        name: 'Мафия'
+                        name: 'Мафия',
+                        label: {formatter: '{c}'}
                     },
                     {
                         value: props.rolesHistoryStatistics.gamesSheriff,
-                        name: 'Шериф'
+                        name: 'Шериф',
+                        label: {formatter: '{c}'}
                     },
                     {
                         value: props.rolesHistoryStatistics.gamesDon,
-                        name: 'Дон'
+                        name: 'Дон',
+                        label: {formatter: '{c}'}
                     },
                     {
                         value: props.rolesHistoryStatistics.gamesRed,
-                        name: 'Мирный'
+                        name: 'Мирный',
+                        label: {formatter: '{c}'}
                     }
                 ],
                 emphasis: {

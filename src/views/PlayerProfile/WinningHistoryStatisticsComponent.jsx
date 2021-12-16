@@ -24,19 +24,23 @@ const WinningHistoryStatisticsComponent = (props) => {
                 data: [
                     {
                         value: props.ratingStatistics.gamesBlack,
-                        name: 'Мафия'
+                        name: 'Мафия',
+                        label: {formatter: '{c}'}
                     },
                     {
                         value: props.ratingStatistics.gamesSheriff,
-                        name: 'Шериф'
+                        name: 'Шериф',
+                        label: {formatter: '{c}'}
                     },
                     {
                         value: props.ratingStatistics.gamesDon,
-                        name: 'Дон'
+                        name: 'Дон',
+                        label: {formatter: '{c}'}
                     },
                     {
                         value: props.ratingStatistics.gamesRed,
-                        name: 'Мирный'
+                        name: 'Мирный',
+                        label: {formatter: '{c}'}
                     }
                 ],
                 emphasis: {
