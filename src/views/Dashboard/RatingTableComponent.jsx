@@ -22,7 +22,7 @@ const RatingTableComponent = (props) => {
         const mention = getMention(player)
 
         const ratingPoints = player.points
-            ? player.points.toFixed(1)
+            ? player.points
             : 0
 
         tableData.push([
