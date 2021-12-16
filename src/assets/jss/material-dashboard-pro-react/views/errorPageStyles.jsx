@@ -17,7 +17,6 @@ const errorPageStyles = theme => ({
         ...title,
         fontSize: '13.7em',
         color: whiteColor,
-        letterSpacing: '14px',
         fontWeight: '700'
     },
     subTitle: {
