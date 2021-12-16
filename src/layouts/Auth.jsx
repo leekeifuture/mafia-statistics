@@ -7,15 +7,15 @@ import pagesStyle
 import AuthNavbar from 'components/Navbars/AuthNavbar.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ReactGA from 'react-ga'
 import {Route, Switch} from 'react-router-dom'
 
 import routes from 'routes.js'
 import Footer from '../components/Footer/Footer'
+import {trackMetriks} from '../util/util'
 
 class Pages extends React.Component {
     componentDidMount() {
-        ReactGA.pageview(window.location.pathname)
+        trackMetriks(window.location.pathname)
 
         if (this.props.location.pathname === '/auth' || this.getBgImage() == null) {
             this.props.history.push('/auth/login')
@@ -25,7 +25,7 @@ class Pages extends React.Component {
     }
 
     componentDidUpdate(e) {
-        ReactGA.pageview(e.history.location.pathname)
+        trackMetriks(e.history.location.pathname)
     }
 
     getBgImage = () => {

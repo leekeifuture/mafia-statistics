@@ -15,7 +15,6 @@ import PerfectScrollbar from 'perfect-scrollbar'
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ReactGA from 'react-ga'
 import {trackPromise} from 'react-promise-tracker'
 import {Route, Switch} from 'react-router-dom'
 
@@ -28,6 +27,7 @@ import {
 import defaultAvatar from '../assets/img/default-avatar.png'
 import Footer from '../components/Footer/Footer'
 import LoadingIndicator from '../components/LoadingIndicator/LoadingIndicator'
+import {trackMetriks} from '../util/util'
 
 var ps
 
@@ -58,7 +58,7 @@ class Statistics extends React.Component {
     }
 
     componentDidMount() {
-        ReactGA.pageview(window.location.pathname)
+        trackMetriks(window.location.pathname)
 
         trackPromise(
             mafiaStatisticsApi.getPlayerById('me')
@@ -105,7 +105,7 @@ class Statistics extends React.Component {
     }
 
     componentDidUpdate(e) {
-        ReactGA.pageview(e.history.location.pathname)
+        trackMetriks(e.history.location.pathname)
 
         if (e.history.location.pathname !== e.location.pathname) {
             this.refs.mainPanel.scrollTop = 0

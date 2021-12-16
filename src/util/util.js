@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga'
+import ym from 'react-yandex-metrika'
 import defaultAvatar from '../assets/img/default-avatar.png'
 
 export const getSubtextDate = (fromDate, toDate) => {
@@ -51,4 +53,9 @@ export const getPhotoUrl = (user) => {
 
 export const isAdmin = (user) => {
     return user.roles.includes('ADMIN')
+}
+
+export const trackMetriks = (pathname) => {
+    ReactGA.pageview(pathname) // Google Analytics
+    ym('hit', pathname) // Yandex Metrica
 }
