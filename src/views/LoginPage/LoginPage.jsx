@@ -8,7 +8,7 @@ import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {API_BASE_URL, OAUTH2_REDIRECT_URI} from '../../api/mafiaStatisticsApi'
+import {APP_PROPERTIES} from '../../api/mafiaStatisticsApi'
 import Button from '../../components/CustomButtons/Button'
 
 class LoginPage extends React.Component {
@@ -36,7 +36,9 @@ class LoginPage extends React.Component {
     }
 
     render() {
-        const VK_AUTH_URL = API_BASE_URL + '/oauth2/authorize/vk?redirect_uri=' + OAUTH2_REDIRECT_URI
+        const VK_AUTH_URL =
+            APP_PROPERTIES.API_BASE_URL + '/oauth2/authorize/vk?redirect_uri=' +
+            APP_PROPERTIES.OAUTH2_REDIRECT_URI
 
         const {classes} = this.props
         return (

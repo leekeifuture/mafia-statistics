@@ -1,8 +1,22 @@
 import * as axios from 'axios'
 
 export const ACCESS_TOKEN = 'accessToken'
-export const API_BASE_URL = 'https://api.statistics.mafia-brest.by'
-export const OAUTH2_REDIRECT_URI = 'http://statistics.mafia-brest.by/oauth2/redirect'
+
+let API_BASE_URL
+let OAUTH2_REDIRECT_URI
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+    OAUTH2_REDIRECT_URI = process.env.REACT_APP_OAUTH2_REDIRECT_URI
+} else if (process.env.NODE_ENV === 'local') {
+    API_BASE_URL = 'http://localhost:8080'
+    OAUTH2_REDIRECT_URI = 'http://localhost:3000/oauth2/redirect'
+} else {
+    API_BASE_URL = 'https://api.statistics.mafia-brest.by'
+    OAUTH2_REDIRECT_URI = 'http://statistics.mafia-brest.by/oauth2/redirect'
+}
+
+export const APP_PROPERTIES = {API_BASE_URL, OAUTH2_REDIRECT_URI}
 
 const axiosInstance = axios.create({
     baseURL: API_BASE_URL,
