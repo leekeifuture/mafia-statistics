@@ -10,8 +10,6 @@ import notificationsStyle
     from '../../../assets/jss/material-dashboard-pro-react/views/notificationsStyle'
 import Button from '../../CustomButtons/Button'
 
-const Transition = props => <Slide direction="down" {...props} />
-
 const SmallNotification = (props) => {
     const {classes} = props
     return (
@@ -21,7 +19,7 @@ const SmallNotification = (props) => {
                 paper: classes.modal + ' ' + classes.modalSmall
             }}
             open={props.smallNotification}
-            TransitionComponent={Transition}
+            TransitionComponent={Slide}
             keepMounted
             aria-labelledby="small-modal-slide-title"
             aria-describedby="small-modal-slide-description"
