@@ -17,7 +17,7 @@ import cx from 'classnames'
 // core components
 import StatisticsNavbarLinks from 'components/Navbars/StatisticsNavbarLinks.jsx'
 // javascript plugin used to create scrollbars on windows
-import PerfectScrollbar from 'perfect-scrollbar'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {NavLink} from 'react-router-dom'

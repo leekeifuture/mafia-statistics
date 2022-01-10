@@ -11,7 +11,7 @@ import cx from 'classnames'
 import StatisticsNavbar from 'components/Navbars/StatisticsNavbar.jsx'
 import Sidebar from 'components/Sidebar/Sidebar.jsx'
 // creates a beautiful scrollbar
-import PerfectScrollbar from 'perfect-scrollbar'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import PropTypes from 'prop-types'
 import React from 'react'
