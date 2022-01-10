@@ -44,9 +44,6 @@ const appStyle = theme => ({
         [theme.breakpoints.up('md')]: {
             width: `calc(100% - ${drawerMiniWidth}px)`
         }
-    },
-    mainPanelWithPerfectScrollbar: {
-        overflow: 'hidden !important'
     }
 })
 

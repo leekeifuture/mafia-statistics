@@ -5,7 +5,6 @@ import Icon from '@material-ui/core/Icon'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-// @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 import {BarChart, ExitToApp, Settings} from '@material-ui/icons'
 import Group from '@material-ui/icons/Group'
@@ -14,10 +13,7 @@ import Person from '@material-ui/icons/Person'
 import sidebarStyle
     from 'assets/jss/material-dashboard-pro-react/components/sidebarStyle.jsx'
 import cx from 'classnames'
-// core components
 import StatisticsNavbarLinks from 'components/Navbars/StatisticsNavbarLinks.jsx'
-// javascript plugin used to create scrollbars on windows
-import PerfectScrollbar from 'react-perfect-scrollbar'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {NavLink} from 'react-router-dom'
@@ -26,20 +22,7 @@ import LoginPage from '../../views/LoginPage/LoginPage'
 
 var ps
 
-// We've created this component so we can have a ref to the wrapper of the links that appears in our sidebar.
-// This was necessary so that we could initialize PerfectScrollbar on the links.
-// There might be something with the Hidden component from material-ui, and we didn't have access to
-// the links, and couldn't initialize the plugin.
 class SidebarWrapper extends React.Component {
-    componentDidMount() {
-        if (navigator.platform.indexOf('Win') > -1) {
-            ps = new PerfectScrollbar(this.refs.sidebarWrapper, {
-                suppressScrollX: true,
-                suppressScrollY: false
-            })
-        }
-    }
-
     componentWillUnmount() {
         if (navigator.platform.indexOf('Win') > -1) {
             ps.destroy()
@@ -530,9 +513,7 @@ class Sidebar extends React.Component {
             ' ' +
             cx({
                 [classes.drawerPaperMini]:
-                this.props.miniActive && this.state.miniActive,
-                [classes.sidebarWrapperWithPerfectScrollbar]:
-                navigator.platform.indexOf('Win') > -1
+                this.props.miniActive && this.state.miniActive
             })
 
         return (

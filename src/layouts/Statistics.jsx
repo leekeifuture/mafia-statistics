@@ -1,4 +1,3 @@
-// @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 import logo from 'assets/img/logo/white-hand-nl.png'
 
@@ -7,12 +6,8 @@ import image from 'assets/img/sidebar-1.jpg'
 import appStyle
     from 'assets/jss/material-dashboard-pro-react/layouts/statisticsStyle.jsx'
 import cx from 'classnames'
-// core components
 import StatisticsNavbar from 'components/Navbars/StatisticsNavbar.jsx'
 import Sidebar from 'components/Sidebar/Sidebar.jsx'
-// creates a beautiful scrollbar
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {trackPromise} from 'react-promise-tracker'
@@ -87,13 +82,6 @@ class Statistics extends React.Component {
                 )
         ).then(r => this.setState({isLoading: false}))
 
-        if (navigator.platform.indexOf('Win') > -1) {
-            ps = new PerfectScrollbar(this.refs.mainPanel, {
-                suppressScrollX: true,
-                suppressScrollY: false
-            })
-            document.body.style.overflow = 'hidden'
-        }
         window.addEventListener('resize', this.resizeFunction)
     }
 
@@ -201,9 +189,7 @@ class Statistics extends React.Component {
             classes.mainPanel +
             ' ' +
             cx({
-                [classes.mainPanelSidebarMini]: this.state.miniActive,
-                [classes.mainPanelWithPerfectScrollbar]:
-                navigator.platform.indexOf('Win') > -1
+                [classes.mainPanelSidebarMini]: this.state.miniActive
             })
         return (<>
                 {this.state.isLoading
