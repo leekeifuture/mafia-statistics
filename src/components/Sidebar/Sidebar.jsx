@@ -20,15 +20,7 @@ import {NavLink} from 'react-router-dom'
 import {getMention, getPhotoUrl, isAdmin} from '../../util/util'
 import LoginPage from '../../views/LoginPage/LoginPage'
 
-var ps
-
 class SidebarWrapper extends React.Component {
-    componentWillUnmount() {
-        if (navigator.platform.indexOf('Win') > -1) {
-            ps.destroy()
-        }
-    }
-
     render() {
         const {className, user, headerLinks, links} = this.props
         return (

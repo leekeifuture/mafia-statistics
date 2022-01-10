@@ -24,8 +24,6 @@ import Footer from '../components/Footer/Footer'
 import LoadingIndicator from '../components/LoadingIndicator/LoadingIndicator'
 import {trackMetriks} from '../util/util'
 
-var ps
-
 class Statistics extends React.Component {
     constructor(props) {
         super(props)
@@ -86,9 +84,6 @@ class Statistics extends React.Component {
     }
 
     componentWillUnmount() {
-        if (navigator.platform.indexOf('Win') > -1) {
-            ps.destroy()
-        }
         window.removeEventListener('resize', this.resizeFunction)
     }
 
