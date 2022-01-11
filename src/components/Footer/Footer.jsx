@@ -46,6 +46,14 @@ function Footer({...props}) {
                                 {'Telegram чат'}
                             </a>
                         </ListItem>
+                        <ListItem className={classes.inlineBlock}>
+                            <a target="_blank"
+                               rel="noopener noreferrer"
+                               href="https://www.twitch.tv/mafia_brest"
+                               className={block}>
+                                {'Twitch'}
+                            </a>
+                        </ListItem>
                     </List>
                 </div>
                 <p className={classes.right}>
