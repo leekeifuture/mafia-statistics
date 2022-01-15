@@ -21,18 +21,82 @@ class Dashboard extends React.Component {
             winSeriesPlayerGender: '',
             winSeriesPlayerNickname: '',
             winSeriesGames: 0,
+
             defeatSeriesPlayerId: '',
             defeatSeriesPlayerGender: '',
             defeatSeriesPlayerNickname: '',
             defeatSeriesGames: 0,
+
             visitingSeriesPlayerId: '',
             visitingSeriesPlayerGender: '',
             visitingSeriesPlayerNickname: '',
             visitingSeriesPercent: 0,
+
             firstShootingSeriesPlayerId: '',
             firstShootingSeriesPlayerGender: '',
             firstShootingSeriesPlayerNickname: '',
             firstShootingSeriesPercent: 0,
+
+            playedByRedSeriesPlayerId: '',
+            playedByRedSeriesPlayerGender: '',
+            playedByRedSeriesPlayerNickname: '',
+            playedByRedSeriesGames: 0,
+
+            playedBySheriffSeriesPlayerId: '',
+            playedBySheriffSeriesPlayerGender: '',
+            playedBySheriffSeriesPlayerNickname: '',
+            playedBySheriffSeriesGames: 0,
+
+            playedByBlackSeriesPlayerId: '',
+            playedByBlackSeriesPlayerGender: '',
+            playedByBlackSeriesPlayerNickname: '',
+            playedByBlackSeriesGames: 0,
+
+            playedByDonSeriesPlayerId: '',
+            playedByDonSeriesPlayerGender: '',
+            playedByDonSeriesPlayerNickname: '',
+            playedByDonSeriesGames: 0,
+
+            wonByRedSeriesPlayerId: '',
+            wonByRedSeriesPlayerGender: '',
+            wonByRedSeriesPlayerNickname: '',
+            wonByRedSeriesGames: 0,
+
+            wonBySheriffSeriesPlayerId: '',
+            wonBySheriffSeriesPlayerGender: '',
+            wonBySheriffSeriesPlayerNickname: '',
+            wonBySheriffSeriesGames: 0,
+
+            wonByBlackSeriesPlayerId: '',
+            wonByBlackSeriesPlayerGender: '',
+            wonByBlackSeriesPlayerNickname: '',
+            wonByBlackSeriesGames: 0,
+
+            wonByDonSeriesPlayerId: '',
+            wonByDonSeriesPlayerGender: '',
+            wonByDonSeriesPlayerNickname: '',
+            wonByDonSeriesGames: 0,
+
+            lostByRedSeriesPlayerId: '',
+            lostByRedSeriesPlayerGender: '',
+            lostByRedSeriesPlayerNickname: '',
+            lostByRedSeriesGames: 0,
+
+            lostBySheriffSeriesPlayerId: '',
+            lostBySheriffSeriesPlayerGender: '',
+            lostBySheriffSeriesPlayerNickname: '',
+            lostBySheriffSeriesGames: 0,
+
+            lostByBlackSeriesPlayerId: '',
+            lostByBlackSeriesPlayerGender: '',
+            lostByBlackSeriesPlayerNickname: '',
+            lostByBlackSeriesGames: 0,
+
+            lostByDonSeriesPlayerId: '',
+            lostByDonSeriesPlayerGender: '',
+            lostByDonSeriesPlayerNickname: '',
+            lostByDonSeriesGames: 0,
+
             topGamesTable: [],
             topRatingTable: [],
             isLoading: true

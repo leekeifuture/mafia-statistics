@@ -65,6 +65,31 @@ const RecordsComponent = (props) => {
         </GridItem>
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
+                <CardHeader color="warning" stats icon>
+                    <CardIcon color="warning">
+                        <i className="fas fa-skull-crossbones" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальный процент первого отстрела
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.firstShootingSeriesPlayerId}`}>
+                            <small>{firstShootingMention}</small>
+                            {props.state.firstShootingSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        {props.state.firstShootingSeriesPercent}%
+                        первого отстрела
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
                 <CardHeader color="info" stats icon>
                     <CardIcon color="info">
                         <Icon>info_outline</Icon>
@@ -87,27 +112,293 @@ const RecordsComponent = (props) => {
                 </CardFooter>
             </Card>
         </GridItem>
+
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
-                <CardHeader color="warning" stats icon>
-                    <CardIcon color="warning">
-                        <i className="fas fa-skull-crossbones" />
+                <CardHeader color="success" stats icon>
+                    <CardIcon color="success">
+                        <i className="fas fa-thumbs-up" />
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
-                        Максимальный процент первого отстрела
+                        Максимальная серия выигранных красным
                     </p>
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
-                            to={`/statistics/players/${props.state.firstShootingSeriesPlayerId}`}>
-                            <small>{firstShootingMention}</small>
-                            {props.state.firstShootingSeriesPlayerNickname}
+                            to={`/statistics/players/${props.state.wonByRedSeriesPlayerId}`}>
+                            <small>{winSeriesMention}</small>
+                            {props.state.wonByRedSeriesPlayerNickname}
                         </NavLink>
                     </h3>
                 </CardHeader>
                 <CardFooter stats>
                     <div className={props.classes.stats}>
-                        {props.state.firstShootingSeriesPercent}%
-                        первого отстрела
+                        Игр подряд {props.state.wonByRedSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="success" stats icon>
+                    <CardIcon color="success">
+                        <i className="fas fa-thumbs-down" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия выигранных чёрным
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.wonByBlackSeriesPlayerId}`}>
+                            <small>{visitingSeriesMention}</small>
+                            {props.state.wonByBlackSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.wonByBlackSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="success" stats icon>
+                    <CardIcon color="success">
+                        <i className="fas fa-american-sign-language-interpreting" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия выигранных шерифом
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.wonBySheriffSeriesPlayerId}`}>
+                            <small>{defeatSeriesMention}</small>
+                            {props.state.wonBySheriffSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.wonBySheriffSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="success" stats icon>
+                    <CardIcon color="success">
+                        <i className="fas fa-user-secret" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия выигранных доном
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.wonByDonSeriesPlayerId}`}>
+                            <small>{firstShootingMention}</small>
+                            {props.state.wonByDonSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.wonByDonSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="danger" stats icon>
+                    <CardIcon color="danger">
+                        <i className="fas fa-thumbs-up" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия проигранных красным
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.lostByRedSeriesPlayerId}`}>
+                            <small>{winSeriesMention}</small>
+                            {props.state.lostByRedSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.lostByRedSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="danger" stats icon>
+                    <CardIcon color="danger">
+                        <i className="fas fa-thumbs-down" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия проигранных чёрным
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.lostByBlackSeriesPlayerId}`}>
+                            <small>{visitingSeriesMention}</small>
+                            {props.state.lostByBlackSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.lostByBlackSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="danger" stats icon>
+                    <CardIcon color="danger">
+                        <i className="fas fa-american-sign-language-interpreting" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия проигранных шерифом
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.lostBySheriffSeriesPlayerId}`}>
+                            <small>{defeatSeriesMention}</small>
+                            {props.state.lostBySheriffSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.lostBySheriffSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="danger" stats icon>
+                    <CardIcon color="danger">
+                        <i className="fas fa-user-secret" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия проигранных доном
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.lostByDonSeriesPlayerId}`}>
+                            <small>{firstShootingMention}</small>
+                            {props.state.lostByDonSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.lostByDonSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="info" stats icon>
+                    <CardIcon color="info">
+                        <i className="fas fa-thumbs-up" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия сыгранных красным
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.playedByRedSeriesPlayerId}`}>
+                            <small>{winSeriesMention}</small>
+                            {props.state.playedByRedSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.playedByRedSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="info" stats icon>
+                    <CardIcon color="info">
+                        <i className="fas fa-thumbs-down" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия сыгранных чёрным
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.playedByBlackSeriesPlayerId}`}>
+                            <small>{visitingSeriesMention}</small>
+                            {props.state.playedByBlackSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.playedByBlackSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="info" stats icon>
+                    <CardIcon color="info">
+                        <i className="fas fa-american-sign-language-interpreting" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия сыгранных шерифом
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.playedBySheriffSeriesPlayerId}`}>
+                            <small>{defeatSeriesMention}</small>
+                            {props.state.playedBySheriffSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.playedBySheriffSeriesGames}
+                    </div>
+                </CardFooter>
+            </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+                <CardHeader color="info" stats icon>
+                    <CardIcon color="info">
+                        <i className="fas fa-user-secret" />
+                    </CardIcon>
+                    <p className={props.classes.cardCategory}>
+                        Максимальная серия сыгранных доном
+                    </p>
+                    <h3 className={props.classes.cardTitle}>
+                        <NavLink
+                            to={`/statistics/players/${props.state.playedByDonSeriesPlayerId}`}>
+                            <small>{firstShootingMention}</small>
+                            {props.state.playedByDonSeriesPlayerNickname}
+                        </NavLink>
+                    </h3>
+                </CardHeader>
+                <CardFooter stats>
+                    <div className={props.classes.stats}>
+                        Игр подряд {props.state.playedByDonSeriesGames}
                     </div>
                 </CardFooter>
             </Card>
