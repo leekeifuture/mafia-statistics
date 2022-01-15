@@ -14,20 +14,20 @@ const RecordsComponent = (props) => {
     const visitingSeriesMention = getMention({gender: props.state.visitingSeriesPlayerGender})
     const firstShootingMention = getMention({gender: props.state.firstShootingSeriesPlayerGender})
 
-    const wonByRedSeriesMention = getMention(props.state.wonByRedSeriesPlayerGender)
-    const wonByBlackSeriesMention = getMention(props.state.wonByBlackSeriesPlayerGender)
-    const wonBySheriffSeriesMention = getMention(props.state.wonBySheriffSeriesPlayerGender)
-    const wonByDonSeriesMention = getMention(props.state.wonByDonSeriesPlayerGender)
+    const wonByRedSeriesMention = getMention({gender: props.state.wonByRedSeriesPlayerGender})
+    const wonByBlackSeriesMention = getMention({gender: props.state.wonByBlackSeriesPlayerGender})
+    const wonBySheriffSeriesMention = getMention({gender: props.state.wonBySheriffSeriesPlayerGender})
+    const wonByDonSeriesMention = getMention({gender: props.state.wonByDonSeriesPlayerGender})
 
-    const lostByRedSeriesMention = getMention(props.state.lostByRedSeriesPlayerGender)
-    const lostByBlackSeriesMention = getMention(props.state.lostByBlackSeriesPlayerGender)
-    const lostBySheriffSeriesMention = getMention(props.state.lostBySheriffSeriesPlayerGender)
-    const lostByDonSeriesMention = getMention(props.state.lostByDonSeriesPlayerGender)
+    const lostByRedSeriesMention = getMention({gender: props.state.lostByRedSeriesPlayerGender})
+    const lostByBlackSeriesMention = getMention({gender: props.state.lostByBlackSeriesPlayerGender})
+    const lostBySheriffSeriesMention = getMention({gender: props.state.lostBySheriffSeriesPlayerGender})
+    const lostByDonSeriesMention = getMention({gender: props.state.lostByDonSeriesPlayerGender})
 
-    const playedByRedSeriesMention = getMention(props.state.playedByRedSeriesPlayerGender)
-    const playedByBlackSeriesMention = getMention(props.state.playedByBlackSeriesPlayerGender)
-    const playedBySheriffSeriesMention = getMention(props.state.playedBySheriffSeriesPlayerGender)
-    const playedByDonSeriesMention = getMention(props.state.playedByDonSeriesPlayerGender)
+    const playedByRedSeriesMention = getMention({gender: props.state.playedByRedSeriesPlayerGender})
+    const playedByBlackSeriesMention = getMention({gender: props.state.playedByBlackSeriesPlayerGender})
+    const playedBySheriffSeriesMention = getMention({gender: props.state.playedBySheriffSeriesPlayerGender})
+    const playedByDonSeriesMention = getMention({gender: props.state.playedByDonSeriesPlayerGender})
 
     return (<>
         <GridItem xs={12} sm={6} md={6} lg={3}>
