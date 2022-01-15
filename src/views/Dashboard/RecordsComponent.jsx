@@ -14,6 +14,21 @@ const RecordsComponent = (props) => {
     const visitingSeriesMention = getMention({gender: props.state.visitingSeriesPlayerGender})
     const firstShootingMention = getMention({gender: props.state.firstShootingSeriesPlayerGender})
 
+    const wonByRedSeriesMention = getMention(props.state.wonByRedSeriesPlayerGender)
+    const wonByBlackSeriesMention = getMention(props.state.wonByBlackSeriesPlayerGender)
+    const wonBySheriffSeriesMention = getMention(props.state.wonBySheriffSeriesPlayerGender)
+    const wonByDonSeriesMention = getMention(props.state.wonByDonSeriesPlayerGender)
+
+    const lostByRedSeriesMention = getMention(props.state.lostByRedSeriesPlayerGender)
+    const lostByBlackSeriesMention = getMention(props.state.lostByBlackSeriesPlayerGender)
+    const lostBySheriffSeriesMention = getMention(props.state.lostBySheriffSeriesPlayerGender)
+    const lostByDonSeriesMention = getMention(props.state.lostByDonSeriesPlayerGender)
+
+    const playedByRedSeriesMention = getMention(props.state.playedByRedSeriesPlayerGender)
+    const playedByBlackSeriesMention = getMention(props.state.playedByBlackSeriesPlayerGender)
+    const playedBySheriffSeriesMention = getMention(props.state.playedBySheriffSeriesPlayerGender)
+    const playedByDonSeriesMention = getMention(props.state.playedByDonSeriesPlayerGender)
+
     return (<>
         <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
@@ -125,7 +140,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.wonByRedSeriesPlayerId}`}>
-                            <small>{winSeriesMention}</small>
+                            <small>{wonByRedSeriesMention}</small>
                             {props.state.wonByRedSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -149,7 +164,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.wonByBlackSeriesPlayerId}`}>
-                            <small>{visitingSeriesMention}</small>
+                            <small>{wonByBlackSeriesMention}</small>
                             {props.state.wonByBlackSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -173,7 +188,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.wonBySheriffSeriesPlayerId}`}>
-                            <small>{defeatSeriesMention}</small>
+                            <small>{wonBySheriffSeriesMention}</small>
                             {props.state.wonBySheriffSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -197,7 +212,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.wonByDonSeriesPlayerId}`}>
-                            <small>{firstShootingMention}</small>
+                            <small>{wonByDonSeriesMention}</small>
                             {props.state.wonByDonSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -222,7 +237,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.lostByRedSeriesPlayerId}`}>
-                            <small>{winSeriesMention}</small>
+                            <small>{lostByRedSeriesMention}</small>
                             {props.state.lostByRedSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -246,7 +261,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.lostByBlackSeriesPlayerId}`}>
-                            <small>{visitingSeriesMention}</small>
+                            <small>{lostByBlackSeriesMention}</small>
                             {props.state.lostByBlackSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -270,7 +285,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.lostBySheriffSeriesPlayerId}`}>
-                            <small>{defeatSeriesMention}</small>
+                            <small>{lostBySheriffSeriesMention}</small>
                             {props.state.lostBySheriffSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -294,7 +309,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.lostByDonSeriesPlayerId}`}>
-                            <small>{firstShootingMention}</small>
+                            <small>{lostByDonSeriesMention}</small>
                             {props.state.lostByDonSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -319,7 +334,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.playedByRedSeriesPlayerId}`}>
-                            <small>{winSeriesMention}</small>
+                            <small>{playedByRedSeriesMention}</small>
                             {props.state.playedByRedSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -343,7 +358,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.playedByBlackSeriesPlayerId}`}>
-                            <small>{visitingSeriesMention}</small>
+                            <small>{playedByBlackSeriesMention}</small>
                             {props.state.playedByBlackSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -367,7 +382,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.playedBySheriffSeriesPlayerId}`}>
-                            <small>{defeatSeriesMention}</small>
+                            <small>{playedBySheriffSeriesMention}</small>
                             {props.state.playedBySheriffSeriesPlayerNickname}
                         </NavLink>
                     </h3>
@@ -391,7 +406,7 @@ const RecordsComponent = (props) => {
                     <h3 className={props.classes.cardTitle}>
                         <NavLink
                             to={`/statistics/players/${props.state.playedByDonSeriesPlayerId}`}>
-                            <small>{firstShootingMention}</small>
+                            <small>{playedByDonSeriesMention}</small>
                             {props.state.playedByDonSeriesPlayerNickname}
                         </NavLink>
                     </h3>
