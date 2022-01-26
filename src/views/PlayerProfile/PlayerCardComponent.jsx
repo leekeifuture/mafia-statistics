@@ -1,4 +1,4 @@
-import {CardMembership} from '@material-ui/icons'
+import {AccessTime, CardMembership} from '@material-ui/icons'
 import React from 'react'
 import {blackColor} from '../../assets/jss/material-dashboard-pro-react'
 import Card from '../../components/Card/Card'
@@ -6,7 +6,7 @@ import CardAvatar from '../../components/Card/CardAvatar'
 import CardBody from '../../components/Card/CardBody'
 import CustomLinearProgress
     from '../../components/CustomLinearProgress/CustomLinearProgress'
-import {getMention, getPhotoUrl} from '../../util/util'
+import {getMention, getPhotoUrl, getSubtextDate} from '../../util/util'
 
 const getClubCardType = (gamesTotal) => {
     let clubCardType = ''
@@ -35,12 +35,31 @@ const getClubCardType = (gamesTotal) => {
             }}>
                 <CardMembership />
                 <span style={{marginLeft: '5px'}}>
-                            {clubCardText}
-                        </span>
+                    {clubCardText}
+                </span>
             </div>
         </div>
     )
 }
+
+const getStatisticsDate = (props) => (
+    <div>
+        <br />
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexWrap: 'wrap'
+        }}>
+            <AccessTime />
+            <span style={{marginLeft: '5px'}}>
+                Статистика за:
+            </span>
+            <span style={{marginLeft: '29px'}}>
+                {getSubtextDate(props.fromDate, props.toDate)}
+            </span>
+        </div>
+    </div>
+)
 
 const PlayerCardComponent = props => {
     const gamesTotal = props.state.gamesTotal
@@ -156,6 +175,8 @@ const PlayerCardComponent = props => {
                     </div>
 
                     {getClubCardType(props.state.gamesTotal)}
+
+                    {getStatisticsDate(props.state.ratingStatistics)}
                 </span>
             </CardBody>
         </Card>
