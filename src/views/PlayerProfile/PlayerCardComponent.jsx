@@ -51,12 +51,14 @@ const getStatisticsDate = (props) => (
             flexWrap: 'wrap'
         }}>
             <AccessTime />
-            <span style={{marginLeft: '5px'}}>
-                Статистика за:
-            </span>
-            <span style={{marginLeft: '29px'}}>
-                {getSubtextDate(props.fromDate, props.toDate)}
-            </span>
+            <div style={{textAlign: 'left', marginLeft: '5px'}}>
+                <div>
+                    Статистика за:
+                </div>
+                <div>
+                    {getSubtextDate(props.fromDate, props.toDate)}
+                </div>
+            </div>
         </div>
     </div>
 )
