@@ -1,5 +1,5 @@
 import withStyles from '@material-ui/core/styles/withStyles'
-import logo from 'assets/img/logo/nl-logo-white.png'
+import logo from '../assets/img/nl-logo-white.png'
 
 import image from 'assets/img/sidebar-1.jpg'
 
