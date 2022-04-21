@@ -1,5 +1,4 @@
 import withStyles from '@material-ui/core/styles/withStyles'
-import logo from '../assets/img/nl-logo-white.png'
 
 import image from 'assets/img/sidebar-1.jpg'
 
@@ -20,6 +19,7 @@ import {
     utilApi
 } from '../api/mafiaStatisticsApi'
 import defaultAvatar from '../assets/img/default-avatar.png'
+import logo from '../assets/img/nl-logo-white.png'
 import Footer from '../components/Footer/Footer'
 import LoadingIndicator from '../components/LoadingIndicator/LoadingIndicator'
 import {trackMetriks} from '../util/util'
