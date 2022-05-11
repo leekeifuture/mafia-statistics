@@ -9,7 +9,10 @@ const RolesHistoryStatisticsComponent = (props) => {
             left: 'center'
         },
         tooltip: {
-            trigger: 'item'
+            trigger: 'item',
+            formatter: params =>
+                `${params.seriesName}<br />
+              ${params.marker} ${params.name}: <b>${params.data.value} (${params.percent}%)</b>`
         },
         legend: {
             orient: 'vertical',
