@@ -159,6 +159,7 @@ class Statistics extends React.Component {
                     <Route
                         path={prop.layout + prop.path}
                         component={prop.component}
+                        exact={prop.exact}
                         key={key}
                     />
                 )
