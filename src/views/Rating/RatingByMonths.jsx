@@ -1,8 +1,4 @@
 import withStyles from '@material-ui/core/styles/withStyles'
-import Tooltip from '@material-ui/core/Tooltip'
-import ArtTrack from '@material-ui/icons/ArtTrack'
-import Edit from '@material-ui/icons/Edit'
-import Refresh from '@material-ui/icons/Refresh'
 
 import priceImage1 from 'assets/img/card-2.jpeg'
 
@@ -95,9 +91,8 @@ class RatingByMonths extends React.Component {
 
                             return (
                                 <GridItem xs={12} sm={12} md={3} key={key}>
-                                    <Card product className={classes.cardHover}>
-                                        <CardHeader image
-                                                    className={classes.cardHeaderHover}>
+                                    <Card product>
+                                        <CardHeader image>
                                             <a href=""
                                                onClick={e => e.preventDefault()}>
                                                 <img src={priceImage1}
@@ -105,48 +100,6 @@ class RatingByMonths extends React.Component {
                                             </a>
                                         </CardHeader>
                                         <CardBody>
-                                            <div
-                                                className={classes.cardHoverUnder}>
-                                                <Tooltip
-                                                    id="tooltip-top"
-                                                    title="View"
-                                                    placement="bottom"
-                                                    classes={{tooltip: classes.tooltip}}
-                                                >
-                                                    <Button color="transparent"
-                                                            simple
-                                                            justIcon>
-                                                        <ArtTrack
-                                                            className={classes.underChartIcons} />
-                                                    </Button>
-                                                </Tooltip>
-                                                <Tooltip
-                                                    id="tooltip-top"
-                                                    title="Edit"
-                                                    placement="bottom"
-                                                    classes={{tooltip: classes.tooltip}}
-                                                >
-                                                    <Button color="success"
-                                                            simple
-                                                            justIcon>
-                                                        <Refresh
-                                                            className={classes.underChartIcons} />
-                                                    </Button>
-                                                </Tooltip>
-                                                <Tooltip
-                                                    id="tooltip-top"
-                                                    title="Remove"
-                                                    placement="bottom"
-                                                    classes={{tooltip: classes.tooltip}}
-                                                >
-                                                    <Button color="danger"
-                                                            simple
-                                                            justIcon>
-                                                        <Edit
-                                                            className={classes.underChartIcons} />
-                                                    </Button>
-                                                </Tooltip>
-                                            </div>
                                             <h4 className={classes.cardProductTitle}>
                                                 <a href=""
                                                    onClick={e => e.preventDefault()}>
