@@ -1,7 +1,5 @@
 import withStyles from '@material-ui/core/styles/withStyles'
-
 import priceImage1 from 'assets/img/card-2.jpeg'
-
 import dashboardStyle
     from 'assets/jss/material-dashboard-pro-react/views/dashboardStyle'
 import Card from 'components/Card/Card.jsx'
@@ -27,8 +25,8 @@ class RatingByMonths extends React.Component {
         this.state = {
             ratingByMonths: {},
             isLoading: true
-        }
-    }
+                    }
+                    }
 
     componentDidMount() {
         trackPromise(
@@ -38,7 +36,7 @@ class RatingByMonths extends React.Component {
                     error => this.props.history.push('/auth/error')
                 )
         ).then(r => this.setState({isLoading: false}))
-    }
+                    }
 
     render() {
         const {classes} = this.props
@@ -51,6 +49,7 @@ class RatingByMonths extends React.Component {
                         ? <LoadingIndicator />
                         : Object.keys(this.state.ratingByMonths).map((date, key) => {
                             const ratingByOneMonth = this.state.ratingByMonths[date]
+                            const ratingByOneMonthLink = `/statistics/rating/${date}`
                             const tableData = []
 
                             if (this.state.ratingByMonths[date].length > 0) {
@@ -93,20 +92,14 @@ class RatingByMonths extends React.Component {
                                 <GridItem xs={12} sm={12} md={3} key={key}>
                                     <Card product>
                                         <CardHeader image>
-                                            <a href=""
-                                               onClick={e => e.preventDefault()}>
-                                                <img src={priceImage1}
-                                                     alt="..." />
-                                            </a>
+                                            <img src={priceImage1}
+                                                 alt="..." />
                                         </CardHeader>
                                         <CardBody>
                                             <h4 className={classes.cardProductTitle}>
-                                                <a href=""
-                                                   onClick={e => e.preventDefault()}>
-                                                    {capitalize(getSubtextDate(
-                                                        mostGamesPlayer.fromDate, mostGamesPlayer.toDate
-                                                    ))}
-                                                </a>
+                                                {capitalize(getSubtextDate(
+                                                    mostGamesPlayer.fromDate, mostGamesPlayer.toDate
+                                                ))}
                                             </h4>
                                             <br />
                                             <p className={classes.cardProductDesciprion}>
@@ -134,7 +127,7 @@ class RatingByMonths extends React.Component {
                                             <div className={classes.price}
                                                  style={{width: '100%'}}>
                                                 <NavLink
-                                                    to={`/statistics/rating/${date}`}>
+                                                    to={ratingByOneMonthLink}>
                                                     <Button color="primary"
                                                             style={{width: '100%'}}>
                                                         Подробнее
