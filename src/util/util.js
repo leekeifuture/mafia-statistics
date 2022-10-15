@@ -59,3 +59,6 @@ export const trackMetriks = (pathname) => {
     ReactGA.pageview(pathname) // Google Analytics
     ym('hit', pathname) // Yandex Metrica
 }
+
+export const capitalize = string =>
+    string.charAt(0).toUpperCase() + string.slice(1)
