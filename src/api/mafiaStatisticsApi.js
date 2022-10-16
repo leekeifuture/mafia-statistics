@@ -35,13 +35,12 @@ axiosInstance.interceptors.request.use(config => {
 })
 
 export const mafiaStatisticsApi = {
-    uploadStatistics(file, statisticsType) {
+    uploadStatistics(files) {
         const formData = new FormData()
-        formData.append('file', file, file.name)
-
-        return axiosInstance.post('/upload/excel', formData, {
-            params: {statisticsType: statisticsType.toUpperCase()}
-        })
+        for (let i = 0; i < files.length; i++) {
+            formData.append('files', files[i])
+        }
+        return axiosInstance.post('/upload/files', formData)
             .then(response => response.data)
     },
     getPlayerById(id) {
