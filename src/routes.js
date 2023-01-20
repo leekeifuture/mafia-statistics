@@ -4,8 +4,6 @@ import LoginPage from './views/LoginPage/LoginPage'
 import Data from './views/Manage/Data'
 import Players from './views/Manage/Players'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
-import RatingByMonths from './views/Rating/RatingByMonths'
-import RatingByOneMonth from './views/Rating/RatingByOneMonth'
 import Search from './views/Search/Search'
 
 const dashRoutes = [
@@ -37,19 +35,6 @@ const dashRoutes = [
         path: '/search/players',
         name: 'Поиск',
         component: Search,
-        layout: '/statistics'
-    },
-    {
-        path: '/rating',
-        name: 'Рейтинг',
-        component: RatingByMonths,
-        layout: '/statistics',
-        exact: true
-    },
-    {
-        path: '/rating/:date?',
-        name: 'Рейтинг за месяц',
-        component: RatingByOneMonth,
         layout: '/statistics'
     },
     {

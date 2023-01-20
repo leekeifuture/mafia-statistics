@@ -19,7 +19,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import {getMention, getPhotoUrl, isAdmin} from '../../util/util'
 import LoginPage from '../../views/LoginPage/LoginPage'
-import Rating from '../../views/Rating/RatingByMonths'
 
 class SidebarWrapper extends React.Component {
     render() {
@@ -421,13 +420,6 @@ class Sidebar extends React.Component {
             : <>
                 <List className={classes.list}>
                     {this.createLinks([
-                        {
-                            path: '/rating',
-                            name: 'Рейтинг',
-                            component: Rating,
-                            icon: BarChart,
-                            layout: '/statistics'
-                        },
                         {
                             path: '/login',
                             name: 'Авторизация',
