@@ -12,8 +12,8 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
     API_BASE_URL = 'http://localhost:8080'
     OAUTH2_REDIRECT_URI = 'http://localhost:3000/oauth2/redirect'
 } else {
-    API_BASE_URL = 'https://api.statistics.mafia-brest.by'
-    OAUTH2_REDIRECT_URI = 'https://statistics.mafia-brest.by/oauth2/redirect'
+    API_BASE_URL = 'https://api.statistics.mafia-brest.com'
+    OAUTH2_REDIRECT_URI = 'https://statistics.mafia-brest.com/oauth2/redirect'
 }
 
 export const APP_PROPERTIES = {API_BASE_URL, OAUTH2_REDIRECT_URI}
