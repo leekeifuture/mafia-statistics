@@ -441,12 +441,6 @@ class Sidebar extends React.Component {
                     state: 'componentsCollapse',
                     views: [
                         {
-                            path: '/manage/players',
-                            name: 'Игроки',
-                            icon: Group,
-                            layout: '/statistics'
-                        },
-                        {
                             path: '/manage/data',
                             name: 'Статистика',
                             icon: BarChart,

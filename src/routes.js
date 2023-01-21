@@ -20,12 +20,6 @@ const dashRoutes = [
         layout: '/statistics'
     },
     {
-        path: '/manage/players',
-        name: 'Игроки',
-        component: Players,
-        layout: '/statistics'
-    },
-    {
         path: '/manage/data',
         name: 'Статистика',
         component: Data,
