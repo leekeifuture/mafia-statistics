@@ -7,7 +7,6 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import withStyles from '@material-ui/core/styles/withStyles'
 import {BarChart, ExitToApp, Settings} from '@material-ui/icons'
-import Group from '@material-ui/icons/Group'
 import Person from '@material-ui/icons/Person'
 
 import sidebarStyle

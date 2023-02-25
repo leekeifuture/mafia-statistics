@@ -25,8 +25,8 @@ class RatingByMonths extends React.Component {
         this.state = {
             ratingByMonths: {},
             isLoading: true
-                    }
-                    }
+        }
+    }
 
     componentDidMount() {
         trackPromise(
@@ -36,7 +36,7 @@ class RatingByMonths extends React.Component {
                     error => this.props.history.push('/auth/error')
                 )
         ).then(r => this.setState({isLoading: false}))
-                    }
+    }
 
     render() {
         const {classes} = this.props
