@@ -43,8 +43,10 @@ export const mafiaStatisticsApi = {
         return axiosInstance.post('/upload/files', formData)
             .then(response => response.data)
     },
-    getPlayerById(id) {
-        return axiosInstance.get(`/players/${id}`)
+    getPlayerById(id, isMinInfo = false) {
+        return axiosInstance.get(`/players/${id}`, {
+            params: {isMinInfo}
+        })
             .then(response => response.data)
     },
     getDashboardInfo() {
