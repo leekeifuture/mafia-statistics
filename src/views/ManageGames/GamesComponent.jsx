@@ -5,29 +5,34 @@ import Card from '../../components/Card/Card'
 import CardBody from '../../components/Card/CardBody'
 import CardHeader from '../../components/Card/CardHeader'
 import CardIcon from '../../components/Card/CardIcon'
-import {getReadableDate} from '../../util/util'
+import {getMention, getReadableDate} from '../../util/util'
 
 const GamesComponent = (props) => {
     const columns = [
         {
             Header: 'Ведущий',
-            accessor: 'host'
+            accessor: 'host',
+            minWidth: 250
         },
         {
             Header: 'Победа',
-            accessor: 'won'
+            accessor: 'won',
+            minWidth: 100
         },
         {
             Header: 'Номер',
-            accessor: 'number'
+            accessor: 'number',
+            minWidth: 100
         },
         {
             Header: 'Статус',
-            accessor: 'status'
+            accessor: 'status',
+            minWidth: 100
         },
         {
             Header: 'Дата',
-            accessor: 'date'
+            accessor: 'date',
+            minWidth: 150
         }
         // {
         //     Header: 'Actions',
@@ -40,7 +45,9 @@ const GamesComponent = (props) => {
     const data = props.games.map((game, key) => {
         return {
             id: key,
-            host: game.host.nickname ? game.host.nickname : '',
+            host: (<>
+                <small>{getMention(game.host)}</small> {game.host.nickname}
+            </>),
             won: getTeamWon(game.won),
             number: game.number,
             status: getGameStatus(game.status),
@@ -114,9 +121,9 @@ const GamesComponent = (props) => {
                 <ReactTable
                     columns={columns}
                     data={data}
+                    columnResizeMode
                     defaultPageSize={10}
-                    showPaginationTop
-                    showPaginationBottom={false}
+                    showPaginationBottom
                     className="-striped -highlight"
                 />
             </CardBody>
