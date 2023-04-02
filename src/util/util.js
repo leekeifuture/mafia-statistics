@@ -3,17 +3,23 @@ import ym from 'react-yandex-metrika'
 import defaultAvatar from '../assets/img/default-avatar.png'
 
 export const getSubtextDate = (fromDate, toDate) => {
-    const fromDateObj = new Date(fromDate)
-    const toDateObj = new Date(toDate)
-
-    const options = {year: 'numeric', month: 'long', formatMatcher: 'basic'}
-
-    const strFromDate = fromDateObj.toLocaleDateString('ru', options)
-    const strToDate = toDateObj.toLocaleDateString('ru', options)
+    const strFromDate = getReadableDate(fromDate)
+    const strToDate = getReadableDate(toDate)
 
     return strFromDate === strToDate
         ? `${strFromDate}`
         : `${strFromDate} - ${strToDate}`
+}
+
+export const getReadableDate = (date, withDay = false) => {
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        formatMatcher: 'basic'
+    }
+    if (withDay) options.day = 'numeric'
+
+    return new Date(date).toLocaleDateString('ru', options)
 }
 
 export const getMention = (user) => {
