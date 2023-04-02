@@ -125,8 +125,7 @@ const PlayerCardComponent = props => {
                             paddingLeft: '5px',
                             marginLeft: '5px'
                         }}>
-                            Рейтинговые
-                            очки: {ratingPoints}
+                            Рейтинговые очки: {ratingPoints}
                         </li>
                     </ul>
 
