@@ -6,7 +6,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import withStyles from '@material-ui/core/styles/withStyles'
-import {BarChart, ExitToApp, Settings} from '@material-ui/icons'
+import {BarChart, ExitToApp, Gamepad, Settings} from '@material-ui/icons'
 import Person from '@material-ui/icons/Person'
 
 import sidebarStyle
@@ -16,7 +16,7 @@ import StatisticsNavbarLinks from 'components/Navbars/StatisticsNavbarLinks.jsx'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import {getMention, getPhotoUrl, isAdmin} from '../../util/util'
+import {getMention, getPhotoUrl, isAdmin, isHost} from '../../util/util'
 import LoginPage from '../../views/LoginPage/LoginPage'
 
 class SidebarWrapper extends React.Component {
@@ -437,7 +437,7 @@ class Sidebar extends React.Component {
                     collapse: true,
                     name: 'Управление',
                     icon: Settings,
-                    state: 'componentsCollapse',
+                    state: 'manageComponentsCollapse',
                     views: [
                         {
                             path: '/manage/data',
@@ -449,9 +449,29 @@ class Sidebar extends React.Component {
                 }]
                 : []
 
+        const hostSideBarLinks =
+            this.props.authenticated &&
+            isHost(this.props.currentUser)
+                ? [{
+                    collapse: true,
+                    name: 'Управление играми',
+                    icon: Gamepad,
+                    state: 'manageGamesComponentsCollapse',
+                    views: [
+                        {
+                            path: '/host/manage/games/all',
+                            name: 'Все игры',
+                            icon: Gamepad,
+                            layout: '/statistics'
+                        }
+                    ]
+                }]
+                : []
+
         const links = (
             <List className={classes.list}>
                 {this.createLinks(adminSideBarLinks)}
+                {this.createLinks(hostSideBarLinks)}
             </List>
         )
 
