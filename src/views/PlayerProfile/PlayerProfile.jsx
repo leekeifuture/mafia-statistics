@@ -25,8 +25,8 @@ class PlayerProfile extends React.Component {
             photoUrl: defaultAvatar,
             roles: [],
             coupleStatistics: [{
-                from_date: '',
-                to_date: '',
+                fromDate: '',
+                toDate: '',
                 couplePlayer: {
                     id: '',
                     nickname: '',
@@ -35,7 +35,6 @@ class PlayerProfile extends React.Component {
                     photoUrl: '',
                     roles: []
                 },
-                percent_of_wins: 0,
                 games: 0,
                 wins: 0,
                 percentOfWins: 0
