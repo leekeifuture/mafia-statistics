@@ -11,7 +11,7 @@ import RolesHistoryStatisticsComponent from './RolesHistoryStatisticsComponent'
 import WinningHistoryStatisticsComponent
     from './WinningHistoryStatisticsComponent'
 
-const RatingStatistics = props => {
+const RatingStatisticsComponent = props => {
     return (
         <GridItem xs={12} sm={12} md={9}>
             <Card>
@@ -43,4 +43,4 @@ const RatingStatistics = props => {
     )
 }
 
-export default RatingStatistics
+export default RatingStatisticsComponent

@@ -9,10 +9,10 @@ import {mafiaStatisticsApi, utilApi} from '../../api/mafiaStatisticsApi'
 import defaultAvatar from '../../assets/img/default-avatar.png'
 import LoadingIndicator
     from '../../components/LoadingIndicator/LoadingIndicator'
-import CoupleStatistics from './CoupleStatistics'
+import CoupleStatisticsComponent from './CoupleStatisticsComponent'
 import PlayerCardComponent from './PlayerCardComponent'
-import RatingStatistics from './RatingStatistics'
-import SerialityStatistics from './SerialityStatistics'
+import RatingStatisticsComponent from './RatingStatisticsComponent'
+import SerialityStatisticsComponent from './SerialityStatisticsComponent'
 
 class PlayerProfile extends React.Component {
     constructor(props) {
@@ -236,7 +236,7 @@ class PlayerProfile extends React.Component {
                             />
                         </GridItem>
                         {this.state.rolesHistoryStatistics || this.state.ratingStatistics
-                            ? (<RatingStatistics
+                            ? (<RatingStatisticsComponent
                                 rolesHistoryStatistics={this.state.rolesHistoryStatistics}
                                 ratingStatistics={this.state.ratingStatistics}
                                 classes={classes}
@@ -244,13 +244,13 @@ class PlayerProfile extends React.Component {
                             />)
                             : <></>}
                         {this.state.serialityStatistics
-                            ? (<SerialityStatistics
+                            ? (<SerialityStatisticsComponent
                                 classes={classes}
                                 serialityStatistics={this.state.serialityStatistics}
                             />)
                             : <></>}
                         {this.state.coupleStatistics && this.state.coupleStatistics.length > 0
-                            ? (<CoupleStatistics
+                            ? (<CoupleStatisticsComponent
                                 classes={classes}
                                 nickname={this.state.nickname}
                                 gender={this.state.gender}

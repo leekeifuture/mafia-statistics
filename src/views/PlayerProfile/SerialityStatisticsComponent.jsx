@@ -9,7 +9,7 @@ import Clearfix from '../../components/Clearfix/Clearfix'
 import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 
-const SerialityStatistics = props => {
+const SerialityStatisticsComponent = props => {
     const labelOption = {
         show: true,
         position: 'insideBottom',
@@ -143,4 +143,4 @@ const SerialityStatistics = props => {
     )
 }
 
-export default SerialityStatistics
+export default SerialityStatisticsComponent

@@ -10,7 +10,7 @@ import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 import {getMention} from '../../util/util'
 
-const CoupleStatistics = props => {
+const CoupleStatisticsComponent = props => {
     const children = props.coupleStatistics.map(row => ({
         name: row.couplePlayer.nickname,
         gender: row.couplePlayer.gender,
@@ -119,4 +119,4 @@ const CoupleStatistics = props => {
     )
 }
 
-export default CoupleStatistics
+export default CoupleStatisticsComponent
