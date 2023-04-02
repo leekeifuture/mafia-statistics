@@ -114,7 +114,6 @@ const GamesComponent = (props) => {
                 <ReactTable
                     columns={columns}
                     data={data}
-                    filterable
                     defaultPageSize={10}
                     showPaginationTop
                     showPaginationBottom={false}
