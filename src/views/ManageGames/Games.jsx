@@ -110,7 +110,95 @@ class Games extends React.Component {
                         ]
                     }
                 ]
-            }],
+            },
+                {
+                    'host': {
+                        'id': 123,
+                        'nickname': 'Джек Николаевич Воскресенский'
+                    },
+                    'number': 1,
+                    'bestMove': [
+                        1,
+                        2,
+                        3
+                    ],
+                    'startDatetime': '2023-03-17T15:13:30',
+                    'endDatetime': '2023-02-05T11:51:07',
+                    'status': 'COMPLETED',
+                    'won': 'RED',
+                    'note': 'Some Note',
+                    'blackPlayerOne': {
+                        'id': 1,
+                        'nickname': 'Джек Николаевич Воскресенский'
+                    },
+                    'blackPlayerTwo': {
+                        'id': 3,
+                        'nickname': 'Джек Николаевич Воскресенский'
+                    },
+                    'donPlayer': {
+                        'id': 31,
+                        'nickname': 'Джек Николаевич Воскресенский'
+                    },
+                    'sheriffPlayer': {
+                        'id': 5,
+                        'nickname': 'Джек Николаевич Воскресенский'
+                    },
+                    'firstShootPlayer': {
+                        'id': 7,
+                        'nickname': 'Джек Николаевич Воскресенский'
+                    },
+                    'players': [
+                        {
+                            'player': {
+                                'id': 1,
+                                'nickname': 'Джек Николаевич Воскресенский'
+                            },
+                            'foulsCount': 3
+                        },
+                        {
+                            'player': {
+                                'id': 1,
+                                'nickname': 'Джек Николаевич Воскресенский'
+                            },
+                            'foulsCount': 3
+                        }
+                    ],
+                    'bestPlayers': [
+                        {
+                            'player': {
+                                'id': 1,
+                                'nickname': 'Джек Николаевич Воскресенский'
+                            },
+                            'additionalPoints': 0
+                        },
+                        {
+                            'player': {
+                                'id': 7,
+                                'nickname': 'Джек Николаевич Воскресенский'
+                            },
+                            'additionalPoints': 0
+                        }
+                    ],
+                    'days': [
+                        {
+                            'number': 1,
+                            'votingMap': [
+                                {
+                                    'player': {
+                                        'id': 1,
+                                        'nickname': 'Джек Николаевич Воскресенский'
+                                    },
+                                    'whoPutToVote': {
+                                        'id': 3,
+                                        'nickname': 'Джек Николаевич Воскресенский'
+                                    },
+                                    'firstVoteCount': 32,
+                                    'secondVoteCount': 4
+                                }
+                            ]
+                        }
+                    ]
+                }],
             isLoading: false // TODO: fix loading
         }
     }
