@@ -2,6 +2,7 @@ import Dashboard from './views/Dashboard/Dashboard'
 import ErrorPage from './views/ErrorPage/ErrorPage'
 import LoginPage from './views/LoginPage/LoginPage'
 import Data from './views/Manage/Data'
+import AllGames from './views/ManageGames/AllGames'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
 import Search from './views/Search/Search'
 
@@ -22,6 +23,12 @@ const dashRoutes = [
         path: '/manage/data',
         name: 'Статистика',
         component: Data,
+        layout: '/statistics'
+    },
+    {
+        path: '/host/manage/games/all',
+        name: 'Все игры',
+        component: AllGames,
         layout: '/statistics'
     },
     {
