@@ -107,6 +107,8 @@ const GamesComponent = (props) => {
         }
     })
 
+    const pageSize = 10
+
     return (
         <Card>
             <CardHeader color="primary" icon>
@@ -121,9 +123,8 @@ const GamesComponent = (props) => {
                 <ReactTable
                     columns={columns}
                     data={data}
-                    columnResizeMode
-                    defaultPageSize={10}
-                    showPaginationBottom
+                    defaultPageSize={data.length > pageSize ? pageSize : data.length}
+                    showPaginationBottom={data.length > pageSize}
                     className="-striped -highlight"
                 />
             </CardBody>
