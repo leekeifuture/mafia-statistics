@@ -16,13 +16,15 @@ class Games extends React.Component {
         super(props)
         this.state = {
             games: [],
+            limit: 15,
+            page: 1,
             isLoading: true
         }
     }
 
     componentDidMount() {
         trackPromise(
-            mafiaStatisticsApi.getAllGames()
+            mafiaStatisticsApi.getAllGames(this.state.limit, this.state.page)
                 .then(
                     data => this.setState({games: data}),
                     error => this.props.history.push('/auth/error')

@@ -71,8 +71,10 @@ export const mafiaStatisticsApi = {
         })
             .then(response => response.data)
     },
-    getAllGames() {
-        return axiosInstance.get('/host/game')
+    getAllGames(limit, page) {
+        return axiosInstance.get('/host/game', {
+            params: {limit, page}
+        })
             .then(response => response.data)
     }
 }
