@@ -130,6 +130,14 @@ const GamesComponent = (props) => {
                     defaultPageSize={data.length > pageSize ? pageSize : data.length}
                     showPaginationBottom={data.length > pageSize}
                     className="-striped -highlight"
+                    // Text
+                    previousText={'Пред'}
+                    nextText={'След'}
+                    loadingText={'Загрузка...'}
+                    noDataText={'Игр не найдено'}
+                    pageText={'Страница'}
+                    ofText={'из'}
+                    rowsText={'ряд'}
                 />
             </CardBody>
         </Card>
