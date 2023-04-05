@@ -1,7 +1,5 @@
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles'
 // @material-ui/icons
-import {cardTitle} from 'assets/jss/material-dashboard-pro-react.jsx'
 // core components
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
@@ -12,14 +10,6 @@ import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
 import LoadingIndicator
     from '../../components/LoadingIndicator/LoadingIndicator'
 import GamesComponent from './GamesComponent'
-
-const styles = {
-    cardIconTitle: {
-        ...cardTitle,
-        marginTop: '15px',
-        marginBottom: '0px'
-    }
-}
 
 class Games extends React.Component {
     constructor(props) {
@@ -59,4 +49,4 @@ class Games extends React.Component {
     }
 }
 
-export default withStyles(styles)(Games)
+export default Games

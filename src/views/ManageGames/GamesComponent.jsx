@@ -1,7 +1,9 @@
+import withStyles from '@material-ui/core/styles/withStyles'
 import Assignment from '@material-ui/icons/Assignment'
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import ReactTable from 'react-table'
+import {cardTitle} from '../../assets/jss/material-dashboard-pro-react'
 import Card from '../../components/Card/Card'
 import CardBody from '../../components/Card/CardBody'
 import CardHeader from '../../components/Card/CardHeader'
@@ -153,4 +155,12 @@ const getTeamWon = wonEnum => {
 const getGameStatus = (statusEnum) =>
     statusEnum === 'COMPLETED' ? 'Завершена' : 'В процессе'
 
-export default GamesComponent
+const styles = {
+    cardIconTitle: {
+        ...cardTitle,
+        marginTop: '15px',
+        marginBottom: '0px'
+    }
+}
+
+export default withStyles(styles)(GamesComponent)
