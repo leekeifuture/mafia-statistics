@@ -61,6 +61,10 @@ export const isAdmin = (user) => {
     return user.roles.includes('ADMIN')
 }
 
+export const isHost = (user) => {
+    return user.roles.includes('HOST')
+}
+
 export const trackMetriks = (pathname) => {
     ReactGA.pageview(pathname) // Google Analytics
     ym('hit', pathname) // Yandex Metrica
