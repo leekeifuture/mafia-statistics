@@ -1,5 +1,6 @@
 import Assignment from '@material-ui/icons/Assignment'
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import ReactTable from 'react-table'
 import Card from '../../components/Card/Card'
 import CardBody from '../../components/Card/CardBody'
@@ -11,8 +12,7 @@ const GamesComponent = (props) => {
     const columns = [
         {
             Header: 'Ведущий',
-            accessor: 'host',
-            minWidth: 250
+            accessor: 'host'
         },
         {
             Header: 'Победа',
@@ -40,10 +40,13 @@ const GamesComponent = (props) => {
         //     sortable: false,
         //     filterable: false
         // }
-    ]
+    ].map(props => (
+        {...props, Cell: props => ClickableCell(props)}
+    ))
 
     const data = props.games.map((game, key) => ({
         id: key,
+        gameId: game.host.id,
         host: (<>
             <small>{getMention(game.host)}</small> {game.host.nickname}
         </>),
@@ -119,6 +122,7 @@ const GamesComponent = (props) => {
             </CardHeader>
             <CardBody>
                 <ReactTable
+                    minRows={1}
                     columns={columns}
                     data={data}
                     defaultPageSize={data.length > pageSize ? pageSize : data.length}
@@ -129,6 +133,12 @@ const GamesComponent = (props) => {
         </Card>
     )
 }
+
+const ClickableCell = props =>
+    <NavLink style={{padding: '7px 5px', display: 'block', color: 'black'}}
+             to={`/statistics/host/manage/games/1`}>
+        {props.row[props.column.id]}
+    </NavLink>
 
 const getTeamWon = wonEnum => {
     if (wonEnum === 'RED') {
