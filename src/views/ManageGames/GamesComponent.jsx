@@ -110,8 +110,6 @@ const GamesComponent = (props) => {
         // )
     }))
 
-    const pageSize = 10
-
     return (
         <Card>
             <CardHeader color="primary" icon>
@@ -124,20 +122,24 @@ const GamesComponent = (props) => {
             </CardHeader>
             <CardBody>
                 <ReactTable
-                    minRows={1}
+                    minRows={0}
                     columns={columns}
                     data={data}
-                    defaultPageSize={data.length > pageSize ? pageSize : data.length}
-                    showPaginationBottom={data.length > pageSize}
+                    defaultPageSize={10}
+                    showPaginationBottom
+                    onPageChange={props => console.log(props)}
+                    onPageSizeChange={props => console.log(props)}
                     className="-striped -highlight"
                     // Text
-                    previousText={'Пред'}
-                    nextText={'След'}
+                    previousText={'Пред.'}
+                    nextText={'След.'}
                     loadingText={'Загрузка...'}
                     noDataText={'Игр не найдено'}
                     pageText={'Страница'}
                     ofText={'из'}
-                    rowsText={'ряд'}
+                    rowsText={'игр'}
+                    pageJumpText={'перейти на страницу'}
+                    rowsSelectorText={'игр на страницу'}
                 />
             </CardBody>
         </Card>

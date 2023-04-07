@@ -16,7 +16,8 @@ class Games extends React.Component {
         super(props)
         this.state = {
             games: [],
-            limit: 15,
+            gamesCount: 0,
+            limit: 999999,
             page: 1,
             isLoading: true
         }
@@ -26,7 +27,7 @@ class Games extends React.Component {
         trackPromise(
             mafiaStatisticsApi.getAllGames(this.state.limit, this.state.page)
                 .then(
-                    data => this.setState({games: data}),
+                    data => this.setState(data),
                     error => this.props.history.push('/auth/error')
                 )
         ).then(r => this.setState({isLoading: false}))
