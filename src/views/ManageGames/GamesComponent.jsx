@@ -36,12 +36,6 @@ const GamesComponent = (props) => {
             accessor: 'date',
             minWidth: 150
         }
-        // {
-        //     Header: 'Actions',
-        //     accessor: 'actions',
-        //     sortable: false,
-        //     filterable: false
-        // }
     ].map(props => (
         {...props, Cell: props => ClickableCell(props)}
     ))
@@ -56,58 +50,6 @@ const GamesComponent = (props) => {
         number: game.number,
         status: getGameStatus(game.status),
         date: getReadableDate(game.startDatetime, true)
-        // actions: (
-        //     // we've added some custom button actions
-        //     <div className="actions-right">
-        //         {/* use this button to add a like kind of action */}
-        //         <Button
-        //             justIcon
-        //             round
-        //             simple
-        //             onClick={() => {
-        //                 let obj = this.state.data.find(o => o.id === key)
-        //                 alert(
-        //                     'You\'ve clicked LIKE button on \n{ \nName: ' +
-        //                     obj.name +
-        //                     ', \nposition: ' +
-        //                     obj.position +
-        //                     ', \noffice: ' +
-        //                     obj.office +
-        //                     ', \nage: ' +
-        //                     obj.age +
-        //                     '\n}.'
-        //                 )
-        //             }}
-        //             color="info"
-        //             className="like"
-        //         >
-        //             <Favorite />
-        //         </Button>{' '}
-        //         {/* use this button to remove the data row */}
-        //         <Button
-        //             justIcon
-        //             round
-        //             simple
-        //             onClick={() => {
-        //                 var data = this.state.data
-        //                 data.find((o, i) => {
-        //                     if (o.id === key) {
-        //                         // here you should add some custom code so you can delete the data
-        //                         // from this component and from your server as well
-        //                         data.splice(i, 1)
-        //                         return true
-        //                     }
-        //                     return false
-        //                 })
-        //                 this.setState({data: data})
-        //             }}
-        //             color="danger"
-        //             className="remove"
-        //         >
-        //             <Close />
-        //         </Button>{' '}
-        //     </div>
-        // )
     }))
 
     return (
@@ -127,8 +69,6 @@ const GamesComponent = (props) => {
                     data={data}
                     defaultPageSize={10}
                     showPaginationBottom
-                    onPageChange={props => console.log(props)}
-                    onPageSizeChange={props => console.log(props)}
                     className="-striped -highlight"
                     // Text
                     previousText={'Пред.'}
