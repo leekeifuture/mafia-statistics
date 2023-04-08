@@ -466,7 +466,7 @@ class Sidebar extends React.Component {
                         },
                         {
                             path: '/host/manage/game',
-                            name: 'Все игры',
+                            name: 'Игра',
                             icon: Gamepad,
                             layout: '/statistics'
                         }
