@@ -62,7 +62,7 @@ export const isAdmin = (user) => {
 }
 
 export const isHost = (user) => {
-    return user.roles.includes('HOST')
+    return user.roles.includes('ADMIN')
 }
 
 export const trackMetriks = (pathname) => {
