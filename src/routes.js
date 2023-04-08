@@ -34,7 +34,7 @@ const dashRoutes = [
     },
     {
         path: '/host/manage/game',
-        name: 'Все игры',
+        name: 'Игра',
         component: HostGame,
         layout: '/statistics'
     },
