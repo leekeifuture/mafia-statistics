@@ -3,6 +3,7 @@ import ErrorPage from './views/ErrorPage/ErrorPage'
 import LoginPage from './views/LoginPage/LoginPage'
 import Data from './views/Manage/Data'
 import Games from './views/ManageGames/Games'
+import HostGame from './views/ManageGames/HostGame'
 import PlayerProfile from './views/PlayerProfile/PlayerProfile'
 import Search from './views/Search/Search'
 
@@ -29,6 +30,12 @@ const dashRoutes = [
         path: '/host/manage/games/all',
         name: 'Все игры',
         component: Games,
+        layout: '/statistics'
+    },
+    {
+        path: '/host/manage/game',
+        name: 'Все игры',
+        component: HostGame,
         layout: '/statistics'
     },
     {

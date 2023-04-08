@@ -5,7 +5,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leekeifuture/mafia-statistics.git"
+    "url": "https://github.com/mafia-brest/mafia-statistics-web-client"
   },
   "engines": {
     "node": ">=10.19.0",
@@ -40,10 +40,17 @@
     "react-router-dom": "4.3.1",
     "react-scripts": "2.1.5",
     "react-swipeable-views": "0.13.1",
-    "react-table": "6.9.2",
+    "react-table": "7.7.0",
     "react-tagsinput": "3.19.0",
     "react-yandex-metrika": "^2.6.0",
-    "read-excel-file": "^5.2.9"
+    "read-excel-file": "^5.2.9",
+    "@popperjs/core": "^2.0.0",
+    "clsx": "1.1.1",
+    "faker": "^5.5.3",
+    "immutability-helper": "^3.1.1",
+    "react-contenteditable": "^3.3.5",
+    "react-popper": "^2.2.5",
+    "react-window": "^1.8.6"
   },
   "scripts": {
     "start": "react-scripts start",
