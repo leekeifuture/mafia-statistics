@@ -1,69 +1,45 @@
+import GridContainer from 'components/Grid/GridContainer.jsx'
+import GridItem from 'components/Grid/GridItem.jsx'
+// core components
+import Wizard from 'components/Wizard/Wizard.jsx'
 import React from 'react'
-import {trackPromise} from 'react-promise-tracker'
-import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
-import GridContainer from '../../components/Grid/GridContainer'
-import GridItem from '../../components/Grid/GridItem'
-import LoadingIndicator
-    from '../../components/LoadingIndicator/LoadingIndicator'
-import GameComponent from './Game/src/GameComponent'
 
-class Game extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            id: '',
-            host: {},
-            number: '',
-            bestMove: [],
-            startDatetime: '',
-            status: '',
-            won: '',
-            note: '',
-            blackPlayerOne: {},
-            blackPlayerTwo: {},
-            donPlayer: {},
-            sheriffPlayer: {},
-            firstShootPlayer: {},
-            players: [],
-            bestPlayers: [],
-            days: [],
-            insertedAt: '',
-            updatedAt: '',
-            isAggregated: false,
-            isLoading: true
-        }
-    }
+import Step1 from './CreateGameSteps/Step1.jsx'
+import Step2 from './CreateGameSteps/Step2.jsx'
+import Step3 from './CreateGameSteps/Step3.jsx'
 
-    createGame() {
-        trackPromise(
-            mafiaStatisticsApi.createGame()
-                .then(
-                    data => this.setState(data),
-                    error => this.props.history.push('/statistics/dashboard')
-                )
-        ).then(r => this.setState({isLoading: false}))
-    }
-
-    componentDidMount() {
-        this.createGame()
-    }
-
+class CreateGame extends React.Component {
     render() {
-        return (<>
-            {this.state.isLoading
-                ? <LoadingIndicator />
-                : (<>
-                    <GridContainer>
-                        <GridItem xs={12}>
-                            <GameComponent
-                                state={this.state}
-                                setState={this.setState}
-                            />
-                        </GridItem>
-                    </GridContainer>
-                </>)}
-        </>)
+        return (
+            <GridContainer justify="center">
+                <GridItem xs={12} sm={8}>
+                    <Wizard
+                        validate
+                        steps={[
+                            {
+                                stepName: 'About',
+                                stepComponent: Step1,
+                                stepId: 'about'
+                            },
+                            {
+                                stepName: 'Account',
+                                stepComponent: Step2,
+                                stepId: 'account'
+                            },
+                            {
+                                stepName: 'Address',
+                                stepComponent: Step3,
+                                stepId: 'address'
+                            }
+                        ]}
+                        title="Build Your Profile"
+                        subtitle="This information will let us know more about you."
+                        finishButtonClick={e => console.log(e)}
+                    />
+                </GridItem>
+            </GridContainer>
+        )
     }
 }
 
-export default Game
+export default CreateGame

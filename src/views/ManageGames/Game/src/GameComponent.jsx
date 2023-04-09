@@ -26,7 +26,6 @@ function reducer(state, action, gameState, setState) {
                 }
             })
         case ActionTypes.ADD_ROW:
-            setState({players: [...gameState.players, {player: {nickname: ''}}]})
             return update(state, {
                 skipReset: {$set: true},
                 data: {$push: [{}]}
