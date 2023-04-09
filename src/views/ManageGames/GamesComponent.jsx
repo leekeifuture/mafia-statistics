@@ -89,7 +89,7 @@ const GamesComponent = (props) => {
 const ClickableCell = props =>
     <NavLink
         style={{padding: '7px 5px', display: 'block', color: 'black'}}
-        to={`/statistics/host/manage/games/${props.original.id}`}>
+        to={`/statistics/host/game/${props.original.id}`}>
         {props.row[props.column.id]}
     </NavLink>
 

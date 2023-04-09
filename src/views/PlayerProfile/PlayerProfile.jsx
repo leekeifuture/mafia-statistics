@@ -192,9 +192,9 @@ class PlayerProfile extends React.Component {
         }
     }
 
-    getPlayer() {
+    getPlayerById(id) {
         trackPromise(
-            mafiaStatisticsApi.getPlayerById(this.props.match.params.id)
+            mafiaStatisticsApi.getPlayerById(id)
                 .then(
                     data => {
                         utilApi.isImageExists(data.photoUrl).then(
@@ -212,13 +212,13 @@ class PlayerProfile extends React.Component {
     }
 
     componentDidMount() {
-        this.getPlayer()
+        this.getPlayerById(this.props.match.params.id)
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.url !== this.props.location.pathname) {
             this.setState({isLoading: true})
-            this.getPlayer()
+            this.getPlayerById()
         }
     }
 

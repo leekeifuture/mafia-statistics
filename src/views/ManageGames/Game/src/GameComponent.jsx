@@ -178,34 +178,22 @@ function reducer(state, action) {
     }
 }
 
-function App() {
-    const [state, dispatch] = useReducer(reducer, makeData(1000))
+function GameComponent(game) {
+    const [state, dispatch] = useReducer(reducer, makeData(game.state))
 
     useEffect(() => {
         dispatch({type: ActionTypes.ENABLE_RESET})
     }, [state.data, state.columns])
 
-    return (
-        <div
-            className="overflow-hidden"
-            style={{
-                width: '100vw',
-                height: '100vh',
-                padding: 10
-            }}
-        >
-            <div style={{marginBottom: 40, marginTop: 40}}>
-                <h1>Editable React Table - Demo</h1>
-            </div>
-            <Table
-                columns={state.columns}
-                data={state.data}
-                dispatch={dispatch}
-                skipReset={state.skipReset}
-            />
-            <div id="popper-portal"></div>
-        </div>
-    )
+    return (<>
+        <Table
+            columns={state.columns}
+            data={state.data}
+            dispatch={dispatch}
+            skipReset={state.skipReset}
+        />
+        <div id="popper-portal"></div>
+    </>)
 }
 
-export default App
+export default GameComponent

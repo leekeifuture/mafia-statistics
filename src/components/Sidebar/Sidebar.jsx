@@ -459,13 +459,13 @@ class Sidebar extends React.Component {
                     state: 'manageGamesComponentsCollapse',
                     views: [
                         {
-                            path: '/host/manage/games/all',
+                            path: '/games/all',
                             name: 'Все игры',
                             icon: Gamepad,
                             layout: '/statistics'
                         },
                         {
-                            path: '/host/manage/game',
+                            path: '/host/game/:id?',
                             name: 'Игра',
                             icon: Gamepad,
                             layout: '/statistics'
