@@ -23,6 +23,7 @@ const defaultColumn = {
 }
 
 export default function Table({
+                                  game,
                                   columns,
                                   data,
                                   dispatch: dataDispatch,
@@ -119,7 +120,7 @@ export default function Table({
                 </div>
                 <div {...getTableBodyProps()}>
                     <FixedSizeList
-                        height={480}
+                        height={game.players.length * 40}
                         itemCount={rows.length}
                         itemSize={40}
                         width={totalColumnsWidth + scrollbarWidth}

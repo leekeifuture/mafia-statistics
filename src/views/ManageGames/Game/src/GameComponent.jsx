@@ -4,7 +4,7 @@ import './style.css'
 import Table from './Table'
 import {ActionTypes, DataTypes, makeData, randomColor, shortId} from './utils'
 
-function reducer(state, action) {
+function reducer(state, action, gameState, setState) {
     switch (action.type) {
         case ActionTypes.ADD_OPTION_TO_COLUMN:
             const optionIndex = state.columns.findIndex(
@@ -26,6 +26,7 @@ function reducer(state, action) {
                 }
             })
         case ActionTypes.ADD_ROW:
+            setState({players: [...gameState.players, {player: {nickname: ''}}]})
             return update(state, {
                 skipReset: {$set: true},
                 data: {$push: [{}]}
@@ -178,8 +179,11 @@ function reducer(state, action) {
     }
 }
 
-function GameComponent(game) {
-    const [state, dispatch] = useReducer(reducer, makeData(game.state))
+function GameComponent(props) {
+    const game = props.state
+    const [state, dispatch] = useReducer(
+        (state, action) => reducer(state, action, game, props.setState), makeData(game)
+    )
 
     useEffect(() => {
         dispatch({type: ActionTypes.ENABLE_RESET})
@@ -187,6 +191,7 @@ function GameComponent(game) {
 
     return (<>
         <Table
+            game={game}
             columns={state.columns}
             data={state.data}
             dispatch={dispatch}

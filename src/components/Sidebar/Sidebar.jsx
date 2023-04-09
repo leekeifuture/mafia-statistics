@@ -463,6 +463,12 @@ class Sidebar extends React.Component {
                             name: 'Все игры',
                             icon: Gamepad,
                             layout: '/statistics'
+                        },
+                        {
+                            path: '/game/create',
+                            name: 'Создать игру',
+                            icon: Gamepad,
+                            layout: '/statistics'
                         }
                     ]
                 }]

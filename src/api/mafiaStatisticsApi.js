@@ -80,6 +80,10 @@ export const mafiaStatisticsApi = {
     getGameById(id) {
         return axiosInstance.get(`/host/game/${id}`)
             .then(response => response.data)
+    },
+    createGame() {
+        return axiosInstance.post('/host/game', {})
+            .then(response => response.data)
     }
 }
 

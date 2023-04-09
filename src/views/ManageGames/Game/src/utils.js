@@ -9,7 +9,7 @@ export function randomColor() {
 export function makeData(game) {
     const data = game.players.map((player, index) => ({
             number: index + 1,
-            ID: player.player.id,
+            ID: index,
             nickname: player.player.nickname
         })
     )

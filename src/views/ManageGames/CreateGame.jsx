@@ -34,9 +34,9 @@ class Game extends React.Component {
         }
     }
 
-    getGameById(id) {
+    createGame() {
         trackPromise(
-            mafiaStatisticsApi.getGameById(id)
+            mafiaStatisticsApi.createGame()
                 .then(
                     data => this.setState(data),
                     error => this.props.history.push('/statistics/dashboard')
@@ -45,11 +45,10 @@ class Game extends React.Component {
     }
 
     componentDidMount() {
-        this.getGameById(this.props.match.params.id)
+        this.createGame()
     }
 
     render() {
-        this.setState = this.setState.bind(this)
         return (<>
             {this.state.isLoading
                 ? <LoadingIndicator />
