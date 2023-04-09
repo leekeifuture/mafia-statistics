@@ -27,7 +27,7 @@ export function makeData(game) {
             label: 'Никнейм',
             accessor: 'nickname',
             minWidth: 100,
-            dataType: DataTypes.TEXT,
+            dataType: DataTypes.TEXT
         },
         {
             id: Constants.ADD_COLUMN_ID,
