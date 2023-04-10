@@ -244,7 +244,9 @@ class Wizard extends React.Component {
                 <Card className={classes.card}>
                     <div className={classes.wizardHeader}>
                         <h3 className={classes.title}>{title}</h3>
-                        <h5 className={classes.subtitle}>{subtitle}</h5>
+                        {subtitle
+                            ? <h5 className={classes.subtitle}>{subtitle}</h5>
+                            : <></>}
                     </div>
                     <div className={classes.wizardNavigation}>
                         <ul className={classes.nav}>
@@ -306,7 +308,7 @@ class Wizard extends React.Component {
                         <div className={classes.right}>
                             {this.state.nextButton ? (
                                 <Button
-                                    color="rose"
+                                    color="primary"
                                     className={this.props.nextButtonClasses}
                                     onClick={() => this.nextButtonClick()}
                                 >
@@ -315,7 +317,7 @@ class Wizard extends React.Component {
                             ) : null}
                             {this.state.finishButton ? (
                                 <Button
-                                    color="rose"
+                                    color="primary"
                                     className={this.finishButtonClasses}
                                     onClick={() => this.finishButtonClick()}
                                 >
@@ -332,9 +334,9 @@ class Wizard extends React.Component {
 }
 
 Wizard.defaultProps = {
-    color: 'rose',
+    color: 'primary',
     title: 'Here should go your title',
-    subtitle: 'And this would be your subtitle',
+    subtitle: '',
     previousButtonText: 'Previous',
     previousButtonClasses: '',
     nextButtonClasses: '',
