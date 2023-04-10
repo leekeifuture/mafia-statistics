@@ -70,7 +70,7 @@ export default function FreeSoloCreateOptionDialog(props) {
                     if (params.inputValue !== '') {
                         filtered.push({
                             inputValue: params.inputValue,
-                            title: `Add '${params.inputValue}'`
+                            title: `Добавить нового игрока '${params.inputValue}'`
                         })
                     }
 
@@ -94,48 +94,45 @@ export default function FreeSoloCreateOptionDialog(props) {
                 freeSolo
                 renderInput={(params) => (
                     <TextField {...params} label={props.label}
-                               variant='outlined' />
+                               variant="outlined" />
                 )}
             />
             <Dialog open={open} onClose={handleClose}
-                    aria-labelledby='form-dialog-title'>
+                    aria-labelledby="form-dialog-title">
                 <form onSubmit={handleSubmit}>
-                    <DialogTitle id='form-dialog-title'>Add a new
-                        film</DialogTitle>
+                    <DialogTitle
+                        id="form-dialog-title"
+                        style={{textAlign: 'center'}}
+                    >
+                        Добавление нового игрока в клуб
+                    </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
-                            Did you miss any film in our list? Please, add it!
+                            Вы не увидели данного игрока в списке?
+                            Можете добавьте его в базу данных клуба здесь.
+                            Не нужно указывать г-н/г-жа!
                         </DialogContentText>
                         <TextField
                             autoFocus
-                            margin='dense'
-                            id='name'
+                            margin="dense"
+                            id="name"
                             value={dialogValue.title}
-                            onChange={(event) => setDialogValue({
-                                ...dialogValue,
-                                title: event.target.value
-                            })}
-                            label='title'
-                            type='text'
-                        />
-                        <TextField
-                            margin='dense'
-                            id='name'
-                            value={dialogValue.year}
-                            onChange={(event) => setDialogValue({
-                                ...dialogValue,
-                                year: event.target.value
-                            })}
-                            label='year'
-                            type='number'
+                            onChange={(event) =>
+                                setDialogValue({
+                                    ...dialogValue,
+                                    title: event.target.value
+                                })}
+                            label="Никнейм"
+                            type="text"
+                            style={{width: '100%'}}
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose} color='primary'>
-                            Cancel
+                        <Button onClick={handleClose} color="primary">
+                            Отмена
                         </Button>
-                        <Button type='submit' color='primary'>
-                            Add
+                        <Button type="submit" color="primary">
+                            Добавить
                         </Button>
                     </DialogActions>
                 </form>
