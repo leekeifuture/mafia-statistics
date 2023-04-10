@@ -93,7 +93,7 @@ class Search extends React.Component {
                 textAlign="center"
                 category={
                     <span>
-                        Начинайте вводить имя игрока и результаты
+                        Начинайте вводить никнейм игрока и результаты
                         автоматически появятся на странице
                     </span>
                 }
