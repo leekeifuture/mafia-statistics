@@ -5,7 +5,7 @@ import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 import LoadingIndicator
     from '../../components/LoadingIndicator/LoadingIndicator'
-import GameComponent from './Game/src/GameComponent'
+import GameComponent from './GameComponent/src/GameComponent'
 
 class Game extends React.Component {
     constructor(props) {
