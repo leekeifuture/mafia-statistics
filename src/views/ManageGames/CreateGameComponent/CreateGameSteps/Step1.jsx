@@ -4,11 +4,11 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import Email from '@material-ui/icons/Email'
 // @material-ui/icons
 import Face from '@material-ui/icons/Face'
-import CustomInput from 'components/CustomInput/CustomInput.jsx'
-// core components
-import GridContainer from 'components/Grid/GridContainer.jsx'
-import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
+// core components
+import GridContainer from '../../../../components/Grid/GridContainer'
+import GridItem from '../../../../components/Grid/GridItem'
+import CustomPlayerInput from '../CustomPlayerInput'
 
 const style = {
     infoText: {
@@ -28,12 +28,10 @@ class Step1 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            player1: '',
-            player1State: '',
-            lastname: '',
-            lastnameState: '',
-            email: '',
-            emailState: ''
+            players: [],
+            playersState: [],
+            host: '',
+            hostState: ''
         }
     }
 
@@ -41,34 +39,15 @@ class Step1 extends React.Component {
         return this.state
     }
 
-    // function that returns true if value is email, false otherwise
-    verifyEmail(value) {
-        var emailRex = /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        if (emailRex.test(value)) {
-            return true
-        }
-        return false
+    // function that verifies if a string has a given player or not
+    verifyPlayer(value, length) {
+        return value.length >= length
     }
 
-    // function that verifies if a string has a given length or not
-    verifyLength(value, length) {
-        if (value.length >= length) {
-            return true
-        }
-        return false
-    }
-
-    change(event, stateName, type, stateNameEqualTo) {
+    change(event, stateName, type) {
         switch (type) {
-            case 'email':
-                if (this.verifyEmail(event.target.value)) {
-                    this.setState({[stateName + 'State']: 'success'})
-                } else {
-                    this.setState({[stateName + 'State']: 'error'})
-                }
-                break
-            case 'length':
-                if (this.verifyLength(event.target.value, stateNameEqualTo)) {
+            case 'player':
+                if (this.verifyPlayer(event.target.value)) {
                     this.setState({[stateName + 'State']: 'success'})
                 } else {
                     this.setState({[stateName + 'State']: 'error'})
@@ -83,19 +62,15 @@ class Step1 extends React.Component {
     isValidated() {
         if (
             this.state.player1State === 'success' &&
-            this.state.lastnameState === 'success' &&
-            this.state.emailState === 'success'
+            this.state.hostState === 'success'
         ) {
             return true
         } else {
             if (this.state.player1State !== 'success') {
                 this.setState({player1State: 'error'})
             }
-            if (this.state.lastnameState !== 'success') {
-                this.setState({lastnameState: 'error'})
-            }
-            if (this.state.emailState !== 'success') {
-                this.setState({emailState: 'error'})
+            if (this.state.hostState !== 'success') {
+                this.setState({hostState: 'error'})
             }
         }
         return false
@@ -107,8 +82,12 @@ class Step1 extends React.Component {
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12}>
                     <h4 className={classes.infoText}>
-                        Начните вводить никнеймы игроков в полях и результаты
-                        автоматически появятся в выпадающем списке
+                        <div>Сперва нужно заполнить список всех игроков</div>
+                        <small>
+                            Начните вводить никнеймы игроков в полях и
+                            результаты автоматически появятся в выпадающем
+                            списке
+                        </small>
                     </h4>
                 </GridItem>
                 {Array.from(Array(10)).map((x, i) => {
@@ -116,7 +95,7 @@ class Step1 extends React.Component {
                     const playerNumber = `player${number}`
                     return (
                         <GridItem xs={12} sm={6}>
-                            <CustomInput
+                            <CustomPlayerInput
                                 success={this.state.player1State === 'success'}
                                 error={this.state.player1State === 'error'}
                                 labelText={
@@ -133,8 +112,7 @@ class Step1 extends React.Component {
                                         this.change(
                                             event,
                                             playerNumber,
-                                            'length',
-                                            3
+                                            'player'
                                         ),
                                     endAdornment: (
                                         <InputAdornment
@@ -151,20 +129,24 @@ class Step1 extends React.Component {
                     )
                 })}
                 <GridItem xs={12} sm={12} md={12} lg={10}>
-                    <CustomInput
-                        success={this.state.emailState === 'success'}
-                        error={this.state.emailState === 'error'}
+                    <CustomPlayerInput
+                        success={this.state.hostState === 'success'}
+                        error={this.state.hostState === 'error'}
                         labelText={
                             <span>
                                 Ведущий
                             </span>
                         }
-                        id="email"
+                        id="host"
                         formControlProps={{
                             fullWidth: true
                         }}
                         inputProps={{
-                            onChange: event => this.change(event, 'email', 'email'),
+                            onChange: event => this.change(
+                                event,
+                                'host',
+                                'host'
+                            ),
                             endAdornment: (
                                 <InputAdornment
                                     position="end"

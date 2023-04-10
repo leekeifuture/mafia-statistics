@@ -1,18 +1,18 @@
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
 // core components
-import Wizard from 'components/Wizard/Wizard.jsx'
 import React from 'react'
+import CreateGameComponent from './CreateGameComponent/CreateGameComponent'
 
-import Step1 from './CreateGameSteps/Step1.jsx'
-import Step2 from './CreateGameSteps/Step2.jsx'
+import Step1 from './CreateGameComponent/CreateGameSteps/Step1.jsx'
+import Step2 from './CreateGameComponent/CreateGameSteps/Step2.jsx'
 
 class CreateGame extends React.Component {
     render() {
         return (
             <GridContainer justify="center">
                 <GridItem xs={12} sm={8}>
-                    <Wizard
+                    <CreateGameComponent
                         validate
                         steps={[
                             {

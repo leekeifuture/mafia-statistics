@@ -5,15 +5,15 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-import customCheckboxRadioSwitch
-    from 'assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx'
-
-import customSelectStyle
-    from 'assets/jss/material-dashboard-pro-react/customSelectStyle.jsx'
-// core components
-import GridContainer from 'components/Grid/GridContainer.jsx'
-import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
+
+// core components
+import customCheckboxRadioSwitch
+    from '../../../../assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch'
+import customSelectStyle
+    from '../../../../assets/jss/material-dashboard-pro-react/customSelectStyle'
+import GridContainer from '../../../../components/Grid/GridContainer'
+import GridItem from '../../../../components/Grid/GridItem'
 
 const style = {
     infoText: {
