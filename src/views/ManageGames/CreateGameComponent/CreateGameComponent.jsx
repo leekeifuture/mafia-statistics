@@ -337,10 +337,10 @@ CreateGameComponent.defaultProps = {
     color: 'primary',
     title: 'Here should go your title',
     subtitle: '',
-    previousButtonText: 'Previous',
+    previousButtonText: 'Назад',
     previousButtonClasses: '',
     nextButtonClasses: '',
-    nextButtonText: 'Next',
+    nextButtonText: 'Дальше',
     finishButtonClasses: '',
     finishButtonText: 'Finish'
 }
