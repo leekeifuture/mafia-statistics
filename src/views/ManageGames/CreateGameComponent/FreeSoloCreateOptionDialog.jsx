@@ -5,6 +5,8 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import MenuItem from '@material-ui/core/MenuItem'
+import Select from '@material-ui/core/Select'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete, {createFilterOptions} from '@material-ui/lab/Autocomplete'
 import React from 'react'
@@ -18,7 +20,7 @@ export default function FreeSoloCreateOptionDialog(props) {
     const handleClose = () => {
         setDialogValue({
             title: '',
-            year: ''
+            mention: ''
         })
 
         toggleOpen(false)
@@ -26,14 +28,14 @@ export default function FreeSoloCreateOptionDialog(props) {
 
     const [dialogValue, setDialogValue] = React.useState({
         title: '',
-        year: ''
+        mention: ''
     })
 
     const handleSubmit = (event) => {
         event.preventDefault()
         setValue({
             title: dialogValue.title,
-            year: parseInt(dialogValue.year, 10)
+            mention: dialogValue.mention
         })
 
         handleClose()
@@ -51,14 +53,14 @@ export default function FreeSoloCreateOptionDialog(props) {
                             toggleOpen(true)
                             setDialogValue({
                                 title: newValue,
-                                year: ''
+                                mention: 'MALE'
                             })
                         })
                     } else if (newValue && newValue.inputValue) {
                         toggleOpen(true)
                         setDialogValue({
                             title: newValue.inputValue,
-                            year: ''
+                            mention: 'MALE'
                         })
                     } else {
                         setValue(newValue)
@@ -110,12 +112,27 @@ export default function FreeSoloCreateOptionDialog(props) {
                         <DialogContentText>
                             Вы не увидели данного игрока в списке?
                             Можете добавьте его в базу данных клуба здесь.
-                            Не нужно указывать г-н/г-жа!
                         </DialogContentText>
+                        <Select
+                            margin="dense"
+                            id="mention"
+                            value={dialogValue.mention}
+                            onChange={(event) =>
+                                setDialogValue({
+                                    ...dialogValue,
+                                    mention: event.target.value
+                                })}
+                            label="Как обращаться"
+                            type="text"
+                            style={{width: '100%'}}
+                        >
+                            <MenuItem value={'MALE'}>Господин</MenuItem>
+                            <MenuItem value={'FEMALE'}>Госпожа</MenuItem>
+                        </Select>
                         <TextField
                             autoFocus
                             margin="dense"
-                            id="name"
+                            id="nickname"
                             value={dialogValue.title}
                             onChange={(event) =>
                                 setDialogValue({
@@ -141,109 +158,111 @@ export default function FreeSoloCreateOptionDialog(props) {
     )
 }
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
-    {title: 'The Shawshank Redemption', year: 1994},
-    {title: 'The Godfather', year: 1972},
-    {title: 'The Godfather: Part II', year: 1974},
-    {title: 'The Dark Knight', year: 2008},
-    {title: '12 Angry Men', year: 1957},
-    {title: 'Schindler\'s List', year: 1993},
-    {title: 'Pulp Fiction', year: 1994},
-    {title: 'The Lord of the Rings: The Return of the King', year: 2003},
-    {title: 'The Good, the Bad and the Ugly', year: 1966},
-    {title: 'Fight Club', year: 1999},
-    {title: 'The Lord of the Rings: The Fellowship of the Ring', year: 2001},
-    {title: 'Star Wars: Episode V - The Empire Strikes Back', year: 1980},
-    {title: 'Forrest Gump', year: 1994},
-    {title: 'Inception', year: 2010},
-    {title: 'The Lord of the Rings: The Two Towers', year: 2002},
-    {title: 'One Flew Over the Cuckoo\'s Nest', year: 1975},
-    {title: 'Goodfellas', year: 1990},
-    {title: 'The Matrix', year: 1999},
-    {title: 'Seven Samurai', year: 1954},
-    {title: 'Star Wars: Episode IV - A New Hope', year: 1977},
-    {title: 'City of God', year: 2002},
-    {title: 'Se7en', year: 1995},
-    {title: 'The Silence of the Lambs', year: 1991},
-    {title: 'It\'s a Wonderful Life', year: 1946},
-    {title: 'Life Is Beautiful', year: 1997},
-    {title: 'The Usual Suspects', year: 1995},
-    {title: 'Léon: The Professional', year: 1994},
-    {title: 'Spirited Away', year: 2001},
-    {title: 'Saving Private Ryan', year: 1998},
-    {title: 'Once Upon a Time in the West', year: 1968},
-    {title: 'American History X', year: 1998},
-    {title: 'Interstellar', year: 2014},
-    {title: 'Casablanca', year: 1942},
-    {title: 'City Lights', year: 1931},
-    {title: 'Psycho', year: 1960},
-    {title: 'The Green Mile', year: 1999},
-    {title: 'The Intouchables', year: 2011},
-    {title: 'Modern Times', year: 1936},
-    {title: 'Raiders of the Lost Ark', year: 1981},
-    {title: 'Rear Window', year: 1954},
-    {title: 'The Pianist', year: 2002},
-    {title: 'The Departed', year: 2006},
-    {title: 'Terminator 2: Judgment Day', year: 1991},
-    {title: 'Back to the Future', year: 1985},
-    {title: 'Whiplash', year: 2014},
-    {title: 'Gladiator', year: 2000},
-    {title: 'Memento', year: 2000},
-    {title: 'The Prestige', year: 2006},
-    {title: 'The Lion King', year: 1994},
-    {title: 'Apocalypse Now', year: 1979},
-    {title: 'Alien', year: 1979},
-    {title: 'Sunset Boulevard', year: 1950},
+    {title: 'The Shawshank Redemption', mention: 'MALE'},
+    {title: 'The Godfather', mention: 'MALE'},
+    {title: 'The Godfather: Part II', mention: 'MALE'},
+    {title: 'The Dark Knight', mention: 'MALE'},
+    {title: '12 Angry Men', mention: 'MALE'},
+    {title: 'Schindler\'s List', mention: 'MALE'},
+    {title: 'Pulp Fiction', mention: 'MALE'},
+    {title: 'The Lord of the Rings: The Return of the King', mention: 'MALE'},
+    {title: 'The Good, the Bad and the Ugly', mention: 'MALE'},
+    {title: 'Fight Club', mention: 'MALE'},
+    {
+        title: 'The Lord of the Rings: The Fellowship of the Ring',
+        mention: 'MALE'
+    },
+    {title: 'Star Wars: Episode V - The Empire Strikes Back', mention: 'MALE'},
+    {title: 'Forrest Gump', mention: 'MALE'},
+    {title: 'Inception', mention: 'MALE'},
+    {title: 'The Lord of the Rings: The Two Towers', mention: 'MALE'},
+    {title: 'One Flew Over the Cuckoo\'s Nest', mention: 'MALE'},
+    {title: 'Goodfellas', mention: 'MALE'},
+    {title: 'The Matrix', mention: 'MALE'},
+    {title: 'Seven Samurai', mention: 'MALE'},
+    {title: 'Star Wars: Episode IV - A New Hope', mention: 'MALE'},
+    {title: 'City of God', mention: 'MALE'},
+    {title: 'Se7en', mention: 'MALE'},
+    {title: 'The Silence of the Lambs', mention: 'MALE'},
+    {title: 'It\'s a Wonderful Life', mention: 'MALE'},
+    {title: 'Life Is Beautiful', mention: 'MALE'},
+    {title: 'The Usual Suspects', mention: 'MALE'},
+    {title: 'Léon: The Professional', mention: 'MALE'},
+    {title: 'Spirited Away', mention: 'MALE'},
+    {title: 'Saving Private Ryan', mention: 'MALE'},
+    {title: 'Once Upon a Time in the West', mention: 'MALE'},
+    {title: 'American History X', mention: 'MALE'},
+    {title: 'Interstellar', mention: 'MALE'},
+    {title: 'Casablanca', mention: 'MALE'},
+    {title: 'City Lights', mention: 'MALE'},
+    {title: 'Psycho', mention: 'MALE'},
+    {title: 'The Green Mile', mention: 'MALE'},
+    {title: 'The Intouchables', mention: 'MALE'},
+    {title: 'Modern Times', mention: 'MALE'},
+    {title: 'Raiders of the Lost Ark', mention: 'MALE'},
+    {title: 'Rear Window', mention: 'MALE'},
+    {title: 'The Pianist', mention: 'MALE'},
+    {title: 'The Departed', mention: 'MALE'},
+    {title: 'Terminator 2: Judgment Day', mention: 'MALE'},
+    {title: 'Back to the Future', mention: 'MALE'},
+    {title: 'Whiplash', mention: 'MALE'},
+    {title: 'Gladiator', mention: 'MALE'},
+    {title: 'Memento', mention: 'MALE'},
+    {title: 'The Prestige', mention: 'MALE'},
+    {title: 'The Lion King', mention: 'MALE'},
+    {title: 'Apocalypse Now', mention: 'MALE'},
+    {title: 'Alien', mention: 'MALE'},
+    {title: 'Sunset Boulevard', mention: 'MALE'},
     {
         title: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
-        year: 1964
+        mention: 'MALE'
     },
-    {title: 'The Great Dictator', year: 1940},
-    {title: 'Cinema Paradiso', year: 1988},
-    {title: 'The Lives of Others', year: 2006},
-    {title: 'Grave of the Fireflies', year: 1988},
-    {title: 'Paths of Glory', year: 1957},
-    {title: 'Django Unchained', year: 2012},
-    {title: 'The Shining', year: 1980},
-    {title: 'WALL·E', year: 2008},
-    {title: 'American Beauty', year: 1999},
-    {title: 'The Dark Knight Rises', year: 2012},
-    {title: 'Princess Mononoke', year: 1997},
-    {title: 'Aliens', year: 1986},
-    {title: 'Oldboy', year: 2003},
-    {title: 'Once Upon a Time in America', year: 1984},
-    {title: 'Witness for the Prosecution', year: 1957},
-    {title: 'Das Boot', year: 1981},
-    {title: 'Citizen Kane', year: 1941},
-    {title: 'North by Northwest', year: 1959},
-    {title: 'Vertigo', year: 1958},
-    {title: 'Star Wars: Episode VI - Return of the Jedi', year: 1983},
-    {title: 'Reservoir Dogs', year: 1992},
-    {title: 'Braveheart', year: 1995},
-    {title: 'M', year: 1931},
-    {title: 'Requiem for a Dream', year: 2000},
-    {title: 'Amélie', year: 2001},
-    {title: 'A Clockwork Orange', year: 1971},
-    {title: 'Like Stars on Earth', year: 2007},
-    {title: 'Taxi Driver', year: 1976},
-    {title: 'Lawrence of Arabia', year: 1962},
-    {title: 'Double Indemnity', year: 1944},
-    {title: 'Eternal Sunshine of the Spotless Mind', year: 2004},
-    {title: 'Amadeus', year: 1984},
-    {title: 'To Kill a Mockingbird', year: 1962},
-    {title: 'Toy Story 3', year: 2010},
-    {title: 'Logan', year: 2017},
-    {title: 'Full Metal Jacket', year: 1987},
-    {title: 'Dangal', year: 2016},
-    {title: 'The Sting', year: 1973},
-    {title: '2001: A Space Odyssey', year: 1968},
-    {title: 'Singin\' in the Rain', year: 1952},
-    {title: 'Toy Story', year: 1995},
-    {title: 'Bicycle Thieves', year: 1948},
-    {title: 'The Kid', year: 1921},
-    {title: 'Inglourious Basterds', year: 2009},
-    {title: 'Snatch', year: 2000},
-    {title: '3 Idiots', year: 2009},
-    {title: 'Monty Python and the Holy Grail', year: 1975}
+    {title: 'The Great Dictator', mention: 'MALE'},
+    {title: 'Cinema Paradiso', mention: 'MALE'},
+    {title: 'The Lives of Others', mention: 'MALE'},
+    {title: 'Grave of the Fireflies', mention: 'MALE'},
+    {title: 'Paths of Glory', mention: 'MALE'},
+    {title: 'Django Unchained', mention: 'MALE'},
+    {title: 'The Shining', mention: 'MALE'},
+    {title: 'WALL·E', mention: 'MALE'},
+    {title: 'American Beauty', mention: 'MALE'},
+    {title: 'The Dark Knight Rises', mention: 'MALE'},
+    {title: 'Princess Mononoke', mention: 'MALE'},
+    {title: 'Aliens', mention: 'MALE'},
+    {title: 'Oldboy', mention: 'MALE'},
+    {title: 'Once Upon a Time in America', mention: 'MALE'},
+    {title: 'Witness for the Prosecution', mention: 'MALE'},
+    {title: 'Das Boot', mention: 'MALE'},
+    {title: 'Citizen Kane', mention: 'MALE'},
+    {title: 'North by Northwest', mention: 'MALE'},
+    {title: 'Vertigo', mention: 'MALE'},
+    {title: 'Star Wars: Episode VI - Return of the Jedi', mention: 'MALE'},
+    {title: 'Reservoir Dogs', mention: 'MALE'},
+    {title: 'Braveheart', mention: 'MALE'},
+    {title: 'M', mention: 'MALE'},
+    {title: 'Requiem for a Dream', mention: 'MALE'},
+    {title: 'Amélie', mention: 'MALE'},
+    {title: 'A Clockwork Orange', mention: 'MALE'},
+    {title: 'Like Stars on Earth', mention: 'MALE'},
+    {title: 'Taxi Driver', mention: 'MALE'},
+    {title: 'Lawrence of Arabia', mention: 'MALE'},
+    {title: 'Double Indemnity', mention: 'MALE'},
+    {title: 'Eternal Sunshine of the Spotless Mind', mention: 'MALE'},
+    {title: 'Amadeus', mention: 'MALE'},
+    {title: 'To Kill a Mockingbird', mention: 'MALE'},
+    {title: 'Toy Story 3', mention: 'MALE'},
+    {title: 'Logan', mention: 'MALE'},
+    {title: 'Full Metal Jacket', mention: 'MALE'},
+    {title: 'Dangal', mention: 'MALE'},
+    {title: 'The Sting', mention: 'MALE'},
+    {title: '2001: A Space Odyssey', mention: 'MALE'},
+    {title: 'Singin\' in the Rain', mention: 'MALE'},
+    {title: 'Toy Story', mention: 'MALE'},
+    {title: 'Bicycle Thieves', mention: 'MALE'},
+    {title: 'The Kid', mention: 'MALE'},
+    {title: 'Inglourious Basterds', mention: 'MALE'},
+    {title: 'Snatch', mention: 'MALE'},
+    {title: '3 Idiots', mention: 'MALE'},
+    {title: 'Monty Python and the Holy Grail', mention: 'MALE'}
 ]
