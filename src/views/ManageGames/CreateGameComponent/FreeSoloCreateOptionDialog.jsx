@@ -70,7 +70,7 @@ export default function FreeSoloCreateOptionDialog(props) {
                     if (params.inputValue !== '') {
                         filtered.push({
                             inputValue: params.inputValue,
-                            title: `Add "${params.inputValue}"`
+                            title: `Add '${params.inputValue}'`
                         })
                     }
 
@@ -94,13 +94,13 @@ export default function FreeSoloCreateOptionDialog(props) {
                 freeSolo
                 renderInput={(params) => (
                     <TextField {...params} label={props.label}
-                               variant="outlined" />
+                               variant='outlined' />
                 )}
             />
             <Dialog open={open} onClose={handleClose}
-                    aria-labelledby="form-dialog-title">
+                    aria-labelledby='form-dialog-title'>
                 <form onSubmit={handleSubmit}>
-                    <DialogTitle id="form-dialog-title">Add a new
+                    <DialogTitle id='form-dialog-title'>Add a new
                         film</DialogTitle>
                     <DialogContent>
                         <DialogContentText>
@@ -108,33 +108,33 @@ export default function FreeSoloCreateOptionDialog(props) {
                         </DialogContentText>
                         <TextField
                             autoFocus
-                            margin="dense"
-                            id="name"
+                            margin='dense'
+                            id='name'
                             value={dialogValue.title}
                             onChange={(event) => setDialogValue({
                                 ...dialogValue,
                                 title: event.target.value
                             })}
-                            label="title"
-                            type="text"
+                            label='title'
+                            type='text'
                         />
                         <TextField
-                            margin="dense"
-                            id="name"
+                            margin='dense'
+                            id='name'
                             value={dialogValue.year}
                             onChange={(event) => setDialogValue({
                                 ...dialogValue,
                                 year: event.target.value
                             })}
-                            label="year"
-                            type="number"
+                            label='year'
+                            type='number'
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose} color="primary">
+                        <Button onClick={handleClose} color='primary'>
                             Cancel
                         </Button>
-                        <Button type="submit" color="primary">
+                        <Button type='submit' color='primary'>
                             Add
                         </Button>
                     </DialogActions>
