@@ -1,6 +1,5 @@
 import FormControl from '@material-ui/core/FormControl'
 import FormHelperText from '@material-ui/core/FormHelperText'
-import InputLabel from '@material-ui/core/InputLabel'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -25,7 +24,8 @@ function CustomPlayerInput({...props}) {
         white,
         inputRootCustomClasses,
         success,
-        helpText
+        helpText,
+        value
     } = props
 
     const labelClasses = classNames({
@@ -61,6 +61,7 @@ function CustomPlayerInput({...props}) {
     return (
         <FormControl {...formControlProps} className={formControlClasses}>
             <FreeSoloCreateOptionDialog
+                value={value}
                 classes={{
                     input: inputClasses,
                     root: marginTop,
@@ -91,7 +92,8 @@ CustomPlayerInput.propTypes = {
     error: PropTypes.bool,
     success: PropTypes.bool,
     white: PropTypes.bool,
-    helpText: PropTypes.node
+    helpText: PropTypes.node,
+    value: PropTypes.string
 }
 
 export default withStyles(customInputStyle)(CustomPlayerInput)

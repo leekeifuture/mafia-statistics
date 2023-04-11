@@ -14,12 +14,12 @@ import React from 'react'
 const filter = createFilterOptions()
 
 export default function FreeSoloCreateOptionDialog(props) {
-    const [value, setValue] = React.useState(null)
+    const [value, setValue] = React.useState(props.value)
     const [open, toggleOpen] = React.useState(false)
 
     const handleClose = () => {
         setDialogValue({
-            title: '',
+            nickname: '',
             mention: ''
         })
 
@@ -27,14 +27,14 @@ export default function FreeSoloCreateOptionDialog(props) {
     }
 
     const [dialogValue, setDialogValue] = React.useState({
-        title: '',
+        nickname: '',
         mention: ''
     })
 
     const handleSubmit = (event) => {
         event.preventDefault()
         setValue({
-            title: dialogValue.title,
+            nickname: dialogValue.nickname,
             mention: dialogValue.mention
         })
 
@@ -52,14 +52,14 @@ export default function FreeSoloCreateOptionDialog(props) {
                         setTimeout(() => {
                             toggleOpen(true)
                             setDialogValue({
-                                title: newValue,
+                                nickname: newValue,
                                 mention: 'MALE'
                             })
                         })
                     } else if (newValue && newValue.inputValue) {
                         toggleOpen(true)
                         setDialogValue({
-                            title: newValue.inputValue,
+                            nickname: newValue.inputValue,
                             mention: 'MALE'
                         })
                     } else {
@@ -72,7 +72,7 @@ export default function FreeSoloCreateOptionDialog(props) {
                     if (params.inputValue !== '') {
                         filtered.push({
                             inputValue: params.inputValue,
-                            title: `Добавить нового игрока '${params.inputValue}'`
+                            nickname: `Добавить нового игрока '${params.inputValue}'`
                         })
                     }
 
@@ -87,12 +87,12 @@ export default function FreeSoloCreateOptionDialog(props) {
                     if (option.inputValue) {
                         return option.inputValue
                     }
-                    return option.title
+                    return option.nickname
                 }}
                 selectOnFocus
                 clearOnBlur
                 handleHomeEndKeys
-                renderOption={(option) => option.title}
+                renderOption={(option) => option.nickname}
                 freeSolo
                 renderInput={(params) => (
                     <TextField {...params} label={props.label}
@@ -100,10 +100,10 @@ export default function FreeSoloCreateOptionDialog(props) {
                 )}
             />
             <Dialog open={open} onClose={handleClose}
-                    aria-labelledby="form-dialog-title">
+                    aria-labelledby="form-dialog-nickname">
                 <form onSubmit={handleSubmit}>
                     <DialogTitle
-                        id="form-dialog-title"
+                        id="form-dialog-nickname"
                         style={{textAlign: 'center'}}
                     >
                         Добавление нового игрока в клуб
@@ -133,11 +133,11 @@ export default function FreeSoloCreateOptionDialog(props) {
                             autoFocus
                             margin="dense"
                             id="nickname"
-                            value={dialogValue.title}
+                            value={dialogValue.nickname}
                             onChange={(event) =>
                                 setDialogValue({
                                     ...dialogValue,
-                                    title: event.target.value
+                                    nickname: event.target.value
                                 })}
                             label="Никнейм"
                             type="text"
@@ -159,101 +159,101 @@ export default function FreeSoloCreateOptionDialog(props) {
 }
 
 const top100Films = [
-    {title: 'Плесень', mention: 'MALE'},
-    {title: 'Старый', mention: 'MALE'},
-    {title: 'БИ-2', mention: 'MALE'},
-    {title: 'Лютер', mention: 'MALE'},
-    {title: 'Шкипер', mention: 'MALE'},
-    {title: 'Ауткаст', mention: 'MALE'},
-    {title: 'Марсианка', mention: 'MALE'},
-    {title: 'Гагарин', mention: 'MALE'},
-    {title: 'Ягодка', mention: 'MALE'},
-    {title: 'Ultimate', mention: 'MALE'},
-    {title: 'ГитлерОк', mention: 'MALE'},
-    {title: 'Валет', mention: 'MALE'},
-    {title: 'Колобок', mention: 'MALE'},
-    {title: 'Andolini', mention: 'MALE'},
-    {title: 'Шанти', mention: 'MALE'},
-    {title: 'Бродяга', mention: 'MALE'},
-    {title: 'Партизан', mention: 'MALE'},
-    {title: 'Белка', mention: 'MALE'},
-    {title: 'Rarity', mention: 'MALE'},
-    {title: 'О! Крошка', mention: 'MALE'},
-    {title: 'Лев', mention: 'MALE'},
-    {title: '55', mention: 'MALE'},
-    {title: 'Twinkle', mention: 'MALE'},
-    {title: 'Эльф', mention: 'MALE'},
-    {title: 'Златовласка', mention: 'MALE'},
-    {title: 'Yaccoon', mention: 'MALE'},
-    {title: 'Панна-котта', mention: 'MALE'},
-    {title: 'Homie', mention: 'MALE'},
-    {title: 'Домино', mention: 'MALE'},
-    {title: 'Империя', mention: 'MALE'},
-    {title: 'Pogchamp', mention: 'MALE'},
-    {title: 'Лупа', mention: 'MALE'},
-    {title: 'Slam', mention: 'MALE'},
-    {title: 'Крендель', mention: 'MALE'},
-    {title: 'Зеленоглазка', mention: 'MALE'},
-    {title: 'Акедия', mention: 'MALE'},
-    {title: 'Элс', mention: 'MALE'},
-    {title: 'Тандэм', mention: 'MALE'},
-    {title: 'Училка', mention: 'MALE'},
-    {title: 'Орк', mention: 'MALE'},
-    {title: 'Валькирия', mention: 'MALE'},
-    {title: 'Ассассин', mention: 'MALE'},
-    {title: 'Совесть', mention: 'MALE'},
-    {title: 'Данило', mention: 'MALE'},
-    {title: 'Конструктор', mention: 'MALE'},
-    {title: 'Мелисса', mention: 'MALE'},
-    {title: 'Барселона', mention: 'MALE'},
-    {title: 'Purple', mention: 'MALE'},
-    {title: 'ReD', mention: 'MALE'},
-    {title: 'Pussy', mention: 'MALE'},
-    {title: 'Мама', mention: 'MALE'},
-    {title: 'Кудряшка', mention: 'MALE'},
-    {title: 'MIKE', mention: 'MALE'},
-    {title: 'Динамо', mention: 'MALE'},
-    {title: 'Пупа', mention: 'MALE'},
-    {title: 'Волчара', mention: 'MALE'},
-    {title: 'Капу$та', mention: 'MALE'},
-    {title: 'Арсения', mention: 'MALE'},
-    {title: 'Безымянный', mention: 'MALE'},
-    {title: 'ФурсДари', mention: 'MALE'},
-    {title: 'Ирландец', mention: 'MALE'},
-    {title: 'Республика', mention: 'MALE'},
-    {title: 'ОдинДва', mention: 'MALE'},
-    {title: 'Герда', mention: 'MALE'},
-    {title: 'Спонжик', mention: 'MALE'},
-    {title: 'Сандра', mention: 'MALE'},
-    {title: 'Кудряшка Сью', mention: 'MALE'},
-    {title: 'Киса', mention: 'MALE'},
-    {title: 'Сон', mention: 'MALE'},
-    {title: 'Джек Николаевич Воскресенский', mention: 'MALE'},
-    {title: 'Фрикаделька', mention: 'MALE'},
-    {title: 'Крекер Джо', mention: 'MALE'},
-    {title: 'Остап', mention: 'MALE'},
-    {title: 'Гарри', mention: 'MALE'},
-    {title: 'Скромный', mention: 'MALE'},
-    {title: 'По', mention: 'MALE'},
-    {title: 'Сапёр', mention: 'MALE'},
-    {title: 'Serseya', mention: 'MALE'},
-    {title: 'Ермак', mention: 'MALE'},
-    {title: 'Ночь', mention: 'MALE'},
-    {title: 'Вишенка', mention: 'MALE'},
-    {title: '13й', mention: 'MALE'},
-    {title: 'Айрис', mention: 'MALE'},
-    {title: 'Director', mention: 'MALE'},
-    {title: 'Антон', mention: 'MALE'},
-    {title: 'Green Ice', mention: 'MALE'},
-    {title: 'Супер Стас', mention: 'MALE'},
-    {title: 'Горун', mention: 'MALE'},
-    {title: 'Декабрист', mention: 'MALE'},
-    {title: 'Батя', mention: 'MALE'},
-    {title: 'Бывшая', mention: 'MALE'},
-    {title: 'Баян', mention: 'MALE'},
-    {title: 'Кортеска', mention: 'MALE'},
-    {title: 'Кепка', mention: 'MALE'},
-    {title: 'Кошка', mention: 'MALE'},
-    {title: 'Иван', mention: 'MALE'},
-    {title: 'Блудница', mention: 'MALE'}
+    {nickname: 'Плесень', mention: 'MALE'},
+    {nickname: 'Старый', mention: 'MALE'},
+    {nickname: 'БИ-2', mention: 'MALE'},
+    {nickname: 'Лютер', mention: 'MALE'},
+    {nickname: 'Шкипер', mention: 'MALE'},
+    {nickname: 'Ауткаст', mention: 'MALE'},
+    {nickname: 'Марсианка', mention: 'MALE'},
+    {nickname: 'Гагарин', mention: 'MALE'},
+    {nickname: 'Ягодка', mention: 'MALE'},
+    {nickname: 'Ultimate', mention: 'MALE'},
+    {nickname: 'ГитлерОк', mention: 'MALE'},
+    {nickname: 'Валет', mention: 'MALE'},
+    {nickname: 'Колобок', mention: 'MALE'},
+    {nickname: 'Andolini', mention: 'MALE'},
+    {nickname: 'Шанти', mention: 'MALE'},
+    {nickname: 'Бродяга', mention: 'MALE'},
+    {nickname: 'Партизан', mention: 'MALE'},
+    {nickname: 'Белка', mention: 'MALE'},
+    {nickname: 'Rarity', mention: 'MALE'},
+    {nickname: 'О! Крошка', mention: 'MALE'},
+    {nickname: 'Лев', mention: 'MALE'},
+    {nickname: '55', mention: 'MALE'},
+    {nickname: 'Twinkle', mention: 'MALE'},
+    {nickname: 'Эльф', mention: 'MALE'},
+    {nickname: 'Златовласка', mention: 'MALE'},
+    {nickname: 'Yaccoon', mention: 'MALE'},
+    {nickname: 'Панна-котта', mention: 'MALE'},
+    {nickname: 'Homie', mention: 'MALE'},
+    {nickname: 'Домино', mention: 'MALE'},
+    {nickname: 'Империя', mention: 'MALE'},
+    {nickname: 'Pogchamp', mention: 'MALE'},
+    {nickname: 'Лупа', mention: 'MALE'},
+    {nickname: 'Slam', mention: 'MALE'},
+    {nickname: 'Крендель', mention: 'MALE'},
+    {nickname: 'Зеленоглазка', mention: 'MALE'},
+    {nickname: 'Акедия', mention: 'MALE'},
+    {nickname: 'Элс', mention: 'MALE'},
+    {nickname: 'Тандэм', mention: 'MALE'},
+    {nickname: 'Училка', mention: 'MALE'},
+    {nickname: 'Орк', mention: 'MALE'},
+    {nickname: 'Валькирия', mention: 'MALE'},
+    {nickname: 'Ассассин', mention: 'MALE'},
+    {nickname: 'Совесть', mention: 'MALE'},
+    {nickname: 'Данило', mention: 'MALE'},
+    {nickname: 'Конструктор', mention: 'MALE'},
+    {nickname: 'Мелисса', mention: 'MALE'},
+    {nickname: 'Барселона', mention: 'MALE'},
+    {nickname: 'Purple', mention: 'MALE'},
+    {nickname: 'ReD', mention: 'MALE'},
+    {nickname: 'Pussy', mention: 'MALE'},
+    {nickname: 'Мама', mention: 'MALE'},
+    {nickname: 'Кудряшка', mention: 'MALE'},
+    {nickname: 'MIKE', mention: 'MALE'},
+    {nickname: 'Динамо', mention: 'MALE'},
+    {nickname: 'Пупа', mention: 'MALE'},
+    {nickname: 'Волчара', mention: 'MALE'},
+    {nickname: 'Капу$та', mention: 'MALE'},
+    {nickname: 'Арсения', mention: 'MALE'},
+    {nickname: 'Безымянный', mention: 'MALE'},
+    {nickname: 'ФурсДари', mention: 'MALE'},
+    {nickname: 'Ирландец', mention: 'MALE'},
+    {nickname: 'Республика', mention: 'MALE'},
+    {nickname: 'ОдинДва', mention: 'MALE'},
+    {nickname: 'Герда', mention: 'MALE'},
+    {nickname: 'Спонжик', mention: 'MALE'},
+    {nickname: 'Сандра', mention: 'MALE'},
+    {nickname: 'Кудряшка Сью', mention: 'MALE'},
+    {nickname: 'Киса', mention: 'MALE'},
+    {nickname: 'Сон', mention: 'MALE'},
+    {nickname: 'Джек Николаевич Воскресенский', mention: 'MALE'},
+    {nickname: 'Фрикаделька', mention: 'MALE'},
+    {nickname: 'Крекер Джо', mention: 'MALE'},
+    {nickname: 'Остап', mention: 'MALE'},
+    {nickname: 'Гарри', mention: 'MALE'},
+    {nickname: 'Скромный', mention: 'MALE'},
+    {nickname: 'По', mention: 'MALE'},
+    {nickname: 'Сапёр', mention: 'MALE'},
+    {nickname: 'Serseya', mention: 'MALE'},
+    {nickname: 'Ермак', mention: 'MALE'},
+    {nickname: 'Ночь', mention: 'MALE'},
+    {nickname: 'Вишенка', mention: 'MALE'},
+    {nickname: '13й', mention: 'MALE'},
+    {nickname: 'Айрис', mention: 'MALE'},
+    {nickname: 'Director', mention: 'MALE'},
+    {nickname: 'Антон', mention: 'MALE'},
+    {nickname: 'Green Ice', mention: 'MALE'},
+    {nickname: 'Супер Стас', mention: 'MALE'},
+    {nickname: 'Горун', mention: 'MALE'},
+    {nickname: 'Декабрист', mention: 'MALE'},
+    {nickname: 'Батя', mention: 'MALE'},
+    {nickname: 'Бывшая', mention: 'MALE'},
+    {nickname: 'Баян', mention: 'MALE'},
+    {nickname: 'Кортеска', mention: 'MALE'},
+    {nickname: 'Кепка', mention: 'MALE'},
+    {nickname: 'Кошка', mention: 'MALE'},
+    {nickname: 'Иван', mention: 'MALE'},
+    {nickname: 'Блудница', mention: 'MALE'}
 ]
