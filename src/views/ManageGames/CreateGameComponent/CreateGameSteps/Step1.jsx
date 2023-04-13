@@ -1,9 +1,6 @@
-import InputAdornment from '@material-ui/core/InputAdornment'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
-import Email from '@material-ui/icons/Email'
 // @material-ui/icons
-import Face from '@material-ui/icons/Face'
 import React from 'react'
 // core components
 import GridContainer from '../../../../components/Grid/GridContainer'
@@ -120,8 +117,9 @@ class Step1 extends React.Component {
                     const number = i + 1
                     const playerNumber = `player${number}`
                     return (
-                        <GridItem xs={12} sm={6}>
+                        <GridItem xs={12} sm={6} key={i}>
                             <CustomPlayerInput
+                                players={this.props.players}
                                 value={this.state[playerNumber]}
                                 success={this.state.player1State === 'success'}
                                 error={this.state.player1State === 'error'}
@@ -140,16 +138,7 @@ class Step1 extends React.Component {
                                             event,
                                             number,
                                             'player'
-                                        ),
-                                    endAdornment: (
-                                        <InputAdornment
-                                            position="end"
-                                            className={classes.inputAdornment}
-                                        >
-                                            <Face
-                                                className={classes.inputAdornmentIcon} />
-                                        </InputAdornment>
-                                    )
+                                        )
                                 }}
                             />
                         </GridItem>
@@ -157,6 +146,7 @@ class Step1 extends React.Component {
                 })}
                 <GridItem xs={12} sm={12} md={12} lg={10}>
                     <CustomPlayerInput
+                        players={this.props.players}
                         success={this.state.hostState === 'success'}
                         error={this.state.hostState === 'error'}
                         labelText={
@@ -173,15 +163,6 @@ class Step1 extends React.Component {
                                 event,
                                 'host',
                                 'host'
-                            ),
-                            endAdornment: (
-                                <InputAdornment
-                                    position="end"
-                                    className={classes.inputAdornment}
-                                >
-                                    <Email
-                                        className={classes.inputAdornmentIcon} />
-                                </InputAdornment>
                             )
                         }}
                     />

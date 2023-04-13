@@ -49,6 +49,16 @@ export const mafiaStatisticsApi = {
         })
             .then(response => response.data)
     },
+    getAllPlayers() {
+        return axiosInstance.get('/players')
+            .then(response => response.data)
+    },
+    searchPlayersByNickname(query) {
+        return axiosInstance.get('/players/search', {
+            params: {query}
+        })
+            .then(response => response.data)
+    },
     getDashboardInfo() {
         return axiosInstance.get('/statistics/dashboard')
             .then(response => response.data)
@@ -62,12 +72,6 @@ export const mafiaStatisticsApi = {
     getRatingByOneMonth(date, minGames) {
         return axiosInstance.get(`/statistics/rating/${date}`, {
             params: {minGames}
-        })
-            .then(response => response.data)
-    },
-    searchPlayersByNickname(query) {
-        return axiosInstance.get('/players/search', {
-            params: {query}
         })
             .then(response => response.data)
     },

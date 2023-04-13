@@ -78,7 +78,7 @@ export default function FreeSoloCreateOptionDialog(props) {
 
                     return filtered
                 }}
-                options={top100Films}
+                options={props.players}
                 getOptionLabel={(option) => {
                     // e.g value selected with enter, right from the input
                     if (typeof option === 'string') {

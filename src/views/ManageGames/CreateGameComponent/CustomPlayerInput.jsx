@@ -25,7 +25,8 @@ function CustomPlayerInput({...props}) {
         inputRootCustomClasses,
         success,
         helpText,
-        value
+        value,
+        players
     } = props
 
     const labelClasses = classNames({
@@ -58,9 +59,11 @@ function CustomPlayerInput({...props}) {
         [classes.labelRootError]: error,
         [classes.labelRootSuccess]: success && !error
     })
+
     return (
         <FormControl {...formControlProps} className={formControlClasses}>
             <FreeSoloCreateOptionDialog
+                players={players}
                 value={value}
                 classes={{
                     input: inputClasses,

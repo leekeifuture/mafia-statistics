@@ -258,7 +258,7 @@ class CreateGameComponent extends React.Component {
                                         style={{width: this.state.width}}
                                     >
                                         <a
-                                            href="#pablo"
+                                            href=""
                                             className={classes.stepsAnchor}
                                             onClick={e => {
                                                 e.preventDefault()
@@ -289,6 +289,7 @@ class CreateGameComponent extends React.Component {
                                     <prop.stepComponent
                                         innerRef={node => (this[prop.stepId] = node)}
                                         allStates={this.state.allStates}
+                                        players={prop.players}
                                     />
                                 </div>
                             )
