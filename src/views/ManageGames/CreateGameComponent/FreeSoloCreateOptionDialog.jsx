@@ -20,7 +20,7 @@ export default function FreeSoloCreateOptionDialog(props) {
     const handleClose = () => {
         setDialogValue({
             nickname: '',
-            mention: ''
+            gender: 0
         })
 
         toggleOpen(false)
@@ -28,14 +28,14 @@ export default function FreeSoloCreateOptionDialog(props) {
 
     const [dialogValue, setDialogValue] = React.useState({
         nickname: '',
-        mention: ''
+        gender: 0
     })
 
     const handleSubmit = (event) => {
         event.preventDefault()
         setValue({
             nickname: dialogValue.nickname,
-            mention: dialogValue.mention
+            gender: dialogValue.gender
         })
 
         handleClose()
@@ -53,18 +53,19 @@ export default function FreeSoloCreateOptionDialog(props) {
                             toggleOpen(true)
                             setDialogValue({
                                 nickname: newValue,
-                                mention: 'MALE'
+                                gender: 'MALE'
                             })
                         })
                     } else if (newValue && newValue.inputValue) {
                         toggleOpen(true)
                         setDialogValue({
                             nickname: newValue.inputValue,
-                            mention: 'MALE'
+                            gender: 'MALE'
                         })
                     } else {
                         setValue(newValue)
                     }
+                    props.onChange(newValue)
                 }}
                 filterOptions={(options, params) => {
                     const filtered = filter(options, params)
@@ -115,12 +116,12 @@ export default function FreeSoloCreateOptionDialog(props) {
                         </DialogContentText>
                         <Select
                             margin="dense"
-                            id="mention"
-                            value={dialogValue.mention}
-                            onChange={(event) =>
+                            id="gender"
+                            value={dialogValue.gender}
+                            onChange={event =>
                                 setDialogValue({
                                     ...dialogValue,
-                                    mention: event.target.value
+                                    gender: event.target.value
                                 })}
                             label="Как обращаться"
                             type="text"
@@ -134,7 +135,7 @@ export default function FreeSoloCreateOptionDialog(props) {
                             margin="dense"
                             id="nickname"
                             value={dialogValue.nickname}
-                            onChange={(event) =>
+                            onChange={event =>
                                 setDialogValue({
                                     ...dialogValue,
                                     nickname: event.target.value
@@ -157,103 +158,3 @@ export default function FreeSoloCreateOptionDialog(props) {
         </React.Fragment>
     )
 }
-
-const top100Films = [
-    {nickname: 'Плесень', mention: 'MALE'},
-    {nickname: 'Старый', mention: 'MALE'},
-    {nickname: 'БИ-2', mention: 'MALE'},
-    {nickname: 'Лютер', mention: 'MALE'},
-    {nickname: 'Шкипер', mention: 'MALE'},
-    {nickname: 'Ауткаст', mention: 'MALE'},
-    {nickname: 'Марсианка', mention: 'MALE'},
-    {nickname: 'Гагарин', mention: 'MALE'},
-    {nickname: 'Ягодка', mention: 'MALE'},
-    {nickname: 'Ultimate', mention: 'MALE'},
-    {nickname: 'ГитлерОк', mention: 'MALE'},
-    {nickname: 'Валет', mention: 'MALE'},
-    {nickname: 'Колобок', mention: 'MALE'},
-    {nickname: 'Andolini', mention: 'MALE'},
-    {nickname: 'Шанти', mention: 'MALE'},
-    {nickname: 'Бродяга', mention: 'MALE'},
-    {nickname: 'Партизан', mention: 'MALE'},
-    {nickname: 'Белка', mention: 'MALE'},
-    {nickname: 'Rarity', mention: 'MALE'},
-    {nickname: 'О! Крошка', mention: 'MALE'},
-    {nickname: 'Лев', mention: 'MALE'},
-    {nickname: '55', mention: 'MALE'},
-    {nickname: 'Twinkle', mention: 'MALE'},
-    {nickname: 'Эльф', mention: 'MALE'},
-    {nickname: 'Златовласка', mention: 'MALE'},
-    {nickname: 'Yaccoon', mention: 'MALE'},
-    {nickname: 'Панна-котта', mention: 'MALE'},
-    {nickname: 'Homie', mention: 'MALE'},
-    {nickname: 'Домино', mention: 'MALE'},
-    {nickname: 'Империя', mention: 'MALE'},
-    {nickname: 'Pogchamp', mention: 'MALE'},
-    {nickname: 'Лупа', mention: 'MALE'},
-    {nickname: 'Slam', mention: 'MALE'},
-    {nickname: 'Крендель', mention: 'MALE'},
-    {nickname: 'Зеленоглазка', mention: 'MALE'},
-    {nickname: 'Акедия', mention: 'MALE'},
-    {nickname: 'Элс', mention: 'MALE'},
-    {nickname: 'Тандэм', mention: 'MALE'},
-    {nickname: 'Училка', mention: 'MALE'},
-    {nickname: 'Орк', mention: 'MALE'},
-    {nickname: 'Валькирия', mention: 'MALE'},
-    {nickname: 'Ассассин', mention: 'MALE'},
-    {nickname: 'Совесть', mention: 'MALE'},
-    {nickname: 'Данило', mention: 'MALE'},
-    {nickname: 'Конструктор', mention: 'MALE'},
-    {nickname: 'Мелисса', mention: 'MALE'},
-    {nickname: 'Барселона', mention: 'MALE'},
-    {nickname: 'Purple', mention: 'MALE'},
-    {nickname: 'ReD', mention: 'MALE'},
-    {nickname: 'Pussy', mention: 'MALE'},
-    {nickname: 'Мама', mention: 'MALE'},
-    {nickname: 'Кудряшка', mention: 'MALE'},
-    {nickname: 'MIKE', mention: 'MALE'},
-    {nickname: 'Динамо', mention: 'MALE'},
-    {nickname: 'Пупа', mention: 'MALE'},
-    {nickname: 'Волчара', mention: 'MALE'},
-    {nickname: 'Капу$та', mention: 'MALE'},
-    {nickname: 'Арсения', mention: 'MALE'},
-    {nickname: 'Безымянный', mention: 'MALE'},
-    {nickname: 'ФурсДари', mention: 'MALE'},
-    {nickname: 'Ирландец', mention: 'MALE'},
-    {nickname: 'Республика', mention: 'MALE'},
-    {nickname: 'ОдинДва', mention: 'MALE'},
-    {nickname: 'Герда', mention: 'MALE'},
-    {nickname: 'Спонжик', mention: 'MALE'},
-    {nickname: 'Сандра', mention: 'MALE'},
-    {nickname: 'Кудряшка Сью', mention: 'MALE'},
-    {nickname: 'Киса', mention: 'MALE'},
-    {nickname: 'Сон', mention: 'MALE'},
-    {nickname: 'Джек Николаевич Воскресенский', mention: 'MALE'},
-    {nickname: 'Фрикаделька', mention: 'MALE'},
-    {nickname: 'Крекер Джо', mention: 'MALE'},
-    {nickname: 'Остап', mention: 'MALE'},
-    {nickname: 'Гарри', mention: 'MALE'},
-    {nickname: 'Скромный', mention: 'MALE'},
-    {nickname: 'По', mention: 'MALE'},
-    {nickname: 'Сапёр', mention: 'MALE'},
-    {nickname: 'Serseya', mention: 'MALE'},
-    {nickname: 'Ермак', mention: 'MALE'},
-    {nickname: 'Ночь', mention: 'MALE'},
-    {nickname: 'Вишенка', mention: 'MALE'},
-    {nickname: '13й', mention: 'MALE'},
-    {nickname: 'Айрис', mention: 'MALE'},
-    {nickname: 'Director', mention: 'MALE'},
-    {nickname: 'Антон', mention: 'MALE'},
-    {nickname: 'Green Ice', mention: 'MALE'},
-    {nickname: 'Супер Стас', mention: 'MALE'},
-    {nickname: 'Горун', mention: 'MALE'},
-    {nickname: 'Декабрист', mention: 'MALE'},
-    {nickname: 'Батя', mention: 'MALE'},
-    {nickname: 'Бывшая', mention: 'MALE'},
-    {nickname: 'Баян', mention: 'MALE'},
-    {nickname: 'Кортеска', mention: 'MALE'},
-    {nickname: 'Кепка', mention: 'MALE'},
-    {nickname: 'Кошка', mention: 'MALE'},
-    {nickname: 'Иван', mention: 'MALE'},
-    {nickname: 'Блудница', mention: 'MALE'}
-]

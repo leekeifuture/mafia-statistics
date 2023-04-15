@@ -25,16 +25,17 @@ class Step1 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            player1: '',
-            player2: '',
-            player3: '',
-            player4: '',
-            player5: '',
-            player6: '',
-            player7: '',
-            player8: '',
-            player9: '',
-            player10: '',
+            player1: {},
+            player2: {},
+            player3: {},
+            player4: {},
+            player5: {},
+            player6: {},
+            player7: {},
+            player8: {},
+            player9: {},
+            player10: {},
+            host: {},
             player1State: '',
             player2State: '',
             player3State: '',
@@ -45,7 +46,6 @@ class Step1 extends React.Component {
             player8State: '',
             player9State: '',
             player10State: '',
-            host: '',
             hostState: ''
         }
     }
@@ -55,27 +55,27 @@ class Step1 extends React.Component {
     }
 
     // function that verifies if a string has a given player or not
-    verifyPlayer(value) {
-        return Boolean(value.length)
+    verifyPlayer(player) {
+        return Boolean(player)
     }
 
-    change(event, stateName, type) {
+    change(player, stateName, type) {
         switch (type) {
             case 'player':
-                if (this.verifyPlayer(event.target.value)) {
+                if (this.verifyPlayer(player)) {
                     this.setState({['player' + stateName + 'State']: 'success'})
                 } else {
                     this.setState({['player' + stateName + 'State']: 'error'})
                 }
-                this.setState({['player' + stateName]: event.target.value})
+                this.setState({['player' + stateName]: player})
                 break
             case 'host':
-                if (this.verifyPlayer(event.target.value)) {
+                if (this.verifyPlayer(player)) {
                     this.setState({hostState: 'success'})
                 } else {
                     this.setState({hostState: 'error'})
                 }
-                this.setState({host: event.target.value})
+                this.setState({host: player})
                 break
             default:
                 break
@@ -147,6 +147,7 @@ class Step1 extends React.Component {
                 <GridItem xs={12} sm={12} md={12} lg={10}>
                     <CustomPlayerInput
                         players={this.props.players}
+                        value
                         success={this.state.hostState === 'success'}
                         error={this.state.hostState === 'error'}
                         labelText={

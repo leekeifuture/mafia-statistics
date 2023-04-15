@@ -18,7 +18,6 @@ function CustomPlayerInput({...props}) {
         formControlProps,
         labelText,
         id,
-        labelProps,
         inputProps,
         error,
         white,
@@ -87,7 +86,6 @@ function CustomPlayerInput({...props}) {
 CustomPlayerInput.propTypes = {
     classes: PropTypes.object.isRequired,
     labelText: PropTypes.node,
-    labelProps: PropTypes.object,
     id: PropTypes.string,
     inputProps: PropTypes.object,
     formControlProps: PropTypes.object,
@@ -96,7 +94,8 @@ CustomPlayerInput.propTypes = {
     success: PropTypes.bool,
     white: PropTypes.bool,
     helpText: PropTypes.node,
-    value: PropTypes.string
+    value: PropTypes.string,
+    players: PropTypes.array
 }
 
 export default withStyles(customInputStyle)(CustomPlayerInput)
