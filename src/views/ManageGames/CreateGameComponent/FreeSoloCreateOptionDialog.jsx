@@ -96,8 +96,12 @@ export default function FreeSoloCreateOptionDialog(props) {
                 renderOption={(option) => option.nickname}
                 freeSolo
                 renderInput={(params) => (
-                    <TextField {...params} label={props.label}
-                               variant="outlined" />
+                    <TextField
+                        {...params}
+                        label={props.label}
+                        variant="outlined"
+                        error={props.error}
+                    />
                 )}
             />
             <Dialog open={open} onClose={handleClose}

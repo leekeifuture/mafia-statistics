@@ -64,6 +64,7 @@ function CustomPlayerInput({...props}) {
             <FreeSoloCreateOptionDialog
                 players={players}
                 value={value}
+                error={error}
                 classes={{
                     input: inputClasses,
                     root: marginTop,
