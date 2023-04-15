@@ -341,9 +341,9 @@ CreateGameComponent.defaultProps = {
     previousButtonText: 'Назад',
     previousButtonClasses: '',
     nextButtonClasses: '',
-    nextButtonText: 'Дальше',
+    nextButtonText: 'Далее',
     finishButtonClasses: '',
-    finishButtonText: 'Finish'
+    finishButtonText: 'Создать игру'
 }
 
 CreateGameComponent.propTypes = {
