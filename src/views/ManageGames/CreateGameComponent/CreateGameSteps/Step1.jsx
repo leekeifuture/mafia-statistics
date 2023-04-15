@@ -85,17 +85,54 @@ class Step1 extends React.Component {
     isValidated() {
         if (
             this.state.player1State === 'success' &&
+            this.state.player2State === 'success' &&
+            this.state.player3State === 'success' &&
+            this.state.player4State === 'success' &&
+            this.state.player5State === 'success' &&
+            this.state.player6State === 'success' &&
+            this.state.player7State === 'success' &&
+            this.state.player8State === 'success' &&
+            this.state.player9State === 'success' &&
+            this.state.player10State === 'success' &&
             this.state.hostState === 'success'
         ) {
             return true
-        } else {
-            if (this.state.player1State !== 'success') {
-                this.setState({player1State: 'error'})
-            }
-            if (this.state.hostState !== 'success') {
-                this.setState({hostState: 'error'})
-            }
         }
+
+        if (this.state.player1State !== 'success') {
+            this.setState({player1State: 'error'})
+        }
+        if (this.state.player2State !== 'success') {
+            this.setState({player2State: 'error'})
+        }
+        if (this.state.player3State !== 'success') {
+            this.setState({player3State: 'error'})
+        }
+        if (this.state.player4State !== 'success') {
+            this.setState({player4State: 'error'})
+        }
+        if (this.state.player5State !== 'success') {
+            this.setState({player5State: 'error'})
+        }
+        if (this.state.player6State !== 'success') {
+            this.setState({player6State: 'error'})
+        }
+        if (this.state.player7State !== 'success') {
+            this.setState({player7State: 'error'})
+        }
+        if (this.state.player8State !== 'success') {
+            this.setState({player8State: 'error'})
+        }
+        if (this.state.player9State !== 'success') {
+            this.setState({player9State: 'error'})
+        }
+        if (this.state.player10State !== 'success') {
+            this.setState({player10State: 'error'})
+        }
+        if (this.state.hostState !== 'success') {
+            this.setState({hostState: 'error'})
+        }
+
         return false
     }
 
@@ -116,13 +153,14 @@ class Step1 extends React.Component {
                 {Array.from(Array(10)).map((x, i) => {
                     const number = i + 1
                     const playerNumber = `player${number}`
+                    const playerState = this.state[playerNumber + 'State']
                     return (
                         <GridItem xs={12} sm={6} key={i}>
                             <CustomPlayerInput
                                 players={this.props.players}
                                 value={this.state[playerNumber]}
-                                success={this.state.player1State === 'success'}
-                                error={this.state.player1State === 'error'}
+                                success={playerState === 'success'}
+                                error={playerState === 'error'}
                                 labelText={
                                     <span>
                                         #{number}
