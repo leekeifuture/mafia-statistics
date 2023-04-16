@@ -44,18 +44,24 @@ export const mafiaStatisticsApi = {
             .then(response => response.data)
     },
     getPlayerById(id, isMinInfo = false) {
-        return axiosInstance.get(`/players/${id}`, {
+        return axiosInstance.get(`/player/${id}`, {
             params: {isMinInfo}
         })
             .then(response => response.data)
     },
     getAllPlayers() {
-        return axiosInstance.get('/players')
+        return axiosInstance.get('/player/all')
             .then(response => response.data)
     },
     searchPlayersByNickname(query) {
-        return axiosInstance.get('/players/search', {
+        return axiosInstance.get('/player/search', {
             params: {query}
+        })
+            .then(response => response.data)
+    },
+    createPlayer(nickname, gender) {
+        return axiosInstance.post('/player', {}, {
+            params: {nickname, gender}
         })
             .then(response => response.data)
     },

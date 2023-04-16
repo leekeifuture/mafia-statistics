@@ -10,17 +10,22 @@ import Select from '@material-ui/core/Select'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete, {createFilterOptions} from '@material-ui/lab/Autocomplete'
 import React from 'react'
+import {trackPromise} from 'react-promise-tracker'
+import {mafiaStatisticsApi} from '../../../api/mafiaStatisticsApi'
+import LoadingIndicator
+    from '../../../components/LoadingIndicator/LoadingIndicator'
 
 const filter = createFilterOptions()
 
 export default function FreeSoloCreateOptionDialog(props) {
     const [value, setValue] = React.useState(props.value)
     const [open, toggleOpen] = React.useState(false)
+    const [isLoading, setLoading] = React.useState(false)
 
     const handleClose = () => {
         setDialogValue({
             nickname: '',
-            gender: 0
+            gender: 'UNKNOWN'
         })
 
         toggleOpen(false)
@@ -28,17 +33,29 @@ export default function FreeSoloCreateOptionDialog(props) {
 
     const [dialogValue, setDialogValue] = React.useState({
         nickname: '',
-        gender: 0
+        gender: 'UNKNOWN'
     })
 
-    const handleSubmit = (event) => {
+    const handleSubmit = event => {
+        setLoading(true)
         event.preventDefault()
         setValue({
             nickname: dialogValue.nickname,
             gender: dialogValue.gender
         })
 
-        handleClose()
+        trackPromise(
+            mafiaStatisticsApi.createPlayer(dialogValue.nickname, dialogValue.gender)
+                .then(
+                    player => props.onChange(player)
+                    // , error => this.props.history.push('/auth/error')
+                )
+        ).then(r => {
+            setLoading(false)
+            handleClose()
+        })
+
+
     }
 
     return (
@@ -131,24 +148,29 @@ export default function FreeSoloCreateOptionDialog(props) {
                             margin="dense"
                             id="nickname"
                             value={dialogValue.nickname}
-                            onChange={event =>
+                            onChange={event => {
                                 setDialogValue({
                                     ...dialogValue,
                                     nickname: event.target.value
-                                })}
+                                })
+                            }}
                             label="Никнейм"
                             type="text"
                             style={{width: '100%'}}
                         />
                     </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleClose} color="primary">
-                            Отмена
-                        </Button>
-                        <Button type="submit" color="primary">
-                            Добавить
-                        </Button>
-                    </DialogActions>
+                    {isLoading
+                        ? <LoadingIndicator position transform />
+                        : (
+                            <DialogActions>
+                                <Button onClick={handleClose} color="primary">
+                                    Отмена
+                                </Button>
+                                <Button type="submit" color="primary">
+                                    Добавить
+                                </Button>
+                            </DialogActions>
+                        )}
                 </form>
             </Dialog>
         </React.Fragment>
