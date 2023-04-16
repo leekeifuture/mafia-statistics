@@ -80,16 +80,7 @@ export default function FreeSoloCreateOptionDialog(props) {
                     return filtered
                 }}
                 options={props.players}
-                getOptionLabel={(option) => {
-                    // e.g value selected with enter, right from the input
-                    if (typeof option === 'string') {
-                        return option
-                    }
-                    if (option.inputValue) {
-                        return option.inputValue
-                    }
-                    return option.nickname
-                }}
+                getOptionLabel={option => option.nickname ? option.nickname : ''}
                 selectOnFocus
                 clearOnBlur
                 handleHomeEndKeys
