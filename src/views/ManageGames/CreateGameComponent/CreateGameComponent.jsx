@@ -289,7 +289,8 @@ class CreateGameComponent extends React.Component {
                                     <prop.stepComponent
                                         innerRef={node => (this[prop.stepId] = node)}
                                         allStates={this.state.allStates}
-                                        players={prop.players}
+                                        players={this.props.players}
+                                        onPlayerSelect={this.props.onPlayerSelect}
                                     />
                                 </div>
                             )

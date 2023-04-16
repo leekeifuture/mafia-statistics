@@ -18,6 +18,25 @@ class CreateGame extends React.Component {
         }
     }
 
+    onPlayerSelect = (newPlayer, prevPlayer) => {
+        let players
+
+        if (Object.keys(newPlayer).length === 0 &&
+            Object.keys(prevPlayer).length !== 0) {
+            players = this.state.players
+                .filter(player => player.id !== prevPlayer.id)
+        } else {
+            players = this.state.players
+                .filter(player => player.id !== newPlayer.id)
+        }
+
+        if (prevPlayer && Object.keys(prevPlayer).length !== 0 &&
+            !prevPlayer.hasOwnProperty('inputValue'))
+            players.unshift(prevPlayer)
+
+        this.setState({players})
+    }
+
     componentDidMount() {
         trackPromise(
             mafiaStatisticsApi.getAllPlayers()
@@ -33,20 +52,19 @@ class CreateGame extends React.Component {
             <GridContainer justifyContent="center">
                 <GridItem xs={12} sm={8}>
                     <CreateGameComponent
-                        player={this.state.players}
+                        onPlayerSelect={this.onPlayerSelect}
+                        players={this.state.players}
                         validate
                         steps={[
                             {
                                 stepName: 'Игроки',
                                 stepComponent: Step1,
-                                stepId: 'players',
-                                players: this.state.players
+                                stepId: 'players'
                             },
                             {
                                 stepName: 'Роли',
                                 stepComponent: Step2,
-                                stepId: 'roles',
-                                players: this.state.players
+                                stepId: 'roles'
                             }
                         ]}
                         title="Создание новой игры"

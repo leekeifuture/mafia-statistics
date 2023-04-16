@@ -60,26 +60,30 @@ class Step1 extends React.Component {
     }
 
     change(player, stateName, type) {
-        switch (type) {
-            case 'player':
-                if (this.verifyPlayer(player)) {
-                    this.setState({['player' + stateName + 'State']: 'success'})
-                } else {
-                    this.setState({['player' + stateName + 'State']: 'error'})
-                }
-                this.setState({['player' + stateName]: player})
-                break
-            case 'host':
-                if (this.verifyPlayer(player)) {
-                    this.setState({hostState: 'success'})
-                } else {
-                    this.setState({hostState: 'error'})
-                }
-                this.setState({host: player})
-                break
-            default:
-                break
-        }
+        const stateItem = stateName === 'host'
+            ? this.state.host
+            : this.state['player' + stateName]
+
+        if (type === 'player') {
+            if (this.verifyPlayer(player)) {
+                this.setState({['player' + stateName + 'State']: 'success'})
+            } else {
+                this.setState({['player' + stateName + 'State']: 'error'})
+            }
+            this.setState({['player' + stateName]: player})
+        } else if (type === 'host') {
+            if (this.verifyPlayer(player)) {
+                this.setState({hostState: 'success'})
+            } else {
+                this.setState({hostState: 'error'})
+            }
+            this.setState({host: player})
+        } else return
+
+        if (player && player.hasOwnProperty('id'))
+            this.props.onPlayerSelect(player, stateItem)
+        else if (!player)
+            this.props.onPlayerSelect({}, stateItem)
     }
 
     isValidated() {
