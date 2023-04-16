@@ -67,9 +67,7 @@ function CustomPlayerInput({...props}) {
                 error={error}
                 classes={{
                     input: inputClasses,
-                    root: marginTop,
-                    disabled: classes.disabled,
-                    underline: underlineClasses
+                    root: marginTop
                 }}
                 id={id}
                 label={labelText}
