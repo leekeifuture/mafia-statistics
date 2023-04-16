@@ -139,7 +139,7 @@ class Step1 extends React.Component {
     render() {
         const {classes} = this.props
         return (
-            <GridContainer justify="center">
+            <GridContainer justifyContent="center">
                 <GridItem xs={12} sm={12}>
                     <h4 className={classes.infoText}>
                         <div>Сперва нужно заполнить список всех игроков</div>

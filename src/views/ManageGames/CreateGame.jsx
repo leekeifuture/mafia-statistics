@@ -30,7 +30,7 @@ class CreateGame extends React.Component {
 
     render() {
         return (
-            <GridContainer justify="center">
+            <GridContainer justifyContent="center">
                 <GridItem xs={12} sm={8}>
                     <CreateGameComponent
                         player={this.state.players}

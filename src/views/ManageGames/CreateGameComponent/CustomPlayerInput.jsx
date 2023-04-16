@@ -8,7 +8,6 @@ import customInputStyle
 // nodejs library that concatenates classes
 import classNames from 'classnames'
 // nodejs library to set properties for components
-import PropTypes from 'prop-types'
 import React from 'react'
 import FreeSoloCreateOptionDialog from './FreeSoloCreateOptionDialog'
 
@@ -28,16 +27,6 @@ function CustomPlayerInput({...props}) {
         players
     } = props
 
-    const labelClasses = classNames({
-        [' ' + classes.labelRootError]: error,
-        [' ' + classes.labelRootSuccess]: success && !error
-    })
-    const underlineClasses = classNames({
-        [classes.underlineError]: error,
-        [classes.underlineSuccess]: success && !error,
-        [classes.underline]: true,
-        [classes.whiteUnderline]: white
-    })
     const marginTop = classNames({
         [inputRootCustomClasses]: inputRootCustomClasses !== undefined
     })
@@ -80,21 +69,6 @@ function CustomPlayerInput({...props}) {
             ) : null}
         </FormControl>
     )
-}
-
-CustomPlayerInput.propTypes = {
-    classes: PropTypes.object.isRequired,
-    labelText: PropTypes.node,
-    id: PropTypes.string,
-    inputProps: PropTypes.object,
-    formControlProps: PropTypes.object,
-    inputRootCustomClasses: PropTypes.string,
-    error: PropTypes.bool,
-    success: PropTypes.bool,
-    white: PropTypes.bool,
-    helpText: PropTypes.node,
-    value: PropTypes.string,
-    players: PropTypes.array
 }
 
 export default withStyles(customInputStyle)(CustomPlayerInput)

@@ -65,6 +65,7 @@ export default function FreeSoloCreateOptionDialog(props) {
                     } else {
                         setValue(newValue)
                     }
+
                     props.onChange(newValue)
                 }}
                 filterOptions={(options, params) => {

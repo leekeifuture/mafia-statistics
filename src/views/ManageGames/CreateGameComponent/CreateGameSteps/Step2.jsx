@@ -65,7 +65,7 @@ class Step2 extends React.Component {
             <div>
                 <h4 className={classes.infoText}>What are you doing?
                     (checkboxes)</h4>
-                <GridContainer justify="center">
+                <GridContainer justifyContent="center">
                     <GridItem xs={12} sm={12} md={12} lg={10}>
                         <GridContainer>
                             <GridItem xs={12} sm={4}>
