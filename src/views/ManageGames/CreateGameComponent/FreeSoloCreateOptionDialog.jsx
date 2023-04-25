@@ -93,8 +93,14 @@ export default function FreeSoloCreateOptionDialog(props) {
                 }}
                 filterOptions={(options, params) => {
                     const filtered = filter(options, params)
+                    const isPlayerExists = Boolean(
+                        props.players
+                            .find(player =>
+                                player.nickname.toLowerCase() ===
+                                params.inputValue.toLowerCase())
+                    )
 
-                    if (params.inputValue !== '') {
+                    if (params.inputValue !== '' && !isPlayerExists) {
                         filtered.push({
                             inputValue: params.inputValue,
                             nickname: `Добавить нового игрока '${params.inputValue}'`
