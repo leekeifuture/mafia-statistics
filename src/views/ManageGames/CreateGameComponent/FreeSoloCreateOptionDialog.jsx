@@ -47,15 +47,18 @@ export default function FreeSoloCreateOptionDialog(props) {
         trackPromise(
             mafiaStatisticsApi.createPlayer(dialogValue.nickname, dialogValue.gender)
                 .then(
-                    player => props.onChange(player)
-                    // , error => this.props.history.push('/auth/error')
+                    player => {
+                        props.successAlert(player)
+                        props.onChange(player)
+                    },
+                    error => {
+                        console.log(error)
+                    }
                 )
         ).then(r => {
             setLoading(false)
             handleClose()
         })
-
-
     }
 
     return (

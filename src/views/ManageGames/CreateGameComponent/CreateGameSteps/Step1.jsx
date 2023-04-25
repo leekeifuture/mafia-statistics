@@ -2,9 +2,13 @@
 import withStyles from '@material-ui/core/styles/withStyles'
 // @material-ui/icons
 import React from 'react'
+import SweetAlert from 'react-bootstrap-sweetalert'
+import sweetAlertStyle
+    from '../../../../assets/jss/material-dashboard-pro-react/views/sweetAlertStyle'
 // core components
 import GridContainer from '../../../../components/Grid/GridContainer'
 import GridItem from '../../../../components/Grid/GridItem'
+import {getMention} from '../../../../util/util'
 import CustomPlayerInput from '../CustomPlayerInput'
 
 const style = {
@@ -46,12 +50,48 @@ class Step1 extends React.Component {
             player8State: '',
             player9State: '',
             player10State: '',
-            hostState: ''
+            hostState: '',
+            alert: null
         }
     }
 
     sendState() {
         return this.state
+    }
+
+    successAlert(player) {
+        const mention = getMention(player)
+        const addedText = 'добавлен' ? mention === 'г-н' : 'добавлена'
+
+        this.setState({
+            alert: (
+                <SweetAlert
+                    success
+                    style={{
+                        display: 'block',
+                        marginTop: '-100px',
+                        top: '40%',
+                        fontSize: '15px'
+                    }}
+                    title="Готово!"
+                    onConfirm={() => this.hideAlert()}
+                    onCancel={() => this.hideAlert()}
+                    confirmBtnCssClass={
+                        this.props.classes.button + ' ' + this.props.classes.success
+                    }
+                >
+                    <small>{mention}</small>
+                    {player.nickname}
+                    {addedText} в базу данных клуба!
+                </SweetAlert>
+            )
+        })
+    }
+
+    hideAlert() {
+        this.setState({
+            alert: null
+        })
     }
 
     // function that verifies if a string has a given player or not
@@ -142,7 +182,8 @@ class Step1 extends React.Component {
 
     render() {
         const {classes} = this.props
-        return (
+        return (<>
+            {this.state.alert}
             <GridContainer justifyContent="center">
                 <GridItem xs={12} sm={12}>
                     <h4 className={classes.infoText}>
@@ -180,7 +221,8 @@ class Step1 extends React.Component {
                                             event,
                                             number,
                                             'player'
-                                        )
+                                        ),
+                                    successAlert: player => this.successAlert(player)
                                 }}
                             />
                         </GridItem>
@@ -211,8 +253,8 @@ class Step1 extends React.Component {
                     />
                 </GridItem>
             </GridContainer>
-        )
+        </>)
     }
 }
 
-export default withStyles(style)(Step1)
+export default withStyles(sweetAlertStyle)(withStyles(style)(Step1))
