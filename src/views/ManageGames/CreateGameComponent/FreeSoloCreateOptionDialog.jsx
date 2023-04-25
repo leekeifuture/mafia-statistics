@@ -52,7 +52,10 @@ export default function FreeSoloCreateOptionDialog(props) {
                         props.onChange(player)
                     },
                     error => {
-                        console.log(error)
+                        props.errorAlert({
+                            nickname: dialogValue.nickname,
+                            gender: dialogValue.gender
+                        }, error)
                     }
                 )
         ).then(r => {

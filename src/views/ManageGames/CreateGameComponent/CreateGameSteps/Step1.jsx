@@ -24,6 +24,12 @@ const style = {
         position: 'relative'
     }
 }
+const sweetAlertExtraStyle = {
+    display: 'block',
+    marginTop: '-100px',
+    top: '40%',
+    fontSize: '15px'
+}
 
 class Step1 extends React.Component {
     constructor(props) {
@@ -67,12 +73,7 @@ class Step1 extends React.Component {
             alert: (
                 <SweetAlert
                     success
-                    style={{
-                        display: 'block',
-                        marginTop: '-100px',
-                        top: '40%',
-                        fontSize: '15px'
-                    }}
+                    style={sweetAlertExtraStyle}
                     title="Готово!"
                     onConfirm={() => this.hideAlert()}
                     onCancel={() => this.hideAlert()}
@@ -83,6 +84,35 @@ class Step1 extends React.Component {
                     <small>{mention}</small>
                     {player.nickname}
                     {addedText} в базу данных клуба!
+                </SweetAlert>
+            )
+        })
+    }
+
+    errorAlert(player, error) {
+        const mention = getMention(player)
+        let errorText = 'Ошибка сервера! Игрок не добавлен.'
+
+        if (error.response.status === 409) {
+            errorText = (<>
+                <small>{mention}</small>
+                {player.nickname} уже существует в базе данных клуба!
+            </>)
+        }
+
+        this.setState({
+            alert: (
+                <SweetAlert
+                    danger
+                    style={sweetAlertExtraStyle}
+                    title="Ошибка!"
+                    onConfirm={() => this.hideAlert()}
+                    onCancel={() => this.hideAlert()}
+                    confirmBtnCssClass={
+                        this.props.classes.button + ' ' + this.props.classes.success
+                    }
+                >
+                    {errorText}
                 </SweetAlert>
             )
         })
@@ -222,7 +252,8 @@ class Step1 extends React.Component {
                                             number,
                                             'player'
                                         ),
-                                    successAlert: player => this.successAlert(player)
+                                    successAlert: player => this.successAlert(player),
+                                    errorAlert: (player, error) => this.errorAlert(player, error)
                                 }}
                             />
                         </GridItem>
