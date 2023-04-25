@@ -45,7 +45,7 @@ class Step1 extends React.Component {
             player8: {},
             player9: {},
             player10: {},
-            host: {},
+            host: this.props.currentUser,
             player1State: '',
             player2State: '',
             player3State: '',
@@ -262,7 +262,7 @@ class Step1 extends React.Component {
                 <GridItem xs={12} sm={12} md={12} lg={10}>
                     <CustomPlayerInput
                         players={this.props.players}
-                        value
+                        value={this.state.host}
                         success={this.state.hostState === 'success'}
                         error={this.state.hostState === 'error'}
                         labelText={

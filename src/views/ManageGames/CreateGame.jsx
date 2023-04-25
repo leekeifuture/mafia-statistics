@@ -4,6 +4,8 @@ import GridItem from 'components/Grid/GridItem.jsx'
 import React from 'react'
 import {trackPromise} from 'react-promise-tracker'
 import {mafiaStatisticsApi} from '../../api/mafiaStatisticsApi'
+import LoadingIndicator
+    from '../../components/LoadingIndicator/LoadingIndicator'
 import CreateGameComponent from './CreateGameComponent/CreateGameComponent'
 
 import Step1 from './CreateGameComponent/CreateGameSteps/Step1.jsx'
@@ -14,6 +16,7 @@ class CreateGame extends React.Component {
         super(props)
         this.state = {
             players: [],
+            currentUser: {},
             isLoading: true
         }
     }
@@ -45,34 +48,42 @@ class CreateGame extends React.Component {
                     error => this.props.history.push('/auth/error')
                 )
         ).then(r => this.setState({isLoading: false}))
+
+        mafiaStatisticsApi.getPlayerById('me', true)
+            .then(currentUser => this.setState({currentUser}))
     }
 
     render() {
-        return (
-            <GridContainer justifyContent="center">
-                <GridItem xs={12} sm={8}>
-                    <CreateGameComponent
-                        onPlayerSelect={this.onPlayerSelect}
-                        players={this.state.players}
-                        validate
-                        steps={[
-                            {
-                                stepName: 'Игроки',
-                                stepComponent: Step1,
-                                stepId: 'players'
-                            },
-                            {
-                                stepName: 'Роли',
-                                stepComponent: Step2,
-                                stepId: 'roles'
-                            }
-                        ]}
-                        title="Создание новой игры"
-                        finishButtonClick={e => console.log(e)}
-                    />
-                </GridItem>
-            </GridContainer>
-        )
+        return (<>
+            {this.state.isLoading
+                ? <LoadingIndicator />
+                : (
+                    <GridContainer justifyContent="center">
+                        <GridItem xs={12} sm={8}>
+                            <CreateGameComponent
+                                onPlayerSelect={this.onPlayerSelect}
+                                players={this.state.players}
+                                currentUser={this.state.currentUser}
+                                validate
+                                steps={[
+                                    {
+                                        stepName: 'Игроки',
+                                        stepComponent: Step1,
+                                        stepId: 'players'
+                                    },
+                                    {
+                                        stepName: 'Роли',
+                                        stepComponent: Step2,
+                                        stepId: 'roles'
+                                    }
+                                ]}
+                                title="Создание новой игры"
+                                finishButtonClick={e => console.log(e)}
+                            />
+                        </GridItem>
+                    </GridContainer>
+                )}
+        </>)
     }
 }
 

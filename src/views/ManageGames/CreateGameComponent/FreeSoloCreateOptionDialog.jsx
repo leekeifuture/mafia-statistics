@@ -96,8 +96,8 @@ export default function FreeSoloCreateOptionDialog(props) {
                     const isPlayerExists = Boolean(
                         props.players
                             .find(player =>
-                                player.nickname.toLowerCase() ===
-                                params.inputValue.toLowerCase())
+                                (player.nickname ? player.nickname : '').toLowerCase() ===
+                                (params.inputValue ? params.inputValue : '').toLowerCase())
                     )
 
                     if (params.inputValue !== '' && !isPlayerExists) {
