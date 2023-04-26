@@ -210,6 +210,14 @@ class Step1 extends React.Component {
         return false
     }
 
+    componentDidMount() {
+        this.change(
+            this.state.host,
+            'host',
+            'host'
+        )
+    }
+
     render() {
         const {classes} = this.props
         return (<>
