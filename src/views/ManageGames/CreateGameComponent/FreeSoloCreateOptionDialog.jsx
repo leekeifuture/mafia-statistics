@@ -39,10 +39,6 @@ export default function FreeSoloCreateOptionDialog(props) {
     const handleSubmit = event => {
         setLoading(true)
         event.preventDefault()
-        setValue({
-            nickname: dialogValue.nickname,
-            gender: dialogValue.gender
-        })
 
         trackPromise(
             mafiaStatisticsApi.createPlayer(dialogValue.nickname, dialogValue.gender)
@@ -50,6 +46,10 @@ export default function FreeSoloCreateOptionDialog(props) {
                     player => {
                         props.successAlert(player)
                         props.onChange(player)
+                        setValue({
+                            nickname: dialogValue.nickname,
+                            gender: dialogValue.gender
+                        })
                     },
                     error => {
                         props.errorAlert({
