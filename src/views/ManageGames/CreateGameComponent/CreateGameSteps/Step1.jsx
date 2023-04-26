@@ -134,6 +134,8 @@ class Step1 extends React.Component {
             ? this.state.host
             : this.state['player' + stateName]
 
+        if (player && player.hasOwnProperty('inputValue')) return
+
         if (type === 'player') {
             if (this.verifyPlayer(player)) {
                 this.setState({['player' + stateName + 'State']: 'success'})
