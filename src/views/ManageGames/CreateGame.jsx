@@ -33,8 +33,9 @@ class CreateGame extends React.Component {
                 .filter(player => player.id !== newPlayer.id)
         }
 
-        if (prevPlayer && Object.keys(prevPlayer).length !== 0 &&
-            !prevPlayer.hasOwnProperty('inputValue'))
+        if ((prevPlayer && Object.keys(prevPlayer).length !== 0 &&
+                !prevPlayer.hasOwnProperty('inputValue')) &&
+            newPlayer !== prevPlayer)
             players.unshift(prevPlayer)
 
         this.setState({players})
