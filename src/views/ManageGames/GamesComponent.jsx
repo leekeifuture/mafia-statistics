@@ -59,7 +59,7 @@ const GamesComponent = (props) => {
                     <Assignment />
                 </CardIcon>
                 <h4 className={props.classes.cardIconTitle}>
-                    Список всех игр
+                    Список всех игр ({props.gamesCount})
                 </h4>
             </CardHeader>
             <CardBody>

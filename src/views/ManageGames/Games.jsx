@@ -44,6 +44,7 @@ class Games extends React.Component {
                             <GamesComponent
                                 classes={classes}
                                 games={this.state.games}
+                                gamesCount={this.state.gamesCount}
                             />
                         </GridItem>
                     </GridContainer>
