@@ -17,7 +17,7 @@ const RatingStatisticsComponent = props => {
             <Card>
                 <CardHeader color="primary" icon>
                     <CardIcon color="primary">
-                        <BarChart />
+                        <BarChart/>
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
                         Статистика игрока
@@ -36,7 +36,7 @@ const RatingStatisticsComponent = props => {
                             />)
                             : (<></>)}
                     </GridContainer>
-                    <Clearfix />
+                    <Clearfix/>
                 </CardBody>
             </Card>
         </GridItem>

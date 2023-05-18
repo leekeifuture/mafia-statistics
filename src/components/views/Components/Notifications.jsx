@@ -116,7 +116,7 @@ class Notifications extends React.Component {
                                     <h4 className={classes.cardTitle}>Notifications
                                         Style</h4>
                                 </div>
-                                <br />
+                                <br/>
                                 <SnackbarContent
                                     message={'This is a plain notification'}
                                     color="info"
@@ -126,7 +126,7 @@ class Notifications extends React.Component {
                                     close
                                     color="info"
                                 />
-                                <br />
+                                <br/>
                                 <SnackbarContent
                                     message={
                                         'This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don\'t have to worry about the style.'
@@ -135,7 +135,7 @@ class Notifications extends React.Component {
                                     icon={AddAlert}
                                     color="info"
                                 />
-                                <br />
+                                <br/>
                                 <SnackbarContent
                                     message={
                                         'This is a notification with close button and icon and is made with color="rose". You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don\'t have to worry about the style.'
@@ -155,7 +155,7 @@ class Notifications extends React.Component {
                                         <h4 className={classes.cardTitle}>Notification
                                             states</h4>
                                     </div>
-                                    <br />
+                                    <br/>
                                     <SnackbarContent
                                         message={
                                             'INFO - This is a regular notification made with color="info"'
@@ -384,7 +384,7 @@ class Notifications extends React.Component {
                                                         onClick={() => this.handleClose('classicModal')}
                                                     >
                                                         <Close
-                                                            className={classes.modalClose} />
+                                                            className={classes.modalClose}/>
                                                     </Button>
                                                     <h4 className={classes.modalTitle}>Modal
                                                         title</h4>
@@ -477,7 +477,7 @@ class Notifications extends React.Component {
                                                         onClick={() => this.handleClose('noticeModal')}
                                                     >
                                                         <Close
-                                                            className={classes.modalClose} />
+                                                            className={classes.modalClose}/>
                                                     </Button>
                                                     <h4 className={classes.modalTitle}>Notice
                                                         Modal</h4>
@@ -576,7 +576,7 @@ class Notifications extends React.Component {
                                                         onClick={() => this.handleClose('smallModal')}
                                                     >
                                                         <Close
-                                                            className={classes.modalClose} />
+                                                            className={classes.modalClose}/>
                                                     </Button>
                                                 </DialogTitle>
                                                 <DialogContent

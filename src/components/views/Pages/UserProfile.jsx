@@ -30,7 +30,7 @@ function UserProfile(props) {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <PermIdentity />
+                                <PermIdentity/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>
                                 Edit Profile - <small>Complete your
@@ -140,7 +140,7 @@ function UserProfile(props) {
                                     className={classes.updateProfileButton}>
                                 Update Profile
                             </Button>
-                            <Clearfix />
+                            <Clearfix/>
                         </CardBody>
                     </Card>
                 </GridItem>
@@ -148,7 +148,7 @@ function UserProfile(props) {
                     <Card profile>
                         <CardAvatar profile>
                             <a href="#pablo" onClick={e => e.preventDefault()}>
-                                <img src={avatar} alt="..." />
+                                <img src={avatar} alt="..."/>
                             </a>
                         </CardAvatar>
                         <CardBody profile>

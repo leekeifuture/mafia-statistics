@@ -142,7 +142,7 @@ function Typography({...props}) {
                         <div className={props.classes.note}>Small Tag</div>
                         <h2>
                             Header with small subtitle
-                            <br />
+                            <br/>
                             <small>Use "small" tag for the headers</small>
                         </h2>
                     </div>

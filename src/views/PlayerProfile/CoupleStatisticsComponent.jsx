@@ -100,7 +100,7 @@ const CoupleStatisticsComponent = props => {
             <Card>
                 <CardHeader color="primary" icon>
                     <CardIcon color="primary">
-                        <SupervisorAccount />
+                        <SupervisorAccount/>
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
                         Командная игра
@@ -109,10 +109,10 @@ const CoupleStatisticsComponent = props => {
                 <CardBody>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={12}>
-                            <ReactEcharts option={option} />
+                            <ReactEcharts option={option}/>
                         </GridItem>
                     </GridContainer>
-                    <Clearfix />
+                    <Clearfix/>
                 </CardBody>
             </Card>
         </GridItem>

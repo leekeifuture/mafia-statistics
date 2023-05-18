@@ -63,7 +63,7 @@ class ExtendedTables extends React.Component {
             return (
                 <Button color={prop.color} className={classes.actionButton}
                         key={key}>
-                    <prop.icon className={classes.icon} />
+                    <prop.icon className={classes.icon}/>
                 </Button>
             )
         })
@@ -79,7 +79,7 @@ class ExtendedTables extends React.Component {
                     className={classes.actionButton}
                     key={key}
                 >
-                    <prop.icon className={classes.icon} />
+                    <prop.icon className={classes.icon}/>
                 </Button>
             )
         })
@@ -95,7 +95,7 @@ class ExtendedTables extends React.Component {
                     className={classes.actionButton + ' ' + classes.actionButtonRound}
                     key={key}
                 >
-                    <prop.icon className={classes.icon} />
+                    <prop.icon className={classes.icon}/>
                 </Button>
             )
         })
@@ -105,7 +105,7 @@ class ExtendedTables extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <Assignment />
+                                <Assignment/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Simple
                                 Table</h4>
@@ -175,7 +175,7 @@ class ExtendedTables extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <Assignment />
+                                <Assignment/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Striped
                                 Table</h4>
@@ -200,9 +200,9 @@ class ExtendedTables extends React.Component {
                                             tabIndex={-1}
                                             onClick={() => this.handleToggle(1)}
                                             checkedIcon={<Check
-                                                className={classes.checkedIcon} />}
+                                                className={classes.checkedIcon}/>}
                                             icon={<Check
-                                                className={classes.uncheckedIcon} />}
+                                                className={classes.uncheckedIcon}/>}
                                             classes={{
                                                 checked: classes.checked,
                                                 root: classes.checkRoot
@@ -221,9 +221,9 @@ class ExtendedTables extends React.Component {
                                             tabIndex={-1}
                                             onClick={() => this.handleToggle(2)}
                                             checkedIcon={<Check
-                                                className={classes.checkedIcon} />}
+                                                className={classes.checkedIcon}/>}
                                             icon={<Check
-                                                className={classes.uncheckedIcon} />}
+                                                className={classes.uncheckedIcon}/>}
                                             classes={{
                                                 checked: classes.checked,
                                                 root: classes.checkRoot
@@ -242,9 +242,9 @@ class ExtendedTables extends React.Component {
                                             tabIndex={-1}
                                             onClick={() => this.handleToggle(3)}
                                             checkedIcon={<Check
-                                                className={classes.checkedIcon} />}
+                                                className={classes.checkedIcon}/>}
                                             icon={<Check
-                                                className={classes.uncheckedIcon} />}
+                                                className={classes.uncheckedIcon}/>}
                                             classes={{
                                                 checked: classes.checked,
                                                 root: classes.checkRoot
@@ -263,9 +263,9 @@ class ExtendedTables extends React.Component {
                                             tabIndex={-1}
                                             onClick={() => this.handleToggle(4)}
                                             checkedIcon={<Check
-                                                className={classes.checkedIcon} />}
+                                                className={classes.checkedIcon}/>}
                                             icon={<Check
-                                                className={classes.uncheckedIcon} />}
+                                                className={classes.uncheckedIcon}/>}
                                             classes={{
                                                 checked: classes.checked,
                                                 root: classes.checkRoot
@@ -284,9 +284,9 @@ class ExtendedTables extends React.Component {
                                             tabIndex={-1}
                                             onClick={() => this.handleToggle(5)}
                                             checkedIcon={<Check
-                                                className={classes.checkedIcon} />}
+                                                className={classes.checkedIcon}/>}
                                             icon={<Check
-                                                className={classes.uncheckedIcon} />}
+                                                className={classes.uncheckedIcon}/>}
                                             classes={{
                                                 checked: classes.checked,
                                                 root: classes.checkRoot
@@ -324,7 +324,7 @@ class ExtendedTables extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <Assignment />
+                                <Assignment/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Shopping Cart
                                 Table</h4>
@@ -345,13 +345,13 @@ class ExtendedTables extends React.Component {
                                     [
                                         <div className={classes.imgContainer}>
                                             <img src={product1} alt="..."
-                                                 className={classes.img} />
+                                                 className={classes.img}/>
                                         </div>,
                                         <span>
                       <a href="#jacket" className={classes.tdNameAnchor}>
                         Spring Jacket
                       </a>
-                      <br />
+                      <br/>
                       <small className={classes.tdNameSmall}>
                         by Dolce&amp;Gabbana
                       </small>
@@ -371,7 +371,7 @@ class ExtendedTables extends React.Component {
                             round
                             className={classes.firstButton}
                         >
-                          <Remove className={classes.icon} />
+                          <Remove className={classes.icon}/>
                         </Button>
                         <Button
                             color="info"
@@ -379,7 +379,7 @@ class ExtendedTables extends React.Component {
                             round
                             className={classes.lastButton}
                         >
-                          <Add className={classes.icon} />
+                          <Add className={classes.icon}/>
                         </Button>
                       </div>
                     </span>,
@@ -388,19 +388,19 @@ class ExtendedTables extends React.Component {
                     </span>,
                                         <Button simple
                                                 className={classes.actionButton}>
-                                            <Close className={classes.icon} />
+                                            <Close className={classes.icon}/>
                                         </Button>
                                     ],
                                     [
                                         <div className={classes.imgContainer}>
                                             <img src={product2} alt="..."
-                                                 className={classes.img} />
+                                                 className={classes.img}/>
                                         </div>,
                                         <span>
                       <a href="#jacket" className={classes.tdNameAnchor}>
                         Short Pants{' '}
                       </a>
-                      <br />
+                      <br/>
                       <small className={classes.tdNameSmall}>by Pucci</small>
                     </span>,
                                         'Purple',
@@ -418,7 +418,7 @@ class ExtendedTables extends React.Component {
                             round
                             className={classes.firstButton}
                         >
-                          <Remove className={classes.icon} />
+                          <Remove className={classes.icon}/>
                         </Button>
                         <Button
                             color="info"
@@ -426,7 +426,7 @@ class ExtendedTables extends React.Component {
                             round
                             className={classes.lastButton}
                         >
-                          <Add className={classes.icon} />
+                          <Add className={classes.icon}/>
                         </Button>
                       </div>
                     </span>,
@@ -435,19 +435,19 @@ class ExtendedTables extends React.Component {
                     </span>,
                                         <Button simple
                                                 className={classes.actionButton}>
-                                            <Close className={classes.icon} />
+                                            <Close className={classes.icon}/>
                                         </Button>
                                     ],
                                     [
                                         <div className={classes.imgContainer}>
                                             <img src={product3} alt="..."
-                                                 className={classes.img} />
+                                                 className={classes.img}/>
                                         </div>,
                                         <span>
                       <a href="#jacket" className={classes.tdNameAnchor}>
                         Pencil Skirt
                       </a>
-                      <br />
+                      <br/>
                       <small className={classes.tdNameSmall}>
                         by Valentino
                       </small>
@@ -467,7 +467,7 @@ class ExtendedTables extends React.Component {
                             round
                             className={classes.firstButton}
                         >
-                          <Remove className={classes.icon} />
+                          <Remove className={classes.icon}/>
                         </Button>
                         <Button
                             color="info"
@@ -475,7 +475,7 @@ class ExtendedTables extends React.Component {
                             round
                             className={classes.lastButton}
                         >
-                          <Add className={classes.icon} />
+                          <Add className={classes.icon}/>
                         </Button>
                       </div>
                     </span>,
@@ -484,7 +484,7 @@ class ExtendedTables extends React.Component {
                     </span>,
                                         <Button simple
                                                 className={classes.actionButton}>
-                                            <Close className={classes.icon} />
+                                            <Close className={classes.icon}/>
                                         </Button>
                                     ],
                                     {
@@ -505,7 +505,7 @@ class ExtendedTables extends React.Component {
                                                 <Button color="info" round>
                                                     Complete Purchase{' '}
                                                     <KeyboardArrowRight
-                                                        className={classes.icon} />
+                                                        className={classes.icon}/>
                                                 </Button>
                                             )
                                         }

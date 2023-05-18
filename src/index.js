@@ -23,13 +23,13 @@ ReactDOM.render((<>
                            webvisor: true,
                            trackHash: true
                        }}
-                       version="2" />
+                       version="2"/>
         <Router history={hist}>
             <Switch>
-                <Route path="/auth" component={AuthLayout} />
-                <Route path="/statistics" component={Statistics} />
-                <Route path="/oauth2/redirect" component={OAuth2RedirectHandler} />
-                <Redirect from="/" to="/statistics/dashboard" />
+                <Route path="/auth" component={AuthLayout}/>
+                <Route path="/statistics" component={Statistics}/>
+                <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
+                <Redirect from="/" to="/statistics/dashboard"/>
             </Switch>
         </Router>
     </>),

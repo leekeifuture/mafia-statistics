@@ -287,7 +287,7 @@ class ValidationForms extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <MailOutline />
+                                <MailOutline/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Register
                                 Forms</h4>
@@ -354,9 +354,9 @@ class ValidationForms extends React.Component {
                                                 this.change(event, 'registerCheckbox', 'checkbox')
                                             }
                                             checkedIcon={<Check
-                                                className={classes.checkedIcon} />}
+                                                className={classes.checkedIcon}/>}
                                             icon={<Check
-                                                className={classes.uncheckedIcon} />}
+                                                className={classes.uncheckedIcon}/>}
                                             classes={{
                                                 checked: classes.checked,
                                                 root: classes.checkRoot
@@ -387,7 +387,7 @@ class ValidationForms extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <Contacts />
+                                <Contacts/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Login
                                 Form</h4>
@@ -469,7 +469,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -508,7 +508,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -547,7 +547,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -585,7 +585,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -623,7 +623,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -653,7 +653,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -711,7 +711,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -748,7 +748,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -785,7 +785,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -822,7 +822,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined
@@ -859,7 +859,7 @@ class ValidationForms extends React.Component {
                                                         <InputAdornment
                                                             position="end">
                                                             <Close
-                                                                className={classes.danger} />
+                                                                className={classes.danger}/>
                                                         </InputAdornment>
                                                     ) : (
                                                         undefined

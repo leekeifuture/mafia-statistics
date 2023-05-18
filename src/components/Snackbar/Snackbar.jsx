@@ -26,7 +26,7 @@ function Snackbar({...props}) {
                 color="inherit"
                 onClick={() => props.closeNotification()}
             >
-                <Close className={classes.close} />
+                <Close className={classes.close}/>
             </IconButton>
         ]
     }
@@ -59,7 +59,7 @@ function Snackbar({...props}) {
             message={
                 <div>
                     {icon !== undefined ?
-                        <props.icon className={iconClasses} /> : null}
+                        <props.icon className={iconClasses}/> : null}
                     <span className={messageClasses}>{message}</span>
                 </div>
             }

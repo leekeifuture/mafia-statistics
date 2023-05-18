@@ -83,7 +83,7 @@ class ExtendedForms extends React.Component {
                         <Card>
                             <CardHeader color="rose" icon>
                                 <CardIcon color="rose">
-                                    <Today />
+                                    <Today/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>Datetime
                                     Picker</h4>
@@ -92,7 +92,7 @@ class ExtendedForms extends React.Component {
                                 <InputLabel className={classes.label}>
                                     Datetime Picker
                                 </InputLabel>
-                                <br />
+                                <br/>
                                 <FormControl fullWidth>
                                     <Datetime
                                         inputProps={{placeholder: 'Datetime Picker Here'}}
@@ -105,7 +105,7 @@ class ExtendedForms extends React.Component {
                         <Card>
                             <CardHeader color="rose" icon>
                                 <CardIcon color="rose">
-                                    <LibraryBooks />
+                                    <LibraryBooks/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>Date
                                     Picker</h4>
@@ -113,7 +113,7 @@ class ExtendedForms extends React.Component {
                             <CardBody>
                                 <InputLabel className={classes.label}>Date
                                     Picker</InputLabel>
-                                <br />
+                                <br/>
                                 <FormControl fullWidth>
                                     <Datetime
                                         timeFormat={false}
@@ -127,7 +127,7 @@ class ExtendedForms extends React.Component {
                         <Card>
                             <CardHeader color="rose" icon>
                                 <CardIcon color="rose">
-                                    <AvTimer />
+                                    <AvTimer/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>Time
                                     Picker</h4>
@@ -135,7 +135,7 @@ class ExtendedForms extends React.Component {
                             <CardBody>
                                 <InputLabel className={classes.label}>Time
                                     Picker</InputLabel>
-                                <br />
+                                <br/>
                                 <FormControl fullWidth>
                                     <Datetime
                                         dateFormat={false}
@@ -150,8 +150,8 @@ class ExtendedForms extends React.Component {
                     <GridItem xs={12} sm={12} md={12}>
                         <Card>
                             <CardBody>
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <legend>Switches</legend>
@@ -601,8 +601,8 @@ class ExtendedForms extends React.Component {
                                         </GridContainer>
                                     </GridItem>
                                 </GridContainer>
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <legend>Tags</legend>
@@ -730,8 +730,8 @@ class ExtendedForms extends React.Component {
                                         </GridContainer>
                                     </GridItem>
                                 </GridContainer>
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <legend>Progress Bars</legend>
@@ -776,10 +776,10 @@ class ExtendedForms extends React.Component {
                                     <GridItem xs={12} sm={12} md={6}>
                                         <legend>Sliders</legend>
                                         <div className="slider-primary"
-                                             ref="slider1" />
-                                        <br />
+                                             ref="slider1"/>
+                                        <br/>
                                         <div className="slider-info"
-                                             ref="slider2" />
+                                             ref="slider2"/>
                                     </GridItem>
                                 </GridContainer>
                                 <GridContainer>

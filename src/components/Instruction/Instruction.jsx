@@ -38,7 +38,7 @@ function Instruction({...props}) {
                 <GridItem xs={12} sm={12} md={4}>
                     <div className={pictureClasses}>
                         <img src={image} alt={imageAlt}
-                             className={classes.image} />
+                             className={classes.image}/>
                     </div>
                 </GridItem>
             </GridContainer>

@@ -70,29 +70,29 @@ class Buttons extends React.Component {
                             <div className={classes.cardContentRight}>
                                 <Button className={classes.marginRight}>
                                     <KeyboardArrowLeft
-                                        className={classes.icons} /> Left
+                                        className={classes.icons}/> Left
                                 </Button>
                                 <Button className={classes.marginRight}>
                                     Right <KeyboardArrowRight
-                                    className={classes.icons} />
+                                    className={classes.icons}/>
                                 </Button>
                                 <Button color="info"
                                         className={classes.marginRight}>
                                     <PriorityHigh
-                                        className={classes.icons} /> Info
+                                        className={classes.icons}/> Info
                                 </Button>
                                 <Button color="success"
                                         className={classes.marginRight}>
-                                    <Check className={classes.icons} /> Success
+                                    <Check className={classes.icons}/> Success
                                 </Button>
                                 <Button color="warning"
                                         className={classes.marginRight}>
                                     <Warning
-                                        className={classes.icons} /> Warning
+                                        className={classes.icons}/> Warning
                                 </Button>
                                 <Button color="danger"
                                         className={classes.marginRight}>
-                                    <Close className={classes.icons} /> Danger
+                                    <Close className={classes.icons}/> Danger
                                 </Button>
                             </div>
                         </GridItem>
@@ -140,7 +140,7 @@ class Buttons extends React.Component {
                                 </Button>
                                 <Button color="primary" round
                                         className={classes.marginRight}>
-                                    <Favorite className={classes.icons} /> with
+                                    <Favorite className={classes.icons}/> with
                                     icon
                                 </Button>
                                 <Button
@@ -149,7 +149,7 @@ class Buttons extends React.Component {
                                     color="primary"
                                     className={classes.marginRight}
                                 >
-                                    <Favorite className={classes.icons} />
+                                    <Favorite className={classes.icons}/>
                                 </Button>
                                 <Button color="primary" simple
                                         className={classes.marginRight}>
@@ -211,8 +211,8 @@ class Buttons extends React.Component {
                                         Right
                                     </Button>
                                 </div>
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div className={classes.buttonGroup}>
                                     <Button color="info" round
                                             className={classes.firstButton}>
@@ -272,7 +272,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="twitter">
-                                            <i className={'fab fa-twitter'} />
+                                            <i className={'fab fa-twitter'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -326,7 +326,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="facebook">
-                                            <i className={'fab fa-facebook'} />
+                                            <i className={'fab fa-facebook'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -381,7 +381,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="google">
-                                            <i className={'fab fa-google'} />
+                                            <i className={'fab fa-google'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -435,7 +435,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="linkedin">
-                                            <i className={'fab fa-linkedin'} />
+                                            <i className={'fab fa-linkedin'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -490,7 +490,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="pinterest">
-                                            <i className={'fab fa-pinterest'} />
+                                            <i className={'fab fa-pinterest'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -546,7 +546,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="youtube">
-                                            <i className={'fab fa-youtube-square'} />
+                                            <i className={'fab fa-youtube-square'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -600,7 +600,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="tumblr">
-                                            <i className={'fab fa-tumblr-square'} />
+                                            <i className={'fab fa-tumblr-square'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -654,7 +654,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="github">
-                                            <i className={'fab fa-github'} />
+                                            <i className={'fab fa-github'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -708,7 +708,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="behance">
-                                            <i className={'fab fa-behance'} />
+                                            <i className={'fab fa-behance'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -762,7 +762,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="dribbble">
-                                            <i className={'fab fa-dribbble'} />
+                                            <i className={'fab fa-dribbble'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
@@ -817,7 +817,7 @@ class Buttons extends React.Component {
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>
                                         <Button justIcon color="reddit">
-                                            <i className={'fab fa-reddit'} />
+                                            <i className={'fab fa-reddit'}/>
                                         </Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={1} md={1}>

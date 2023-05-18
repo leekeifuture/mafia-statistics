@@ -41,7 +41,7 @@ class Accordion extends React.Component {
                             }}
                         >
                             <ExpansionPanelSummary
-                                expandIcon={<ExpandMore />}
+                                expandIcon={<ExpandMore/>}
                                 classes={{
                                     root: classes.expansionPanelSummary,
                                     expanded: classes.expansionPanelSummaryExpaned,

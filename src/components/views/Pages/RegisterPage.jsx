@@ -85,17 +85,17 @@ class RegisterPage extends React.Component {
                                         <div className={classes.center}>
                                             <Button justIcon round
                                                     color="twitter">
-                                                <i className="fab fa-twitter" />
+                                                <i className="fab fa-twitter"/>
                                             </Button>
                                             {` `}
                                             <Button justIcon round
                                                     color="dribbble">
-                                                <i className="fab fa-dribbble" />
+                                                <i className="fab fa-dribbble"/>
                                             </Button>
                                             {` `}
                                             <Button justIcon round
                                                     color="facebook">
-                                                <i className="fab fa-facebook-f" />
+                                                <i className="fab fa-facebook-f"/>
                                             </Button>
                                             {` `}
                                             <h4 className={classes.socialTitle}>or
@@ -114,7 +114,7 @@ class RegisterPage extends React.Component {
                                                             className={classes.inputAdornment}
                                                         >
                                                             <Face
-                                                                className={classes.inputAdornmentIcon} />
+                                                                className={classes.inputAdornmentIcon}/>
                                                         </InputAdornment>
                                                     ),
                                                     placeholder: 'First Name...'
@@ -132,7 +132,7 @@ class RegisterPage extends React.Component {
                                                             className={classes.inputAdornment}
                                                         >
                                                             <Email
-                                                                className={classes.inputAdornmentIcon} />
+                                                                className={classes.inputAdornmentIcon}/>
                                                         </InputAdornment>
                                                     ),
                                                     placeholder: 'Email...'
@@ -169,10 +169,10 @@ class RegisterPage extends React.Component {
                                                         onClick={() => this.handleToggle(1)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot

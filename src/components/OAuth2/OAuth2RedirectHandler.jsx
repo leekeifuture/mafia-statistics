@@ -23,7 +23,7 @@ class OAuth2RedirectHandler extends React.Component {
             return <Redirect to={{
                 pathname: '/statistics/players/me',
                 state: {from: this.props.location}
-            }} />
+            }}/>
         } else {
             return <Redirect to={{
                 pathname: '/auth/login',
@@ -31,7 +31,7 @@ class OAuth2RedirectHandler extends React.Component {
                     from: this.props.location,
                     error
                 }
-            }} />
+            }}/>
         }
     }
 }

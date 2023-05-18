@@ -39,7 +39,7 @@ function Timeline({...props}) {
                     <li className={classes.item} key={key}>
                         {prop.badgeIcon ? (
                             <div className={timelineBadgeClasses}>
-                                <prop.badgeIcon className={classes.badgeIcon} />
+                                <prop.badgeIcon className={classes.badgeIcon}/>
                             </div>
                         ) : null}
                         <div className={panelClasses}>
@@ -55,7 +55,7 @@ function Timeline({...props}) {
                                 <h6 className={classes.footerTitle}>{prop.footerTitle}</h6>
                             ) : null}
                             {prop.footer ?
-                                <hr className={classes.footerLine} /> : null}
+                                <hr className={classes.footerLine}/> : null}
                             {prop.footer ? (
                                 <div
                                     className={classes.timelineFooter}>{prop.footer}</div>

@@ -17,7 +17,7 @@ const style = {
 
 function Clearfix({...props}) {
     const {classes} = props
-    return <div className={classes.clearfix} />
+    return <div className={classes.clearfix}/>
 }
 
 Clearfix.propTypes = {

@@ -64,7 +64,7 @@ class PricingPage extends React.Component {
                                 <h6 className={classes.cardCategory}>SMALL
                                     COMPANY</h6>
                                 <div className={classes.icon}>
-                                    <Home className={classes.iconRose} />
+                                    <Home className={classes.iconRose}/>
                                 </div>
                                 <h3 className={`${classes.cardTitle} ${classes.marginTop30}`}>
                                     $29
@@ -85,7 +85,7 @@ class PricingPage extends React.Component {
                                 <h6 className={classes.cardCategory}>MEDIUM
                                     COMPANY</h6>
                                 <div className={classes.icon}>
-                                    <Business className={classes.iconWhite} />
+                                    <Business className={classes.iconWhite}/>
                                 </div>
                                 <h3
                                     className={`${classes.cardTitleWhite} ${classes.marginTop30}`}
@@ -109,7 +109,7 @@ class PricingPage extends React.Component {
                                 <h6 className={classes.cardCategory}>ENTERPRISE</h6>
                                 <div className={classes.icon}>
                                     <AccountBalance
-                                        className={classes.iconWhite} />
+                                        className={classes.iconWhite}/>
                                 </div>
                                 <h3
                                     className={`${classes.cardTitleWhite} ${classes.marginTop30}`}

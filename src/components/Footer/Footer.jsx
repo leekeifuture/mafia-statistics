@@ -59,7 +59,7 @@ function Footer({...props}) {
                 <p className={classes.right}>
                     &copy; {1900 + new Date().getYear()}{', '}
                     {'Сделано с '}
-                    <i className="fa fa-heart heart" />
+                    <i className="fa fa-heart heart"/>
                     {' от '}
                     <a target="_blank"
                        rel="noopener noreferrer"

@@ -50,9 +50,9 @@ class Tasks extends React.Component {
                                     tabIndex={-1}
                                     onClick={this.handleToggle(value)}
                                     checkedIcon={<Check
-                                        className={classes.checkedIcon} />}
+                                        className={classes.checkedIcon}/>}
                                     icon={<Check
-                                        className={classes.uncheckedIcon} />}
+                                        className={classes.uncheckedIcon}/>}
                                     classes={{
                                         checked: classes.checked,
                                         root: classes.checkRoot

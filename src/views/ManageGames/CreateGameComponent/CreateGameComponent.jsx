@@ -328,7 +328,7 @@ class CreateGameComponent extends React.Component {
                                 </Button>
                             ) : null}
                         </div>
-                        <div className={classes.clearfix} />
+                        <div className={classes.clearfix}/>
                     </div>
                 </Card>
             </div>

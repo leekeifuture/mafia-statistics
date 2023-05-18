@@ -52,7 +52,7 @@ class Game extends React.Component {
         this.setState = this.setState.bind(this)
         return (<>
             {this.state.isLoading
-                ? <LoadingIndicator />
+                ? <LoadingIndicator/>
                 : (<>
                     <GridContainer>
                         <GridItem xs={12}>

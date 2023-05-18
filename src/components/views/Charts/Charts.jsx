@@ -132,7 +132,7 @@ class Charts extends React.Component {
                         <Card>
                             <CardHeader color="info" icon>
                                 <CardIcon color="info">
-                                    <Timeline />
+                                    <Timeline/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>
                                     Coloured Line Chart <small>- Rounded</small>
@@ -152,7 +152,7 @@ class Charts extends React.Component {
                         <Card>
                             <CardHeader color="rose" icon>
                                 <CardIcon color="rose">
-                                    <Timeline />
+                                    <Timeline/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>
                                     Multiple Bars Chart <small>- Bar
@@ -175,7 +175,7 @@ class Charts extends React.Component {
                         <Card>
                             <CardHeader color="warning" icon>
                                 <CardIcon color="warning">
-                                    <Timeline />
+                                    <Timeline/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>
                                     Coloured Lines Chart <small>-
@@ -196,7 +196,7 @@ class Charts extends React.Component {
                         <Card>
                             <CardHeader color="danger" icon>
                                 <CardIcon color="danger">
-                                    <Timeline />
+                                    <Timeline/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>Pie
                                     Chart</h4>
@@ -210,10 +210,10 @@ class Charts extends React.Component {
                             </CardBody>
                             <CardFooter stats className={classes.cardFooter}>
                                 <h6 className={classes.legendTitle}>Legend</h6>
-                                <i className={'fas fa-circle ' + classes.info} /> Apple{` `}
-                                <i className={'fas fa-circle ' + classes.warning} /> Samsung
+                                <i className={'fas fa-circle ' + classes.info}/> Apple{` `}
+                                <i className={'fas fa-circle ' + classes.warning}/> Samsung
                                 {` `}
-                                <i className={'fas fa-circle ' + classes.danger} /> Windows
+                                <i className={'fas fa-circle ' + classes.danger}/> Windows
                                 Phone{` `}
                             </CardFooter>
                         </Card>

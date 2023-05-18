@@ -52,15 +52,15 @@ export default function Header({
                         ref={setHeaderMenuAnchorRef}
                     >
             <span className="svg-icon svg-gray icon-margin">
-              <DataTypeIcon dataType={dataType} />
+              <DataTypeIcon dataType={dataType}/>
             </span>
                         {label}
                     </div>
-                    <div {...getResizerProps()} className="resizer" />
+                    <div {...getResizerProps()} className="resizer"/>
                 </div>
                 {showHeaderMenu && (
                     <div className="overlay"
-                         onClick={() => setShowHeaderMenu(false)} />
+                         onClick={() => setShowHeaderMenu(false)}/>
                 )}
                 {showHeaderMenu && (
                     <HeaderMenu

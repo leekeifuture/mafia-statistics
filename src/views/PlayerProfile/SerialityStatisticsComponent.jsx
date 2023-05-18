@@ -118,7 +118,7 @@ const SerialityStatisticsComponent = props => {
             <Card>
                 <CardHeader color="primary" icon>
                     <CardIcon color="primary">
-                        <Update />
+                        <Update/>
                     </CardIcon>
                     <h4 className={props.classes.cardIconTitle}>
                         Серийность
@@ -127,16 +127,16 @@ const SerialityStatisticsComponent = props => {
                 <CardBody>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={4}>
-                            <ReactEcharts option={rolesPlayedOption} />
+                            <ReactEcharts option={rolesPlayedOption}/>
                         </GridItem>
                         <GridItem xs={12} sm={12} md={4}>
-                            <ReactEcharts option={rolesWonOption} />
+                            <ReactEcharts option={rolesWonOption}/>
                         </GridItem>
                         <GridItem xs={12} sm={12} md={4}>
-                            <ReactEcharts option={rolesLostOption} />
+                            <ReactEcharts option={rolesLostOption}/>
                         </GridItem>
                     </GridContainer>
-                    <Clearfix />
+                    <Clearfix/>
                 </CardBody>
             </Card>
         </GridItem>

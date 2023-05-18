@@ -135,10 +135,10 @@ class CustomDropdown extends React.Component {
                     >
                         {buttonIcon !== undefined ? (
                             <this.props.buttonIcon
-                                className={classes.buttonIcon} />
+                                className={classes.buttonIcon}/>
                         ) : null}
                         {buttonText !== undefined ? buttonText : null}
-                        {caret ? <b className={caretClasses} /> : null}
+                        {caret ? <b className={caretClasses}/> : null}
                     </Button>
                 </div>
                 <Popper

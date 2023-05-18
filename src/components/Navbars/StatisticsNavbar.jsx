@@ -35,7 +35,7 @@ function StatisticsNavbar({...props}) {
                                 color="white"
                                 onClick={props.sidebarMinimize}
                             >
-                                <ViewList className={classes.sidebarMiniIcon} />
+                                <ViewList className={classes.sidebarMiniIcon}/>
                             </Button>
                         ) : (
                             <Button
@@ -44,7 +44,7 @@ function StatisticsNavbar({...props}) {
                                 color="white"
                                 onClick={props.sidebarMinimize}
                             >
-                                <MoreVert className={classes.sidebarMiniIcon} />
+                                <MoreVert className={classes.sidebarMiniIcon}/>
                             </Button>
                         )}
                     </div>
@@ -72,7 +72,7 @@ function StatisticsNavbar({...props}) {
                         aria-label="open drawer"
                         onClick={props.handleDrawerToggle}
                     >
-                        <Menu />
+                        <Menu/>
                     </Button>
                 </Hidden>
             </Toolbar>

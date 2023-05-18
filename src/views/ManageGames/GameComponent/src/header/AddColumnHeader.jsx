@@ -16,7 +16,7 @@ export default function AddColumnHeader({getHeaderProps, dataDispatch}) {
                 }
             >
         <span className="svg-icon-sm svg-gray">
-          <PlusIcon />
+          <PlusIcon/>
         </span>
             </div>
         </div>

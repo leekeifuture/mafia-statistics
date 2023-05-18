@@ -100,11 +100,11 @@ export default function SelectCell({
                 onClick={() => setShowSelect(true)}
             >
                 {value.value && (
-                    <Badge value={value.value} backgroundColor={getColor()} />
+                    <Badge value={value.value} backgroundColor={getColor()}/>
                 )}
             </div>
             {showSelect && (
-                <div className="overlay" onClick={() => setShowSelect(false)} />
+                <div className="overlay" onClick={() => setShowSelect(false)}/>
             )}
             {showSelect &&
                 createPortal(
@@ -161,7 +161,7 @@ export default function SelectCell({
                                 <Badge
                                     value={
                                         <span className="svg-icon-sm svg-text">
-                      <PlusIcon />
+                      <PlusIcon/>
                     </span>
                                     }
                                     backgroundColor={grey(200)}

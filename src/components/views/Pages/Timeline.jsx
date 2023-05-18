@@ -13,12 +13,12 @@ class TimelinePage extends React.Component {
     render() {
         return (
             <div>
-                <Heading title="Timeline" textAlign="center" />
+                <Heading title="Timeline" textAlign="center"/>
                 <GridContainer>
                     <GridItem xs={12}>
                         <Card plain>
                             <CardBody plain>
-                                <Timeline stories={stories} />
+                                <Timeline stories={stories}/>
                             </CardBody>
                         </Card>
                     </GridItem>

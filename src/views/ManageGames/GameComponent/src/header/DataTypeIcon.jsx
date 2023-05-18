@@ -8,11 +8,11 @@ export default function DataTypeIcon({dataType}) {
     function getPropertyIcon(dataType) {
         switch (dataType) {
             case DataTypes.NUMBER:
-                return <HashIcon />
+                return <HashIcon/>
             case DataTypes.TEXT:
-                return <TextIcon />
+                return <TextIcon/>
             case DataTypes.SELECT:
-                return <MultiIcon />
+                return <MultiIcon/>
             default:
                 return null
         }

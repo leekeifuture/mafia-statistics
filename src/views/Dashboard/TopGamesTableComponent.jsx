@@ -35,7 +35,7 @@ const TopGamesTableComponent = (props) => {
         <Card>
             <CardHeader color="success" icon>
                 <CardIcon color="success">
-                    <Language />
+                    <Language/>
                 </CardIcon>
                 <h4 className={props.classes.cardIconTitle}>
                     Топ по количеству игр

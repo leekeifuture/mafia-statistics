@@ -59,7 +59,7 @@ class Panels extends React.Component {
                             plug-and-play networks. Dynamically procrastinate
                             B2C users after installed base benefits.
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dramatically visualize customer directed convergence
                             without revolutionary ROI. Collaboratively
@@ -67,7 +67,7 @@ class Panels extends React.Component {
                             networks. Dynamically procrastinate B2C users after
                             installed base benefits.
                           </p>
-                          <br />
+                          <br/>
                           <p>This is very nice.</p>
                         </span>
                                             )
@@ -81,7 +81,7 @@ class Panels extends React.Component {
                             cross-media value. Quickly maximize timely
                             deliverables for real-time schemas.
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dramatically maintain clicks-and-mortar solutions
                             without functional solutions.
@@ -98,7 +98,7 @@ class Panels extends React.Component {
                             via premier niche markets. Professionally cultivate
                             one-to-one customer service with robust ideas.{' '}
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dynamically innovate resource-leveling customer
                             service for state of the art customer service.
@@ -136,7 +136,7 @@ class Panels extends React.Component {
                             plug-and-play networks. Dynamically procrastinate
                             B2C users after installed base benefits.
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dramatically visualize customer directed convergence
                             without revolutionary ROI. Collaboratively
@@ -144,7 +144,7 @@ class Panels extends React.Component {
                             networks. Dynamically procrastinate B2C users after
                             installed base benefits.
                           </p>
-                          <br />
+                          <br/>
                           <p>This is very nice.</p>
                         </span>
                                             )
@@ -158,7 +158,7 @@ class Panels extends React.Component {
                             cross-media value. Quickly maximize timely
                             deliverables for real-time schemas.
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dramatically maintain clicks-and-mortar solutions
                             without functional solutions.
@@ -175,7 +175,7 @@ class Panels extends React.Component {
                             via premier niche markets. Professionally cultivate
                             one-to-one customer service with robust ideas.{' '}
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dynamically innovate resource-leveling customer
                             service for state of the art customer service.
@@ -246,7 +246,7 @@ class Panels extends React.Component {
                             plug-and-play networks. Dynamically procrastinate
                             B2C users after installed base benefits.
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dramatically visualize customer directed convergence
                             without revolutionary ROI. Collaboratively
@@ -254,7 +254,7 @@ class Panels extends React.Component {
                             networks. Dynamically procrastinate B2C users after
                             installed base benefits.
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dramatically visualize customer directed convergence
                             without revolutionary ROI. Collaboratively
@@ -275,7 +275,7 @@ class Panels extends React.Component {
                             cross-media value. Quickly maximize timely
                             deliverables for real-time schemas.
                           </p>
-                          <br />
+                          <br/>
                           <p>
                             Dramatically maintain clicks-and-mortar solutions
                             without functional solutions. Dramatically visualize
@@ -299,7 +299,7 @@ class Panels extends React.Component {
                         <h3 className={classes.pageSubcategoriesTitle}>
                             Page Subcategories
                         </h3>
-                        <br />
+                        <br/>
                         <NavPills
                             color="warning"
                             alignCenter
@@ -324,8 +324,8 @@ class Panels extends React.Component {
                                                 Dynamically procrastinate B2C
                                                 users after installed base
                                                 benefits.
-                                                <br />
-                                                <br />
+                                                <br/>
+                                                <br/>
                                                 Dramatically visualize customer
                                                 directed convergence
                                                 without revolutionary ROI.
@@ -352,8 +352,8 @@ class Panels extends React.Component {
                                                 cross-media value. Quickly
                                                 maximize timely deliverables
                                                 for real-time schemas.
-                                                <br />
-                                                <br />
+                                                <br/>
+                                                <br/>
                                                 Dramatically maintain
                                                 clicks-and-mortar solutions
                                                 without functional solutions.
@@ -381,8 +381,8 @@ class Panels extends React.Component {
                                                 Professionally cultivate
                                                 one-to-one customer service with
                                                 robust ideas.
-                                                <br />
-                                                <br />
+                                                <br/>
+                                                <br/>
                                                 Dynamically innovate
                                                 resource-leveling customer
                                                 service
@@ -413,8 +413,8 @@ class Panels extends React.Component {
                                                 experience. So while its
                                                 display is larger, the phone
                                                 feels just right.
-                                                <br />
-                                                <br />
+                                                <br/>
+                                                <br/>
                                                 Another Text. The first thing
                                                 you notice when you hold
                                                 the phone is how great it feels

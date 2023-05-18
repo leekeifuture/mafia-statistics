@@ -258,7 +258,7 @@ class GridSystem extends React.Component {
                                 </p>
                             </GridItem>
                         </GridContainer>
-                        <br />
+                        <br/>
                         <GridContainer>
                             <GridItem xs={12} sm={4}>
                                 <h3>Some Title Here</h3>
@@ -312,7 +312,7 @@ class GridSystem extends React.Component {
                                 </p>
                             </GridItem>
                         </GridContainer>
-                        <br />
+                        <br/>
                         <GridContainer>
                             <GridItem xs={12} sm={4}>
                                 <h3>Some Title Here</h3>

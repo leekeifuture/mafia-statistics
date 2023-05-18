@@ -115,7 +115,7 @@ class Search extends React.Component {
                         </CardBody>
                     </Card>
                     {this.state.isLoading
-                        ? <LoadingIndicator />
+                        ? <LoadingIndicator/>
                         : (<>
                             {tableData.length !== 0
                                 ? (<Card>

@@ -25,7 +25,7 @@ function SnackbarContent({...props}) {
                 aria-label="Close"
                 color="inherit"
             >
-                <Close className={classes.close} />
+                <Close className={classes.close}/>
             </IconButton>
         ]
     }
@@ -43,7 +43,7 @@ function SnackbarContent({...props}) {
             message={
                 <div>
                     {icon !== undefined ?
-                        <props.icon className={iconClasses} /> : null}
+                        <props.icon className={iconClasses}/> : null}
                     <span className={messageClasses}>{message}</span>
                 </div>
             }

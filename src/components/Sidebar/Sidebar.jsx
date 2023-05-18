@@ -26,7 +26,7 @@ class SidebarWrapper extends React.Component {
             <div className={className} ref="sidebarWrapper">
                 {user}
                 <Hidden mdUp implementation="css">
-                    <br />
+                    <br/>
                 </Hidden>
                 {headerLinks}
                 {links}
@@ -163,7 +163,7 @@ class Sidebar extends React.Component {
                                     <Icon
                                         className={itemIcon}>{prop.icon}</Icon>
                                 ) : (
-                                    <prop.icon className={itemIcon} />
+                                    <prop.icon className={itemIcon}/>
                                 )
                             ) : (
                                 <span className={collapseItemMini}>
@@ -260,7 +260,7 @@ class Sidebar extends React.Component {
                             typeof prop.icon === 'string' ? (
                                 <Icon className={itemIcon}>{prop.icon}</Icon>
                             ) : (
-                                <prop.icon className={itemIcon} />
+                                <prop.icon className={itemIcon}/>
                             )
                         ) : (
                             <span className={collapseItemMini}>
@@ -318,7 +318,7 @@ class Sidebar extends React.Component {
             <div className={userWrapperClass}>
                 <div className={photo}>
                     <img src={avatar} className={classes.avatarImg}
-                         alt="..." />
+                         alt="..."/>
                 </div>
                 <List className={classes.list}>
                     <ListItem
@@ -506,7 +506,7 @@ class Sidebar extends React.Component {
         var brand = (
             <div className={logoClasses}>
                 <span className={logoMini}>
-                    <img src={logo} alt="logo" className={classes.img} />
+                    <img src={logo} alt="logo" className={classes.img}/>
                 </span>
                 <span className={logoNormal}>
                     {logoText}

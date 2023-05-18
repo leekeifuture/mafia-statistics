@@ -70,7 +70,7 @@ class RegularForms extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <MailOutline />
+                                <MailOutline/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Stacked
                                 Form</h4>
@@ -104,9 +104,9 @@ class RegularForms extends React.Component {
                                                 tabIndex={-1}
                                                 onClick={() => this.handleToggle(2)}
                                                 checkedIcon={<Check
-                                                    className={classes.checkedIcon} />}
+                                                    className={classes.checkedIcon}/>}
                                                 icon={<Check
-                                                    className={classes.uncheckedIcon} />}
+                                                    className={classes.uncheckedIcon}/>}
                                                 classes={{
                                                     checked: classes.checked,
                                                     root: classes.checkRoot
@@ -128,7 +128,7 @@ class RegularForms extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <Contacts />
+                                <Contacts/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Horizontal
                                 Form</h4>
@@ -184,10 +184,10 @@ class RegularForms extends React.Component {
                                                         onClick={() => this.handleToggle(1)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -341,10 +341,10 @@ class RegularForms extends React.Component {
                                                         onClick={() => this.handleToggle(3)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -371,10 +371,10 @@ class RegularForms extends React.Component {
                                                         onClick={() => this.handleToggle(4)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -484,10 +484,10 @@ class RegularForms extends React.Component {
                                                         onClick={() => this.handleToggle(10)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -506,10 +506,10 @@ class RegularForms extends React.Component {
                                                         onClick={() => this.handleToggle(11)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -528,10 +528,10 @@ class RegularForms extends React.Component {
                                                         onClick={() => this.handleToggle(12)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -587,10 +587,10 @@ class RegularForms extends React.Component {
                                                         onClick={() => this.handleToggle(21)}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -622,10 +622,10 @@ class RegularForms extends React.Component {
                                                         }
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -652,10 +652,10 @@ class RegularForms extends React.Component {
                                                         tabIndex={-1}
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot
@@ -688,10 +688,10 @@ class RegularForms extends React.Component {
                                                         }
                                                         checkedIcon={
                                                             <Check
-                                                                className={classes.checkedIcon} />
+                                                                className={classes.checkedIcon}/>
                                                         }
                                                         icon={<Check
-                                                            className={classes.uncheckedIcon} />}
+                                                            className={classes.uncheckedIcon}/>}
                                                         classes={{
                                                             checked: classes.checked,
                                                             root: classes.checkRoot

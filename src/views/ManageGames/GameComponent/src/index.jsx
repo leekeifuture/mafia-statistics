@@ -5,7 +5,7 @@ import GameComponent from './GameComponent'
 
 ReactDOM.render(
     <React.StrictMode>
-        <GameComponent />
+        <GameComponent/>
     </React.StrictMode>,
     document.getElementById('root')
 )

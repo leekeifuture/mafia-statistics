@@ -59,7 +59,7 @@ const RolesHistoryStatisticsComponent = (props) => {
 
     return (
         <GridItem xs={12} sm={12} md={6}>
-            <ReactEcharts option={option} />
+            <ReactEcharts option={option}/>
         </GridItem>
     )
 

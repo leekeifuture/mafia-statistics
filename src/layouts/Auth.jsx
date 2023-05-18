@@ -106,7 +106,7 @@ class Auth extends React.Component {
                         style={{backgroundImage: 'url(' + this.getBgImage() + ')'}}
                     >
                         <Switch>{this.getRoutes(routes)}</Switch>
-                        <Footer white />
+                        <Footer white/>
                     </div>
                 </div>
                 <SmallNotification

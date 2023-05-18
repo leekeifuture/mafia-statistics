@@ -25,7 +25,7 @@ export default function TypesMenu({
                 })
                 onClose()
             },
-            icon: <DataTypeIcon dataType={DataTypes.SELECT} />,
+            icon: <DataTypeIcon dataType={DataTypes.SELECT}/>,
             label: getLabel(DataTypes.SELECT)
         },
         {
@@ -38,7 +38,7 @@ export default function TypesMenu({
                 })
                 onClose()
             },
-            icon: <DataTypeIcon dataType={DataTypes.TEXT} />,
+            icon: <DataTypeIcon dataType={DataTypes.TEXT}/>,
             label: getLabel(DataTypes.TEXT)
         },
         {
@@ -51,7 +51,7 @@ export default function TypesMenu({
                 })
                 onClose()
             },
-            icon: <DataTypeIcon dataType={DataTypes.NUMBER} />,
+            icon: <DataTypeIcon dataType={DataTypes.NUMBER}/>,
             label: getLabel(DataTypes.NUMBER)
         }
     ]

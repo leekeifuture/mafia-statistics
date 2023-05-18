@@ -174,7 +174,7 @@ class RTLSupport extends React.Component {
                                         </h6>
                                         <div className={classes.icon}>
                                             <Home
-                                                className={classes.iconRose} />
+                                                className={classes.iconRose}/>
                                         </div>
                                         <h3
                                             className={`${classes.cardTitle} ${classes.marginTop30}`}
@@ -218,7 +218,7 @@ class RTLSupport extends React.Component {
                             <GridItem xs={12} sm={12} md={11}>
                                 <Card testimonial>
                                     <div className={classes.testimonialIcon}>
-                                        <FormatQuote />
+                                        <FormatQuote/>
                                     </div>
                                     <CardBody>
                                         <h5 className={classes.cardTestimonialDescription}>
@@ -242,7 +242,7 @@ class RTLSupport extends React.Component {
                                                     testimonialFooter>
                                             <a href="#pablo"
                                                onClick={e => e.preventDefault()}>
-                                                <img src={image} alt="..." />
+                                                <img src={image} alt="..."/>
                                             </a>
                                         </CardAvatar>
                                     </CardFooter>
@@ -251,7 +251,7 @@ class RTLSupport extends React.Component {
                         </GridContainer>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
-                        <Timeline simple stories={rtlStories} />
+                        <Timeline simple stories={rtlStories}/>
                     </GridItem>
                 </GridContainer>
             </div>

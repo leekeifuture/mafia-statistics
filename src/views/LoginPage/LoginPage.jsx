@@ -65,7 +65,7 @@ class LoginPage extends React.Component {
                                         информации, после чего вы будете
                                         перенаправлены обратно на этот сайт.
                                     </div>
-                                    <br />
+                                    <br/>
                                     <Button href={VK_AUTH_URL} color="success">
                                         Войти
                                     </Button>

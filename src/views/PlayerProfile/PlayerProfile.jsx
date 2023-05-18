@@ -226,7 +226,7 @@ class PlayerProfile extends React.Component {
         const {classes} = this.props
         return (<>
             {this.state.isLoading
-                ? <LoadingIndicator />
+                ? <LoadingIndicator/>
                 : (<>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={3}>

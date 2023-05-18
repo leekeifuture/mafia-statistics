@@ -172,7 +172,7 @@ export default function FreeSoloCreateOptionDialog(props) {
                         />
                     </DialogContent>
                     {isLoading
-                        ? <LoadingIndicator position transform />
+                        ? <LoadingIndicator position transform/>
                         : (
                             <DialogActions>
                                 <Button onClick={handleClose} color="primary">

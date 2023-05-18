@@ -58,12 +58,12 @@ class RatingByOneMonth extends React.Component {
         return (
             <GridContainer>
                 {this.state.isLoading
-                    ? <LoadingIndicator />
+                    ? <LoadingIndicator/>
                     : <GridItem xs={12}>
                         <Card>
                             <CardHeader color="primary" icon>
                                 <CardIcon color="primary">
-                                    <Assignment />
+                                    <Assignment/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>
                                     Рейтинг за {' '}

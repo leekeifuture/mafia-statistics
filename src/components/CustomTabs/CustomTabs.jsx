@@ -55,7 +55,7 @@ class CustomTabs extends React.Component {
                             var icon = {}
                             if (prop.tabIcon) {
                                 icon = {
-                                    icon: <prop.tabIcon />
+                                    icon: <prop.tabIcon/>
                                 }
                             }
                             return (

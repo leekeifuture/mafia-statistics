@@ -35,7 +35,7 @@ const SatelliteMap = withScriptjs(
                 scrollwheel: false
             }}
         >
-            <Marker position={{lat: 40.748817, lng: -73.985428}} />
+            <Marker position={{lat: 40.748817, lng: -73.985428}}/>
         </GoogleMap>
     ))
 )
@@ -49,7 +49,7 @@ const RegularMap = withScriptjs(
                 scrollwheel: false
             }}
         >
-            <Marker position={{lat: 40.748817, lng: -73.985428}} />
+            <Marker position={{lat: 40.748817, lng: -73.985428}}/>
         </GoogleMap>
     ))
 )
@@ -125,7 +125,7 @@ const CustomSkinMap = withScriptjs(
                 ]
             }}
         >
-            <Marker position={{lat: 40.748817, lng: -73.985428}} />
+            <Marker position={{lat: 40.748817, lng: -73.985428}}/>
         </GoogleMap>
     ))
 )
@@ -139,7 +139,7 @@ class GoogleMaps extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <Map />
+                                <Map/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Satellite
                                 Map</h4>
@@ -148,7 +148,7 @@ class GoogleMaps extends React.Component {
                             <SatelliteMap
                                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
                                 loadingElement={<div
-                                    style={{height: `100%`}} />}
+                                    style={{height: `100%`}}/>}
                                 containerElement={
                                     <div
                                         style={{
@@ -158,7 +158,7 @@ class GoogleMaps extends React.Component {
                                         }}
                                     />
                                 }
-                                mapElement={<div style={{height: `100%`}} />}
+                                mapElement={<div style={{height: `100%`}}/>}
                             />
                         </CardBody>
                     </Card>
@@ -167,7 +167,7 @@ class GoogleMaps extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <AddLocation />
+                                <AddLocation/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>Regular
                                 Map</h4>
@@ -176,7 +176,7 @@ class GoogleMaps extends React.Component {
                             <RegularMap
                                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
                                 loadingElement={<div
-                                    style={{height: `100%`}} />}
+                                    style={{height: `100%`}}/>}
                                 containerElement={
                                     <div
                                         style={{
@@ -186,7 +186,7 @@ class GoogleMaps extends React.Component {
                                         }}
                                     />
                                 }
-                                mapElement={<div style={{height: `100%`}} />}
+                                mapElement={<div style={{height: `100%`}}/>}
                             />
                         </CardBody>
                     </Card>
@@ -195,7 +195,7 @@ class GoogleMaps extends React.Component {
                     <Card>
                         <CardHeader color="rose" icon>
                             <CardIcon color="rose">
-                                <Place />
+                                <Place/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>
                                 Custom Skin & Settings Map
@@ -205,7 +205,7 @@ class GoogleMaps extends React.Component {
                             <CustomSkinMap
                                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
                                 loadingElement={<div
-                                    style={{height: `100%`}} />}
+                                    style={{height: `100%`}}/>}
                                 containerElement={
                                     <div
                                         style={{
@@ -215,7 +215,7 @@ class GoogleMaps extends React.Component {
                                         }}
                                     />
                                 }
-                                mapElement={<div style={{height: `100%`}} />}
+                                mapElement={<div style={{height: `100%`}}/>}
                             />
                         </CardBody>
                     </Card>

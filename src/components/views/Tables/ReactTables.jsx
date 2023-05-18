@@ -65,7 +65,7 @@ class ReactTables extends React.Component {
                                 color="info"
                                 className="like"
                             >
-                                <Favorite />
+                                <Favorite/>
                             </Button>{' '}
                             {/* use this button to add a edit kind of action */}
                             <Button
@@ -89,7 +89,7 @@ class ReactTables extends React.Component {
                                 color="warning"
                                 className="edit"
                             >
-                                <Dvr />
+                                <Dvr/>
                             </Button>{' '}
                             {/* use this button to remove the data row */}
                             <Button
@@ -112,7 +112,7 @@ class ReactTables extends React.Component {
                                 color="danger"
                                 className="remove"
                             >
-                                <Close />
+                                <Close/>
                             </Button>{' '}
                         </div>
                     )
@@ -129,7 +129,7 @@ class ReactTables extends React.Component {
                     <Card>
                         <CardHeader color="primary" icon>
                             <CardIcon color="primary">
-                                <Assignment />
+                                <Assignment/>
                             </CardIcon>
                             <h4 className={classes.cardIconTitle}>React
                                 Table</h4>

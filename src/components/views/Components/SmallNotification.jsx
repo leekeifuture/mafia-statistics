@@ -38,7 +38,7 @@ const SmallNotification = (props) => {
                     onClick={() => props.handleClose('smallNotification')}
                 >
                     <Close
-                        className={classes.modalClose} />
+                        className={classes.modalClose}/>
                 </Button>
             </DialogTitle>
             <DialogContent

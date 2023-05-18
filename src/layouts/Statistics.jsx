@@ -189,7 +189,7 @@ class Statistics extends React.Component {
             })
         return (<>
                 {this.state.isLoading
-                    ? <LoadingIndicator />
+                    ? <LoadingIndicator/>
                     : (<div className={classes.wrapper}>
                         <Sidebar
                             routes={routes}
@@ -228,7 +228,7 @@ class Statistics extends React.Component {
                                     <Switch>{this.getRoutes(routes)}</Switch>
                                 </div>
                             )}
-                            {this.getRoute() ? <Footer fluid /> : null}
+                            {this.getRoute() ? <Footer fluid/> : null}
                         </div>
                     </div>)}
             </>

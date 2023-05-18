@@ -54,7 +54,7 @@ class AuthNavbar extends React.Component {
                 <ListItem className={classes.listItem}>
                     <NavLink to={'/statistics/dashboard'}
                              className={classes.navLink}>
-                        <Dashboard className={classes.listItemIcon} />
+                        <Dashboard className={classes.listItemIcon}/>
                         <ListItemText
                             primary={'Главная'}
                             disableTypography={true}
@@ -70,7 +70,7 @@ class AuthNavbar extends React.Component {
                                 [classes.navLinkActive]: this.activeRoute('/auth/login')
                             })}
                         >
-                            <Fingerprint className={classes.listItemIcon} />
+                            <Fingerprint className={classes.listItemIcon}/>
                             <ListItemText
                                 primary={'Авторизация'}
                                 disableTypography={true}
@@ -111,7 +111,7 @@ class AuthNavbar extends React.Component {
                             aria-label="open drawer"
                             onClick={this.handleDrawerToggle}
                         >
-                            <Menu />
+                            <Menu/>
                         </Button>
                     </Hidden>
                     <Hidden mdUp>

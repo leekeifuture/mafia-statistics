@@ -100,7 +100,7 @@ class Dashboard extends React.Component {
                             <CardFooter stats>
                                 <div className={classes.stats}>
                                     <Danger>
-                                        <Warning />
+                                        <Warning/>
                                     </Danger>
                                     <a href="#pablo"
                                        onClick={e => e.preventDefault()}>
@@ -114,14 +114,14 @@ class Dashboard extends React.Component {
                         <Card>
                             <CardHeader color="success" stats icon>
                                 <CardIcon color="success">
-                                    <Store />
+                                    <Store/>
                                 </CardIcon>
                                 <p className={classes.cardCategory}>Revenue</p>
                                 <h3 className={classes.cardTitle}>$34,245</h3>
                             </CardHeader>
                             <CardFooter stats>
                                 <div className={classes.stats}>
-                                    <DateRange />
+                                    <DateRange/>
                                     Last 24 Hours
                                 </div>
                             </CardFooter>
@@ -139,7 +139,7 @@ class Dashboard extends React.Component {
                             </CardHeader>
                             <CardFooter stats>
                                 <div className={classes.stats}>
-                                    <LocalOffer />
+                                    <LocalOffer/>
                                     Tracked from Github
                                 </div>
                             </CardFooter>
@@ -149,14 +149,14 @@ class Dashboard extends React.Component {
                         <Card>
                             <CardHeader color="info" stats icon>
                                 <CardIcon color="info">
-                                    <i className="fab fa-twitter" />
+                                    <i className="fab fa-twitter"/>
                                 </CardIcon>
                                 <p className={classes.cardCategory}>Followers</p>
                                 <h3 className={classes.cardTitle}>+245</h3>
                             </CardHeader>
                             <CardFooter stats>
                                 <div className={classes.stats}>
-                                    <Update />
+                                    <Update/>
                                     Just Updated
                                 </div>
                             </CardFooter>
@@ -168,7 +168,7 @@ class Dashboard extends React.Component {
                         <Card>
                             <CardHeader color="success" icon>
                                 <CardIcon color="success">
-                                    <Language />
+                                    <Language/>
                                 </CardIcon>
                                 <h4 className={classes.cardIconTitle}>
                                     Global Sales by Top Locations
@@ -181,42 +181,42 @@ class Dashboard extends React.Component {
                                             tableData={[
                                                 [
                                                     <img src={us_flag}
-                                                         alt="us_flag" />,
+                                                         alt="us_flag"/>,
                                                     'USA',
                                                     '2.920',
                                                     '53.23%'
                                                 ],
                                                 [
                                                     <img src={de_flag}
-                                                         alt="us_flag" />,
+                                                         alt="us_flag"/>,
                                                     'Germany',
                                                     '1.300',
                                                     '20.43%'
                                                 ],
                                                 [
                                                     <img src={au_flag}
-                                                         alt="us_flag" />,
+                                                         alt="us_flag"/>,
                                                     'Australia',
                                                     '760',
                                                     '10.35%'
                                                 ],
                                                 [
                                                     <img src={gb_flag}
-                                                         alt="us_flag" />,
+                                                         alt="us_flag"/>,
                                                     'United Kingdom',
                                                     '690',
                                                     '7.87%'
                                                 ],
                                                 [
                                                     <img src={ro_flag}
-                                                         alt="us_flag" />,
+                                                         alt="us_flag"/>,
                                                     'Romania',
                                                     '600',
                                                     '5.94%'
                                                 ],
                                                 [
                                                     <img src={br_flag}
-                                                         alt="us_flag" />,
+                                                         alt="us_flag"/>,
                                                     'Brasil',
                                                     '550',
                                                     '4.34%'
@@ -282,7 +282,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button simple color="info" justIcon>
                                             <Refresh
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -294,7 +294,7 @@ class Dashboard extends React.Component {
                                         <Button color="transparent" simple
                                                 justIcon>
                                             <Edit
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                 </div>
@@ -302,14 +302,14 @@ class Dashboard extends React.Component {
                                     Sales</h4>
                                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
-                    <ArrowUpward className={classes.upArrowCardCategory} /> 55%
+                    <ArrowUpward className={classes.upArrowCardCategory}/> 55%
                   </span>{' '}
                                     increase in today sales.
                                 </p>
                             </CardBody>
                             <CardFooter chart>
                                 <div className={classes.stats}>
-                                    <AccessTime /> updated 4 minutes ago
+                                    <AccessTime/> updated 4 minutes ago
                                 </div>
                             </CardFooter>
                         </Card>
@@ -337,7 +337,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button simple color="info" justIcon>
                                             <Refresh
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -349,7 +349,7 @@ class Dashboard extends React.Component {
                                         <Button color="transparent" simple
                                                 justIcon>
                                             <Edit
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                 </div>
@@ -361,7 +361,7 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter chart>
                                 <div className={classes.stats}>
-                                    <AccessTime /> campaign sent 2 days ago
+                                    <AccessTime/> campaign sent 2 days ago
                                 </div>
                             </CardFooter>
                         </Card>
@@ -388,7 +388,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button simple color="info" justIcon>
                                             <Refresh
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -400,7 +400,7 @@ class Dashboard extends React.Component {
                                         <Button color="transparent" simple
                                                 justIcon>
                                             <Edit
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                 </div>
@@ -412,14 +412,14 @@ class Dashboard extends React.Component {
                             </CardBody>
                             <CardFooter chart>
                                 <div className={classes.stats}>
-                                    <AccessTime /> campaign sent 2 days ago
+                                    <AccessTime/> campaign sent 2 days ago
                                 </div>
                             </CardFooter>
                         </Card>
                     </GridItem>
                 </GridContainer>
                 <h3>Manage Listings</h3>
-                <br />
+                <br/>
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={4}>
                         <Card product className={classes.cardHover}>
@@ -427,7 +427,7 @@ class Dashboard extends React.Component {
                                         className={classes.cardHeaderHover}>
                                 <a href="#pablo"
                                    onClick={e => e.preventDefault()}>
-                                    <img src={priceImage1} alt="..." />
+                                    <img src={priceImage1} alt="..."/>
                                 </a>
                             </CardHeader>
                             <CardBody>
@@ -441,7 +441,7 @@ class Dashboard extends React.Component {
                                         <Button color="transparent" simple
                                                 justIcon>
                                             <ArtTrack
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -452,7 +452,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button color="success" simple justIcon>
                                             <Refresh
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -463,7 +463,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button color="danger" simple justIcon>
                                             <Edit
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                 </div>
@@ -487,7 +487,7 @@ class Dashboard extends React.Component {
                                 </div>
                                 <div
                                     className={`${classes.stats} ${classes.productStats}`}>
-                                    <Place /> Barcelona, Spain
+                                    <Place/> Barcelona, Spain
                                 </div>
                             </CardFooter>
                         </Card>
@@ -498,7 +498,7 @@ class Dashboard extends React.Component {
                                         className={classes.cardHeaderHover}>
                                 <a href="#pablo"
                                    onClick={e => e.preventDefault()}>
-                                    <img src={priceImage2} alt="..." />
+                                    <img src={priceImage2} alt="..."/>
                                 </a>
                             </CardHeader>
                             <CardBody>
@@ -512,7 +512,7 @@ class Dashboard extends React.Component {
                                         <Button color="transparent" simple
                                                 justIcon>
                                             <ArtTrack
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -523,7 +523,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button color="success" simple justIcon>
                                             <Refresh
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -534,7 +534,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button color="danger" simple justIcon>
                                             <Edit
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                 </div>
@@ -558,7 +558,7 @@ class Dashboard extends React.Component {
                                 </div>
                                 <div
                                     className={`${classes.stats} ${classes.productStats}`}>
-                                    <Place /> London, UK
+                                    <Place/> London, UK
                                 </div>
                             </CardFooter>
                         </Card>
@@ -569,7 +569,7 @@ class Dashboard extends React.Component {
                                         className={classes.cardHeaderHover}>
                                 <a href="#pablo"
                                    onClick={e => e.preventDefault()}>
-                                    <img src={priceImage3} alt="..." />
+                                    <img src={priceImage3} alt="..."/>
                                 </a>
                             </CardHeader>
                             <CardBody>
@@ -583,7 +583,7 @@ class Dashboard extends React.Component {
                                         <Button color="transparent" simple
                                                 justIcon>
                                             <ArtTrack
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -594,7 +594,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button color="success" simple justIcon>
                                             <Refresh
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                     <Tooltip
@@ -605,7 +605,7 @@ class Dashboard extends React.Component {
                                     >
                                         <Button color="danger" simple justIcon>
                                             <Edit
-                                                className={classes.underChartIcons} />
+                                                className={classes.underChartIcons}/>
                                         </Button>
                                     </Tooltip>
                                 </div>
@@ -629,7 +629,7 @@ class Dashboard extends React.Component {
                                 </div>
                                 <div
                                     className={`${classes.stats} ${classes.productStats}`}>
-                                    <Place /> Milan, Italy
+                                    <Place/> Milan, Italy
                                 </div>
                             </CardFooter>
                         </Card>

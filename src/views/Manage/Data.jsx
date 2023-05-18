@@ -33,7 +33,7 @@ class Data extends React.Component {
                         <input
                             type="file"
                             multiple
-                            onChange={this.onFilesChange} />
+                            onChange={this.onFilesChange}/>
                         <button
                             onClick={this.onFilesUpload}>
                             Upload

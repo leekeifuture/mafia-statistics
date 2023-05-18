@@ -113,7 +113,7 @@ class Step1 extends React.Component {
                     </h4>
                 </GridItem>
                 <GridItem xs={12} sm={4}>
-                    <PictureUpload />
+                    <PictureUpload/>
                 </GridItem>
                 <GridItem xs={12} sm={6}>
                     <CustomInput
@@ -136,7 +136,7 @@ class Step1 extends React.Component {
                                     className={classes.inputAdornment}
                                 >
                                     <Face
-                                        className={classes.inputAdornmentIcon} />
+                                        className={classes.inputAdornmentIcon}/>
                                 </InputAdornment>
                             )
                         }}
@@ -161,7 +161,7 @@ class Step1 extends React.Component {
                                     className={classes.inputAdornment}
                                 >
                                     <RecordVoiceOver
-                                        className={classes.inputAdornmentIcon} />
+                                        className={classes.inputAdornmentIcon}/>
                                 </InputAdornment>
                             )
                         }}
@@ -188,7 +188,7 @@ class Step1 extends React.Component {
                                     className={classes.inputAdornment}
                                 >
                                     <Email
-                                        className={classes.inputAdornmentIcon} />
+                                        className={classes.inputAdornmentIcon}/>
                                 </InputAdornment>
                             )
                         }}

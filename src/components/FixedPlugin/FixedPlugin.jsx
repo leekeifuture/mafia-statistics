@@ -59,7 +59,7 @@ class FixedPlugin extends React.Component {
                 <div id="fixedPluginClasses"
                      className={this.props.fixedClasses}>
                     <div onClick={this.handleClick}>
-                        <i className="fa fa-cog fa-2x" />
+                        <i className="fa fa-cog fa-2x"/>
                     </div>
                     <ul className="dropdown-menu">
                         <li className="header-title">SIDEBAR FILTERS</li>
@@ -144,7 +144,7 @@ class FixedPlugin extends React.Component {
                                         }}
                                     />
                                 </div>
-                                <div className="clearfix" />
+                                <div className="clearfix"/>
                             </a>
                         </li>
                         <li className="header-title">SIDEBAR BACKGROUND</li>
@@ -185,7 +185,7 @@ class FixedPlugin extends React.Component {
                                         }}
                                     />
                                 </div>
-                                <div className="clearfix" />
+                                <div className="clearfix"/>
                             </a>
                         </li>
                         <li className="adjustments-line">
@@ -203,7 +203,7 @@ class FixedPlugin extends React.Component {
                                         bar: classes.switchBar
                                     }}
                                 />
-                                <div className="clearfix" />
+                                <div className="clearfix"/>
                             </a>
                         </li>
                         <li className="adjustments-line">
@@ -221,7 +221,7 @@ class FixedPlugin extends React.Component {
                                         bar: classes.switchBar
                                     }}
                                 />
-                                <div className="clearfix" />
+                                <div className="clearfix"/>
                             </a>
                         </li>
                         <li className="header-title">Images</li>
@@ -236,7 +236,7 @@ class FixedPlugin extends React.Component {
                                     this.props.handleImageClick(imagine1)
                                 }}
                             >
-                                <img src={imagine1} alt="..." />
+                                <img src={imagine1} alt="..."/>
                             </a>
                         </li>
                         <li className={this.state['bgImage'] === imagine2 ? 'active' : ''}>
@@ -250,7 +250,7 @@ class FixedPlugin extends React.Component {
                                     this.props.handleImageClick(imagine2)
                                 }}
                             >
-                                <img src={imagine2} alt="..." />
+                                <img src={imagine2} alt="..."/>
                             </a>
                         </li>
                         <li className={this.state['bgImage'] === imagine3 ? 'active' : ''}>
@@ -264,7 +264,7 @@ class FixedPlugin extends React.Component {
                                     this.props.handleImageClick(imagine3)
                                 }}
                             >
-                                <img src={imagine3} alt="..." />
+                                <img src={imagine3} alt="..."/>
                             </a>
                         </li>
                         <li className={this.state['bgImage'] === imagine4 ? 'active' : ''}>
@@ -278,7 +278,7 @@ class FixedPlugin extends React.Component {
                                     this.props.handleImageClick(imagine4)
                                 }}
                             >
-                                <img src={imagine4} alt="..." />
+                                <img src={imagine4} alt="..."/>
                             </a>
                         </li>
                         <li className="button-container">
@@ -305,7 +305,7 @@ class FixedPlugin extends React.Component {
                         </li>
                         <li className="header-title" id="sharrreTitle">
                             Thank you for sharing!
-                            <br />
+                            <br/>
                         </li>
                     </ul>
                 </div>

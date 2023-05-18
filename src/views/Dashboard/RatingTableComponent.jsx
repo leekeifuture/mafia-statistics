@@ -39,7 +39,7 @@ const RatingTableComponent = (props) => {
         <Card>
             <CardHeader color="success" icon>
                 <CardIcon color="success">
-                    <Star />
+                    <Star/>
                 </CardIcon>
                 <h4 className={props.classes.cardIconTitle}>
                     Рейтинговая таблица

@@ -34,7 +34,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="success" stats icon>
                     <CardIcon color="success">
-                        <i className="fas fa-trophy" />
+                        <i className="fas fa-trophy"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия побед
@@ -58,7 +58,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="danger" stats icon>
                     <CardIcon color="danger">
-                        <i className="fas fa-shield-alt" />
+                        <i className="fas fa-shield-alt"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия поражений
@@ -82,7 +82,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="warning" stats icon>
                     <CardIcon color="warning">
-                        <i className="fas fa-skull-crossbones" />
+                        <i className="fas fa-skull-crossbones"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальный процент первого отстрела
@@ -132,7 +132,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="success" stats icon>
                     <CardIcon color="success">
-                        <i className="fas fa-thumbs-up" />
+                        <i className="fas fa-thumbs-up"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия выигранных красным
@@ -156,7 +156,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="success" stats icon>
                     <CardIcon color="success">
-                        <i className="fas fa-thumbs-down" />
+                        <i className="fas fa-thumbs-down"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия выигранных чёрным
@@ -180,7 +180,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="success" stats icon>
                     <CardIcon color="success">
-                        <i className="fas fa-american-sign-language-interpreting" />
+                        <i className="fas fa-american-sign-language-interpreting"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия выигранных шерифом
@@ -204,7 +204,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="success" stats icon>
                     <CardIcon color="success">
-                        <i className="fas fa-user-secret" />
+                        <i className="fas fa-user-secret"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия выигранных доном
@@ -229,7 +229,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="danger" stats icon>
                     <CardIcon color="danger">
-                        <i className="fas fa-thumbs-up" />
+                        <i className="fas fa-thumbs-up"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия проигранных красным
@@ -253,7 +253,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="danger" stats icon>
                     <CardIcon color="danger">
-                        <i className="fas fa-thumbs-down" />
+                        <i className="fas fa-thumbs-down"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия проигранных чёрным
@@ -277,7 +277,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="danger" stats icon>
                     <CardIcon color="danger">
-                        <i className="fas fa-american-sign-language-interpreting" />
+                        <i className="fas fa-american-sign-language-interpreting"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия проигранных шерифом
@@ -301,7 +301,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="danger" stats icon>
                     <CardIcon color="danger">
-                        <i className="fas fa-user-secret" />
+                        <i className="fas fa-user-secret"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия проигранных доном
@@ -326,7 +326,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="info" stats icon>
                     <CardIcon color="info">
-                        <i className="fas fa-thumbs-up" />
+                        <i className="fas fa-thumbs-up"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия сыгранных красным
@@ -350,7 +350,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="info" stats icon>
                     <CardIcon color="info">
-                        <i className="fas fa-thumbs-down" />
+                        <i className="fas fa-thumbs-down"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия сыгранных чёрным
@@ -374,7 +374,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="info" stats icon>
                     <CardIcon color="info">
-                        <i className="fas fa-american-sign-language-interpreting" />
+                        <i className="fas fa-american-sign-language-interpreting"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия сыгранных шерифом
@@ -398,7 +398,7 @@ const RecordsComponent = (props) => {
             <Card>
                 <CardHeader color="info" stats icon>
                     <CardIcon color="info">
-                        <i className="fas fa-user-secret" />
+                        <i className="fas fa-user-secret"/>
                     </CardIcon>
                     <p className={props.classes.cardCategory}>
                         Максимальная серия сыгранных доном

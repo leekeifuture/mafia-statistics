@@ -27,13 +27,13 @@ const getClubCardType = (gamesTotal) => {
 
     return (
         <div>
-            <br />
+            <br/>
             <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 flexWrap: 'wrap'
             }}>
-                <CardMembership />
+                <CardMembership/>
                 <span style={{marginLeft: '5px'}}>
                     {clubCardText}
                 </span>
@@ -44,13 +44,13 @@ const getClubCardType = (gamesTotal) => {
 
 const getStatisticsDate = (props) => (
     <div>
-        <br />
+        <br/>
         <div style={{
             display: 'flex',
             alignItems: 'center',
             flexWrap: 'wrap'
         }}>
-            <AccessTime />
+            <AccessTime/>
             <div style={{textAlign: 'left', marginLeft: '5px'}}>
                 <div>
                     Статистика за:
@@ -91,7 +91,7 @@ const PlayerCardComponent = props => {
         <Card profile>
             <CardAvatar profile>
                 <img src={getPhotoUrl(props.state)}
-                     alt="..." />
+                     alt="..."/>
             </CardAvatar>
             <CardBody profile>
                 <h6 className={props.classes.cardCategory}
@@ -107,7 +107,7 @@ const PlayerCardComponent = props => {
                 >
                     {props.state.nickname}
                 </h4>
-                <hr />
+                <hr/>
                 <span style={{color: blackColor}}
                       className={props.classes.description}>
                     <ul style={{
@@ -129,7 +129,7 @@ const PlayerCardComponent = props => {
                         </li>
                     </ul>
 
-                    <br />
+                    <br/>
 
                     <span style={{display: 'flex'}}>
                         <span style={{
@@ -156,7 +156,7 @@ const PlayerCardComponent = props => {
                         alignItems: 'center',
                         flexWrap: 'wrap'
                     }}>
-                        <i className="fas fa-trophy" />
+                        <i className="fas fa-trophy"/>
                         <span style={{marginLeft: '5px'}}>
                             Максимальная серия
                             побед: {maximumSeriesOfWin}
@@ -168,7 +168,7 @@ const PlayerCardComponent = props => {
                         flexWrap: 'wrap'
                     }}>
                         <i className="fas fa-shield-alt"
-                           style={{marginLeft: '1px'}} />
+                           style={{marginLeft: '1px'}}/>
                         <span style={{marginLeft: '6px'}}>
                             Максимальная серия
                             поражений: {maximumSeriesOfDefeat}

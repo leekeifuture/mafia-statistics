@@ -166,7 +166,7 @@ class Widgets extends React.Component {
                                             COMPANY</h6>
                                         <div className={classes.icon}>
                                             <Home
-                                                className={classes.iconRose} />
+                                                className={classes.iconRose}/>
                                         </div>
                                         <h3
                                             className={`${classes.cardTitle} ${classes.marginTop30}`}
@@ -211,7 +211,7 @@ class Widgets extends React.Component {
                             <GridItem xs={12} sm={12} md={11}>
                                 <Card testimonial>
                                     <div className={classes.testimonialIcon}>
-                                        <FormatQuote />
+                                        <FormatQuote/>
                                     </div>
                                     <CardBody>
                                         <h5 className={classes.cardTestimonialDescription}>
@@ -231,7 +231,7 @@ class Widgets extends React.Component {
                                                     testimonialFooter>
                                             <a href="#pablo"
                                                onClick={e => e.preventDefault()}>
-                                                <img src={image} alt="..." />
+                                                <img src={image} alt="..."/>
                                             </a>
                                         </CardAvatar>
                                     </CardFooter>
@@ -240,7 +240,7 @@ class Widgets extends React.Component {
                         </GridContainer>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
-                        <Timeline simple stories={widgetStories} />
+                        <Timeline simple stories={widgetStories}/>
                     </GridItem>
                 </GridContainer>
             </div>

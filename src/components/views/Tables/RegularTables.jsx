@@ -34,7 +34,7 @@ function RegularTables({...props}) {
                 <Card>
                     <CardHeader color="rose" icon>
                         <CardIcon color="rose">
-                            <Assignment />
+                            <Assignment/>
                         </CardIcon>
                         <h4 className={classes.cardIconTitle}>Simple Table</h4>
                     </CardHeader>
@@ -60,7 +60,7 @@ function RegularTables({...props}) {
                 <Card plain>
                     <CardHeader color="rose" icon plain>
                         <CardIcon color="rose">
-                            <Assignment />
+                            <Assignment/>
                         </CardIcon>
                         <h4 className={classes.cardIconTitle}>
                             Table on Plain Background
@@ -99,7 +99,7 @@ function RegularTables({...props}) {
                 <Card>
                     <CardHeader color="rose" icon>
                         <CardIcon color="rose">
-                            <Assignment />
+                            <Assignment/>
                         </CardIcon>
                         <h4 className={classes.cardIconTitle}>Regular Table with
                             Colors</h4>

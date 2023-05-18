@@ -56,7 +56,7 @@ const GamesComponent = (props) => {
         <Card>
             <CardHeader color="primary" icon>
                 <CardIcon color="primary">
-                    <Assignment />
+                    <Assignment/>
                 </CardIcon>
                 <h4 className={props.classes.cardIconTitle}>
                     Список всех игр ({props.gamesCount})

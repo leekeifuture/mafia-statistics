@@ -43,10 +43,10 @@ class RatingByMonths extends React.Component {
         return (
             <div>
                 <h3>Рейтинг по месяцам</h3>
-                <br />
+                <br/>
                 <GridContainer>
                     {this.state.isLoading
-                        ? <LoadingIndicator />
+                        ? <LoadingIndicator/>
                         : Object.keys(this.state.ratingByMonths).map((date, key) => {
                             const ratingByOneMonth = this.state.ratingByMonths[date]
                             const ratingByOneMonthLink = `/statistics/rating/${date}`
@@ -93,7 +93,7 @@ class RatingByMonths extends React.Component {
                                     <Card product>
                                         <CardHeader image>
                                             <img src={priceImage1}
-                                                 alt="..." />
+                                                 alt="..."/>
                                         </CardHeader>
                                         <CardBody>
                                             <h4 className={classes.cardProductTitle}>
@@ -101,7 +101,7 @@ class RatingByMonths extends React.Component {
                                                     mostGamesPlayer.fromDate, mostGamesPlayer.toDate
                                                 ))}
                                             </h4>
-                                            <br />
+                                            <br/>
                                             <p className={classes.cardProductDesciprion}>
                                                 <GridItem xs={12} sm={12}
                                                           md={12}>

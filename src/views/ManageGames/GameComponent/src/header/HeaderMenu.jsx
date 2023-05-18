@@ -57,7 +57,7 @@ export default function HeaderMenu({
                 setSortBy([{id: columnId, desc: false}])
                 setShowHeaderMenu(false)
             },
-            icon: <ArrowUpIcon />,
+            icon: <ArrowUpIcon/>,
             label: 'Sort ascending'
         },
         {
@@ -70,7 +70,7 @@ export default function HeaderMenu({
                 setSortBy([{id: columnId, desc: true}])
                 setShowHeaderMenu(false)
             },
-            icon: <ArrowDownIcon />,
+            icon: <ArrowDownIcon/>,
             label: 'Sort descending'
         },
         {
@@ -87,7 +87,7 @@ export default function HeaderMenu({
                 })
                 setShowHeaderMenu(false)
             },
-            icon: <ArrowLeftIcon />,
+            icon: <ArrowLeftIcon/>,
             label: 'Insert left'
         },
         {
@@ -104,7 +104,7 @@ export default function HeaderMenu({
                 })
                 setShowHeaderMenu(false)
             },
-            icon: <ArrowRightIcon />,
+            icon: <ArrowRightIcon/>,
             label: 'Insert right'
         },
         {
@@ -112,7 +112,7 @@ export default function HeaderMenu({
                 dataDispatch({type: ActionTypes.DELETE_COLUMN, columnId})
                 setShowHeaderMenu(false)
             },
-            icon: <TrashIcon />,
+            icon: <TrashIcon/>,
             label: 'Delete'
         }
     ]
@@ -185,7 +185,7 @@ export default function HeaderMenu({
                         ref={setTypeReferenceElement}
                     >
             <span className="svg-icon svg-text icon-margin">
-              <DataTypeIcon dataType={dataType} />
+              <DataTypeIcon dataType={dataType}/>
             </span>
                         <span
                             className="text-transform-capitalize">{dataType}</span>
@@ -201,7 +201,7 @@ export default function HeaderMenu({
                         />
                     )}
                 </div>
-                <div style={{borderTop: `2px solid ${grey(200)}`}} />
+                <div style={{borderTop: `2px solid ${grey(200)}`}}/>
                 <div className="list-padding">
                     {buttons.map(button => (
                         <button
