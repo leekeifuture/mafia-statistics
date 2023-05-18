@@ -14,7 +14,6 @@ const customSelectStyle = {
         fontWeight: '400',
         lineHeight: '1.42857',
         textDecoration: 'none',
-        textTransform: 'uppercase',
         color: grayColor[2],
         letterSpacing: '0',
         '&:focus': {
@@ -33,9 +32,6 @@ const customSelectStyle = {
             '&:before': {
                 borderBottomWidth: '1px !important',
                 borderBottomColor: grayColor[4] + '!important'
-            },
-            '&:after': {
-                borderBottomColor: primaryColor[0] + '!important'
             }
         }
     },

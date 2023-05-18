@@ -1,4 +1,3 @@
-import Checkbox from '@material-ui/core/Checkbox'
 import FormControl from '@material-ui/core/FormControl'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -37,10 +36,15 @@ class Step2 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            simpleSelect: '',
-            desgin: false,
-            code: false,
-            develop: false
+            players: [],
+            blackPlayerOne: {},
+            blackPlayerTwo: {},
+            donPlayer: {},
+            sheriffPlayer: {},
+            blackPlayerOneState: '',
+            blackPlayerTwoState: '',
+            donPlayerState: '',
+            sheriffPlayerState: '',
         }
     }
 
@@ -48,109 +52,93 @@ class Step2 extends React.Component {
         return this.state
     }
 
-    handleSimple = event => {
-        this.setState({[event.target.name]: event.target.value})
+    // function that verifies if a string has a given player or not
+    verifyPlayer(player) {
+        return Boolean(player)
     }
-    handleChange = name => event => {
-        this.setState({[name]: event.target.checked})
+
+    change(playerId, key) {
+        const player = this.state.players.find((obj) => obj.id === playerId)
+
+        if (this.verifyPlayer(player)) {
+            this.setState({[key + 'State']: 'success'})
+
+            // Unselect the player from other selects
+            Object.keys(this.state).forEach((stateKey) => {
+                if (
+                    stateKey !== key &&
+                    this.state[stateKey] &&
+                    this.state[stateKey].id === playerId
+                ) {
+                    this.setState({[key + 'State']: 'error'})
+                }
+            })
+        } else {
+            this.setState({[key + 'State']: 'error'})
+        }
+        this.setState({[key]: player})
     }
 
     isValidated() {
-        return true
+        if (
+            this.state.blackPlayerOneState === 'success' &&
+            this.state.blackPlayerTwoState === 'success' &&
+            this.state.donPlayerState === 'success' &&
+            this.state.sheriffPlayerState === 'success'
+        ) {
+            return true
+        }
+
+        if (this.state.blackPlayerOneState !== 'success') {
+            this.setState({blackPlayerOneState: 'error'})
+        }
+        if (this.state.blackPlayerTwoState !== 'success') {
+            this.setState({blackPlayerTwoState: 'error'})
+        }
+        if (this.state.donPlayerState !== 'success') {
+            this.setState({donPlayerState: 'error'})
+        }
+        if (this.state.sheriffPlayerState !== 'success') {
+            this.setState({sheriffPlayerState: 'error'})
+        }
+    }
+
+    getPlayers(allStates) {
+        if (allStates && allStates.players) {
+            const players = Array.from(Array(10)).map((x, i) => {
+                const key = 'player' + (i + 1)
+                if (this.props.allStates.players.hasOwnProperty(key)) {
+                    return this.props.allStates.players[key]
+                }
+            })
+            this.setState({players})
+        }
+        return []
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (!this.state.players.length) this.getPlayers(this.props.allStates)
     }
 
     render() {
         const {classes} = this.props
         return (
             <div>
-                <h4 className={classes.infoText}>What are you doing?
-                    (checkboxes)</h4>
-                <GridContainer justifyContent="center">
+                <h4 className={classes.infoText}>
+                    Дальше выберите роли игроков
+                </h4>
+                <GridContainer justifyContent='center'>
                     <GridItem xs={12} sm={12} md={12} lg={10}>
                         <GridContainer>
-                            <GridItem xs={12} sm={4}>
-                                <div className={classes.choiche}>
-                                    <Checkbox
-                                        tabIndex={-1}
-                                        onClick={this.handleChange('desgin')}
-                                        checkedIcon={
-                                            <i
-                                                className={
-                                                    'fas fa-pencil-alt ' + classes.iconCheckboxIcon
-                                                }
-                                            />
-                                        }
-                                        icon={
-                                            <i
-                                                className={
-                                                    'fas fa-pencil-alt ' + classes.iconCheckboxIcon
-                                                }
-                                            />
-                                        }
-                                        classes={{
-                                            checked: classes.iconCheckboxChecked,
-                                            root: classes.iconCheckbox
-                                        }}
-                                    />
-                                    <h6>Design</h6>
-                                </div>
-                            </GridItem>
-                            <GridItem xs={12} sm={4}>
-                                <div className={classes.choiche}>
-                                    <Checkbox
-                                        tabIndex={-1}
-                                        onClick={this.handleChange('code')}
-                                        checkedIcon={
-                                            <i
-                                                className={
-                                                    'fas fa-terminal ' + classes.iconCheckboxIcon
-                                                }
-                                            />
-                                        }
-                                        icon={
-                                            <i
-                                                className={
-                                                    'fas fa-terminal ' + classes.iconCheckboxIcon
-                                                }
-                                            />
-                                        }
-                                        classes={{
-                                            checked: classes.iconCheckboxChecked,
-                                            root: classes.iconCheckbox
-                                        }}
-                                    />
-                                    <h6>Code</h6>
-                                </div>
-                            </GridItem>
-                            <GridItem xs={12} sm={4}>
-                                <div className={classes.choiche}>
-                                    <Checkbox
-                                        tabIndex={-1}
-                                        onClick={this.handleChange('develop')}
-                                        checkedIcon={
-                                            <i
-                                                className={'fas fa-laptop ' + classes.iconCheckboxIcon}
-                                            />
-                                        }
-                                        icon={
-                                            <i
-                                                className={'fas fa-laptop ' + classes.iconCheckboxIcon}
-                                            />
-                                        }
-                                        classes={{
-                                            checked: classes.iconCheckboxChecked,
-                                            root: classes.iconCheckbox
-                                        }}
-                                    />
-                                    <h6>Develop</h6>
-                                </div>
+                            <GridItem xs={12} sm={6}>
                                 <FormControl fullWidth
+                                             error={this.state.blackPlayerOneState === 'error'}
                                              className={classes.selectFormControl}>
                                     <InputLabel
-                                        htmlFor="simple-select"
+                                        htmlFor='simple-select'
                                         className={classes.selectLabel}
                                     >
-                                        Choose City
+                                        Мафия 1
                                     </InputLabel>
                                     <Select
                                         MenuProps={{
@@ -159,12 +147,9 @@ class Step2 extends React.Component {
                                         classes={{
                                             select: classes.select
                                         }}
-                                        value={this.state.simpleSelect}
-                                        onChange={this.handleSimple}
-                                        inputProps={{
-                                            name: 'simpleSelect',
-                                            id: 'simple-select'
-                                        }}
+                                        value={this.state.blackPlayerOne.id}
+                                        onChange={event =>
+                                            this.change(event.target.value, 'blackPlayerOne')}
                                     >
                                         <MenuItem
                                             disabled
@@ -172,26 +157,160 @@ class Step2 extends React.Component {
                                                 root: classes.selectMenuItem
                                             }}
                                         >
-                                            Choose City
+                                            Выберите мафию 1
                                         </MenuItem>
+                                        {this.state.players.map((player, index) => {
+                                            return (
+                                                <MenuItem
+                                                    key={index}
+                                                    classes={{
+                                                        root: classes.selectMenuItem,
+                                                        selected: classes.selectMenuItemSelected
+                                                    }}
+                                                    value={player.id}
+                                                >
+                                                    {player.nickname}
+                                                </MenuItem>
+                                            )
+                                        })}
+                                    </Select>
+                                </FormControl>
+                            </GridItem>
+                            <GridItem xs={12} sm={6}>
+                                <FormControl fullWidth
+                                             error={this.state.blackPlayerTwoState === 'error'}
+                                             className={classes.selectFormControl}>
+                                    <InputLabel
+                                        htmlFor='simple-select'
+                                        className={classes.selectLabel}
+                                    >
+                                        Мафия 2
+                                    </InputLabel>
+                                    <Select
+                                        MenuProps={{
+                                            className: classes.selectMenu
+                                        }}
+                                        classes={{
+                                            select: classes.select
+                                        }}
+                                        value={this.state.blackPlayerTwo.id}
+                                        onChange={event =>
+                                            this.change(event.target.value, 'blackPlayerTwo')}
+                                    >
                                         <MenuItem
+                                            disabled
                                             classes={{
-                                                root: classes.selectMenuItem,
-                                                selected: classes.selectMenuItemSelected
+                                                root: classes.selectMenuItem
                                             }}
-                                            value="2"
                                         >
-                                            Paris
+                                            Выберите мафию 2
                                         </MenuItem>
+                                        {this.state.players.map((player, index) => {
+                                            return (
+                                                <MenuItem
+                                                    key={index}
+                                                    classes={{
+                                                        root: classes.selectMenuItem,
+                                                        selected: classes.selectMenuItemSelected
+                                                    }}
+                                                    value={player.id}
+                                                >
+                                                    {player.nickname}
+                                                </MenuItem>
+                                            )
+                                        })}
+                                    </Select>
+                                </FormControl>
+                            </GridItem>
+                            <GridItem xs={12} sm={6}>
+                                <FormControl fullWidth
+                                             error={this.state.donPlayerState === 'error'}
+                                             className={classes.selectFormControl}>
+                                    <InputLabel
+                                        htmlFor='simple-select'
+                                        className={classes.selectLabel}
+                                    >
+                                        Дон
+                                    </InputLabel>
+                                    <Select
+                                        MenuProps={{
+                                            className: classes.selectMenu
+                                        }}
+                                        classes={{
+                                            select: classes.select
+                                        }}
+                                        value={this.state.donPlayer.id}
+                                        onChange={event =>
+                                            this.change(event.target.value, 'donPlayer')}
+                                    >
                                         <MenuItem
+                                            disabled
                                             classes={{
-                                                root: classes.selectMenuItem,
-                                                selected: classes.selectMenuItemSelected
+                                                root: classes.selectMenuItem
                                             }}
-                                            value="3"
                                         >
-                                            Bucharest
+                                            Выберите дона
                                         </MenuItem>
+                                        {this.state.players.map((player, index) => {
+                                            return (
+                                                <MenuItem
+                                                    key={index}
+                                                    classes={{
+                                                        root: classes.selectMenuItem,
+                                                        selected: classes.selectMenuItemSelected
+                                                    }}
+                                                    value={player.id}
+                                                >
+                                                    {player.nickname}
+                                                </MenuItem>
+                                            )
+                                        })}
+                                    </Select>
+                                </FormControl>
+                            </GridItem>
+                            <GridItem xs={12} sm={6}>
+                                <FormControl fullWidth
+                                             error={this.state.sheriffPlayerState === 'error'}
+                                             className={classes.selectFormControl}>
+                                    <InputLabel
+                                        htmlFor='simple-select'
+                                        className={classes.selectLabel}
+                                    >
+                                        Шериф
+                                    </InputLabel>
+                                    <Select
+                                        MenuProps={{
+                                            className: classes.selectMenu
+                                        }}
+                                        classes={{
+                                            select: classes.select
+                                        }}
+                                        value={this.state.sheriffPlayer.id}
+                                        onChange={event =>
+                                            this.change(event.target.value, 'sheriffPlayer')}
+                                    >
+                                        <MenuItem
+                                            disabled
+                                            classes={{
+                                                root: classes.selectMenuItem
+                                            }}
+                                        >
+                                            Выберите шерифа
+                                        </MenuItem>
+                                        {this.state.players.map((player, index) => {
+                                            return (
+                                                <MenuItem
+                                                    key={index}
+                                                    classes={{
+                                                        root: classes.selectMenuItem,
+                                                        selected: classes.selectMenuItemSelected
+                                                    }}
+                                                    value={player.id}
+                                                >
+                                                    {player.nickname}
+                                                </MenuItem>
+                                            )
+                                        })}
                                     </Select>
                                 </FormControl>
                             </GridItem>
