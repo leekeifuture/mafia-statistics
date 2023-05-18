@@ -91,8 +91,8 @@ export const mafiaStatisticsApi = {
         return axiosInstance.get(`/host/game/${id}`)
             .then(response => response.data)
     },
-    createGame() {
-        return axiosInstance.post('/host/game', {})
+    createGame(requestBody) {
+        return axiosInstance.post('/host/game', requestBody)
             .then(response => response.data)
     }
 }

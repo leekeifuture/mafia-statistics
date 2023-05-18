@@ -22,15 +22,13 @@ class CreateGame extends React.Component {
     }
 
     onPlayerSelect = (newPlayer, prevPlayer) => {
-        let players
+        let players = this.state.players
 
         if (Object.keys(newPlayer).length === 0 &&
             Object.keys(prevPlayer).length !== 0) {
-            players = this.state.players
-                .filter(player => player.id !== prevPlayer.id)
+            players = players.filter(player => player.id !== prevPlayer.id)
         } else {
-            players = this.state.players
-                .filter(player => player.id !== newPlayer.id)
+            players = players.filter(player => player.id !== newPlayer.id)
         }
 
         if ((prevPlayer && Object.keys(prevPlayer).length !== 0 &&
@@ -39,6 +37,26 @@ class CreateGame extends React.Component {
             players.unshift(prevPlayer)
 
         this.setState({players})
+    }
+
+    createGame = (players, roles) => {
+        const requestBody = {
+            blackPlayerOneId: roles.blackPlayerOne.id,
+            blackPlayerTwoId: roles.blackPlayerTwo.id,
+            donPlayerId: roles.donPlayer.id,
+            sheriffPlayerId: roles.sheriffPlayer.id,
+            hostId: players.host.id,
+            players: Array.from(Array(10)).map((x, i) => {
+                const playerNumber = `player${i + 1}`
+                return {playerId: players[playerNumber].id}
+            })
+        }
+
+        mafiaStatisticsApi.createGame(requestBody)
+            .then(
+                game => this.props.history.push(`/statistics/game/${game.id}`),
+                error => this.props.history.push('/auth/error')
+            )
     }
 
     componentDidMount() {
@@ -57,7 +75,7 @@ class CreateGame extends React.Component {
     render() {
         return (<>
             {this.state.isLoading
-                ? <LoadingIndicator />
+                ? <LoadingIndicator/>
                 : (
                     <GridContainer justifyContent="center">
                         <GridItem xs={12} sm={8}>
@@ -79,7 +97,7 @@ class CreateGame extends React.Component {
                                     }
                                 ]}
                                 title="Создание новой игры"
-                                finishButtonClick={e => console.log(e)}
+                                finishButtonClick={e => this.createGame(e.players, e.roles)}
                             />
                         </GridItem>
                     </GridContainer>
