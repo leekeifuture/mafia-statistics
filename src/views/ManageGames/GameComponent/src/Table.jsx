@@ -127,15 +127,6 @@ export default function Table({
                     >
                         {RenderRow}
                     </FixedSizeList>
-                    <div
-                        className="tr add-row"
-                        onClick={() => dataDispatch({type: ActionTypes.ADD_ROW})}
-                    >
-            <span className="svg-icon svg-gray icon-margin">
-              <PlusIcon/>
-            </span>
-                        New
-                    </div>
                 </div>
             </div>
         </div>
