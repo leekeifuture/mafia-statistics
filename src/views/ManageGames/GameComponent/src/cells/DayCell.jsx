@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import {ActionTypes} from '../utils'
 
 export default function DayCell({
                                     initialValue,
@@ -13,16 +12,22 @@ export default function DayCell({
 
     function onChange(e, type) {
         if (type === 'number') setNumber({value: e.target.value, update: false})
-        if (type === 'sum1') setSum1({value: e.target.value, update: false})
-        if (type === 'sum2') setSum2({value: e.target.value, update: false})
+        else if (type === 'sum1') setSum1({
+            value: e.target.value,
+            update: false
+        })
+        else if (type === 'sum2') setSum2({
+            value: e.target.value,
+            update: false
+        })
     }
 
     function onBlur(e, type) {
         if (type === 'number')
             setNumber(old => ({value: old.value, update: true}))
-        if (type === 'sum1')
+        else if (type === 'sum1')
             setSum1(old => ({value: old.value, update: true}))
-        if (type === 'sum2')
+        else if (type === 'sum2')
             setSum2(old => ({value: old.value, update: true}))
     }
 
@@ -31,35 +36,6 @@ export default function DayCell({
         setSum1({value: initialValue, update: false})
         setSum2({value: initialValue, update: false})
     }, [initialValue])
-
-    useEffect(() => {
-        if (number.update) {
-            dataDispatch({
-                type: ActionTypes.UPDATE_CELL,
-                columnId,
-                rowIndex,
-                value: number.value
-            })
-        }
-        if (sum1.update) {
-            dataDispatch({
-                type: ActionTypes.UPDATE_CELL,
-                columnId,
-                rowIndex,
-                value: sum1.value
-            })
-        }
-        if (sum2.update) {
-            dataDispatch({
-                type: ActionTypes.UPDATE_CELL,
-                columnId,
-                rowIndex,
-                value: sum2.value
-            })
-        }
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [number.update, sum1.update, sum2.update, columnId, rowIndex])
 
     return (<>
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr'}}>
