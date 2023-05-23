@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 
 export default function DayCell({
                                     initialValue,
@@ -30,12 +30,6 @@ export default function DayCell({
         else if (type === 'sum2')
             setSum2(old => ({value: old.value, update: true}))
     }
-
-    useEffect(() => {
-        setNumber({value: initialValue, update: false})
-        setSum1({value: initialValue, update: false})
-        setSum2({value: initialValue, update: false})
-    }, [initialValue])
 
     return (<>
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr'}}>
