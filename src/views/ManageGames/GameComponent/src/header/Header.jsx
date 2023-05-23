@@ -3,7 +3,6 @@ import {usePopper} from 'react-popper'
 import {Constants} from '../utils'
 import AddColumnHeader from './AddColumnHeader'
 import DataTypeIcon from './DataTypeIcon'
-import HeaderMenu from './HeaderMenu'
 
 export default function Header({
                                    column: {
@@ -51,29 +50,13 @@ export default function Header({
                         onClick={() => setShowHeaderMenu(true)}
                         ref={setHeaderMenuAnchorRef}
                     >
-            <span className="svg-icon svg-gray icon-margin">
-              <DataTypeIcon dataType={dataType}/>
-            </span>
+                        <span className="svg-icon svg-gray icon-margin">
+                          <DataTypeIcon dataType={dataType}/>
+                        </span>
                         {label}
                     </div>
                     <div {...getResizerProps()} className="resizer"/>
                 </div>
-                {showHeaderMenu && (
-                    <div className="overlay"
-                         onClick={() => setShowHeaderMenu(false)}/>
-                )}
-                {showHeaderMenu && (
-                    <HeaderMenu
-                        label={label}
-                        dataType={dataType}
-                        popper={headerMenuPopper}
-                        popperRef={setHeaderMenuPopperRef}
-                        dataDispatch={dataDispatch}
-                        setSortBy={setSortBy}
-                        columnId={id}
-                        setShowHeaderMenu={setShowHeaderMenu}
-                    />
-                )}
             </>
         )
     }
