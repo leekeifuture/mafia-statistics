@@ -97,6 +97,27 @@ function reducer(state, action, gameState, setState) {
                             }
                         })
                     }
+                case DataTypes.DAY:
+                    if (state.columns[typeIndex].dataType === DataTypes.DAY) {
+                        return state
+                    } else if (state.columns[typeIndex].dataType === DataTypes.SELECT) {
+                        return update(state, {
+                            skipReset: {$set: true},
+                            columns: {[typeIndex]: {dataType: {$set: action.dataType}}}
+                        })
+                    } else {
+                        return update(state, {
+                            skipReset: {$set: true},
+                            columns: {[typeIndex]: {dataType: {$set: action.dataType}}},
+                            data: {
+                                $apply: data =>
+                                    data.map(row => ({
+                                        ...row,
+                                        [action.columnId]: row[action.columnId] + ''
+                                    }))
+                            }
+                        })
+                    }
                 default:
                     return state
             }
@@ -129,9 +150,10 @@ function reducer(state, action, gameState, setState) {
                             0,
                             {
                                 id: leftId,
-                                label: 'Column',
+                                label: 'День',
                                 accessor: leftId,
-                                dataType: DataTypes.TEXT,
+                                minWidth: 100,
+                                dataType: DataTypes.DAY,
                                 created: action.focus && true,
                                 options: []
                             }

@@ -53,6 +53,19 @@ export default function TypesMenu({
             },
             icon: <DataTypeIcon dataType={DataTypes.NUMBER}/>,
             label: getLabel(DataTypes.NUMBER)
+        },
+        {
+            type: DataTypes.DAY,
+            onClick: e => {
+                dataDispatch({
+                    type: ActionTypes.UPDATE_COLUMN_TYPE,
+                    columnId,
+                    dataType: DataTypes.DAY
+                })
+                onClose()
+            },
+            icon: <DataTypeIcon dataType={DataTypes.DAY}/>,
+            label: getLabel(DataTypes.DAY)
         }
     ]
 

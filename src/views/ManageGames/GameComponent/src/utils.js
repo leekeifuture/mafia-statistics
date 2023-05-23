@@ -55,7 +55,8 @@ export const ActionTypes = Object.freeze({
 export const DataTypes = Object.freeze({
     NUMBER: 'number',
     TEXT: 'text',
-    SELECT: 'select'
+    SELECT: 'select',
+    DAY: 'day'
 })
 
 export const Constants = Object.freeze({
