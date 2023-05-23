@@ -11,15 +11,12 @@ export default function DayCell({
     const [sum2, setSum2] = useState({value: initialValue, update: false})
 
     function onChange(e, type) {
-        if (type === 'number') setNumber({value: e.target.value, update: false})
-        else if (type === 'sum1') setSum1({
-            value: e.target.value,
-            update: false
-        })
-        else if (type === 'sum2') setSum2({
-            value: e.target.value,
-            update: false
-        })
+        if (type === 'number')
+            setNumber({value: e.target.value, update: false})
+        else if (type === 'sum1')
+            setSum1({value: e.target.value, update: false})
+        else if (type === 'sum2')
+            setSum2({value: e.target.value, update: false})
     }
 
     function onBlur(e, type) {
