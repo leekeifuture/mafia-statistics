@@ -416,19 +416,23 @@ class Sidebar extends React.Component {
 
         const user = this.props.authenticated
             ? this.getUser(classes, rtlActive, bgColor, collapseItemText)
-            : <>
-                <List className={classes.list}>
-                    {this.createLinks([
-                        {
-                            path: '/login',
-                            name: 'Авторизация',
-                            component: LoginPage,
-                            icon: Person,
-                            layout: '/auth'
-                        }
-                    ])}
-                </List>
-            </>
+            : <List className={classes.list}>
+              {this.createLinks([
+                {
+                  path: '/login',
+                  name: 'Авторизация',
+                  component: LoginPage,
+                  icon: Person,
+                  layout: '/auth'
+                },
+                {
+                  path: '/game/create',
+                  name: 'Создать игру',
+                  icon: Gamepad,
+                  layout: '/statistics'
+                }
+              ])}
+            </List>
 
         const adminSideBarLinks =
             this.props.authenticated &&
